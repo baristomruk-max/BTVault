@@ -45,6 +45,10 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v4.0.1
 
+      - name: Accept Android SDK Licenses
+        run: |
+          yes | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses || true
+
       - name: Build Plugins
         working-directory: ${{ github.workspace }}/src
         run: |
