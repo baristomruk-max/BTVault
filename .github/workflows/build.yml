@@ -18,6 +18,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ANDROID_HOME: /usr/local/lib/android/sdk
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
     steps:
       - name: Checkout Source
         uses: actions/checkout@v7
@@ -45,8 +48,6 @@ jobs:
       - name: Build Plugins
         working-directory: ${{ github.workspace }}/src
         run: |
-          export ANDROID_HOME=$ANDROID_HOME
-          export ANDROID_SDK_ROOT=$ANDROID_HOME
           chmod +x gradlew
           ./gradlew make makePluginsJson
           cp **/build/*.cs3 ${{ github.workspace }}/builds/
