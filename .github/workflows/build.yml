@@ -8,12 +8,13 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - "**/*.md"
       - "**/*.yml"
       - "**/*.jpg"
       - "**/*.png"
+      - ".github/**"
 
 jobs:
   Derle:

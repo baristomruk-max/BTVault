@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="cloudstreamrepo://raw.githubusercontent.com/baristomruk-max/BTVault/master/repo.json">
+  <a href="cloudstreamrepo://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json">
     <img src="https://img.shields.io/badge/-Depoyu_Ekle-4CAF50?style=for-the-badge&logo=android&logoColor=white" alt="Depoyu Ekle"/>
   </a>
   <a href="https://github.com/recloudstream/cloudstream/releases/tag/pre-release">
@@ -28,7 +28,7 @@
 > **Telefonunuzdan asagidaki butona tiklayin, CloudStream otomatik olarak acilacak ve depoyu ekleyecektir.**
 
 <p align="center">
-  <a href="cloudstreamrepo://raw.githubusercontent.com/baristomruk-max/BTVault/master/repo.json">
+  <a href="cloudstreamrepo://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json">
     <img src="https://img.shields.io/badge/TIKLA_-_Depoyu_Otomatik_Ekle-4CAF50?style=for-the-badge&logo=android&logoColor=white&labelColor=333" alt="Depoyu Ekle"/>
   </a>
 </p>
@@ -40,7 +40,7 @@
 3. Kisa kod olarak `baristomruk-max` yazin veya asagidaki URL'yi yapistirin:
 
 ```
-https://raw.githubusercontent.com/baristomruk-max/BTVault/master/repo.json
+https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 ```
 
 ---
