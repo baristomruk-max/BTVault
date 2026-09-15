@@ -1,6 +1,5 @@
 package com.btcozum.btvault
 
-import android.util.Log
 import android.util.Base64
 import org.jsoup.nodes.Element
 import org.jsoup.nodes.Document
