@@ -42,12 +42,11 @@ jobs:
           distribution: temurin
           cache: gradle
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v4.0.1
-
       - name: Build Plugins
         working-directory: ${{ github.workspace }}/src
         run: |
+          export ANDROID_HOME=$ANDROID_HOME
+          export ANDROID_SDK_ROOT=$ANDROID_HOME
           chmod +x gradlew
           ./gradlew make makePluginsJson
           cp **/build/*.cs3 ${{ github.workspace }}/builds/
