@@ -1,0 +1,868 @@
+[
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/AnimeciX.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "AnimeciX",
+        "internalName": "AnimeciX",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "AnimeciX - Animeleri kesfedebileceginiz paylasim platformu",
+        "fileSize": 29074,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Anime"
+        ],
+        "iconUrl": "https://anm.cx/favicon.ico",
+        "apiVersion": 1,
+        "fileHash": "sha256-b8bd32ee4ef0e3850b8cf7050ec11178d9e15205c82d839dc0d53cadf11dae7a"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/BelgeselX.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "BelgeselX",
+        "internalName": "BelgeselX",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "En yeni belgeseller, t\u00fcrk\u00e7e altyaz\u0131l\u0131 yada dublaj olarak 1080p kalitesinde HD belgesel izle.",
+        "fileSize": 27642,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Documentary"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=belgeselx.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-6686a4e8e92830bc3dfccc2903224b126b2fe142eba3cfdcccdd88514bbab15a"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/CanliTV.cs3",
+        "status": 0,
+        "version": 4,
+        "name": "CanliTV",
+        "internalName": "CanliTV",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Canl\u0131 TV",
+        "fileSize": 19897,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Live"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=tr.canlitv.team&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-cee51ddab8ba3db453ac46b61fcd9e6c536788e5148148e98fe026c909f9c2f0"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/CizgiMax.cs3",
+        "status": 1,
+        "version": 5,
+        "name": "CizgiMax",
+        "internalName": "CizgiMax",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "\u00c7izgiMax ile \u00c7izgi Film izlemek art\u0131k daha kolay, donmadan full hd ve reklams\u0131z bir sitedir, i\u00e7erisinde 700 den fazla \u00e7izgi film olan, Bu site bu i\u015fi profesyonelce yap\u0131yor.",
+        "fileSize": 28401,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Cartoon"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=cizgimax.online&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-846df7e619476117c49a4b641e1f8346f337f222daebcbc0be71e98514fc1eda"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DiziBox.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "DiziBox",
+        "internalName": "DiziBox",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "DiziBox - Yabanci dizileri full hd izleyebileceginiz elit site",
+        "fileSize": 22528,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.dizibox.live&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-55544500f989aee1ffe81014c943acc7496c44a890418f6f81d158278973156c"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DiziKorea.cs3",
+        "status": 0,
+        "version": 4,
+        "name": "DiziKorea",
+        "internalName": "DiziKorea",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "En G\u00fcncel Kore Dizileri izleme Sitesi",
+        "fileSize": 20099,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "AsianDrama"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=https://dizikorea.vip&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-c245f9b1343803a17f8bc3498f7d8d2cb8dd9a35b666c657c2e06fc5d4ae371d"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/Dizilla.cs3",
+        "status": 1,
+        "version": 14,
+        "name": "Dizilla",
+        "internalName": "Dizilla",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Dizilla t\u00fcm yabanc\u0131 dizileri \u00fccretsiz olarak T\u00fcrk\u00e7e Dublaj ve altyaz\u0131l\u0131 se\u00e7enekleri ile 1080P kalite izleyebilece\u011finiz yeni nesil yabanc\u0131 dizi izleme siteniz.",
+        "fileSize": 27921,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=dizilla.club&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-4df4063df91143121906b2c42b85b6ba9b0ef1a64696d7786b98887d51e74422"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DiziMom.cs3",
+        "status": 1,
+        "version": 10,
+        "name": "DiziMom",
+        "internalName": "DiziMom",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Binlerce yerli yabanc\u0131 dizi ar\u015fivi, t\u00fcm sezonlar, kesintisiz b\u00f6l\u00fcmler. Sadece dizi izle, Dizimom heryerde seninle!",
+        "fileSize": 31767,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.dizimom.tv&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-9b352639afdc1df4708fc4e20202762789f820abe94bdec72d6501b3baabe37f"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DiziPal.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "DiziPal",
+        "internalName": "DiziPal",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "DiziPal - En yeni dizileri guvenli ve hizli sekilde sunar",
+        "fileSize": 28795,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=dizipal1219.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-c38c9c9c3b7d7f8eb0cfad8aeaf4274c7d45fc3b7131e4385c37bd110817f9b9"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DiziYou.cs3",
+        "status": 1,
+        "version": 7,
+        "name": "DiziYou",
+        "internalName": "DiziYou",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Diziyou en kaliteli T\u00fcrk\u00e7e dublaj ve altyaz\u0131l\u0131 yabanc\u0131 dizi izleme sitesidir. G\u00fcncel ve efsanevi dizileri 1080p Full HD kalitede izlemek i\u00e7in hemen t\u0131kla!",
+        "fileSize": 14427,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.diziyou.co&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-9446dcd315666506143889470e8ed435ef1db344c2def5c87d7c2f97041a988e"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/FilmMakinesi.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "FilmMakinesi",
+        "internalName": "FilmMakinesi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "Film Makinesi - En g\u00fcncel filmleri full HD kalitede izleyin",
+        "fileSize": 14804,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=filmmakinesi.to&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-b996948b57a6fdd1539b1f1d130d25799e811cc0a92bf08bbcb0c8ee54cd7bed"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/FilmModu.cs3",
+        "status": 1,
+        "version": 8,
+        "name": "FilmModu",
+        "internalName": "FilmModu",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Film modun geldiyse y\u00fcksek kalitede en yeni filmleri izle, 1080p izleyebilece\u011finiz reklamsiz film sitesi.",
+        "fileSize": 15556,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.filmmodu17.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-90d4233a6466c6bc18d7813fbe35de0d6c4b20687181660b1c5393755c5ebc41"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/FullHDFilm.cs3",
+        "status": 0,
+        "version": 12,
+        "name": "FullHDFilm",
+        "internalName": "FullHDFilm",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Fullhdfilm ile en yeni vizyon filmler Full HD ve kesintisiz film sizlerle. \u00d6zg\u00fcn film ar\u015fivimizle en \u00fcst\u00fcn kaliteli film izle keyfini sunuyoruz.",
+        "fileSize": 20170,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=fullhdfilm.pro&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-f3ddbd7b09043b77a0c8501655df703683c3c7b720a7e44ac401baea9c614c73"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/FullHDFilmizlesene.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "FullHDFilmizlesene",
+        "internalName": "FullHDFilmizlesene",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Sinema zevkini evinize kadar getirdik. T\u00fcrkiye'nin lider Film sitesinde, en yeni filmleri Full HD izleyin.",
+        "fileSize": 31890,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.fullhdfilmizlesene.now&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-eafae18a76388d952b2cd39197cc97f96ebd63ca41dc9d2abba76ffb8eda16ce"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/FullPorner.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "FullPorner",
+        "internalName": "FullPorner",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "(VPN) FullPorner is the best free full length porn video site. Choose from millions of hardcore videos that stream quickly and in high quality and only full length",
+        "fileSize": 13379,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "en",
+        "tvTypes": [
+            "NSFW"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=fullporner.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-fd4966da5757d899809e43cd6ba3e7c674eb6ae000f0678ef3fc41f125fc8022"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/GolgeTV.cs3",
+        "status": 0,
+        "version": 4,
+        "name": "GolgeTV",
+        "internalName": "GolgeTV",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "GolgeTV cloudstream eklentisidir. Sevdi\u011finiz yay\u0131n platformlar\u0131n\u0131 ve canl\u0131 ma\u00e7lar\u0131 burada bulabilirsiniz.",
+        "fileSize": 28117,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Live"
+        ],
+        "iconUrl": "https://www.apkdelisi.net/wp-content/uploads/2022/03/golge-tv-reklamsiz-mod-apk-canli-tv-apkdelisi-0.jpg",
+        "apiVersion": 1,
+        "fileHash": "sha256-9ba44984770620caf5c54f0559ca514c23aa41e64319c0661a8c76c4a09eba24"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/HDFilmCehennemi.cs3",
+        "status": 1,
+        "version": 18,
+        "name": "HDFilmCehennemi",
+        "internalName": "HDFilmCehennemi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "HDFilmCehennemi - Turkiye'nin en hizli hd film izleme sitesi",
+        "fileSize": 27269,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=hdfilmcehennemi.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-d7f67f669493d258ca983218e351bb57021bd39c187cedb9270e152269a355b7"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/HQPorner.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "HQPorner",
+        "internalName": "HQPorner",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Truly high definition porn videos and truly for free! We're sure you'll like our best collection containing thousands of 4K, 60FPS and 1080p free HD porn videos with the hottest girls ever!",
+        "fileSize": 18336,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "en",
+        "tvTypes": [
+            "NSFW"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=hqporner.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-34698b9bf55232b070c6c7c34eabca994edfe1ab1c89e2ee00fb931980d39eba"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/InatBox.cs3",
+        "status": 0,
+        "version": 14,
+        "name": "InatBox",
+        "internalName": "InatBox",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "\u0130natBox cloudstream eklentisidir. Sevdi\u011finiz yay\u0131n platformlar\u0131n\u0131 ve canl\u0131 ma\u00e7lar\u0131 burada bulabilirsiniz.",
+        "fileSize": 29491,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "Live"
+        ],
+        "iconUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3vCp6N1K4bECoYRQD-cisJF2_6V_Hk01ZhDmoPR2JuM8O5qr4MqrPO1munM9cRlleBBSK6odYhLtDBWv4E3vhPhynlmS5hVVtJZShHoGA5REQ8_3v8SIlccTEqzVQu2UJyNYQdJNrKIfWy66RQeT0D-CcmFCbHPz5023H6p2v5fv4NVloZ5Rqo_yGrIY/s320/iNat-Box-App.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-d2838ae5526c3a8fe6a75a23b10c0baa239c533c375b49aeddc9313acd879e6b"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/IzleAI.cs3",
+        "status": 1,
+        "version": 5,
+        "name": "IzleAI",
+        "internalName": "IzleAI",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "1080P yabanc\u0131 film izle, T\u00fcrk\u00e7e dublaj ve T\u00fcrk\u00e7e altyaz\u0131l\u0131 film se\u00e7enekleri ile T\u00fcrkiye'nin en geni\u015f film ar\u015fivi 720pizle Full hd film izle.",
+        "fileSize": 28488,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=720pizle.ai&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-f58828e1a71f276f1fd6ba84c0bddb1ddf4313d4e760b894c1ba0321e3944d5f"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/JetFilmizle.cs3",
+        "status": 1,
+        "version": 19,
+        "name": "JetFilmizle",
+        "internalName": "JetFilmizle",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Binlerce Film \u0130zleme Se\u00e7ene\u011fiyle En \u0130yi Film \u0130zleme Sitesi",
+        "fileSize": 20913,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=https://jetfilmizle.de&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-d37a077024956cc139f1e4fe63add24c05c5d3cefd720dde17437a8ea8400d0b"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/KoreanTurk.cs3",
+        "status": 0,
+        "version": 5,
+        "name": "KoreanTurk",
+        "internalName": "KoreanTurk",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "G\u00fcney Kore sevdal\u0131lar\u0131n\u0131n vazge\u00e7emedi\u011fi ve T\u00fcrkiye'nin en \u00e7ok ziyaret edilen G\u00fcney Kore Portal\u0131; Koreant\u00fcrk'e ho\u015fgeldiniz!",
+        "fileSize": 13241,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "AsianDrama"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.koreanturk.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-1953e13c2e3aa30be16c9441eb63fcda3926f69cdf6776efe5a7625c3e6ecd79"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/KultFilmler.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "KultFilmler",
+        "internalName": "KultFilmler",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "KultFilmler - Ozenle secilmis en iyi filmler",
+        "fileSize": 20212,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=kultfilmler.net&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-59f8956b0dfd7328756f783dd685dbfc6624f880c91100bdb92f89328ab83b8f"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/NetflixMirror.cs3",
+        "status": 0,
+        "version": 8,
+        "name": "NetflixMirror",
+        "internalName": "NetflixMirror",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Netflix, PrimeVideo Content in Multiple Languages",
+        "fileSize": 40704,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "hi",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://iosmirror.cc/img/nf2/icon_x192.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-c0542995758b0148eaf9da386ec7b9c8707f2018bde758be3e4c3f2803296a65"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/OxAx.cs3",
+        "status": 0,
+        "version": 1,
+        "name": "OxAx",
+        "internalName": "OxAx",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "(VPN) \u041e\u0425-\u0410\u0425.\u0422\u0412 - \u0441\u0430\u0439\u0442 \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430 \u0432\u0437\u0440\u043e\u0441\u043b\u044b\u0445 \u0422\u0412 \u043e\u043d\u043b\u0430\u0439\u043d \u0431\u0435\u0437 \u043a\u0430\u043a\u0438\u0445 \u043b\u0438\u0431\u043e \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0439. \u0421\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e \u043d\u0430 \u043c\u043e\u0431\u0438\u043b\u044c\u043d\u044b\u0445 \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0430\u0445 iPad, iPhone \u0438 Android.",
+        "fileSize": 14344,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "ru",
+        "tvTypes": [
+            "NSFW",
+            "Live"
+        ],
+        "iconUrl": "https://cdn1.iconfinder.com/data/icons/nsfw-1/64/tv-adult-content-porn-512.png",
+        "apiVersion": 1,
+        "fileHash": "sha256-38c1af07c23a95084acefb1fbe7dcc1cfff4d8c4d9972822759096ee81989d4a"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/PornHub.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "PornHub",
+        "internalName": "PornHub",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "(VPN) Pornhub is the world\u2019s leading free porn site. Choose from millions of hardcore videos that stream quickly and in high quality, including amazing VR Porn. The largest adult site on the Internet just keeps getting better. We have more pornstars and real amateurs than anyone else. It\u2019s fast, it\u2019s free, it\u2019s Pornhub!",
+        "fileSize": 12474,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "en",
+        "tvTypes": [
+            "NSFW"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=pornhub.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-79afb2a297f8798ec24bdca2e0aa960900b3f38520d7be2ab13166f1706ded15"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/RareFilmm.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "RareFilmm",
+        "internalName": "RareFilmm",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "The Cave of Forgotten Films",
+        "fileSize": 15947,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "en",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=rarefilmm.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-f0eb92f4508b0601fc9f04739a01c7e3d0234fb5b2fc0ee556391964eb743304"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/RecTV.cs3",
+        "status": 0,
+        "version": 65,
+        "name": "RecTV",
+        "internalName": "RecTV",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "RecTv APK, T\u00fcrkiye\u2019deki en pop\u00fcler \u00c7evrimi\u00e7i Medya Ak\u0131\u015f platformlar\u0131ndan biridir. Filmlerin, Canl\u0131 Sporlar\u0131n, Web Dizilerinin ve \u00e7ok daha fazlas\u0131n\u0131n keyfini \u00fccretsiz \u00e7\u0131kar\u0131n.",
+        "fileSize": 22912,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "Live",
+            "TvSeries"
+        ],
+        "iconUrl": "https://rectvapk.cc/wp-content/uploads/2023/02/Rec-TV.webp",
+        "apiVersion": 1,
+        "fileHash": "sha256-c32ab2258772faf7c1e6de264eefec4634f4a6ecd6c0117b06c2b2688559b469"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/SetFilmIzle.cs3",
+        "status": 0,
+        "version": 9,
+        "name": "SetFilmIzle",
+        "internalName": "SetFilmIzle",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Setfilmizle sitemizde, donma ya\u015famadan T\u00fcrk\u00e7e dublaj ve altyaz\u0131l\u0131 filmleri ile dizileri muhte\u015fem 1080p full HD kalitesinde izleyebilirsiniz.",
+        "fileSize": 22829,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.setfilmizle.de&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-5fddd391d70c75957a614fa063feb2c87599247fab1573d88d59de42e8960343"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/SezonlukDizi.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "SezonlukDizi",
+        "internalName": "SezonlukDizi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "SezonlukDizi - Guncel ve eski dizileri en iyi goruntu kalitesiyle izleyin",
+        "fileSize": 21250,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=sezonlukdizi.cc&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-e95482a5c4caf43d8e21b3e118d1ab522ac9b344656414e6aed5e85f63204487"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/SinemaCX.cs3",
+        "status": 0,
+        "version": 2,
+        "name": "SinemaCX",
+        "internalName": "SinemaCX",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "G\u00fcncel ve en iyi yabanc\u0131 filmleri y\u00fcksek g\u00f6r\u00fcnt\u00fc kalitesinde, T\u00fcrk\u00e7e dublaj ve altyaz\u0131 se\u00e7enekleriyle filmleri full izleyin.",
+        "fileSize": 14718,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.sinema.cx&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-53eb096253dc86ffa2dbb684838696ba980fb925737c31f9ab229ab9d39103a5"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/SineWix.cs3",
+        "status": 0,
+        "version": 11,
+        "name": "SineWix",
+        "internalName": "SineWix",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Sinewix | \u00dccretsiz Film - Dizi - Anime \u0130zleme Uygulamas\u0131.",
+        "fileSize": 26757,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries",
+            "Anime"
+        ],
+        "iconUrl": "https://play-lh.googleusercontent.com/brwGNmr7IjA_MKk_TTPs0va10hdKE_bD_a1lnKoiMuCayW98EHpRv55edA6aEoJlmwfX",
+        "apiVersion": 1,
+        "fileHash": "sha256-8013f2cd1e7f89f57d5ad4ef53b48a4568ac18624feadf4eb3119a4fed616a9f"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/SpankBang.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "SpankBang",
+        "internalName": "SpankBang",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "(VPN) SpankBang is the hottest free porn site in the world! Cum like never before and explore millions of fresh and free porn videos! Get lit on SpankBang!",
+        "fileSize": 13812,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "en",
+        "tvTypes": [
+            "NSFW"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=spankbang.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-e734352d14dd2cb9753e3ae963710b4f8ebff089d130a7656ad270f2df7d67fd"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/SuperFilmGeldi.cs3",
+        "status": 0,
+        "version": 3,
+        "name": "SuperFilmGeldi",
+        "internalName": "SuperFilmGeldi",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Hd film izliyerek arkada\u015flar\u0131n\u0131zla ve sevdiklerinizle iyi bir vakit ge\u00e7irmek istiyorsan\u0131z a\u00e7\u0131n bir film e\u011flenmeye bak\u0131n. Bilim kurgu filmleri, a\u015fk drama vah\u015fet a\u015fk romantik s\u0131rad\u0131\u015f\u0131 korku filmlerini izle.",
+        "fileSize": 19165,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.superfilmgeldi.biz&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-5d341c43330789712cf0e75393803431e5447c1aac60d45bf8c2bad09a3427af"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/TurkAnime.cs3",
+        "status": 0,
+        "version": 1,
+        "name": "TurkAnime",
+        "internalName": "TurkAnime",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "TurkAnime - Turkiye'nin Online Anime izleme sitesi",
+        "fileSize": 16049,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Anime"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.turkanime.tv&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-c13520727b763352a3e1385d15ed5b69e8c911de4d40be5647324a81289e9c32"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/UgurFilm.cs3",
+        "status": 0,
+        "version": 3,
+        "name": "UgurFilm",
+        "internalName": "UgurFilm",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Yabanc\u0131 film izle, T\u00fcrk\u00e7e dublaj ve T\u00fcrk\u00e7e altyaz\u0131l\u0131 film se\u00e7enekleriyle 720p ve 1080p HD kalitesinde film izle - U\u011fur Film full hd film izle.",
+        "fileSize": 24126,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=ugurfilm7.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-d8a72a5a896370b3f4882ed8118cad7c1626a3c37bcf844a141c732e88bcb951"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/UncutMaza.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "UncutMaza",
+        "internalName": "UncutMaza",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "(VPN) We Provide Huge Colocation of Hindi Porn (Uncut) Web Series",
+        "fileSize": 11042,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "hi",
+        "tvTypes": [
+            "NSFW"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=uncutmaza.cc&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-70c35910f9cf00e16eb0c205a490eda642682782fd53f0aa613397c72b81d2e7"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/Watch2Movies.cs3",
+        "status": 0,
+        "version": 0,
+        "name": "Watch2Movies",
+        "internalName": "Watch2Movies",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "!!! YAPIM A\u015eAMASINDA !!! Watch2Movies is a Free Movies streaming site with zero ads. We let you watch movies online without having to register or paying, with over 10000 movies and TV-Series. You can also Download full movies from Watch2Movies and watch it later if you want.",
+        "fileSize": 19651,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "en",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=watch2movies.net&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-0ece60207d5151cb77d33c6067138e684776b6c676db3feb2f76e4d93d38ff90"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/WebteIzle.cs3",
+        "status": 1,
+        "version": 15,
+        "name": "WebteIzle",
+        "internalName": "WebteIzle",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Her t\u00fcrl\u00fc filmi ister dublaj ister altyaz\u0131l\u0131, en kaliteli bir \u015fekilde izleyebilece\u011finiz ar\u015fivi en geni\u015f ger\u00e7ek film izleme siteniz.",
+        "fileSize": 24376,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=webteizle2.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-3b25ea6ea40fecaa88da579d2587255a237fd4419f1f802ef693574c7071ed68"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/xHamster.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "xHamster",
+        "internalName": "xHamster",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "(VPN) 5 milyondan fazla Porno Videosunu \u00fccretsiz izleyin.",
+        "fileSize": 11029,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "en",
+        "tvTypes": [
+            "NSFW"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=xhamster.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-3e1004e1cb66da6afb2434064cc9429ada12854c0035e314b5c3ad8eedee91e0"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/YouTube.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "YouTube",
+        "internalName": "YouTube",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "YouTube, izledi\u011finiz videolarla \u00f6nerilerini iyile\u015ftirir. \u0130lginizi \u00e7ekebilecek i\u00e7eriklerle dolu bir ak\u0131\u015f olu\u015fturmak i\u00e7in video izlemeye ba\u015flay\u0131n.",
+        "fileSize": 17089,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Others"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=youtube.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-f067f05e91fa24a5f7ca8cabd36d9bfebc8f526a94ddb7be01d3be2b32a2f173"
+    }
+]
