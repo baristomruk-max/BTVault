@@ -49,7 +49,7 @@ class AnimeciX : MainAPI() {
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
 
     override suspend fun load(url: String): LoadResponse? {
-        val response = app.get(url, headers = mapOf("x-e-h" to "7Y2ozlO+QysR5w9Q6Tupmtvl9jJp7ThFH8SB+Lo7NvZjgjqRSqOgcT2v4ISM9sP10LmnlYI8WQ==.xrlyOBFS5BHjQ2Lk")).parsedSafe<Title>() ?: return null
+        val response = app.get(url, headers = mapOf("x-e-h" to "7Y2ozlO+QysR5w9Q6Tupmtvl9jJp7ThFH8SB+Lo7NvZjgjqRSqOgcT2v4ISM9sP10LmnlYI8WQ==.xrlyOBFS5BHjQ2Lk")).parsedSafe<TitleResponse>() ?: return null
         val episodes = mutableListOf<Episode>()
         val titleId  = url.substringAfter("?titleId=")
 

@@ -199,13 +199,13 @@ class DiziPal : MainAPI() {
                     val subLang = it.substringAfter("[").substringBefore("]")
                     val subUrl  = it.replace("[$subLang]", "")
                     val fullSubUrl = if (subUrl.startsWith("http")) subUrl else "${mainUrl.trimEnd('/')}$subUrl"
-                    subtitleCallback.invoke(SubtitleFile(lang = subLang, url = fullSubUrl))
+                    subtitleCallback.invoke(newSubtitleFile(subLang, fullSubUrl))
                 }
             } else {
                 val subLang = subtitles.substringAfter("[").substringBefore("]")
                 val subUrl  = subtitles.replace("[$subLang]", "")
                 val fullSubUrl = if (subUrl.startsWith("http")) subUrl else "${mainUrl.trimEnd('/')}$subUrl"
-                subtitleCallback.invoke(SubtitleFile(lang = subLang, url = fullSubUrl))
+                subtitleCallback.invoke(newSubtitleFile(subLang, fullSubUrl))
             }
         }
 
