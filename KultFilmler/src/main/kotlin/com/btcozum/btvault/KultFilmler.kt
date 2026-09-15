@@ -4,7 +4,7 @@ import android.util.Base64
 import org.jsoup.nodes.Element
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
-import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
+
 import com.lagradost.cloudstream3.network.CloudflareKiller
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -103,12 +103,12 @@ class KultFilmler : MainAPI() {
                 newEpisode(epHref) { this.name = epName; this.season = epSeason; this.episode = epEpisode }
             }
             return newTvSeriesLoadResponse(title, url, TvType.TvSeries, episodes) {
-                this.posterUrl = poster; this.year = year; this.plot = description; this.tags = tags; this.duration = duration; addActors(actors)
+                this.posterUrl = poster; this.year = year; this.plot = description; this.tags = tags; this.duration = duration; this.actors = actors.map { ActorData(it) }
             }
         }
 
         return newMovieLoadResponse(title, url, TvType.Movie, url) {
-            this.posterUrl = poster; this.year = year; this.plot = description; this.tags = tags; this.duration = duration; addActors(actors)
+            this.posterUrl = poster; this.year = year; this.plot = description; this.tags = tags; this.duration = duration; this.actors = actors.map { ActorData(it) }
         }
     }
 

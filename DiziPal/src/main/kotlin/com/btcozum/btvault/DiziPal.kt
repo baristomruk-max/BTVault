@@ -198,12 +198,14 @@ class DiziPal : MainAPI() {
                 subtitles.split(",").forEach {
                     val subLang = it.substringAfter("[").substringBefore("]")
                     val subUrl  = it.replace("[$subLang]", "")
-                    subtitleCallback.invoke(SubtitleFile(lang = subLang, url = fixUrl(subUrl)))
+                    val fullSubUrl = if (subUrl.startsWith("http")) subUrl else "${mainUrl.trimEnd('/')}$subUrl"
+                    subtitleCallback.invoke(SubtitleFile(lang = subLang, url = fullSubUrl))
                 }
             } else {
                 val subLang = subtitles.substringAfter("[").substringBefore("]")
                 val subUrl  = subtitles.replace("[$subLang]", "")
-                subtitleCallback.invoke(SubtitleFile(lang = subLang, url = fixUrl(subUrl)))
+                val fullSubUrl = if (subUrl.startsWith("http")) subUrl else "${mainUrl.trimEnd('/')}$subUrl"
+                subtitleCallback.invoke(SubtitleFile(lang = subLang, url = fullSubUrl))
             }
         }
 

@@ -42,14 +42,16 @@ jobs:
           distribution: temurin
           cache: gradle
 
-      - name: Build Single Provider (FilmMakinesi)
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v4.0.1
+
+      - name: Build Plugins
         working-directory: ${{ github.workspace }}/src
         run: |
           chmod +x gradlew
-          ./gradlew FilmMakinesi:make 2>&1
-          cp FilmMakinesi/build/*.cs3 ${{ github.workspace }}/builds/ 2>/dev/null || true
-          ./gradlew makePluginsJson 2>&1
-          cp build/plugins.json ${{ github.workspace }}/builds/ 2>/dev/null || true
+          ./gradlew make makePluginsJson
+          cp **/build/*.cs3 ${{ github.workspace }}/builds/
+          cp build/plugins.json ${{ github.workspace }}/builds/
 
       - name: Push builds
         working-directory: ${{ github.workspace }}/builds

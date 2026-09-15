@@ -3,7 +3,7 @@ package com.btcozum.btvault
 import org.jsoup.nodes.Element
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
-import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
+
 
 class SezonlukDizi : MainAPI() {
     override var mainUrl              = "https://sezonlukdizi8.com"
@@ -67,7 +67,7 @@ class SezonlukDizi : MainAPI() {
             }
         }
         return newTvSeriesLoadResponse(title, url, TvType.TvSeries, episodes) {
-            this.posterUrl = poster; this.year = year; this.plot = description; this.tags = tags; this.duration = duration; addActors(actors)
+            this.posterUrl = poster; this.year = year; this.plot = description; this.tags = tags; this.duration = duration; this.actors = actors.map { ActorData(it) }
         }
     }
 

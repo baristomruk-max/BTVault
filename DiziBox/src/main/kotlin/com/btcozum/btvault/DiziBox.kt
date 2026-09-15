@@ -3,8 +3,7 @@ package com.btcozum.btvault
 import org.jsoup.nodes.Element
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
-import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
-import com.lagradost.cloudstream3.LoadResponse.Companion.addTrailer
+
 import com.lagradost.cloudstream3.network.CloudflareKiller
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -106,7 +105,7 @@ class DiziBox : MainAPI() {
         }
 
         return newTvSeriesLoadResponse(title, url, TvType.TvSeries, episodeList) {
-            this.posterUrl = poster; this.plot = description; this.year = year; this.tags = tags; addActors(actors); addTrailer(trailer)
+            this.posterUrl = poster; this.plot = description; this.year = year; this.tags = tags; this.actors = actors.map { ActorData(it) }; if (trailer != null) this.trailers.add(TrailerData(trailer, null, false))
         }
     }
 

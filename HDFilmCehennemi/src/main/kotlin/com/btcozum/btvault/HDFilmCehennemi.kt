@@ -7,8 +7,7 @@ import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
-import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
-import com.lagradost.cloudstream3.LoadResponse.Companion.addTrailer
+
 import com.lagradost.cloudstream3.network.CloudflareKiller
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -133,12 +132,12 @@ class HDFilmCehennemi : MainAPI() {
                 newEpisode(epHref) { this.name = epName; this.season = epSeason; this.episode = epEpisode }
             }
             newTvSeriesLoadResponse(title, url, TvType.TvSeries, episodes) {
-                this.posterUrl = poster; this.year = year; this.plot = description; this.tags = tags; this.recommendations = recommendations; addActors(actors); addTrailer(trailer)
+                this.posterUrl = poster; this.year = year; this.plot = description; this.tags = tags; this.recommendations = recommendations; this.actors = actors.map { ActorData(it) }; if (trailer != null) this.trailers.add(TrailerData(trailer, null, false))
             }
         } else {
             val trailer = document.selectFirst("div.post-info-trailer button")?.attr("data-modal")?.substringAfter("trailer/", "")?.let { if (it.isNotEmpty()) "https://www.youtube.com/watch?v=$it" else null }
             newMovieLoadResponse(title, url, TvType.Movie, url) {
-                this.posterUrl = poster; this.year = year; this.plot = description; this.tags = tags; this.recommendations = recommendations; addActors(actors); addTrailer(trailer)
+                this.posterUrl = poster; this.year = year; this.plot = description; this.tags = tags; this.recommendations = recommendations; this.actors = actors.map { ActorData(it) }; if (trailer != null) this.trailers.add(TrailerData(trailer, null, false))
             }
         }
     }

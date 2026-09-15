@@ -3,8 +3,7 @@ package com.btcozum.btvault
 import org.jsoup.nodes.Element
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
-import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
-import com.lagradost.cloudstream3.LoadResponse.Companion.addTrailer
+
 
 class FilmMakinesi : MainAPI() {
     override var mainUrl              = "https://filmmakinesi.sh"
@@ -13,6 +12,8 @@ class FilmMakinesi : MainAPI() {
     override var lang                 = "tr"
     override val hasQuickSearch       = false
     override val supportedTypes       = setOf(TvType.Movie)
+
+    private val USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0"
 
     override var sequentialMainPage            = true
     override var sequentialMainPageDelay       = 50L
@@ -110,8 +111,8 @@ class FilmMakinesi : MainAPI() {
             this.tags            = tags
             this.duration        = duration
             this.recommendations = recommendations
-            addActors(actors)
-            addTrailer(trailer)
+            this.actors = actors?.map { ActorData(it) } ?: emptyList()
+            if (trailer != null) this.trailers.add(TrailerData(trailer, null, false))
         }
     }
 
