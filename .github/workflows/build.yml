@@ -45,20 +45,11 @@ jobs:
           distribution: temurin
           cache: gradle
 
-      - name: Debug Environment
-        run: |
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
-          ls -la $ANDROID_HOME 2>/dev/null || echo "ANDROID_HOME not found"
-          ls -la $ANDROID_SDK_ROOT 2>/dev/null || echo "ANDROID_SDK_ROOT not found"
-          java -version
-          echo "JAVA_HOME=$JAVA_HOME"
-
       - name: Build Plugins
         working-directory: ${{ github.workspace }}/src
         run: |
           chmod +x gradlew
-          ./gradlew make makePluginsJson --stacktrace
+          ./gradlew make makePluginsJson --info 2>&1 | tail -200
           cp **/build/*.cs3 ${{ github.workspace }}/builds/
           cp build/plugins.json ${{ github.workspace }}/builds/
 
