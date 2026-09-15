@@ -1,6 +1,6 @@
 # BTVault - CloudStream Turkce Eklenti Deposu
 
-Turkce film ve dizi platformlari icin CloudStream eklentileri.
+Turkce film, dizi ve anime platformlari icin CloudStream eklentileri.
 
 ## Kurulum
 
@@ -15,10 +15,25 @@ Turkce film ve dizi platformlari icin CloudStream eklentileri.
 
 ## Icerik
 
-| Platform    | Tur           | Durum |
-|-------------|---------------|-------|
-| FilmMakinesi| Film          | Aktif |
-| DiziPal     | Dizi & Film   | Aktif |
+### Filmler
+| Platform        | Tur                | Durum |
+|-----------------|--------------------|-------|
+| FilmMakinesi    | Film               | Aktif |
+| HDFilmCehennemi | Film & Dizi        | Aktif |
+| KultFilmler     | Film & Dizi        | Aktif |
+
+### Diziler
+| Platform        | Tur                | Durum |
+|-----------------|--------------------|-------|
+| DiziPal         | Dizi & Film        | Aktif |
+| DiziBox         | Yabanci Dizi       | Aktif |
+| SezonlukDizi    | Yabanci Dizi       | Aktif |
+
+### Animeler
+| Platform        | Tur                | Durum |
+|-----------------|--------------------|-------|
+| TurkAnime       | Anime              | Aktif |
+| AnimeciX        | Anime              | Aktif |
 
 ## Eklenti Ekleme
 
@@ -40,6 +55,11 @@ Yeni Turkce platform eklemek icin:
 # Linux/Mac
 ./gradlew FilmMakinesi:make
 ```
+
+## Tesekkurler
+
+- [KekikAkademi](https://github.com/keyiflerolsun/Kekik-cloudstream) - Kaynak provider kodlari
+- [CloudStream](https://github.com/recloudstream/cloudstream) - Uygulama
 
 ## Lisans
 
