@@ -10,13 +10,13 @@
 </p>
 
 <p align="center">
-  <a href="cloudstreamrepo://raw.githubusercontent.com/BTcozum/BTVault/master/repo.json">
+  <a href="cloudstreamrepo://raw.githubusercontent.com/baristomruk-max/BTVault/master/repo.json">
     <img src="https://img.shields.io/badge/-Depoyu_Ekle-4CAF50?style=for-the-badge&logo=android&logoColor=white" alt="Depoyu Ekle"/>
   </a>
   <a href="https://github.com/recloudstream/cloudstream/releases/tag/pre-release">
     <img src="https://img.shields.io/badge/-CloudStream_Pre--Release-2196F3?style=for-the-badge&logo=github&logoColor=white" alt="CloudStream APK"/>
   </a>
-  <a href="https://github.com/BTcozum/BTVault">
+  <a href="https://github.com/baristomruk-max/BTVault">
     <img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
   </a>
 </p>
@@ -28,7 +28,7 @@
 > **Telefonunuzdan asagidaki butona tiklayin, CloudStream otomatik olarak acilacak ve depoyu ekleyecektir.**
 
 <p align="center">
-  <a href="cloudstreamrepo://raw.githubusercontent.com/BTcozum/BTVault/master/repo.json">
+  <a href="cloudstreamrepo://raw.githubusercontent.com/baristomruk-max/BTVault/master/repo.json">
     <img src="https://img.shields.io/badge/TIKLA_-_Depoyu_Otomatik_Ekle-4CAF50?style=for-the-badge&logo=android&logoColor=white&labelColor=333" alt="Depoyu Ekle"/>
   </a>
 </p>
@@ -37,10 +37,10 @@
 
 1. [CloudStream Pre-Release](https://github.com/recloudstream/cloudstream/releases/tag/pre-release) APK'sini indirip kurun
 2. **Ayarlar > Eklentiler > Depo Ekle** bolumune gidin
-3. Kisa kod olarak `BTcozum` yazin veya asagidaki URL'yi yapistirin:
+3. Kisa kod olarak `baristomruk-max` yazin veya asagidaki URL'yi yapistirin:
 
 ```
-https://raw.githubusercontent.com/BTcozum/BTVault/master/repo.json
+https://raw.githubusercontent.com/baristomruk-max/BTVault/master/repo.json
 ```
 
 ---
@@ -152,5 +152,5 @@ git push origin main
 ---
 
 <p align="center">
-  <sub>BTVault &copy; 2026 | <a href="https://github.com/BTcozum">BTcozum</a> | GPL-3.0</sub>
+  <sub>BTVault &copy; 2026 | <a href="https://github.com/baristomruk-max">baristomruk-max</a> | GPL-3.0</sub>
 </p>
