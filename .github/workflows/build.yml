@@ -11,10 +11,9 @@ on:
       - main
     paths-ignore:
       - "**/*.md"
-      - "**/*.yml"
       - "**/*.jpg"
       - "**/*.png"
-      - ".github/**"
+      - ".github/assets/**"
 
 jobs:
   Derle:
@@ -34,22 +33,23 @@ jobs:
       - name: Eski Derlemeleri Temizle
         run: rm $GITHUB_WORKSPACE/builds/*.cs3 || true
 
-      - name: JDK 17 Ayarla
+      - name: JDK 21 Ayarla
         uses: actions/setup-java@v4
         with:
           distribution: adopt
-          java-version: 17
+          java-version: 21
+          cache: gradle
 
       - name: Android SDK Ayarla
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v3.2.2
 
       - name: Eklentileri Derle
         run: |
           cd $GITHUB_WORKSPACE/src
           chmod +x gradlew
           ./gradlew make makePluginsJson
-          cp **/build/*.cs3 $GITHUB_WORKSPACE/builds
-          cp build/plugins.json $GITHUB_WORKSPACE/builds
+          cp **/build/*.cs3 $GITHUB_WORKSPACE/builds/
+          cp build/plugins.json $GITHUB_WORKSPACE/builds/
 
       - name: Derlemeleri Yukle
         run: |
