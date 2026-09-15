@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="300" fill="url(#bg)" rx="12"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="800" cy="50" r="120" fill="#e94560" opacity="0.08"/>
+  <circle cx="850" cy="250" r="80" fill="#ff6b6b" opacity="0.06"/>
+  <circle cx="50" cy="250" r="60" fill="#533483" opacity="0.1"/>
+  
+  <!-- Play icon -->
+  <g transform="translate(60, 95)" filter="url(#glow)">
+    <polygon points="0,0 70,45 0,90" fill="url(#accent)" opacity="0.9"/>
+  </g>
+  
+  <!-- BT text -->
+  <text x="160" y="155" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="#ffffff" filter="url(#glow)">BT</text>
+  
+  <!-- Vault text -->
+  <text x="258" y="155" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="300" fill="#e94560">Vault</text>
+  
+  <!-- Subtitle line -->
+  <rect x="160" y="175" width="200" height="3" fill="url(#accent)" rx="2"/>
+  
+  <!-- Description -->
+  <text x="160" y="210" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#a0a0a0">CloudStream Turkce Eklenti Deposu</text>
+  
+  <!-- Stats -->
+  <text x="160" y="250" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#666">
+    <tspan fill="#e94560">8</tspan> Provider  •  
+    <tspan fill="#e94560">Film</tspan>  •  
+    <tspan fill="#e94560">Dizi</tspan>  •  
+    <tspan fill="#e94560">Anime</tspan>
+  </text>
+  
+  <!-- CloudStream badge -->
+  <g transform="translate(700, 200)">
+    <rect x="0" y="0" width="140" height="40" fill="#1a1a2e" stroke="#e94560" stroke-width="2" rx="20"/>
+    <text x="70" y="26" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#e94560" text-anchor="middle" font-weight="bold">CLOUDSTREAM</text>
+  </g>
+</svg>

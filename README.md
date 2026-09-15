@@ -1,66 +1,156 @@
-# BTVault - CloudStream Turkce Eklenti Deposu
+<p align="center">
+  <img src=".github/assets/banner.svg" alt="BTVault Banner" width="100%"/>
+</p>
 
-Turkce film, dizi ve anime platformlari icin CloudStream eklentileri.
+<h1 align="center">BTVault</h1>
 
-## Kurulum
+<p align="center">
+  <strong>CloudStream Turkce Eklenti Deposu</strong><br>
+  Film, dizi ve anime platformlari icin tek depo.
+</p>
 
-1. [CloudStream Pre-Release](https://github.com/recloudstream/cloudstream/releases/tag/pre-release) APK'sini indirip kurun.
-2. Uygulamada **Ayarlar > Eklentiler > Depo Ekle** bolumune gidin.
-3. Asagidaki bilgileri girin:
-   - **Depo Adi:** `BTVault` (bos birakilabilir)
-   - **Depo URL:** `BTcozum` (kisakod) veya tam URL:
-     ```
-     https://raw.githubusercontent.com/BTcozum/BTVault/master/repo.json
-     ```
+<p align="center">
+  <a href="cloudstreamrepo://raw.githubusercontent.com/BTcozum/BTVault/master/repo.json">
+    <img src="https://img.shields.io/badge/-Depoyu_Ekle-4CAF50?style=for-the-badge&logo=android&logoColor=white" alt="Depoyu Ekle"/>
+  </a>
+  <a href="https://github.com/recloudstream/cloudstream/releases/tag/pre-release">
+    <img src="https://img.shields.io/badge/-CloudStream_Pre--Release-2196F3?style=for-the-badge&logo=github&logoColor=white" alt="CloudStream APK"/>
+  </a>
+  <a href="https://github.com/BTcozum/BTVault">
+    <img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+</p>
+
+---
+
+## Tek Tikla Kurulum
+
+> **Telefonunuzdan asagidaki butona tiklayin, CloudStream otomatik olarak acilacak ve depoyu ekleyecektir.**
+
+<p align="center">
+  <a href="cloudstreamrepo://raw.githubusercontent.com/BTcozum/BTVault/master/repo.json">
+    <img src="https://img.shields.io/badge/TIKLA_-_Depoyu_Otomatik_Ekle-4CAF50?style=for-the-badge&logo=android&logoColor=white&labelColor=333" alt="Depoyu Ekle"/>
+  </a>
+</p>
+
+### Manuel Kurulum
+
+1. [CloudStream Pre-Release](https://github.com/recloudstream/cloudstream/releases/tag/pre-release) APK'sini indirip kurun
+2. **Ayarlar > Eklentiler > Depo Ekle** bolumune gidin
+3. Kisa kod olarak `BTcozum` yazin veya asagidaki URL'yi yapistirin:
+
+```
+https://raw.githubusercontent.com/BTcozum/BTVault/master/repo.json
+```
+
+---
 
 ## Icerik
 
-### Filmler
-| Platform        | Tur                | Durum |
-|-----------------|--------------------|-------|
-| FilmMakinesi    | Film               | Aktif |
-| HDFilmCehennemi | Film & Dizi        | Aktif |
-| KultFilmler     | Film & Dizi        | Aktif |
+<table>
+  <tr>
+    <th>Platform</th>
+    <th>Tur</th>
+    <th>Durum</th>
+  </tr>
+  <tr>
+    <td>🎬 <strong>FilmMakinesi</strong></td>
+    <td>Film</td>
+    <td>✅ Aktif</td>
+  </tr>
+  <tr>
+    <td>🎬 <strong>HDFilmCehennemi</strong></td>
+    <td>Film & Dizi</td>
+    <td>✅ Aktif</td>
+  </tr>
+  <tr>
+    <td>🎬 <strong>KultFilmler</strong></td>
+    <td>Film & Dizi</td>
+    <td>✅ Aktif</td>
+  </tr>
+  <tr>
+    <td>📺 <strong>DiziPal</strong></td>
+    <td>Dizi & Film</td>
+    <td>✅ Aktif</td>
+  </tr>
+  <tr>
+    <td>📺 <strong>DiziBox</strong></td>
+    <td>Yabanci Dizi</td>
+    <td>✅ Aktif</td>
+  </tr>
+  <tr>
+    <td>📺 <strong>SezonlukDizi</strong></td>
+    <td>Yabanci Dizi</td>
+    <td>✅ Aktif</td>
+  </tr>
+  <tr>
+    <td>🎭 <strong>TurkAnime</strong></td>
+    <td>Anime</td>
+    <td>✅ Aktif</td>
+  </tr>
+  <tr>
+    <td>🎭 <strong>AnimeciX</strong></td>
+    <td>Anime</td>
+    <td>✅ Aktif</td>
+  </tr>
+</table>
 
-### Diziler
-| Platform        | Tur                | Durum |
-|-----------------|--------------------|-------|
-| DiziPal         | Dizi & Film        | Aktif |
-| DiziBox         | Yabanci Dizi       | Aktif |
-| SezonlukDizi    | Yabanci Dizi       | Aktif |
+---
 
-### Animeler
-| Platform        | Tur                | Durum |
-|-----------------|--------------------|-------|
-| TurkAnime       | Anime              | Aktif |
-| AnimeciX        | Anime              | Aktif |
+## Ozellikler
 
-## Eklenti Ekleme
+- 🔍 **Tek Arama** - Tum platformlarda ayni anda arama
+- 📥 **Indirme** - Filmleri ve dizileri cevirime indirin
+- 📱 **TV Desteği** - Android TV ve tabletlerde calisir
+- 🔄 **Otomatik Guncelleme** - Yeni bolumler otomatik eklenir
+- 🎬 **Kiralama Modu** - Chromecast ile televizyona aktarin
 
-Yeni Turkce platform eklemek icin:
+---
 
-1. Bu repoyu fork edin
-2. Yeni klasor olusturun (ornegin `YeniPlatform/`)
-3. `build.gradle.kts` dosyasini olusturun
-4. Plugin ve Provider siniflarini yazin
-5. `settings.gradle.kts` otomatik olarak yeni klasoru sececektir
-6. Push edin ve GitHub Actions'in derlemesini bekleyin
+## Yeni Eklenti Ekleme
+
+```bash
+# 1. Bu repoyu fork edin
+# 2. Yeni klasor olusturun
+mkdir YeniPlatform
+
+# 3. Gerekli dosyalari olusturun
+# - build.gradle.kts (metadata)
+# - src/main/AndroidManifest.xml
+# - src/main/kotlin/com/btcozum/btvault/YeniPlatformPlugin.kt
+# - src/main/kotlin/com/btcozum/btvault/YeniPlatform.kt
+
+# 4. Push edin, GitHub Actions otomatik derler
+git push origin main
+```
+
+---
 
 ## Gelistirme
 
 ```bash
-# Windows
+# Yerel derleme
 .\gradlew.bat FilmMakinesi:make
 
-# Linux/Mac
-./gradlew FilmMakinesi:make
+# Tek provider derleme
+.\gradlew.bat HDFilmCehennemi:make
+
+# Tum provider'lari derleme
+.\gradlew.bat make
 ```
+
+---
 
 ## Tesekkurler
 
-- [KekikAkademi](https://github.com/keyiflerolsun/Kekik-cloudstream) - Kaynak provider kodlari
-- [CloudStream](https://github.com/recloudstream/cloudstream) - Uygulama
+| | Proje |
+|---|---|
+| 🙏 | [KekikAkademi](https://github.com/keyiflerolsun/Kekik-cloudstream) - Kaynak provider kodlari |
+| 🙏 | [CloudStream](https://github.com/recloudstream/cloudstream) - Uygulama |
+| 🙏 | [recloudstream](https://github.com/recloudstream) - Topluluk |
 
-## Lisans
+---
 
-GPL-3.0
+<p align="center">
+  <sub>BTVault &copy; 2026 | <a href="https://github.com/BTcozum">BTcozum</a> | GPL-3.0</sub>
+</p>
