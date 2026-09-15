@@ -1,0 +1,8 @@
+{
+  "name": "BTVault | @BTcozum",
+  "description": "Türkçe film ve dizi platformları için CloudStream eklenti deposu",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/BTcozum/BTVault/builds/plugins.json"
+  ]
+}
