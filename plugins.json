@@ -1,0 +1,640 @@
+[
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/AnimeciX.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "AnimeciX",
+        "internalName": "AnimeciX",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "AnimeciX - Animeleri kesfedebileceginiz paylasim platformu",
+        "fileSize": 30115,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Anime"
+        ],
+        "iconUrl": "https://anm.cx/favicon.ico",
+        "apiVersion": 1,
+        "fileHash": "sha256-e71c15f2b7dffa5ca04c291083a5fc10f4d1aef6b931e557fe5322faeabc4c22"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/AsyaWatch.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "AsyaWatch",
+        "internalName": "AsyaWatch",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "AsyaWatch - Asya dizileri ve filmleri",
+        "fileSize": 17380,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=asyawatch.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-c75a64187015218b067a718e583aba3bc8fc9d2907e11ea112d41e1b8f178811"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/BelgeselX.cs3",
+        "status": 1,
+        "version": 5,
+        "name": "BelgeselX",
+        "internalName": "BelgeselX",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "En yeni belgeseller, t\u00fcrk\u00e7e altyaz\u0131l\u0131 yada dublaj olarak 1080p kalitesinde HD belgesel izle.",
+        "fileSize": 27642,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Documentary"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=belgeselx.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-f593d0fc361fb800b6a62aa907683669a033667cee003f306aaa945ded18f152"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/CanliTV.cs3",
+        "status": 1,
+        "version": 6,
+        "name": "CanliTV",
+        "internalName": "CanliTV",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Canli TV - iptv-org TR kanal listesi",
+        "fileSize": 20512,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Live"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=iptv-org.github.io&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-0d95ea6ae4ccc97a711998bc523c7d25e3ffa673abdc4554b86d6228ff7764c1"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DDizi.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "DDizi",
+        "internalName": "DDizi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "DDizi - Yabanci dizi izle",
+        "fileSize": 17441,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=ddizi.tel&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-2ce6902206c1a65193a9e8e03e773f61365cd40bf0d9ff1fe63c438466a9dfee"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DiziBox.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "DiziBox",
+        "internalName": "DiziBox",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "DiziBox - Yabanci dizileri full hd izleyebileceginiz elit site. DIKKAT: site VPN/sunucu IP adreslerini engelliyor (Cloudflare 1000s -> 500 ERROR), normal ev/mobil interneti olmadan acilmaz.",
+        "fileSize": 22762,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.dizibox.live&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-e65017242f4149ccd9a86ed08cdcd1095e0bb3d41916d7728d1bb8ecd9d005ad"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DiziGom.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "DiziGom",
+        "internalName": "DiziGom",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "DiziGom - Yabanci dizi izle",
+        "fileSize": 25442,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=dizigom.news&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-39d677260274829a42662035265c5c2c712420e110c3adfcca2a657196d21415"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/Dizilla.cs3",
+        "status": 0,
+        "version": 17,
+        "name": "Dizilla",
+        "internalName": "Dizilla",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Dizilla t\u00c3\u00bcm yabanc\u00c4\u00b1 dizileri \u00c3\u00bccretsiz olarak T\u00c3\u00bcrk\u00c3\u00a7e Dublaj ve altyaz\u00c4\u00b1l\u00c4\u00b1 se\u00c3\u00a7enekleri ile 1080P kalite izleyebilece\u00c4\u0178iniz yeni nesil yabanc\u00c4\u00b1 dizi izleme siteniz.",
+        "fileSize": 29738,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=dizilla.la&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-83e3bad501eee7fb965eaf55a88596264556e61aa8167ebeb4209333254c8e6e"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DiziMag.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "DiziMag",
+        "internalName": "DiziMag",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "DiziMag - Turkce altyazili yabanci dizi",
+        "fileSize": 41513,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=dizimag.onl&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-eaf8d0f743189850dbe485f807fb7d36dca5242ca4a819b27cce45fae84b0781"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/Dizipod.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "Dizipod",
+        "internalName": "Dizipod",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "Dizipod - Yabanci dizi ve film izle (Turkce altyazili)",
+        "fileSize": 20366,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=dizipod.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-42b2af95cae159b246cd58b92c6a0bad9c639270611f43e97107b976567f7def"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DiziYou.cs3",
+        "status": 1,
+        "version": 9,
+        "name": "DiziYou",
+        "internalName": "DiziYou",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Diziyou en kaliteli T\u00fcrk\u00e7e dublaj ve altyaz\u0131l\u0131 yabanc\u0131 dizi izleme sitesidir. G\u00fcncel ve efsanevi dizileri 1080p Full HD kalitede izlemek i\u00e7in hemen t\u0131kla!",
+        "fileSize": 15500,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.diziyou.co&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-f0f2ed4b090c48cb84bc78a7a5653e2ee843bc04119559291406cfe9d52782e4"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DMax.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "DMax",
+        "internalName": "DMax",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "DMAX - Belgesel ve macera dizileri",
+        "fileSize": 14367,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=dmax.com.tr&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-426fa59c00a613af7032d4b4848d9d08c07ab2597050e4963e4216e8625b6426"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/FilmMakinesi.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "FilmMakinesi",
+        "internalName": "FilmMakinesi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "Film Makinesi - En g\u00fcncel filmleri full HD kalitede izleyin",
+        "fileSize": 25455,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=filmmakinesi.to&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-6d18ea79e240e902837c76fa17dbb309f64fd01a08e13382ca870ba6d16c7a28"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/FilmModu.cs3",
+        "status": 1,
+        "version": 10,
+        "name": "FilmModu",
+        "internalName": "FilmModu",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Film modun geldiyse y\u00fcksek kalitede en yeni filmleri izle, 1080p izleyebilece\u011finiz reklamsiz film sitesi.",
+        "fileSize": 16189,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.filmmodu17.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-83b2809ba3d7a6b21fa779302305494b0d8248013235f711570b1a6ad9253490"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/HDFilmCehennemi.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "HDFilmCehennemi",
+        "internalName": "HDFilmCehennemi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "HDFilmCehennemi - Full HD film ve dizi (hdfilmcehennemi.land)",
+        "fileSize": 14664,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=hdfilmcehennemi.land&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-37b155cf61b8850a5596d5cb6c0a7c9535ce6d431e98980212840068d5e7c1af"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/HDFilmCehennemi2.cs3",
+        "status": 1,
+        "version": 6,
+        "name": "HDFilmCehennemi2",
+        "internalName": "HDFilmCehennemi2",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "HDFilmCehennemi2 - Full HD film ve dizi (yeni Laravel/Livewire tema, /api/search + vidload/vidmoly oynatici)",
+        "fileSize": 26164,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=hdfilmcehennemi2.biz&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-353d86c4467f1b21d72b87e2d2ba0699ba628ff7b94aa05cb337d2561268d104"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/HDFilmIzle.cs3",
+        "status": 1,
+        "version": 4,
+        "name": "HDFilmIzle",
+        "internalName": "HDFilmIzle",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "HDFilmIzle - HD film izle",
+        "fileSize": 34613,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=hdfilmizle.live&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-b8af344f03ea6688e6d6306aa64ae0399a5cf3659a076ae0a84be6414e3e305c"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/IzleAI.cs3",
+        "status": 0,
+        "version": 7,
+        "name": "IzleAI",
+        "internalName": "IzleAI",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "1080P yabanc\u0131 film izle, T\u00fcrk\u00e7e dublaj ve T\u00fcrk\u00e7e altyaz\u0131l\u0131 film se\u00e7enekleri ile T\u00fcrkiye'nin en geni\u015f film ar\u015fivi 720pizle Full hd film izle.",
+        "fileSize": 29488,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=selcukflix.app&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-ea94f4c98f4aab388dd7f5a8614caa5b3b5fcc8e9670fb0258cbf128b8caf5bd"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/JetFilmizle.cs3",
+        "status": 1,
+        "version": 22,
+        "name": "JetFilmizle",
+        "internalName": "JetFilmizle",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Binlerce Film \u0130zleme Se\u00e7ene\u011fiyle En \u0130yi Film \u0130zleme Sitesi",
+        "fileSize": 22191,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=jetfilmizle.app&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-e65e7c76977459f6eb715c80eb5e3a8273821351568bc7598394f91ffa5e6677"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/KultFilmler.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "KultFilmler",
+        "internalName": "KultFilmler",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "KultFilmler - Ozenle secilmis en iyi filmler",
+        "fileSize": 20212,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=kultfilmler.net&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-4aca6402e2d906aecff92e8db03d42fb4b2e61cb4e29115c6244a47b9f8966ca"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/powerDizi.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "powerDizi",
+        "internalName": "powerDizi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "powerDizi - Canli yabanci dizi kanallari",
+        "fileSize": 20508,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=power&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-dc34fa43d45e5ac7cc24c009b259c72b516be8bb71a16130c973c4b3de3baabc"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/powerSinema.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "powerSinema",
+        "internalName": "powerSinema",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "powerSinema - Canli sinema kanallari",
+        "fileSize": 20508,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=power&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-16b701845ccb5ae87a19bb75b77f243318e487d17322e2f7ed36d977b5e62c9d"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/RareFilmm.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "RareFilmm",
+        "internalName": "RareFilmm",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "The Cave of Forgotten Films",
+        "fileSize": 15947,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "en",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=rarefilmm.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-7ae5a256b144a018ef404226305447a0b985e6e9772198f191b5d62b7f7fd74d"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/SezonlukDizi.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "SezonlukDizi",
+        "internalName": "SezonlukDizi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "SezonlukDizi - Guncel ve eski dizileri en iyi goruntu kalitesiyle izleyin",
+        "fileSize": 25963,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=sezonlukdizi.cc&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-e4e8f7b7041bc0bf303984bd36beed385c54837b9d6973c52f5766592a5b8337"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/SporTV.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "SporTV",
+        "internalName": "SporTV",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "SporTV - Canli spor kanallari (TRT Spor, beIN Sports, Eurosport, NBA TV ve daha fazlasi)",
+        "fileSize": 13715,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Live"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=trtspor.com.tr&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-c18a5b7cdc05e67eaaa312e6bbb63ba9ced6eb329f1554960b7b64b6184f999b"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/TLC.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "TLC",
+        "internalName": "TLC",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "TLC - Dizi ve belgesel",
+        "fileSize": 14378,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=tlctv.com.tr&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-71fe7111b8e587c71ee0c2d0c0059e294f95e80726dd660ca90e28d7fe93216c"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/vavooSpor.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "vavooSpor",
+        "internalName": "vavooSpor",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "vavooSpor - Kapsamli dunya spor kanallari (iptv-org, ulke gruplu)",
+        "fileSize": 21792,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Live"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=iptv-org.github.io&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-3ac42de28edf9d6c53b9ddb81d27b418be04ba2eee1e9f14a978076e7c3cd20e"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/WebteIzle.cs3",
+        "status": 1,
+        "version": 18,
+        "name": "WebteIzle",
+        "internalName": "WebteIzle",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "Her t\u00fcrl\u00fc filmi ister dublaj ister altyaz\u0131l\u0131, en kaliteli bir \u015fekilde izleyebilece\u011finiz ar\u015fivi en geni\u015f ger\u00e7ek film izleme siteniz.",
+        "fileSize": 27009,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=webteizle2.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-c2c9799ede3d741d6d088b6881008d6f6fa6d1ee7cde2938ea3b78a77b10b84f"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/XPrime.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "XPrime",
+        "internalName": "XPrime",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "XPrime - TMDB tabanli film/dizi bilgi",
+        "fileSize": 32030,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=themoviedb.org&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-5f50772b672c8924c9e21653d493438c81c945e6414b4c61bff79cf18d071dbc"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/YabanciDizi.cs3",
+        "status": 1,
+        "version": 3,
+        "name": "YabanciDizi",
+        "internalName": "YabanciDizi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "YabanciDizi - Turkce altyazili dizi izle",
+        "fileSize": 47600,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=yabancidizi.news&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-4ac265a37fd2931ba18919137d87c4b2f813da600239881c688d0d2a5b45499f"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/YouTube.cs3",
+        "status": 1,
+        "version": 6,
+        "name": "YouTube",
+        "internalName": "YouTube",
+        "authors": [
+            "BTcozum",
+            "keyiflerolsun"
+        ],
+        "description": "YouTube, izledi\u011finiz videolarla \u00f6nerilerini iyile\u015ftirir. \u0130lginizi \u00e7ekebilecek i\u00e7eriklerle dolu bir ak\u0131\u015f olu\u015fturmak i\u00e7in video izlemeye ba\u015flay\u0131n.",
+        "fileSize": 17063,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Others"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=youtube.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-05ad1b67a614a35ebc1467dca70950d3015f761444a0ad02498c0ff90bdb6414"
+    }
+]
