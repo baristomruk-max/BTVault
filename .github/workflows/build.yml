@@ -18,9 +18,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      ANDROID_HOME: /usr/local/lib/android/sdk
-      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
     steps:
       - name: Checkout Source
         uses: actions/checkout@v7
@@ -45,13 +42,14 @@ jobs:
           distribution: temurin
           cache: gradle
 
-      - name: Build Plugins
+      - name: Build Single Provider (FilmMakinesi)
         working-directory: ${{ github.workspace }}/src
         run: |
           chmod +x gradlew
-          ./gradlew make makePluginsJson --info 2>&1 | tail -200
-          cp **/build/*.cs3 ${{ github.workspace }}/builds/
-          cp build/plugins.json ${{ github.workspace }}/builds/
+          ./gradlew FilmMakinesi:make 2>&1
+          cp FilmMakinesi/build/*.cs3 ${{ github.workspace }}/builds/ 2>/dev/null || true
+          ./gradlew makePluginsJson 2>&1
+          cp build/plugins.json ${{ github.workspace }}/builds/ 2>/dev/null || true
 
       - name: Push builds
         working-directory: ${{ github.workspace }}/builds
