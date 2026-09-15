@@ -1,0 +1,165 @@
+[
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/AnimeciX.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "AnimeciX",
+        "internalName": "AnimeciX",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "AnimeciX - Animeleri kesfedebileceginiz paylasim platformu",
+        "fileSize": 22006,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Anime"
+        ],
+        "iconUrl": "https://anm.cx/favicon.ico",
+        "apiVersion": 1,
+        "fileHash": "sha256-b600ae136a1bae1239a35cb4bc2eeb0fc890c3e4c4b602263291ec8f9cab58b8"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DiziBox.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "DiziBox",
+        "internalName": "DiziBox",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "DiziBox - Yabanci dizileri full hd izleyebileceginiz elit site",
+        "fileSize": 16413,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.dizibox.live&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-79e2185fa1ecbfa3ec637d54fac64940cfdbf5a4a918705c44ad2fff8681f9fc"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/DiziPal.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "DiziPal",
+        "internalName": "DiziPal",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "DiziPal - En yeni dizileri guvenli ve hizli sekilde sunar",
+        "fileSize": 21849,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries",
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=dizipal1219.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-7112c7616459eece69a5b5ee83be8b22591a4e6e38913a1b3afb7c76ae0268b9"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/FilmMakinesi.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "FilmMakinesi",
+        "internalName": "FilmMakinesi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "Film Makinesi - En g\u00fcncel filmleri full HD kalitede izleyin",
+        "fileSize": 13559,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=filmmakinesi.sh&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-c71f5da502b282cf5391d6702572a52e12f83e84a119829eb740bf6da08b282b"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/HDFilmCehennemi.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "HDFilmCehennemi",
+        "internalName": "HDFilmCehennemi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "HDFilmCehennemi - Turkiye'nin en hizli hd film izleme sitesi",
+        "fileSize": 23315,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=hdfilmcehennemi.la&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-1a67806e4a8baaa057ac9a9cf91a136535a1dea4840187a681e211658688ed70"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/KultFilmler.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "KultFilmler",
+        "internalName": "KultFilmler",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "KultFilmler - Ozenle secilmis en iyi filmler",
+        "fileSize": 17714,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=kultfilmler.net&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-2cf54d058c3bfd496aa8983cebc6b7a8be3e50d0631cf385013279b0acc78171"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/SezonlukDizi.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "SezonlukDizi",
+        "internalName": "SezonlukDizi",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "SezonlukDizi - Guncel ve eski dizileri en iyi goruntu kalitesiyle izleyin",
+        "fileSize": 19405,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "TvSeries"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=sezonlukdizi8.com&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-5322c781ece0894fa6296ab79344279d2478f0f451676e2dabbf7a17e59a9338"
+    },
+    {
+        "url": "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/TurkAnime.cs3",
+        "status": 1,
+        "version": 1,
+        "name": "TurkAnime",
+        "internalName": "TurkAnime",
+        "authors": [
+            "BTcozum"
+        ],
+        "description": "TurkAnime - Turkiye'nin Online Anime izleme sitesi",
+        "fileSize": 16049,
+        "repositoryUrl": "https://github.com/baristomruk-max/BTVault",
+        "language": "tr",
+        "tvTypes": [
+            "Anime"
+        ],
+        "iconUrl": "https://www.google.com/s2/favicons?domain=www.turkanime.tv&sz=%size%",
+        "apiVersion": 1,
+        "fileHash": "sha256-c13520727b763352a3e1385d15ed5b69e8c911de4d40be5647324a81289e9c32"
+    }
+]
