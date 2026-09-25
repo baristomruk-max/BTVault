@@ -136,6 +136,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 - **Dizilla `load()` onarildi**: `document.select("div.gap-3 span.text-sm")[1]` yeni next.js sayfasinda eleman bulamayinca `IndexOutOfBoundsException` firlatiyordu (butun detay sayfalari icin load() catliyordu) -> guvenli `getOrNull` cekilere alindi; ayrica ozet `meta[name=description]`, puan JSON-LD `ratingValue`, bolum kapagi `img[src*=images.macellan]` yedekleri eklendi.
 - **IzleAI tamamen yeniden yazildi**: yeni temada eski secicilerin tamami kalmadi (`/kategori/*` 404, `a.ambilight` yok, `/bg/searchcontent` 404). Site artik AES-256-CBC ile sifreli `secureData` paketi uzerinden calisiyor: liste `POST /api/bg/findMovies` (`currentPage`, 24'er kayit), arama `POST /api/bg/searchContent?searchterm=`, detay `__NEXT_DATA__ -> props.pageProps.secureData`, kaynaklar `RelatedResults.getMoviePartSourcesById_* -> source_content -> pichive -> source2.php -> master.m3u8`. Cozucu `base64(sha256("!!22xx!!90!!")).substring(0,32)` anahtari ile yazildi; butun zincir `scripts/verify-izleai.ps1` ile canli dogrulaniyor.
 - **BelgeselX yeni temaya gore yeniden yazildi**: `div.gen-movie-contain` / `h2.gen-title` secicileri tamamen kalkti. Ana sayfa `a.px-card` (sayfa 1 SSR, devami `/ajax_konukat.php?url=<slug>&page=N`, eski `&page=` eki kaldirildi), detay `h1.px-hero-title` + `meta[name=description]` + `span.px-imdb-genre-tag`, bolumler `a.px-ep-card` (`butonKaydet('id')` + `S<n> - B<m>` etiketi) ve `?epid=` ile izleme sayfasina baglandi; kaynaklar `diziGetir('id','ic1','ic2','ic3',...)` cagrilari ile `/video/data/<map>.php?id=<id>&sira=<1..3>` uclerine cevrilip icindeki jwplayer `file:` (mp4) veya `<iframe>` uzerinden cozuluyor. `scripts/verify-belgeselx.ps1` 4 adimin hepsini canli geciyor.
+- **DiziBox oynatici zinciri onarildi**: `loadExtractor()` dogrudan `player/king/king.php` uzerine cagiriliyordu, bu adreste kayitli bir extractor oldugu icin hicbir kaynak bulunamiyordu. Simdi `div#video-area iframe` -> `player/*.php` -> icindeki gercek `<iframe>` cozuluyor: **molystream** icin AES'li `/embed/<id>` sayfasi yerine HLS ucu olan `/embed/sheila/<id>` dogrudan `M3U8` olarak ekleniyor (tarayici `User-Agent` + `Referer` sart, aksi halde 403/404), `moly.php` icindeki `atob(unescape(...))` karistirmasi cozulerek bulunan `vidmoly.biz` ve `haydi.php` -> `ok.ru` yansitilari `loadExtractor`'a veriliyor (cekirdekteki `Vidmolybiz` / `OkRuSSL` extractorlari ile). Ayrica kart basligi artik `h3 a`'dan okunuyor (ilk `<a>` afis linki oldugu icin arsivdeki 15/15 baslik bos kaliyordu), bolum numarasi regex'i `1.Sezon 1.Bolum` gibi isimlerle eslesecek sekilde duzeltildi, `?s=` arama sorgusu encode ediliyor ve interceptor 403 + `Just a moment` Cloudflare asamasini da yakaliyor. `scripts/verify-dizibox.ps1` eklendi (dizibox.live datacenter IP'ye 403 verdigi icin bu adimlar SKIP olur, molystream HLS + extractor kontrolleri calisir).
 
 ---
 
@@ -199,6 +200,11 @@ cozup canli olarak ceker, sonra kullanilan CSS selector'lerin hala sayfada olup 
 .\scripts\verify-search.ps1  # search() token'lari -> scripts/site-checks-search/
 .\scripts\verify-load.ps1    # sonuc baglantisi -> detay/sezon sayfasi -> load() token'lari
 .\scripts\check-tokens.ps1   # tek bir URL icin load() token raporu: -Url ... -Name ...
+
+# asama 3 - tek tek eklenti zincir dogrulamasi (arama -> load -> loadLinks)
+.\scripts\verify-izleai.ps1      # IzleAI      AES secureData + pichive zinciri
+.\scripts\verify-belgeselx.ps1   # BelgeselX   diziGetir + /video/data/<map>.php
+.\scripts\verify-dizibox.ps1     # DiziBox     player/*.php -> molystream HLS / vidmoly / ok.ru
 ```
 
 `verify-load.ps1` film + dizi (sezon) sayfasini birlestirerek bakar; bazi seciciler
