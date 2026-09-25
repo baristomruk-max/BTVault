@@ -10,5 +10,5 @@ cloudstream {
     **/
     status  = 1
     tvTypes = listOf("Movie")
-    iconUrl = "https://www.google.com/s2/favicons?domain=filmmakinesi.sh&sz=%size%"
+    iconUrl = "https://www.google.com/s2/favicons?domain=filmmakinesi.to&sz=%size%"
 }

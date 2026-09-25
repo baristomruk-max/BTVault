@@ -10,3 +10,9 @@
 .cxx
 local.properties
 .vscode
+
+# local build/debug artifacts
+*.log
+errors-full.txt
+plugins*.json
+

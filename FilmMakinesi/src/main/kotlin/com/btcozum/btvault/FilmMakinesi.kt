@@ -6,12 +6,12 @@ import com.lagradost.cloudstream3.utils.*
 
 
 class FilmMakinesi : MainAPI() {
-    override var mainUrl              = "https://filmmakinesi.sh"
+    override var mainUrl              = "https://filmmakinesi.to"
     override var name                 = "FilmMakinesi"
     override val hasMainPage          = true
     override var lang                 = "tr"
     override val hasQuickSearch       = false
-    override val supportedTypes       = setOf(TvType.Movie)
+    override var supportedTypes       = setOf(TvType.Movie)
 
     private val USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0"
 
@@ -22,15 +22,17 @@ class FilmMakinesi : MainAPI() {
     override val mainPage = mainPageOf(
         "${mainUrl}/filmler-1/sayfa/"                                    to "Son Filmler",
         "${mainUrl}/film-izle/olmeden-izlenmesi-gerekenler-fm1/sayfa/"   to "Olmeden Izle",
-        "${mainUrl}/tur/aksiyon-fm1/film/sayfa/"                         to "Aksiyon",
-        "${mainUrl}/tur/bilim-kurgu-fm2/film/sayfa/"                     to "Bilim Kurgu",
+        "${mainUrl}/tur/aksiyon-fmy54y/film/sayfa/"                      to "Aksiyon",
+        "${mainUrl}/tur/bilim-kurgu-fm3/film/sayfa/"                     to "Bilim Kurgu",
         "${mainUrl}/tur/macera-fm1/film/sayfa/"                          to "Macera",
         "${mainUrl}/tur/komedi-fm1/film/sayfa/"                          to "Komedi",
         "${mainUrl}/tur/romantik-fm1/film/sayfa/"                        to "Romantik",
         "${mainUrl}/tur/belgesel/film/sayfa/"                            to "Belgesel",
         "${mainUrl}/tur/fantastik-fm1/film/sayfa/"                       to "Fantastik",
         "${mainUrl}/tur/polisiye/film/sayfa/"                            to "Polisiye Suc",
-        "${mainUrl}/tur/korku-fm1/film/sayfa/"                           to "Korku",
+        "${mainUrl}/tur/korku-fm2/film/sayfa/"                           to "Korku",
+        "${mainUrl}/tur/dram-fm1/film/sayfa/"                            to "Dram",
+        "${mainUrl}/tur/gerilim-fm1/film/sayfa/"                         to "Gerilim",
     )
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
@@ -56,7 +58,7 @@ class FilmMakinesi : MainAPI() {
         val aTag = selectFirst("a.item") ?: return null
         val title = aTag.attr("data-title").takeIf { it.isNotBlank() } ?: return null
         val href = fixUrlNull(aTag.attr("href")) ?: return null
-        val posterUrl = fixUrlNull(aTag.selectFirst("img")?.attr("src"))
+        val posterUrl = fixUrlNull(aTag.selectFirst("img")?.attr("src") ?: aTag.selectFirst("img")?.attr("data-src"))
 
         return newMovieSearchResponse(title, href, TvType.Movie) {
             this.posterUrl = posterUrl
@@ -84,19 +86,22 @@ class FilmMakinesi : MainAPI() {
         val title       = document.selectFirst("h1")?.text()?.trim() ?: return null
         val poster      = fixUrlNull(document.selectFirst("[property='og:image']")?.attr("content"))
         val description = document.select("div.info-description p").last()?.text()?.trim()
-        val tags        = document.selectFirst("dt:contains(Tur:) + dd")?.text()?.split(", ")
-        val year        = document.selectFirst("dt:contains(Yapim Yili:) + dd")?.text()?.trim()?.toIntOrNull()
+        val tags        = document.select("div.type a").map { it.text().trim() }.filter { it.isNotEmpty() }
 
-        val durationElement = document.select("dt:contains(Film Suresi:) + dd time").attr("datetime")
-        val duration = if (durationElement.startsWith("PT") && durationElement.endsWith("M")) {
-            durationElement.drop(2).dropLast(1).toIntOrNull() ?: 0
-        } else {
-            0
-        }
+        val ogDescription = document.selectFirst("[property='og:description']")?.attr("content") ?: ""
+        val year = Regex("""\b(19|20)\d{2}\b""").find(ogDescription)?.value?.toIntOrNull()
+            ?: Regex("""-(?:19|20)\d{2}-""").find(url)?.value?.trim('-')?.toIntOrNull()
+
+        val durationText = document.html()
+        val duration = Regex(""""duration"\s*:\s*"PT(\d+)M"""").find(durationText)?.groupValues?.get(1)?.toIntOrNull()
+            ?: Regex("""(\d+)\s*Dakika""", RegexOption.IGNORE_CASE).find(document.selectFirst("div.time")?.text() ?: "")?.groupValues?.get(1)?.toIntOrNull()
+            ?: 0
 
         val recommendations = document.select("div.film-list div.item-relative").mapNotNull { it.toRecommendResult() }
-        val actors = document.selectFirst("dt:contains(Oyuncular:) + dd")?.text()?.split(", ")?.map {
-            Actor(it.trim())
+        val actors = document.select("div.oyuncu-list a.cast").mapNotNull {
+            val name = it.selectFirst("div.cast-name")?.text()?.trim() ?: return@mapNotNull null
+            val pic  = fixUrlNull(it.selectFirst("img")?.attr("src") ?: it.selectFirst("img")?.attr("data-src"))
+            Actor(name, pic)
         }
 
         val trailer = document.selectFirst("div.left a.trailer-button")?.attr("data-video_url")
@@ -111,7 +116,7 @@ class FilmMakinesi : MainAPI() {
             this.tags            = tags
             this.duration        = duration
             this.recommendations = recommendations
-            this.actors = actors?.map { ActorData(it) } ?: emptyList()
+            this.actors = actors.map { ActorData(it) }
             if (trailer != null) this.trailers.add(TrailerData(trailer, null, false))
         }
     }
@@ -123,9 +128,14 @@ class FilmMakinesi : MainAPI() {
         callback: (ExtractorLink) -> Unit
     ): Boolean {
         val document = app.get(data).document
-        val iframeSrc = document.selectFirst("iframe")?.attr("data-src") ?: ""
+
         val videoUrls = document.select(".video-parts a[data-video_url]").map { it.attr("data-video_url") }
-        val allUrls = (if (iframeSrc.isNotEmpty()) listOf(iframeSrc) else emptyList()) + videoUrls
+        // the trailer iframe also carries a data-src, never feed it to the extractor
+        val iframeUrls = document.select("iframe[data-src]")
+            .map { it.attr("data-src") }
+            .filter { it.isNotBlank() && !it.contains("youtube.com") }
+
+        val allUrls = (videoUrls + iframeUrls).distinct()
 
         allUrls.forEach { url ->
             loadExtractor(url, "${mainUrl}/", subtitleCallback, callback)

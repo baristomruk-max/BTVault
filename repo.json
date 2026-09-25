@@ -1,7 +1,7 @@
 {
   "name": "BTVault",
   "iconUrl": "https://raw.githubusercontent.com/baristomruk-max/BTVault/main/.github/assets/banner.svg",
-  "description": "CloudStream Turkce Eklenti Deposu - Film, dizi ve anime icin 8 aktif provider",
+  "description": "CloudStream Turkce Eklenti Deposu - 41 provider (27 aktif): film, dizi, anime, belgesel, canli TV",
   "manifestVersion": 1,
   "pluginLists": [
     "https://raw.githubusercontent.com/baristomruk-max/BTVault/builds/plugins.json"

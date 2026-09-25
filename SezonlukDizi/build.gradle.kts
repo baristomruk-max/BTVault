@@ -10,5 +10,5 @@ cloudstream {
      **/
     status  = 1
     tvTypes = listOf("TvSeries")
-    iconUrl = "https://www.google.com/s2/favicons?domain=sezonlukdizi8.com&sz=%size%"
+    iconUrl = "https://www.google.com/s2/favicons?domain=sezonlukdizi.cc&sz=%size%"
 }
