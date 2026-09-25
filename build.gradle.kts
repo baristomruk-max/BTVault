@@ -7,12 +7,34 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        // JitPack's maven-metadata for recloudstream artifacts is currently broken
+        // (points to gradle--32895aedb6-1.pom which 404s). This ivy repo bypasses
+        // maven-metadata entirely and fetches gradle--SNAPSHOT.jar directly.
+        // NOTE: real plugin classes live in the SUBPROJECT coordinates
+        // com.github.recloudstream.gradle:gradle (the root jar is manifest-only).
+        // ivy gives no transitive POM, so stdlib/asm/jadb are declared explicitly.
+        ivy {
+            url = uri("https://jitpack.io")
+            patternLayout {
+                artifact("[organisation]/[module]/[revision]/[artifact]-[revision].[ext]")
+                setM2compatible(true)
+            }
+            metadataSources {
+                artifact()
+            }
+            content {
+                includeGroupByRegex("com\\.github\\.recloudstream\\.gradle")
+            }
+        }
         maven("https://jitpack.io")
     }
 
     dependencies {
         classpath("com.android.tools.build:gradle:9.1.1")
-        classpath("com.github.recloudstream:gradle:-SNAPSHOT")
+        classpath("com.github.recloudstream.gradle:gradle:-SNAPSHOT")
+        classpath("org.ow2.asm:asm:9.9.1")
+        classpath("org.ow2.asm:asm-tree:9.9.1")
+        classpath("com.github.vidstige:jadb:v1.2.1")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.4.0")
     }
 }
