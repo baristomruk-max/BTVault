@@ -171,13 +171,13 @@ git push origin main
 
 ### Canli dogrulama scriptleri
 
-Depo kokundeki scriptler her provider'in ana adresini Google DNS (8.8.8.8) uzerinden
+`scripts/` altindaki scriptler her provider'in ana adresini Google DNS (8.8.8.8) uzerinden
 cozup canli olarak ceker, sonra kullanilan CSS selector'lerin hala sayfada olup olmadigini kontrol eder.
 (Yerel router DNS'i bir cok streaming alan adini 195.175.254.2'ye yonlendirdigi icin Google DNS kullanilir.)
 
 ```powershell
-.\check-sites.ps1    # her provider'in ana adresi -> HTTP durumu, baslik, HTML
-.\verify-sel.ps1     # kod icindeki selector'lerin ana sayfada kacisi var
+.\scripts\check-sites.ps1    # her provider'in ana adresi -> HTTP durumu, baslik, HTML
+.\scripts\verify-sel.ps1     # kod icindeki selector'lerin ana sayfada kacisi var
 ```
 
 ---

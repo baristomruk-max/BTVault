@@ -17,3 +17,6 @@ errors-full.txt
 plugins*.json
 
 commit-msg*.txt
+scripts/site-checks/
+scripts/*.csv
+
