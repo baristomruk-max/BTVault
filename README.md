@@ -53,7 +53,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **41 eklenti - 27 aktif, 1 beta, 13 site kapali.**
+> **41 eklenti - 25 aktif, 16 site kapali.**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 > - 🟡 Beta: eklenti henuz tam test edilmedi
@@ -70,9 +70,9 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>🎭 <strong>AnimeciX</strong></td><td>Anime</td><td>✅ Aktif</td></tr>
   <tr><td>🌍 <strong>BelgeselX</strong></td><td>Belgesel</td><td>✅ Aktif</td></tr>
   <tr><td>📡 <strong>CanliTV</strong></td><td>Canli TV</td><td>🔴 M3U listesi kaldirildi</td></tr>
-  <tr><td>🧸 <strong>CizgiMax</strong></td><td>Cizgi Film</td><td>✅ Aktif</td></tr>
+  <tr><td>🧸 <strong>CizgiMax</strong></td><td>Cizgi Film</td><td>✅ Aktif (yeni tema guncellendi)</td></tr>
   <tr><td>📺 <strong>DiziBox</strong></td><td>Yabanci Dizi</td><td>⚠️ Cloudflare korumali</td></tr>
-  <tr><td>🌸 <strong>DiziKorea</strong></td><td>Kore Dizi</td><td>⏳ Kaynak su an yanit vermiyor</td></tr>
+  <tr><td>🌸 <strong>DiziKorea</strong></td><td>Kore Dizi</td><td>🔴 Sunucu kapali (526 Invalid SSL)</td></tr>
   <tr><td>📺 <strong>Dizilla</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizilla.club)</td></tr>
   <tr><td>📺 <strong>DiziMom</strong></td><td>Yerli + Yabanci Dizi</td><td>✅ Aktif (dizimom.com)</td></tr>
   <tr><td>📺 <strong>DiziPal</strong></td><td>Dizi & Film</td><td>🔄 Domain donerli (1219+)</td></tr>
@@ -83,12 +83,12 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>🎬 <strong>FullHDFilmizlesene</strong></td><td>Film</td><td>✅ Aktif (fullhdfilmizlesene.now)</td></tr>
   <tr><td>🔞 <strong>FullPorner</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
   <tr><td>📡 <strong>GolgeTV</strong></td><td>Canli TV</td><td>🔴 API adresi yok</td></tr>
-  <tr><td>🎬 <strong>HDFilmCehennemi</strong></td><td>Film & Dizi</td><td>✅ Aktif</td></tr>
+  <tr><td>🎬 <strong>HDFilmCehennemi</strong></td><td>Film & Dizi</td><td>✅ Aktif (arama duzeltildi)</td></tr>
   <tr><td>🔞 <strong>HQPorner</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
-  <tr><td>🎬 <strong>InatBox</strong></td><td>Film, Dizi, Canli</td><td>🟡 Beta</td></tr>
+  <tr><td>🎬 <strong>InatBox</strong></td><td>Film, Dizi, Canli</td><td>🔴 Backend kapali (dizibox.rest)</td></tr>
   <tr><td>🎬 <strong>IzleAI</strong></td><td>Film</td><td>✅ Aktif</td></tr>
   <tr><td>🎬 <strong>JetFilmizle</strong></td><td>Film</td><td>✅ Aktif</td></tr>
-  <tr><td>🌸 <strong>KoreanTurk</strong></td><td>Kore Dizi</td><td>⏳ Kaynak su an yanit vermiyor</td></tr>
+  <tr><td>🌸 <strong>KoreanTurk</strong></td><td>Kore Dizi</td><td>🔴 Sunucu kapali (522 Timeout)</td></tr>
   <tr><td>🎬 <strong>KultFilmler</strong></td><td>Film & Dizi</td><td>✅ Aktif (yeni tema guncellendi)</td></tr>
   <tr><td>🎬 <strong>NetflixMirror</strong></td><td>Film & Dizi</td><td>🔴 iosmirror.cc kapandi</td></tr>
   <tr><td>🔞 <strong>OxAx</strong></td><td>Yetiskin (VPN)</td><td>🔴 Servis kapandi</td></tr>
@@ -107,13 +107,18 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>🎬 <strong>Watch2Movies</strong></td><td>Film</td><td>🔴 Adresi yok</td></tr>
   <tr><td>🎬 <strong>WebteIzle</strong></td><td>Film</td><td>⚠️ Cloudflare korumali (webteizle.info)</td></tr>
   <tr><td>🔞 <strong>xHamster</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
-  <tr><td>▶️ <strong>YouTube</strong></td><td>Video</td><td>✅ Aktif (Invidious)</td></tr>
+  <tr><td>▶️ <strong>YouTube</strong></td><td>Video</td><td>✅ Aktif (Invidious, otomatik instance)</td></tr>
 </table>
 
 ---
 
 ## Son Guncellemeler (25.09.2026)
 
+- **Tek tek canli denetim** yapildi: `scripts/audit.ps1` her eklentinin ana sayfa + arama ucunu Google DNS (8.8.8.8) uzerinden cekip karsilastirir; sonuclar asagidaki tabloya islendi.
+- **HDFilmCehennemi arama duzeltildi**: `/search/?q=` adresi site tarafinda 404 donuyordu, kod `/search?q=` + `X-Requested-With: fetch` basligina cevrildi (5 sonuc donuyor).
+- **CizgiMax yeni temaya gore yeniden yazildi**: ana sayfa `/arsiv/?page=N`, arama `/ara/?q=`, kartlar `div.film-item`, detay `anime-info-box` + `p.anime-desc`, bolum listesi `div.ep-grid-numbers`; oynatici icin sayfaya gomulu base64 `var servers` akisi port edildi.
+- **YouTube Invidious ornegi degistirildi**: `inv.nadeko.net` API'yi kapatti (`403 Endpoint disabled`), artik sirayla denenen ornek listesi (`invidious.f5.si` vb.) ve `i.ytimg.com` kapak gorselleri kullaniliyor; DASH manifest de calisan ornekten aliniyor.
+- **3 eklenti `status = 0`**: DiziKorea (526 Invalid SSL), KoreanTurk (522 Timeout), InatBox (`dizibox.rest` + `boxbc.sbs` backend DNS'de yok).
 - **Kekik Akademi deposundan 33 yeni eklenti port edildi** (paket adi `com.keyiflerolsun` -> `com.btcozum.btvault`).
 - **KultFilmler** tamamen yeni temaya gore yazildi: `a.mcard` kartlari, `h1.vtitle`, `script#kf-srcdata` JSON kaynak listesi.
 - **SezonlukDizi** `sezonlukdizi.cc` adresine tasinip yeni `div.afis` kart yapilandirmasina gore guncellendi, arama Cloudflare korumasi icin `CloudflareKiller` eklendi.
@@ -177,6 +182,7 @@ cozup canli olarak ceker, sonra kullanilan CSS selector'lerin hala sayfada olup 
 
 ```powershell
 .\scripts\check-sites.ps1    # her provider'in ana adresi -> HTTP durumu, baslik, HTML
+.\scripts\audit.ps1         # ana sayfa + arama ucunu canli cekip sonuc uretir
 .\scripts\verify-sel.ps1     # kod icindeki selector'lerin ana sayfada kacisi var
 ```
 

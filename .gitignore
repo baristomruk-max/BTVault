@@ -20,3 +20,4 @@ commit-msg*.txt
 scripts/site-checks/
 scripts/*.csv
 
+scripts/audit-html/
