@@ -21,6 +21,7 @@ $targets = [ordered]@{
     "FullPorner"        = "https://fullporner.com/search?q=matrix&p=1"
     "HDFilmCehennemi"   = "https://www.hdfilmcehennemi.nl/search?q=matrix"
     "HQPorner"          = "https://hqporner.com/?q=matrix&p=1"
+    "JetFilmizle"       = "https://jetfilmizle.now/arama?q=matrix"
     "KultFilmler"       = "https://kultfilmler.net/?s=matrix"
     "PornHub"           = "https://www.pornhub.com/video/search?search=matrix"
     "RareFilmm"         = "https://rarefilmm.com/?s=matrix"
@@ -29,6 +30,12 @@ $targets = [ordered]@{
     "WebteIzle"         = "https://webteizle.info/filtre?a=matrix"
     "xHamster"          = "https://xhamster.com/search/matrix/?page=1&x_platform_switch=desktop"
     "YouTube"           = "https://invidious.f5.si/api/v1/search?q=matrix&region=TR&page=1&type=video&fields=videoId,title"
+}
+
+# for JSON endpoints there are no CSS selectors - check these keys instead
+$jsonKeys = @{
+    "AnimeciX" = '"results"'
+    "YouTube"  = '"videoId"'
 }
 
 function Resolve-Ip([string]$h) {
@@ -80,6 +87,10 @@ foreach ($name in $targets.Keys) {
     if (Test-Path $file) { $html = [System.IO.File]::ReadAllText($file) }
 
     $found = 0; $missing = @()
+    if ($tokens.Count -eq 0 -and $jsonKeys[$name]) {
+        $key = $jsonKeys[$name]
+        if ($html -match [regex]::Escape($key)) { $found = 1; $tokens = @($key) } else { $missing = @($key) }
+    }
     foreach ($t in $tokens) {
         if ($t -and $html -match ('(?<![\w-])' + [regex]::Escape($t) + '(?![\w-])')) { $found++ }
         else { $missing += $t }

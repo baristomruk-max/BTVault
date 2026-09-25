@@ -65,10 +65,13 @@ class PornHub : MainAPI() {
         val title           = document.selectFirst("h1.title span[class='inlineFree']")?.text()?.trim() ?: return null
         val poster          = fixUrlNull(document.selectFirst("div.mainPlayerDiv img")?.attr("src"))
         val year            = Regex("""uploadDate": "(\d+)""").find(document.html())?.groupValues?.get(1)?.toIntOrNull()
-        val tags            = document.select("div.categoriesWrapper a[data-label='Category']").map { it.text().trim().replace(", ","") }
-        val rating          = document.selectFirst("span.percent")?.text()?.first()?.toString()?.toRatingInt()
+        val tags            = document.select("div.categoriesWrapper a[data-label=category], div.categoriesWrapper a[data-label=Category]").map { it.text().trim().replace(", ","") }
+        // span.percent is rendered by the front-end after load, so fall back to the
+        // "rating":NN value embedded in the page payload
+        val rating          = document.selectFirst("span.percent")?.text()?.trim()?.filter { it.isDigit() }?.take(2)?.toIntOrNull()
+            ?: Regex("\"rating\":\\s*(\\d+)").find(document.html())?.groupValues?.get(1)?.toIntOrNull()
         val duration        = Regex("duration' : '(.*)',").find(document.html())?.groupValues?.get(1)?.toIntOrNull()
-        val actors          = document.select("div.pornstarsWrapper a[data-label='Pornstar']").mapNotNull {
+        val actors          = document.select("div.pornstarsWrapper a[data-label=pornstar], div.pornstarsWrapper a[data-label=Pornstar]").mapNotNull {
             Actor(it.text().trim(), it.select("img").attr("src"))
         }
 

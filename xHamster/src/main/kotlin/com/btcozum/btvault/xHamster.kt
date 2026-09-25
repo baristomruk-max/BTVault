@@ -72,8 +72,13 @@ class xHamster : MainAPI() {
 
         val title           = document.selectFirst("div.with-player-container h1")?.text()?.trim().toString()
         val poster          = fixUrlNull(document.selectFirst("div.xp-preload-image")?.attr("style")?.substringAfter("https:")?.substringBefore("\');"))
-        val tags            = document.select(" nav#video-tags-list-container ul.root-8199e.video-categories-tags.collapsed-8199e li.item-8199e a.video-tag").map { it.text() }
-        val recommendations = document.select("div.related-container div.thumb-list div.thumb-list__item").mapNotNull { it.toSearchResult() }
+        // xHamster regenerates the hashed utility classes (root-xxxxx / item-xxxxx) on every
+        // front-end build, so match the stable container id + category links instead
+        val tags            = document.select("nav#video-tags-list-container a").filter { el ->
+            val href = el.attr("href")
+            href.contains("/categories/") || href.endsWith("/hd") || href.endsWith("/4k")
+        }.map { it.text().trim() }.filter { it.isNotBlank() }.distinct()
+        val recommendations = document.select("div.thumb-list--related div.thumb-list__item").mapNotNull { it.toSearchResult() }
 
         return newMovieLoadResponse(title, url, TvType.NSFW, url) {
             this.posterUrl       = poster

@@ -18,8 +18,13 @@ $targets = [ordered]@{
     "FullHDFilmizlesene"= "https://www.fullhdfilmizlesene.now/arama/matrix"
     "HDFilmCehennemi"   = "https://www.hdfilmcehennemi.nl/search?q=matrix"
     "KultFilmler"       = "https://kultfilmler.net/?s=matrix"
+    "FullPorner"        = "https://fullporner.com/search?q=matrix&p=1"
+    "HQPorner"          = "https://hqporner.com/?q=matrix&p=1"
+    "JetFilmizle"       = "https://jetfilmizle.now/arama?q=matrix"
+    "PornHub"           = "https://www.pornhub.com/video/search?search=matrix"
     "RareFilmm"         = "https://rarefilmm.com/?s=heat"
     "SezonlukDizi"      = "https://sezonlukdizi.cc/diziler.asp?adi=breaking"
+    "xHamster"          = "https://xhamster.com/search/matrix/?page=1&x_platform_switch=desktop"
 }
 
 # query word expected inside a result link (used to rank candidates)
@@ -33,8 +38,18 @@ $queries = @{
     "FullHDFilmizlesene" = "matrix"
     "HDFilmCehennemi"    = "matrix"
     "KultFilmler"        = "matrix"
+    "FullPorner"         = "matrix"
+    "HQPorner"           = "matrix"
+    "JetFilmizle"        = "matrix"
+    "PornHub"            = "matrix"
     "RareFilmm"          = "heat"
     "SezonlukDizi"       = "breaking"
+    "xHamster"           = "matrix"
+}
+
+# links that are certainly a detail page (checked before the query-word ranking)
+$prefer = @{
+    "PornHub" = 'view_video\.php\?viewkey='
 }
 
 # second detail page (series / season page) - unioned with the movie detail page,
@@ -50,14 +65,16 @@ $extras = @{
 # so their absence is not a breakage
 $allow = @{
     "KultFilmler" = @("ccast", "cm")
-    "Dizilla"    = @("mv-det-p")
+    "Dizilla"     = @("mv-det-p")
+    # span.percent is injected by the front-end after load (JSON fallback in code)
+    "PornHub"     = @("percent")
 }
 
 # never detail pages
 $badPath = '(\.css|\.js|\.png|\.jpg|\.jpeg|\.webp|\.svg|\.gif|\.ico|\.woff2?|\.mp4|\.m3u8|\.pdf)$' +
            '|/(assets|static|dist|cdn-cgi|wp-content|wp-includes|js|css|img|images|fonts|api|feed|giris|uyelik|iletisim|gizlilik|hakkinda|sartlar|kayit)/' +
-           '|(^|/)(page|tag|kategori|category|tur|yil|arsiv|tum-diziler|kesfet|en-cok-izlenen|film-arsivi|son-bolumler|yeni-eklenenler|giris|ulkeler|chat-room|dizi-takvimi|haberler|takvim|sosyal-akis|uygulamalar|istek|rastgele|bolumler|oyuncular|iletisim|hakkinda)(/|$)' +
-           '|(/ara/|/search|/arama|/filtre|diziler\.asp|\?s=|\?q=|\?term=|\?adi=|\?page=)'
+           '|(^|/)(page|tag|kategori|category|tur|yil|arsiv|tum-diziler|kesfet|en-cok-izlenen|film-arsivi|son-bolumler|yeni-eklenenler|giris|ulkeler|chat-room|dizi-takvimi|haberler|takvim|sosyal-akis|uygulamalar|istek|rastgele|bolumler|oyuncular|iletisim|hakkinda|information|cookie-notice|dmca|privacy|terms)(/|$)' +
+           '|(^|/)(categories|channels|pornstars|albums|trending|best|live|amateur|community|forums|stories|tags|playlists)(/|$)|(/ara/|/search|/arama|/filtre|diziler\.asp|\?s=|\?q=|\?term=|\?adi=|\?page=)'
 
 function Resolve-Ip([string]$h) {
     try { return (Resolve-DnsName $h -Server 8.8.8.8 -Type A -EA Stop | Where-Object { $_.IPAddress } | Select-Object -First 1).IPAddress } catch { return $null }
@@ -106,6 +123,8 @@ foreach ($name in $targets.Keys) {
 
     $qWord = $queries[$name]
     if (-not $qWord) { $qWord = [guid]::NewGuid().ToString() }
+    $prWord = $prefer[$name]
+    $pre  = New-Object System.Collections.Generic.List[string]
     $hot  = New-Object System.Collections.Generic.List[string]
     $cold = New-Object System.Collections.Generic.List[string]
     foreach ($m in [regex]::Matches($html, 'href\s*=\s*["'']([^"''#]{3,300})["'']')) {
@@ -118,10 +137,13 @@ foreach ($name in $targets.Keys) {
         $path = ""; try { $path = ([uri]$abs).AbsolutePath } catch { }
         if ($path.Length -lt 3) { continue }                 # site root
         if ($abs -match $badPath) { continue }
-        if ($abs -match $qWord) { $hot.Add($abs) } else { $cold.Add($abs) }
-        if (($hot.Count + $cold.Count) -ge 200) { break }
+        if ($prWord -and $abs -match $prWord)     { $pre.Add($abs) }
+        elseif ($abs -match $qWord)                { $hot.Add($abs) }
+        else                                       { $cold.Add($abs) }
+        if (($pre.Count + $hot.Count + $cold.Count) -ge 200) { break }
     }
     $links = New-Object System.Collections.Generic.List[string]
+    foreach ($x in $pre)  { $links.Add($x) }
     foreach ($x in $hot)  { $links.Add($x) }
     foreach ($x in $cold) { $links.Add($x) }
 
