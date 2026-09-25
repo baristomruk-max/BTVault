@@ -118,13 +118,28 @@ class Dizilla : MainAPI() {
         val title       = document.selectFirst("div.page-top h1")?.text() ?: return null
         val poster      = fixUrlNull(document.selectFirst("div.page-top img")?.attr("src")) ?: fixUrlNull(document.selectFirst("div.page-top img")?.attr("data-src"))
         val year        = document.selectXpath("//span[text()='Yayın tarihi']//following-sibling::span").text().trim().split(" ").last().toIntOrNull()
-        val description = document.selectFirst("div.mv-det-p")?.text()?.trim() ?: document.selectFirst("div.w-full div.text-base")?.text()?.trim()
-        val tags        = document.select("[href*='dizi-turu']").map { it.text() }
-        val rating      = document.selectFirst("a[href*='imdb.com'] span")?.text()?.trim().toRatingInt()
-        val duration    = Regex("(\\d+)").find(document.select("div.gap-3 span.text-sm")[1].text())?.value?.toIntOrNull()
+        val description = document.selectFirst("div.mv-det-p")?.text()?.trim()
+            ?: document.selectFirst("div.w-full div.text-base")?.text()?.trim()
+            ?: document.selectFirst("meta[name=description]")?.attr("content")?.trim()
+            ?: document.selectFirst("meta[property=og:description]")?.attr("content")?.trim()
+        val tags        = document.select("[href*='dizi-turu'], [href*='/tur/']").map { it.text() }.filter { it.isNotBlank() }.distinct()
+        val jsonLd      = document.select("script[type=application/ld+json]").joinToString("\n") { it.data() }
+        val rating      = (document.selectFirst("a[href*='imdb.com'] span")?.text()?.trim()?.toRatingInt()
+            ?: Regex("\"ratingValue\"\\s*:\\s*\"?([0-9.]+)").find(jsonLd)?.groupValues?.get(1)?.toFloatOrNull()?.let {
+                (it * 10).toInt()
+            })
+        // NOTE: the old selector "div.gap-3 span.text-sm"[1] threw IndexOutOfBoundsException
+        // when the page has no such element (next.js markup changed) - keep it crash free
+        val duration    = document.select("div.gap-3 span.text-sm").getOrNull(1)?.text()
+            ?.let { Regex("(\\d+)").find(it)?.value?.toIntOrNull() }
+            ?: document.select("div.gap-3 span.text-sm").firstNotNullOfOrNull { el ->
+                Regex("(\\d+)\\s*dk").find(el.text())?.value?.let { Regex("(\\d+)").find(it)?.value?.toIntOrNull() }
+            }
         val actors      = document.select("[href*='oyuncu']").map {
             Actor(it.text())
         }
+        val epPosterUrl = fixUrlNull(document.selectFirst("img[src*=images.macellan]")?.attr("src"))
+            ?: fixUrlNull(document.selectFirst("div.page-top img")?.attr("src"))
 
         val episodeList = mutableListOf<Episode>()
         document.selectXpath("//div[contains(@class, 'gap-2')]/a[contains(@href, '-sezon')]").forEach {
@@ -134,7 +149,7 @@ class Dizilla : MainAPI() {
                 val epName        = episodeElement.select("a").last()?.text()?.trim() ?: return@ep
                 val epHref        = fixUrlNull(episodeElement.selectFirst("a.opacity-60")?.attr("href")) ?: return@ep
                 val epDescription = episodeElement.selectFirst("span.t-content")?.text()?.trim()
-                val epPoster      = epDoc.selectFirst("img.object-cover")?.attr("src")
+                val epPoster      = fixUrlNull(epDoc.selectFirst("img[src*=images.macellan]")?.attr("src")) ?: epPosterUrl
                 val epEpisode     = episodeElement.selectFirst("a.opacity-60")?.text()?.toIntOrNull()
         
                 val parentDiv   = episodeElement.parent()
@@ -154,7 +169,7 @@ class Dizilla : MainAPI() {
                 val epName        = dubEpisodeElement.select("a").last()?.text()?.trim() ?: return@epDub
                 val epHref        = fixUrlNull(dubEpisodeElement.selectFirst("a.opacity-60")?.attr("href")) ?: return@epDub
                 val epDescription = dubEpisodeElement.selectFirst("span.t-content")?.text()?.trim()
-                val epPoster      = epDoc.selectFirst("img.object-cover")?.attr("src")
+                val epPoster      = fixUrlNull(epDoc.selectFirst("img[src*=images.macellan]")?.attr("src")) ?: epPosterUrl
                 val epEpisode     = dubEpisodeElement.selectFirst("a.opacity-60")?.text()?.toIntOrNull()
         
                 val parentDiv   = dubEpisodeElement.parent()

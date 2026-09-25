@@ -126,6 +126,10 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 - **Domain guncellemesi:** Dizilla (`.club`), DiziYou (`.com`), DiziMom (`.com`), FilmModu (`.nl`), FullHDFilmizlesene (`.now`), WebteIzle (`.info`).
 - **13 eklenti `status = 0` (kapali)** olarak isaretlendi; site adresi bulunur olcur tekrar aktif edilebilir.
 - `check-sites.ps1` / `verify-sel.ps1` ile **yasi adres ve selector dogrulama** scriptleri eklendi (bkz. `Gelistirme`).
+- **`scripts/verify-search.ps1`** her arama ucunu canli cekip `search()` icindeki token'larin donen HTML/JSON'da olup olmadigini; **`scripts/verify-load.ps1`** ise ayni sonuc sayfalarindaki baglantilari takip edip detay + sezon sayfalarinda `load()` token'larini kontrol eder.
+- **Arama ucunu dogrulama (25.09.2026):** CizgiMax 3/3, HDFilmCehennemi 2/2, YouTube 200 JSON (19 sonuc), AnimeciX JSON OK; SpankBang / WebteIzle / SezonlukDizi Cloudflare 403 verdigi icin otomatik kontrol edilemiyor (uygulama ici `CloudflareKiller` devrede).
+- **Detay sayfa dogrulamasi sonucu (25.09.2026):** CizgiMax 12/12, Dizilla 19/19, DiziMom 8/8, DiziYou 12/12, FilmMakinesi 12/12, FilmModu 8/8, FullHDFilmizlesene 12/12, HDFilmCehennemi 19/19, KultFilmler 17/17, RareFilmm 7/7; SezonlukDizi Cloudflare tarafindan engellendigi icin otomatik kontrol edilemiyor.
+- **Dizilla `load()` onarildi**: `document.select("div.gap-3 span.text-sm")[1]` yeni next.js sayfasinda eleman bulamayinca `IndexOutOfBoundsException` firlatiyordu (butun detay sayfalari icin load() catliyordu) -> guvenli `getOrNull` cekilere alindi; ayrica ozet `meta[name=description]`, puan JSON-LD `ratingValue`, bolum kapagi `img[src*=images.macellan]` yedekleri eklendi.
 
 ---
 
@@ -184,7 +188,16 @@ cozup canli olarak ceker, sonra kullanilan CSS selector'lerin hala sayfada olup 
 .\scripts\check-sites.ps1    # her provider'in ana adresi -> HTTP durumu, baslik, HTML
 .\scripts\audit.ps1         # ana sayfa + arama ucunu canli cekip sonuc uretir
 .\scripts\verify-sel.ps1     # kod icindeki selector'lerin ana sayfada kacisi var
+
+# asama 2 - arama ucunu ve detay sayfayi canli dogrula
+.\scripts\verify-search.ps1  # search() token'lari -> scripts/site-checks-search/
+.\scripts\verify-load.ps1    # sonuc baglantisi -> detay/sezon sayfasi -> load() token'lari
+.\scripts\check-tokens.ps1   # tek bir URL icin load() token raporu: -Url ... -Name ...
 ```
+
+`verify-load.ps1` film + dizi (sezon) sayfasini birlestirerek bakar; bazi seciciler
+yalnizca dizi sayfasinda (`seasons`, `epsection`) ya da yalnizca film sayfasinda bulunur.
+Kod icinde birebir yedek seciciler (`ccast`/`cm`, `mv-det-p`) `$allow` listesi ile isaretlidir.
 
 ---
 

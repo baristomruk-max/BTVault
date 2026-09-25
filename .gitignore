@@ -18,6 +18,8 @@ plugins*.json
 
 commit-msg*.txt
 scripts/site-checks/
+scripts/site-checks-search/
+scripts/site-checks-load/
 scripts/*.csv
 
 scripts/audit-html/
