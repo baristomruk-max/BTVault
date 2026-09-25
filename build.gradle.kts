@@ -36,7 +36,11 @@ subprojects {
     apply(plugin = "com.lagradost.cloudstream3.gradle")
 
     cloudstream {
-        setRepo(System.getenv("GITHUB_REPOSITORY") ?: "https://github.com/baristomruk-max/BTVault")
+        // GITHUB_REPOSITORY should be in "owner/repo" format (e.g., "baristomruk-max/BTVault")
+        // If not set or invalid, fall back to the default repository
+        setRepo(System.getenv("GITHUB_REPOSITORY")
+            ?.takeIf { it.contains("/") }
+            ?: "https://github.com/baristomruk-max/BTVault")
         authors = listOf("BTcozum")
     }
 

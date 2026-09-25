@@ -1,5 +1,6 @@
 {
   "name": "BTVault",
+  "iconUrl": "https://raw.githubusercontent.com/baristomruk-max/BTVault/main/.github/assets/banner.svg",
   "description": "CloudStream Turkce Eklenti Deposu - Film, dizi ve anime icin 8 aktif provider",
   "manifestVersion": 1,
   "pluginLists": [

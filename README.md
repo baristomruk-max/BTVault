@@ -31,17 +31,23 @@
   <a href="cloudstreamrepo://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json">
     <img src="https://img.shields.io/badge/TIKLA_-_Depoyu_Otomatik_Ekle-4CAF50?style=for-the-badge&logo=android&logoColor=white&labelColor=333" alt="Depoyu Ekle"/>
   </a>
+  <sub>*(CloudStream uygulamasını açar ve repoyu otomatik ekler)*</sub>
 </p>
 
 ### Manuel Kurulum
 
 1. [CloudStream Pre-Release](https://github.com/recloudstream/cloudstream/releases/tag/pre-release) APK'sini indirip kurun
-2. **Ayarlar > Eklentiler > Depo Ekle** bolumune gidin
-3. Kisa kod olarak `baristomruk-max` yazin veya asagidaki URL'yi yapistirin:
+2. Uygulamada **Ayarlar > Eklentiler > Depo Ekle** bolumune gidin
+3. **"URL" fieldsine tam olarak asagidaki linki kopyalayip yapistirin:**
 
 ```
 https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 ```
+
+> **ÖNEMLİ:** Sadece `BTVault` veya `baristomruk-max` yazmayin! Tam URL'yi kopyalayip yapistirmelisiniz. Aksi takdirde "geçersiz veri" hatası alacaksınız.
+
+4. "Depo Adı" fieldsine `BTVault` yazabilirsiniz veya bunu boş bırakabilirsiniz.
+5. "Tamam" veya "Ekle"'a tiklayin.
 
 ---
 
