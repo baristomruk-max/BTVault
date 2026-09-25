@@ -16,3 +16,4 @@ local.properties
 errors-full.txt
 plugins*.json
 
+commit-msg*.txt
