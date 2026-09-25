@@ -7,9 +7,28 @@ import android.util.Log
 import org.jsoup.nodes.*
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
+import com.lagradost.cloudstream3.network.CloudflareKiller
+import okhttp3.Interceptor
+import okhttp3.Response
+import org.jsoup.Jsoup
 import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
 
 class SpankBang : MainAPI() {
+    private val cloudflareKiller by lazy { CloudflareKiller() }
+    private val interceptor      by lazy { CloudflareInterceptor(cloudflareKiller) }
+
+    class CloudflareInterceptor(private val cloudflareKiller: CloudflareKiller) : Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val request  = chain.request()
+            val response = chain.proceed(request)
+            val doc      = Jsoup.parse(response.peekBody(1024 * 1024).string())
+            if (doc.text().contains("Just a moment...")) {
+                return cloudflareKiller.intercept(chain)
+            }
+            return response
+        }
+    }
+
     override var mainUrl              = "https://spankbang.com"
     override var name                 = "SpankBang"
     override val hasMainPage          = true
@@ -48,7 +67,7 @@ class SpankBang : MainAPI() {
     )
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-        val document = app.get("${request.data}${page}/?o=popular&p=w&d=10").document
+        val document = app.get("${request.data}${page}/?o=popular&p=w&d=10", interceptor = interceptor).document
         val home     = document.select("div.main_results div.video-item").mapNotNull { it.toSearchResult() }
 
         return newHomePageResponse(
@@ -73,7 +92,7 @@ class SpankBang : MainAPI() {
         val searchResponse = mutableListOf<SearchResponse>()
 
         for (say in 1..5) {
-            val document = app.get("${mainUrl}/s/${query}/${say}/?o=new&d=10").document
+            val document = app.get("${mainUrl}/s/${query}/${say}/?o=new&d=10", interceptor = interceptor).document
             val results  = document.select("div.main_results div.video-item").mapNotNull { it.toSearchResult() }
 
             if (!searchResponse.containsAll(results)) {
@@ -89,7 +108,7 @@ class SpankBang : MainAPI() {
     }
 
     override suspend fun load(url: String): LoadResponse? {
-        val document = app.get(url).document
+        val document = app.get(url, interceptor = interceptor).document
 
         val title           = document.selectFirst("div#video h1")?.text()?.trim() ?: return null
         val poster          = fixUrlNull(document.selectFirst("meta[property='og:image']")?.attr("content"))
@@ -117,7 +136,7 @@ class SpankBang : MainAPI() {
 
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
         Log.d("SkBg", "data » $data")
-        val document = app.get(data).document
+        val document = app.get(data, interceptor = interceptor).document
         val videoUrl = Regex("""'m3u8': \['([^'\]]+)""").find(document.html())?.groupValues?.get(1) ?: return false
         Log.d("SkBg", "videoUrl » $videoUrl")
 
