@@ -60,8 +60,34 @@ class SezonlukDizi : MainAPI() {
         return newTvSeriesSearchResponse(title, href, TvType.TvSeries) { this.posterUrl = posterUrl }
     }
 
+    // "Dizi Adi (2025)" -> "Dizi Adi" (SearchResponse yil alanina sahip degil)
+    private val yilSonu = Regex("""\s*\((?:19|20)\d{2}\)\s*$""")
+
     override suspend fun search(query: String): List<SearchResponse> {
-        val document = app.get("${mainUrl}/diziler.asp?adi=${query}", interceptor = interceptor).document
+        // /ajax/arama.asp (POST q=) -> JSON; bu uc Cloudflare'siz calisiyor.
+        // Eski diziler.asp?adi= sayfasi datacenter IP'ye 403 verdigi icin yalnizca yedek.
+        val arama = app.post(
+            "${mainUrl}/ajax/arama.asp",
+            headers = mapOf("X-Requested-With" to "XMLHttpRequest"),
+            data = mapOf("q" to query)
+        ).parsedSafe<Arama>()
+
+        val sonuclar = arama?.results?.values
+            ?.flatMap { it.results ?: emptyList() }
+            ?.filter { it.url.contains("/diziler/") }
+            ?.mapNotNull { sonuc ->
+                val ad   = sonuc.title.replace(yilSonu, "").trim().ifEmpty { return@mapNotNull null }
+                val href = fixUrlNull(sonuc.url) ?: return@mapNotNull null
+                newTvSeriesSearchResponse(ad, href, TvType.TvSeries) {
+                    this.posterUrl = fixUrlNull(sonuc.image)
+                }
+            } ?: emptyList()
+        if (sonuclar.isNotEmpty()) return sonuclar
+
+        val document = app.get(
+            "${mainUrl}/diziler.asp?adi=${java.net.URLEncoder.encode(query, "UTF-8")}",
+            interceptor = interceptor
+        ).document
         return document.select("div.afis a[href*='/diziler/']").mapNotNull { it.toSearchResult() }
     }
 
@@ -112,29 +138,57 @@ class SezonlukDizi : MainAPI() {
 
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
         val document = app.get(data).document
-        val bid      = document.selectFirst("div#dilsec")?.attr("data-id") ?: return false
+        val bid      = document.selectFirst("div#dilsec")?.attr("data-id")?.trim().orEmpty()
+        if (bid.isEmpty()) return false
 
-        val altyaziResponse = app.post("${mainUrl}/ajax/dataAlternatif.asp", headers = mapOf("X-Requested-With" to "XMLHttpRequest"), data = mapOf("bid" to bid, "dil" to "1")).parsedSafe<Kaynak>()
-        altyaziResponse?.takeIf { it.status == "success" }?.data?.forEach { veri ->
-            val veriResponse = app.post("${mainUrl}/ajax/dataEmbed.asp", headers = mapOf("X-Requested-With" to "XMLHttpRequest"), data = mapOf("id" to "${veri.id}")).document
-            val iframe = fixUrlNull(veriResponse.selectFirst("iframe")?.attr("src")) ?: return@forEach
-            loadExtractor(iframe, "${mainUrl}/", subtitleCallback) { link ->
-                callback.invoke(ExtractorLink(source = "AltYazi - ${veri.baslik}", name = "AltYazi - ${veri.baslik}", url = link.url, referer = link.referer, quality = link.quality, headers = link.headers, extractorData = link.extractorData, type = link.type))
-            }
-        }
-
-        val dublajResponse = app.post("${mainUrl}/ajax/dataAlternatif.asp", headers = mapOf("X-Requested-With" to "XMLHttpRequest"), data = mapOf("bid" to bid, "dil" to "0")).parsedSafe<Kaynak>()
-        dublajResponse?.takeIf { it.status == "success" }?.data?.forEach { veri ->
-            val veriResponse = app.post("${mainUrl}/ajax/dataEmbed.asp", headers = mapOf("X-Requested-With" to "XMLHttpRequest"), data = mapOf("id" to "${veri.id}")).document
-            val iframe = fixUrlNull(veriResponse.selectFirst("iframe")?.attr("src")) ?: return@forEach
-            loadExtractor(iframe, "${mainUrl}/", subtitleCallback) { link ->
-                callback.invoke(ExtractorLink(source = "Dublaj - ${veri.baslik}", name = "Dublaj - ${veri.baslik}", url = link.url, referer = link.referer, quality = link.quality, headers = link.headers, extractorData = link.extractorData, type = link.type))
-            }
-        }
+        // dil=1 -> altyazi, dil=0 -> dublaj; ikisi de ayni alternatif listesini verir
+        alternatifleriEkle(bid, "1", "AltYazi", subtitleCallback, callback)
+        alternatifleriEkle(bid, "0", "Dublaj", subtitleCallback, callback)
         return true
     }
 
+    // /ajax/dataAlternatif22.asp (bid + dil) -> [{id, baslik, kalite}]
+    // /ajax/dataEmbed22.asp       (id)       -> <iframe src="...">
+    // (eski .asp uclari 404'e dustu, "22" ekiyle yenilendi)
+    private suspend fun alternatifleriEkle(
+        bid: String, dil: String, etiket: String,
+        subtitleCallback: (SubtitleFile) -> Unit,
+        callback: (ExtractorLink) -> Unit
+    ) {
+        val alternatifler = app.post(
+            "${mainUrl}/ajax/dataAlternatif22.asp",
+            headers = mapOf("X-Requested-With" to "XMLHttpRequest"),
+            data = mapOf("bid" to bid, "dil" to dil)
+        ).parsedSafe<Kaynak>()?.takeIf { it.status == "success" }?.data ?: return
+
+        for (veri in alternatifler) {
+            val kaynakAdi = "$etiket - ${veri.baslik}"
+            val src = app.post(
+                "${mainUrl}/ajax/dataEmbed22.asp",
+                headers = mapOf("X-Requested-With" to "XMLHttpRequest"),
+                data = mapOf("id" to "${veri.id}")
+            ).document.selectFirst("iframe")?.attr("src")?.trim().orEmpty()
+
+            // bazi alternatifler (Pixel) reCAPTCHA kapisi dondurur, atla
+            if (src.isEmpty() || src.contains("reCAPTCHA", ignoreCase = true)) continue
+            val iframe = when {
+                src.startsWith("//") -> "https:$src"
+                src.startsWith("http") -> src
+                else -> fixUrlNull(src) ?: continue
+            }
+
+            loadExtractor(iframe, "${mainUrl}/", subtitleCallback) { link ->
+                callback.invoke(ExtractorLink(source = kaynakAdi, name = kaynakAdi, url = link.url, referer = link.referer, quality = link.quality, headers = link.headers, extractorData = link.extractorData, type = link.type))
+            }
+        }
+    }
+
     data class Kaynak(val status: String = "", val data: List<KaynakData>? = null)
-    data class KaynakData(val id: String = "", val baslik: String = "")
+    data class KaynakData(val id: Int = 0, val baslik: String = "", val kalite: Int = 0)
+
+    // /ajax/arama.asp cevabi: {status, results:{<kategori>:{name, results:[{title,url,image}]}}}
+    data class Arama(val status: String = "", val results: Map<String, AramaGrup>? = null)
+    data class AramaGrup(val name: String = "", val results: List<AramaSonuc>? = null)
+    data class AramaSonuc(val title: String = "", val description: String = "", val url: String = "", val image: String = "")
     data class AspData(val alternatif: String, val embed: String)
 }

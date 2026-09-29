@@ -141,24 +141,25 @@ class FilmMakinesi : MainAPI() {
         // Oynatici adreslerini topla
         val candidates = LinkedHashSet<String>()
 
-        // Sayfadaki oynatici sekmeleri (Tek Close / DUAL Rapid ...)
+        fun isPlayer(v: String) = v.isNotBlank() &&
+            !v.contains("youtube.com") &&
+            !v.contains("youtu.be") &&
+            !v.contains("googlevideo") &&
+            !v.contains("google.com") &&
+            !v.contains("vimeo.com") &&
+            !v.contains("dailymotion.com")
+
+        // Sayfadaki oynatici sekmeleri (eski temada "Tek Close" / "DUAL Rapid")
         document.select(".video-parts a[data-video_url]").forEach { el ->
             val v = fixUrlNull(el.attr("data-video_url"))
-            if (!v.isNullOrBlank()) candidates.add(v)
+            if (!v.isNullOrBlank() && isPlayer(v)) candidates.add(v)
         }
 
         // Ana oynatici iframe'i (trailer/YouTube haric)
-        document.select(".after-player iframe, iframe[data-src], iframe[src]").forEach { el ->
+        document.select(".after-player iframe, .player-div iframe, iframe[data-src], iframe[src]").forEach { el ->
             val raw = el.attr("data-src").ifBlank { el.attr("src") }
             val v = fixUrlNull(raw)
-            if (!v.isNullOrBlank() &&
-                !v.contains("youtube.com") &&
-                !v.contains("youtu.be") &&
-                !v.contains("googlevideo") &&
-                !v.contains("google.com")
-            ) {
-                candidates.add(v)
-            }
+            if (!v.isNullOrBlank() && isPlayer(v)) candidates.add(v)
         }
 
         if (candidates.isEmpty()) return false

@@ -29,8 +29,11 @@ open class CloseLoadExtractor : ExtractorApi() {
         private val ZIP_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
         fun decodeBase64Latin1(str: String): String {
-            val padLen = (4 - str.length % 4) % 4
-            val padded = str + "=".repeat(padLen)
+            // "=" dolgu karakterleri girdide zaten mevcut olabiliyor, once temizle
+            val cleaned = str.filter { !it.isWhitespace() && it != '=' }
+            if (cleaned.isEmpty()) return ""
+            val padLen = (4 - cleaned.length % 4) % 4
+            val padded = cleaned + "=".repeat(padLen)
             return try {
                 String(Base64.decode(padded, Base64.DEFAULT), Charsets.ISO_8859_1)
             } catch (_: Throwable) {
@@ -204,7 +207,10 @@ open class CloseLoadExtractor : ExtractorApi() {
         private fun looksLikeStream(value: String?): Boolean {
             if (value.isNullOrBlank()) return false
             val v = value.trim()
-            return v.startsWith("http") && (v.contains(".m3u8") || v.contains(".mp4"))
+            if (!v.startsWith("http")) return false
+            // FilmMakinesi HLS'i bazen "master.txt" olarak sunuyor
+            return v.contains(".m3u8") || v.contains(".mp4") ||
+                v.contains("/hls/") || v.contains("master") || v.contains(".txt")
         }
 
         /**
@@ -250,7 +256,9 @@ open class CloseLoadExtractor : ExtractorApi() {
                 )
                 val m = payloadRegex.find(unpacked)
                 if (m != null) {
-                    val decoded = decodePayload(m.groupValues[1].split(m.groupValues[2]))
+                    // JS kacis karakterlerini (\/ gibi) geri coz
+                    val payload = m.groupValues[1].replace("\\/", "/").replace("\\\"", "\"")
+                    val decoded = decodePayload(payload.split(m.groupValues[2]))
                     if (looksLikeStream(decoded)) return decoded
                 }
             }
@@ -260,7 +268,8 @@ open class CloseLoadExtractor : ExtractorApi() {
                 """var\s+[a-zA-Z0-9_$]+\s*=\s*[a-zA-Z0-9_$]+\s*\(\s*["']([^"']{100,})["']\.split\(\s*["']([|^*@#~])["']\s*\)\s*\)"""
             )
             for (m in generic.findAll(unpacked)) {
-                val decoded = decodePayload(m.groupValues[1].split(m.groupValues[2]))
+                val payload = m.groupValues[1].replace("\\/", "/").replace("\\\"", "\"")
+                val decoded = decodePayload(payload.split(m.groupValues[2]))
                 if (looksLikeStream(decoded)) return decoded
             }
 
@@ -291,7 +300,8 @@ open class CloseLoadExtractor : ExtractorApi() {
         val streamUrl = extractStreamUrl(html)
         if (streamUrl.isNullOrBlank()) return
 
-        val isM3u8 = streamUrl.contains(".m3u8")
+        // closeload her zaman HLS (jwplayer "type": "hls") yayinliyor
+        val isM3u8 = !streamUrl.substringAfterLast('/').endsWith(".mp4")
         callback(
             newExtractorLink(
                 source = name,
@@ -299,6 +309,7 @@ open class CloseLoadExtractor : ExtractorApi() {
                 url = streamUrl,
                 type = if (isM3u8) ExtractorLinkType.M3U8 else INFER_TYPE
             ) {
+                // CDN referer kontrolu yapiyor, olmazsa 404 donuyor
                 this.referer = "$host/"
                 this.quality = Qualities.Unknown.value
             }
