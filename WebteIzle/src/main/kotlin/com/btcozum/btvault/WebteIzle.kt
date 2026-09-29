@@ -124,7 +124,8 @@ class WebteIzle : MainAPI() {
         val document = app.get(url).document
 
         val title       = document.selectFirst("[property='og:title']")?.attr("content")?.substringBefore(" izle") ?: return null
-        val poster      = fixUrlNull(document.selectFirst("div.card img")?.attr("data-src"))
+        val poster      = fixUrlNull(document.selectFirst("div.ui.card img")?.attr("data-src"))
+            ?: fixUrlNull(document.selectFirst("div.card img")?.attr("data-src"))
         val year        = document.selectXpath("//td[contains(text(), 'Vizyon')]/following-sibling::td").text().trim().split(" ").last().toIntOrNull()
         val description = document.selectFirst("blockquote")?.text()?.trim()
         val tags        = document.selectXpath("//a[@itemgroup='genre']").map { it.text() }
@@ -154,12 +155,17 @@ class WebteIzle : MainAPI() {
         val filmId  = document.selectFirst("button#wip")?.attr("data-id") ?: return false
         Log.d("WBTI", "filmId » $filmId")
 
+        // Dil butonlari <a href="/izle/altyazi/..."> seklinde linkler (src degil!)
         val dilList = mutableListOf<String>()
-        if (document.selectFirst("div.golge a[href*=dublaj]")?.attr("src") != null) {
+        if (document.selectFirst("div.golge a[href*=dublaj]") != null ||
+            document.selectFirst("a[href*='/izle/dublaj/']") != null
+        ) {
             dilList.add("0")
         }
 
-        if (document.selectFirst("div.golge a[href*=altyazi]")?.attr("src") != null) {
+        if (document.selectFirst("div.golge a[href*=altyazi]") != null ||
+            document.selectFirst("a[href*='/izle/altyazi/']") != null
+        ) {
             dilList.add("1")
         }
 
