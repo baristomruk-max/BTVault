@@ -25,36 +25,37 @@ class FullHDFilmizlesene : MainAPI() {
     override val supportedTypes       = setOf(TvType.Movie)
 
     override val mainPage = mainPageOf(
-        "${mainUrl}/en-cok-izlenen-filmler-izle-hd/"            to "En Çok izlenen Filmler",
-        "${mainUrl}/filmizle/imdb-puani-yuksek-filmler-izle-1/" to "IMDB Puanı Yüksek Filmler",
-        "${mainUrl}/filmizle/aile-filmleri-izle-2/"             to "Aile Filmleri",
-        "${mainUrl}/filmizle/aksiyon-filmler-izle-1/"           to "Aksiyon Filmleri",
-        "${mainUrl}/filmizle/animasyon-filmleri-izle-4/"        to "Animasyon Filmleri",
-        "${mainUrl}/filmizle/belgesel-filmleri-izle-2/"         to "Belgeseller",
-        "${mainUrl}/filmizle/bilim-kurgu-filmleri-izle-1/"      to "Bilim Kurgu Filmleri",
-        "${mainUrl}/filmizle/bluray-filmler-izle-1/"            to "Blu Ray Filmler",
-        "${mainUrl}/filmizle/cizgi-filmler-izle-1/"             to "Çizgi Filmler",
-        "${mainUrl}/filmizle/dram-filmleri-izle/"               to "Dram Filmleri",
-        "${mainUrl}/filmizle/fantastik-filmleri-izle-2/"        to "Fantastik Filmler",
-        "${mainUrl}/filmizle/gerilim-filmleri-izle-3/"          to "Gerilim Filmleri",
-        "${mainUrl}/filmizle/gizem-filmleri-izle/"              to "Gizem Filmleri",
-        "${mainUrl}/filmizle/hint-filmler-fh-hd-izle/"          to "Hint Filmleri",
-        "${mainUrl}/filmizle/komedi-filmleri-izle-2/"           to "Komedi Filmleri",
-        "${mainUrl}/filmizle/korku-filmleri-izle-2/"            to "Korku Filmleri",
-        "${mainUrl}/filmizle/macera-filmleri-izle-1/"           to "Macera Filmleri",
-        "${mainUrl}/filmizle/muzikal-filmleri-izle/"            to "Müzikal Filmler",
-        "${mainUrl}/filmizle/polisiye-filmleri-izle-1/"         to "Polisiye Filmleri",
-        "${mainUrl}/filmizle/psikolojik-filmleri-izle/"         to "Psikolojik Filmler",
-        "${mainUrl}/filmizle/romantik-filmler-izle-1/"          to "Romantik Filmler",
-        "${mainUrl}/filmizle/savas-filmleri-izle-2/"            to "Savaş Filmleri",
-        "${mainUrl}/filmizle/suc-filmleri-izle-3/"              to "Suç Filmleri",
-        "${mainUrl}/filmizle/tarih-filmleri-izle/"              to "Tarih Filmleri",
-        "${mainUrl}/filmizle/western-filmleri-izle/"            to "Western Filmler",
-        "${mainUrl}/filmizle/yerli-filmler-izle-3/"             to "Yerli Filmler",
+        "${mainUrl}/en-cok-izlenen-filmler"          to "En Çok İzlenen Filmler",
+        "${mainUrl}/filmizle/aile-filmleri"          to "Aile Filmleri",
+        "${mainUrl}/filmizle/aksiyon-filmleri"       to "Aksiyon Filmleri",
+        "${mainUrl}/filmizle/animasyon-filmleri"     to "Animasyon Filmleri",
+        "${mainUrl}/filmizle/belgesel-filmleri"      to "Belgeseller",
+        "${mainUrl}/filmizle/bilim-kurgu-filmleri"   to "Bilim Kurgu Filmleri",
+        "${mainUrl}/filmizle/bluray-filmler"         to "Blu Ray Filmler",
+        "${mainUrl}/filmizle/cizgi-filmler"          to "Çizgi Filmler",
+        "${mainUrl}/filmizle/dram-filmler-izle"      to "Dram Filmleri",
+        "${mainUrl}/filmizle/fantastik-filmler"      to "Fantastik Filmler",
+        "${mainUrl}/filmizle/gerilim-filmleri"       to "Gerilim Filmleri",
+        "${mainUrl}/filmizle/gizem-filmleri"         to "Gizem Filmleri",
+        "${mainUrl}/filmizle/hint-filmleri"          to "Hint Filmleri",
+        "${mainUrl}/filmizle/komedi-filmleri"        to "Komedi Filmleri",
+        "${mainUrl}/filmizle/korku-filmleri"         to "Korku Filmleri",
+        "${mainUrl}/filmizle/macera-filmleri-izle"   to "Macera Filmleri",
+        "${mainUrl}/filmizle/muzikal-filmler"        to "Müzikal Filmler",
+        "${mainUrl}/filmizle/polisiye-filmleri"      to "Polisiye Filmleri",
+        "${mainUrl}/filmizle/psikolojik-filmler"     to "Psikolojik Filmler",
+        "${mainUrl}/filmizle/romantik-filmler"       to "Romantik Filmler",
+        "${mainUrl}/filmizle/savas-filmleri"         to "Savaş Filmleri",
+        "${mainUrl}/filmizle/suc-filmleri"           to "Suç Filmleri",
+        "${mainUrl}/filmizle/tarih-filmleri"         to "Tarih Filmleri",
+        "${mainUrl}/filmizle/western-filmler"        to "Western Filmler",
+        "${mainUrl}/filmizle/yerli-filmler"          to "Yerli Filmler",
     )
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-        val document = app.get("${request.data}${page}").document
+        // ilk sayfa adresi "/slug", sonrakiler "/slug/2" seklinde
+        val url      = if (page <= 1) request.data else "${request.data}/$page"
+        val document = app.get(url).document
         val home     = document.select("li.film").mapNotNull { it.toSearchResult() }
 
         return newHomePageResponse(request.name, home)
@@ -131,8 +132,11 @@ class FullHDFilmizlesene : MainAPI() {
     }
 
     private fun getVideoLinks(document: Document): List<Map<String, String>> {
-        val scriptElement = document.select("script").firstOrNull { it.data().isNotEmpty() }
-        val scriptContent = scriptElement?.data()?.trim() ?: return emptyList()
+        // "scx = {...}" yazilmis scripti bul (ilk bos olmayan script her zaman dogru olmuyor)
+        val scriptContent = document.select("script")
+            .mapNotNull { it.data() }
+            .firstOrNull { it.contains("scx =") }
+            ?.trim() ?: return emptyList()
 
         val scxData         = Regex("scx = (.*?);").find(scriptContent)?.groupValues?.get(1) ?: return emptyList()
         val scxMap: SCXData = jacksonObjectMapper().readValue(scxData)

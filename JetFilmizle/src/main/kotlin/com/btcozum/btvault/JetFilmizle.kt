@@ -178,31 +178,43 @@ class JetFilmizle : MainAPI() {
 
     /** Bir oynatici embed adresini gercek dosya baglantilarina cevirir. */
     private suspend fun resolveEmbed(embed: String, referer: String, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Int {
-        // videopark.top -> worker uzerinden dogrudan mp4 kaliteleri
+        // videopark.top -> worker uzerinden HLS/mp4
         if (embed.contains("videopark.top")) {
             val page = app.get(embed, referer = referer).text
-            val worker = Regex("""WORKER_BASE\s*=\s*["']([^"']+)["']""").find(page)?.groupValues?.get(1)
+            // sayfa artik WORKER_BASE degil WORKER_URL kullaniyor
+            val worker = Regex("""WORKER_(?:BASE|URL)\s*=\s*["']([^"']+)["']""").find(page)?.groupValues?.get(1)
                 ?: return 0
-            val videoId = Regex("""VIDEO_ID\s*=\s*(\d+)""").find(page)?.groupValues?.get(1) ?: return 0
+            // VIDEO_ID artik tirnakli ve bosluklu yazilabiliyor
+            val videoId = Regex("""VIDEO_ID\s*=\s*["']?(\d+)["']?""").find(page)?.groupValues?.get(1) ?: return 0
             val base    = worker.trimEnd('/')
 
-            val info     = app.get("$base/v/$videoId/info", referer = embed).text
-            val qualities = Regex("\"qualities\"\\s*:\\s*\\[([\\d,\\s]*)\\]").find(info)?.groupValues?.get(1)
-                ?.split(",")?.mapNotNull { it.trim().toIntOrNull() } ?: listOf()
+            val info = app.get("$base/api/video?id=$videoId", referer = embed).text
 
-            if (qualities.isEmpty()) {
-                callback(newExtractorLink(source = "JetFilmizle", name = "JetFilmizle", url = "$base/v/$videoId", type = ExtractorLinkType.VIDEO) {
-                    quality = Qualities.Unknown.value
+            var emitted = 0
+
+            // HLS
+            val hls = Regex(""""hlsSource"\s*:\s*\{[\s\S]{0,400}?"file"\s*:\s*"(https?://[^"]+)"""")
+                .find(info)?.groupValues?.get(1)
+            if (!hls.isNullOrBlank()) {
+                callback(newExtractorLink(source = "JetFilmizle", name = "HLS", url = hls, type = ExtractorLinkType.M3U8) {
+                    this.referer = base
+                    this.quality = Qualities.Unknown.value
                 })
-                return 1
+                emitted++
             }
 
-            qualities.forEach { q ->
-                callback(newExtractorLink(source = "JetFilmizle", name = "${q}p", url = "$base/v/$videoId?q=$q", type = ExtractorLinkType.VIDEO) {
-                    quality = q
-                })
-            }
-            return qualities.size
+            // MP4 kaynaklari
+            val mp4s = Regex(""""mp4Sources"\s*:\s*\[([\s\S]{0,2000}?)\]""").find(info)?.groupValues?.get(1).orEmpty()
+            Regex("""(https?://[^"'\s\\]+\.mp4[^"'\s\\]*)""").findAll(mp4s).map { it.groupValues[1] }
+                .distinct().forEach { mp4 ->
+                    callback(newExtractorLink(source = "JetFilmizle", name = "MP4", url = mp4, type = ExtractorLinkType.VIDEO) {
+                        this.referer = base
+                        this.quality = Qualities.Unknown.value
+                    })
+                    emitted++
+                }
+
+            return emitted
         }
 
         // diger kaynaklar (VK, OkRu, Moly, SPlay ...) hazir extractor'larla acilir

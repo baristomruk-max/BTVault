@@ -8,5 +8,7 @@ import android.content.Context
 class SezonlukDiziPlugin : Plugin() {
     override fun load(context: Context) {
         registerMainAPI(SezonlukDizi())
+        // StreamRuby (rubyvidhub) kaynaklari icin cozucu
+        registerExtractorAPI(StreamRubyExtractor())
     }
 }

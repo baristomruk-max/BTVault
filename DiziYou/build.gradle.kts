@@ -1,9 +1,9 @@
-version = 7
+﻿version = 8
 
 cloudstream {
     authors     = listOf("BTcozum", "keyiflerolsun")
     language    = "tr"
-    description = "Diziyou en kaliteli Türkçe dublaj ve altyazılı yabancı dizi izleme sitesidir. Güncel ve efsanevi dizileri 1080p Full HD kalitede izlemek için hemen tıkla!"
+    description = "Diziyou en kaliteli TÃ¼rkÃ§e dublaj ve altyazÄ±lÄ± yabancÄ± dizi izleme sitesidir. GÃ¼ncel ve efsanevi dizileri 1080p Full HD kalitede izlemek iÃ§in hemen tÄ±kla!"
 
     /**
      * Status int as the following:

@@ -1,9 +1,9 @@
-version = 8
+﻿version = 9
 
 cloudstream {
     authors     = listOf("BTcozum", "keyiflerolsun")
     language    = "tr"
-    description = "Film modun geldiyse yüksek kalitede en yeni filmleri izle, 1080p izleyebileceğiniz reklamsiz film sitesi."
+    description = "Film modun geldiyse yÃ¼ksek kalitede en yeni filmleri izle, 1080p izleyebileceÄŸiniz reklamsiz film sitesi."
 
     /**
      * Status int as the following:

@@ -190,7 +190,7 @@ class WebteIzle : MainAPI() {
 
                 if (iframe == null) {
                     val scriptSource = embedApi.html()
-                    val matchResult  = Regex("""(vidmoly|okru|filemoon)\('([\d\w]+)','""").find(scriptSource)
+                    val matchResult  = Regex("""(vidmoly|okru|filemoon|streamruby|rubyvidhub|megacloud)\('([\d\w]+)''""").find(scriptSource)
 
                     if (matchResult == null) {
                         Log.d("WBTI", "scriptSource » $scriptSource")
@@ -199,9 +199,12 @@ class WebteIzle : MainAPI() {
                         val vidId    = matchResult.groupValues[2]
 
                         iframe       = when(platform) {
-                            "vidmoly"  -> "https://vidmoly.to/embed-${vidId}.html"
-                            "okru"     -> "https://odnoklassniki.ru/videoembed/${vidId}"
-                            "filemoon" -> "https://filemoon.sx/e/${vidId}"
+                            "vidmoly"    -> "https://vidmoly.to/embed-${vidId}.html"
+                            "okru"       -> "https://odnoklassniki.ru/videoembed/${vidId}"
+                            "filemoon"   -> "https://filemoon.sx/e/${vidId}"
+                            "megacloud"  -> "https://megacloud.tv/embed-2/?player=embed-$vidId"
+                            "streamruby" -> "https://rubyvidhub.com/embed-$vidId.html"
+                            "rubyvidhub" -> "https://rubyvidhub.com/embed-$vidId.html"
                             else       -> null
                         }
                     }

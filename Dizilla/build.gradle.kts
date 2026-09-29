@@ -1,9 +1,9 @@
-version = 14
+﻿version = 15
 
 cloudstream {
     authors     = listOf("BTcozum", "keyiflerolsun")
     language    = "tr"
-    description = "Dizilla tüm yabancı dizileri ücretsiz olarak Türkçe Dublaj ve altyazılı seçenekleri ile 1080P kalite izleyebileceğiniz yeni nesil yabancı dizi izleme siteniz."
+    description = "Dizilla tÃ¼m yabancÄ± dizileri Ã¼cretsiz olarak TÃ¼rkÃ§e Dublaj ve altyazÄ±lÄ± seÃ§enekleri ile 1080P kalite izleyebileceÄŸiniz yeni nesil yabancÄ± dizi izleme siteniz."
 
     /**
      * Status int as the following:
