@@ -24,6 +24,14 @@ class DiziBox : MainAPI() {
 
     private val dbxCookies = mapOf("LockUser" to "true", "isTrustedUser" to "true", "dbxu" to "1743289650198")
 
+    // Cloudflare bot kontrolune takilmamak icin tarayici benzeri basliklar
+    private val cfHeaders = mapOf(
+        "User-Agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "Accept" to "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "Accept-Language" to "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Upgrade-Insecure-Requests" to "1"
+    )
+
     private val cloudflareKiller by lazy { CloudflareKiller() }
     private val interceptor      by lazy { CloudflareInterceptor(cloudflareKiller) }
 
@@ -62,7 +70,7 @@ class DiziBox : MainAPI() {
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val url      = request.data.replace("SAYFA", "$page")
-        val document = app.get(url, cookies = dbxCookies, interceptor = interceptor, cacheTime = 60).document
+        val document = app.get(url, cookies = dbxCookies, interceptor = interceptor, headers = cfHeaders, cacheTime = 60).document
         val selector = if (request.name == "Dizi Arsivi") "article.detailed-article" else "article.article-series-poster"
         val home     = document.select(selector).mapNotNull { it.toMainPageResult() }
         return newHomePageResponse(request.name, home)
@@ -84,14 +92,14 @@ class DiziBox : MainAPI() {
 
     override suspend fun search(query: String): List<SearchResponse> {
         val q        = java.net.URLEncoder.encode(query.trim(), "UTF-8")
-        val document = app.get("${mainUrl}/?s=$q", cookies = dbxCookies, interceptor = interceptor).document
+        val document = app.get("${mainUrl}/?s=$q", cookies = dbxCookies, interceptor = interceptor, headers = cfHeaders).document
         return document.select("article.detailed-article").mapNotNull { it.toMainPageResult() }
     }
 
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
 
     override suspend fun load(url: String): LoadResponse? {
-        val document    = app.get(url, cookies = dbxCookies, interceptor = interceptor).document
+        val document    = app.get(url, cookies = dbxCookies, interceptor = interceptor, headers = cfHeaders).document
         val title       = (document.selectFirst("div.tv-overview h1 a") ?: document.selectFirst("div.tv-overview h1") ?: document.selectFirst("h1"))
             ?.text()?.trim()?.takeIf { it.isNotEmpty() } ?: return null
         val poster      = fixUrlNull(document.selectFirst("div.tv-overview figure img")?.attr("src"))
@@ -108,7 +116,7 @@ class DiziBox : MainAPI() {
             addEpisodes(document, episodeList)
         } else seasons.forEach {
             val epUrl = fixUrlNull(it.attr("href")) ?: return@forEach
-            val epDoc = runCatching { app.get(epUrl, cookies = dbxCookies, interceptor = interceptor).document }.getOrNull() ?: return@forEach
+            val epDoc = runCatching { app.get(epUrl, cookies = dbxCookies, interceptor = interceptor, headers = cfHeaders).document }.getOrNull() ?: return@forEach
             addEpisodes(epDoc, episodeList)
         }
 
@@ -142,7 +150,7 @@ class DiziBox : MainAPI() {
     }
 
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
-        val document = runCatching { app.get(data, cookies = dbxCookies, interceptor = interceptor).document }.getOrNull() ?: return false
+        val document = runCatching { app.get(data, cookies = dbxCookies, interceptor = interceptor, headers = cfHeaders).document }.getOrNull() ?: return false
 
         // ayni bolumun yansiticilari: /2/ ve /3/ (video-toolbar)
         val pages = mutableListOf(data)
@@ -154,7 +162,7 @@ class DiziBox : MainAPI() {
         var found = false
         for (page in pages) {
             val pageDoc = if (page == data) document
-                          else runCatching { app.get(page, cookies = dbxCookies, interceptor = interceptor).document }.getOrNull() ?: continue
+                          else runCatching { app.get(page, cookies = dbxCookies, interceptor = interceptor, headers = cfHeaders).document }.getOrNull() ?: continue
             val player  = pageDoc.selectFirst("div#video-area iframe")?.attr("src")?.trim()
             if (player.isNullOrEmpty()) continue
             if (resolvePlayer(player, page, subtitleCallback, callback)) found = true
@@ -169,7 +177,7 @@ class DiziBox : MainAPI() {
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit
     ): Boolean {
-        var html = runCatching { app.get(playerUrl, referer = referer, cookies = dbxCookies, interceptor = interceptor).text }.getOrNull() ?: return false
+        var html = runCatching { app.get(playerUrl, referer = referer, cookies = dbxCookies, interceptor = interceptor, headers = cfHeaders).text }.getOrNull() ?: return false
 
         // moly.php: document.write(atob(unescape("%..")))
         OBFUSCATED.find(html)?.groupValues?.get(1)?.let { payload ->
