@@ -34,19 +34,22 @@ class Dizilla : MainAPI() {
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val document = app.get(request.data).document
-        val home     = if (request.data.contains("dizi-turu")) { 
-            document.select("div.grid-cols-3 a").mapNotNull { it.diziler() }
-        } else {
-            document.select("div.grid a").mapNotNull { it.sonBolumler() }
-        }
+        // Yeni Tailwind temasi: kartlar <li class="hover-border-top"><a href="dizi/slug">
+        val home = document.select("a[href*='dizi/']").mapNotNull { it.diziler() }
+            .distinctBy { it.url }
 
         return newHomePageResponse(request.name, home)
     }
 
     private fun Element.diziler(): SearchResponse? {
-        val title     = this.selectFirst("h2")?.text() ?: return null
-        val href      = fixUrlNull(this.attr("href")) ?: return null
-        val posterUrl = fixUrlNull(this.selectFirst("img")?.attr("data-src")) ?: fixUrlNull(this.selectFirst("img")?.attr("src"))
+        val hrefRaw = attr("href")?.trim() ?: return null
+        if (!hrefRaw.contains("dizi/")) return null
+        val href = if (hrefRaw.startsWith("http")) hrefRaw
+                    else "${mainUrl}/${hrefRaw.trimStart('/')}"
+        val img       = selectFirst("img")
+        val title     = img?.attr("alt")?.trim()?.removeSuffix(" izle")?.trim()?.takeIf { it.isNotEmpty() }
+            ?: hrefRaw.substringAfterLast('/')
+        val posterUrl = fixUrlNull(img?.attr("src"))
 
         return newTvSeriesSearchResponse(title, href, TvType.TvSeries) { this.posterUrl = posterUrl }
     }
@@ -74,40 +77,24 @@ class Dizilla : MainAPI() {
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
-        val mainReq  = app.get(mainUrl)
-        val mainPage = mainReq.document
-        val cKey     = mainPage.selectFirst("input[name='cKey']")?.attr("value") ?: return emptyList()
-        val cValue   = mainPage.selectFirst("input[name='cValue']")?.attr("value") ?: return emptyList()
+        // Yeni temada sunucu tarafi arama yok (?s= ve /arama artik calismiyor),
+        // arsiv sayfasindaki diziler istemci tarafinda filtreleniyor.
+        val q = query.trim().lowercase()
+        val out = LinkedHashMap<String, SearchResponse>()
 
-        val veriler   = mutableListOf<SearchResponse>()
-
-        val searchReq = app.post(
-            "${mainUrl}/bg/searchcontent",
-            data = mapOf(
-                "cKey"       to cKey,
-                "cValue"     to cValue,
-                "searchterm" to query
-            ),
-            headers = mapOf(
-                "Accept"           to "application/json, text/javascript, */*; q=0.01",
-                "X-Requested-With" to "XMLHttpRequest"
-            ),
-            referer = "${mainUrl}/",
-            cookies = mapOf(
-                "showAllDaFull"   to "true",
-                "PHPSESSID"       to mainReq.cookies["PHPSESSID"].toString(),
-            )
-        ).parsedSafe<SearchResult>()
-
-        if (searchReq?.data?.state != true) {
-            throw ErrorLoadingException("Invalid Json response")
+        listOf("${mainUrl}/arsiv", "${mainUrl}/yabanci-dizi-izle", mainUrl).forEach { page ->
+            runCatching {
+                val doc = app.get(page).document
+                doc.select("a[href*='dizi/']").forEach { el ->
+                    val item = el.diziler() ?: return@forEach
+                    val name = item.name?.lowercase() ?: ""
+                    if (q.isNotEmpty() && !name.contains(q) && !item.url.lowercase().contains(q)) return@forEach
+                    out.putIfAbsent(item.url, item)
+                }
+            }
         }
 
-        searchReq.data.result?.forEach { searchItem ->
-            veriler.add(searchItem.toSearchResponse() ?: return@forEach)
-        }
-
-        return veriler
+        return out.values.toList()
     }
 
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
@@ -115,8 +102,12 @@ class Dizilla : MainAPI() {
     override suspend fun load(url: String): LoadResponse? {
         val document = app.get(url).document
 
-        val title       = document.selectFirst("div.page-top h1")?.text() ?: return null
-        val poster      = fixUrlNull(document.selectFirst("div.page-top img")?.attr("src")) ?: fixUrlNull(document.selectFirst("div.page-top img")?.attr("data-src"))
+        val title       = document.selectFirst("div.page-top h1")?.text()?.trim()
+            ?: document.selectFirst("h1")?.text()?.trim()?.removeSuffix(" izle")?.trim()
+            ?: return null
+        val poster      = fixUrlNull(document.selectFirst("div.page-top img")?.attr("src"))
+            ?: fixUrlNull(document.selectFirst("div.page-top img")?.attr("data-src"))
+            ?: fixUrlNull(document.selectFirst("img[src*=macellan]")?.attr("src"))
         val year        = document.selectXpath("//span[text()='Yayın tarihi']//following-sibling::span").text().trim().split(" ").last().toIntOrNull()
         val description = document.selectFirst("div.mv-det-p")?.text()?.trim()
             ?: document.selectFirst("div.w-full div.text-base")?.text()?.trim()
@@ -203,8 +194,21 @@ class Dizilla : MainAPI() {
         val iframes  = mutableSetOf<String>()
 
         val alternatifler = document.select("a[href*='player']")
+        // iframe src'si "//four.pichive.online/..." seklinde (protokol-relative) geliyor
+        fun iframeUrl(doc: org.jsoup.nodes.Document): String? {
+            val raw = doc.selectFirst("div#playerLsDizilla iframe")?.attr("src")
+                ?: doc.selectFirst("iframe[src*=pichive]")?.attr("src")
+                ?: return null
+            val abs = when {
+                raw.startsWith("//") -> "https:$raw"
+                raw.startsWith("http") -> raw
+                else -> "${mainUrl}/$raw"
+            }
+            return fixUrlNull(abs)
+        }
+
         if (alternatifler.isEmpty()) {
-            val iframe = fixUrlNull(document.selectFirst("div#playerLsDizilla iframe")?.attr("src")) ?: return false
+            val iframe = iframeUrl(document) ?: return false
 
             Log.d("DZL", "iframe » $iframe")
 
@@ -212,7 +216,7 @@ class Dizilla : MainAPI() {
         } else {
             alternatifler.forEach {
                 val playerDoc = app.get(fixUrlNull(it.attr("href")) ?: return@forEach).document
-                val iframe    = fixUrlNull(playerDoc.selectFirst("div#playerLsDizilla iframe")?.attr("src")) ?: return false
+                val iframe    = iframeUrl(playerDoc) ?: return@forEach
 
                 if (iframe in iframes) { return@forEach }
                 iframes.add(iframe)

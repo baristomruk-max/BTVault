@@ -31,31 +31,41 @@ class DiziMom : MainAPI() {
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val document = app.get("${request.data}${page}/").document
         val home     = if (request.data.contains("/tum-bolumler/")) {
-            document.select("div.episode-box").mapNotNull { it.sonBolumler() } 
+            document.select("div.episode-box").mapNotNull { it.sonBolumler() }
         } else {
-            document.select("div.single-item").mapNotNull { it.diziler() }
+            // Yeni temada kartlar: <div class="img"><a href=".../diziler/<slug>/"><img data-src alt=".. izle">
+            document.select("a[href*='/diziler/']").mapNotNull { it.diziler() }
+                .distinctBy { it.url }
         }
 
         return newHomePageResponse(request.name, home)
     }
 
     private suspend fun Element.sonBolumler(): SearchResponse? {
-        val name      = this.selectFirst("div.episode-name a")?.text()?.substringBefore(" izle") ?: return null
-        val title     = name.replace(".Sezon ", "x").replace(".Bölüm", "")
+        // Yeni temada bolum kutusu icinde dizi linki + (varsa) bolum linki var
+        val link     = this.select("a[href]").firstOrNull { !it.attr("href").contains("/diziler/") }
+            ?: this.selectFirst("a[href*='/diziler/']")
+            ?: return null
+        val href      = fixUrlNull(link.attr("href")) ?: return null
+        val img       = this.selectFirst("img")
+        val title     = img?.attr("alt")?.trim()?.substringBefore(" izle")?.trim()
+            ?: this.selectFirst("div.episode-name")?.text()?.substringBefore(" izle")?.trim()
+            ?: return null
+        if (title.isEmpty()) return null
 
-        val epHref   = fixUrlNull(this.selectFirst("div.episode-name a")?.attr("href")) ?: return null
-        val epDoc    = app.get(epHref).document
-        val href     = epDoc.selectFirst("div#benzerli a")?.attr("href") ?: return null
-
-        val posterUrl = fixUrlNull(this.selectFirst("a img")?.attr("src"))
+        val posterUrl = fixUrlNull(img?.attr("data-src")) ?: fixUrlNull(img?.attr("src"))
 
         return newTvSeriesSearchResponse(title, href, TvType.TvSeries) { this.posterUrl = posterUrl }
     }
 
     private fun Element.diziler(): SearchResponse? {
-        val title     = this.selectFirst("div.categorytitle a")?.text()?.substringBefore(" izle") ?: return null
-        val href      = fixUrlNull(this.selectFirst("div.categorytitle a")?.attr("href")) ?: return null
-        val posterUrl = fixUrlNull(this.selectFirst("div.cat-img img")?.attr("src"))
+        val href = fixUrlNull(attr("href")) ?: return null
+        if (!href.contains("/diziler/")) return null
+        val img       = selectFirst("img")
+        val title     = img?.attr("alt")?.trim()?.substringBefore(" izle")?.trim()
+            ?: text().trim().substringBefore(" izle").trim()
+        if (title.isEmpty()) return null
+        val posterUrl = fixUrlNull(img?.attr("data-src")) ?: fixUrlNull(img?.attr("src"))
 
         return newTvSeriesSearchResponse(title, href, TvType.TvSeries) { this.posterUrl = posterUrl }
     }
@@ -63,7 +73,8 @@ class DiziMom : MainAPI() {
     override suspend fun search(query: String): List<SearchResponse> {
         val document = app.get("${mainUrl}/?s=${query}").document
 
-        return document.select("div.single-item").mapNotNull { it.diziler() }
+        return document.select("a[href*='/diziler/']").mapNotNull { it.diziler() }
+            .distinctBy { it.url }
     }
 
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
