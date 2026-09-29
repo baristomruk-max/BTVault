@@ -8,5 +8,8 @@ import android.content.Context
 class FilmMakinesiPlugin : Plugin() {
     override fun load(context: Context) {
         registerMainAPI(FilmMakinesi())
+        // FilmMakinesi kendi oynaticilarini kullaniyor, hazir extractor yok
+        registerExtractorAPI(CloseLoadExtractor())
+        registerExtractorAPI(RapidFMExtractor())
     }
 }

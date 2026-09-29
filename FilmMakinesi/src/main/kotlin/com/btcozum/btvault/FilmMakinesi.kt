@@ -121,25 +121,69 @@ class FilmMakinesi : MainAPI() {
         }
     }
 
+    private val closeLoad = CloseLoadExtractor()
+    private val rapidFM = RapidFMExtractor()
+
     override suspend fun loadLinks(
         data: String,
         isCasting: Boolean,
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit
     ): Boolean {
-        val document = app.get(data).document
+        val document = app.get(
+            data,
+            headers = mapOf(
+                "User-Agent" to USER_AGENT,
+                "Referer" to mainUrl
+            )
+        ).document
 
-        val videoUrls = document.select(".video-parts a[data-video_url]").map { it.attr("data-video_url") }
-        // the trailer iframe also carries a data-src, never feed it to the extractor
-        val iframeUrls = document.select("iframe[data-src]")
-            .map { it.attr("data-src") }
-            .filter { it.isNotBlank() && !it.contains("youtube.com") }
+        // Oynatici adreslerini topla
+        val candidates = LinkedHashSet<String>()
 
-        val allUrls = (videoUrls + iframeUrls).distinct()
-
-        allUrls.forEach { url ->
-            loadExtractor(url, "${mainUrl}/", subtitleCallback, callback)
+        // Sayfadaki oynatici sekmeleri (Tek Close / DUAL Rapid ...)
+        document.select(".video-parts a[data-video_url]").forEach { el ->
+            val v = fixUrlNull(el.attr("data-video_url"))
+            if (!v.isNullOrBlank()) candidates.add(v)
         }
-        return allUrls.isNotEmpty()
+
+        // Ana oynatici iframe'i (trailer/YouTube haric)
+        document.select(".after-player iframe, iframe[data-src], iframe[src]").forEach { el ->
+            val raw = el.attr("data-src").ifBlank { el.attr("src") }
+            val v = fixUrlNull(raw)
+            if (!v.isNullOrBlank() &&
+                !v.contains("youtube.com") &&
+                !v.contains("youtu.be") &&
+                !v.contains("googlevideo") &&
+                !v.contains("google.com")
+            ) {
+                candidates.add(v)
+            }
+        }
+
+        if (candidates.isEmpty()) return false
+
+        var found = false
+        val emit: (ExtractorLink) -> Unit = { link ->
+            found = true
+            callback(link)
+        }
+
+        for (link in candidates) {
+            try {
+                when {
+                    // FilmMakinesi'nin kendi oynaticilari: hazir extractor yok
+                    link.contains("closeload") ->
+                        closeLoad.getUrl(link, "${mainUrl}/", subtitleCallback, emit)
+                    link.contains("rapid.filmmakinesi") ->
+                        rapidFM.getUrl(link, "${mainUrl}/", subtitleCallback, emit)
+                    else ->
+                        if (loadExtractor(link, "${mainUrl}/", subtitleCallback, emit)) found = true
+                }
+            } catch (_: Throwable) {
+                // siradaki adayi dene
+            }
+        }
+        return found
     }
 }
