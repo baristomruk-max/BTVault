@@ -55,7 +55,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **41 eklenti - 25 aktif, 16 site kapali.**
+> **41 eklenti - 22 aktif, 3 Cloudflare korumali, 16 site kapali.**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 > - 🟡 Beta: eklenti henuz tam test edilmedi
@@ -73,14 +73,14 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>🌍 <strong>BelgeselX</strong></td><td>Belgesel</td><td>✅ Aktif</td></tr>
   <tr><td>📡 <strong>CanliTV</strong></td><td>Canli TV</td><td>🔴 M3U listesi kaldirildi</td></tr>
   <tr><td>🧸 <strong>CizgiMax</strong></td><td>Cizgi Film</td><td>✅ Aktif (yeni tema guncellendi)</td></tr>
-  <tr><td>📺 <strong>DiziBox</strong></td><td>Yabanci Dizi</td><td>⚠️ Cloudflare korumali</td></tr>
+  <tr><td>📺 <strong>DiziBox</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizibox.live, v17 - tarayici basliklari eklendi)</td></tr>
   <tr><td>🌸 <strong>DiziKorea</strong></td><td>Kore Dizi</td><td>🔴 Sunucu kapali (526 Invalid SSL)</td></tr>
   <tr><td>📺 <strong>Dizilla</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizilla.now, v16 - Tailwind/Angular tema entegrasyonu)</td></tr>
   <tr><td>📺 <strong>DiziMom</strong></td><td>Yerli + Yabanci Dizi</td><td>✅ Aktif (dizimom.help, v12 - yeni tema uyumu)</td></tr>
   <tr><td>📺 <strong>DiziPal</strong></td><td>Dizi & Film</td><td>✅ Yeni filmvedizi temasi (dizipal3008)</td></tr>
   <tr><td>📺 <strong>DiziYou</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (diziyou.one)</td></tr>
   <tr><td>🎬 <strong>FilmMakinesi</strong></td><td>Film</td><td>✅ Aktif (filmmakinesi.to, v2 - CloseLoad/Rapid extractor eklentisi eklendi)</td></tr>
-  <tr><td>🎬 <strong>FilmModu</strong></td><td>Film</td><td>✅ Aktif (filmmodu.nl, v9 - schema.org microdata + lazy afiş güncellemesi)</td></tr>
+  <tr><td>🎬 <strong>FilmModu</strong></td><td>Film</td><td>✅ Aktif (filmmodu.one, v9 - schema.org microdata + lazy afis guncellemesi)</td></tr>
   <tr><td>🎬 <strong>FullHDFilm</strong></td><td>Film</td><td>🔴 Adresi yok</td></tr>
   <tr><td>🎬 <strong>FullHDFilmizlesene</strong></td><td>Film</td><td>✅ Aktif (fullhdfilmizlesene.now, v5 - kategori adresleri düzeltildi)</td></tr>
   <tr><td>🔞 <strong>FullPorner</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
@@ -114,7 +114,15 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ---
 
-## Son Guncellemeler (25.09.2026)
+## Son Guncellemeler (06.10.2026)
+
+- **Canli denetim (06.10.2026):** 41 eklentinin tamami Google DNS (8.8.8.8) uzerinden tekrar cekildi. Sonuclar tabloya islendi:
+  - **DiziBox** artik erisilebilir (200, gercek sayfa, VPN engeli yok) -> ✅ Aktif olarak guncellendi (v17 tarayici basliklari).
+  - **FilmModu** domaini `filmmodu.one` olarak dogrulandi (README'de hala `filmmodu.nl` yaziyordu; kod zaten `.one` kullanıyordu).
+  - **SetFilmIzle** + **SuperFilmGeldi** 200 donuyor ama govde bos (0 byte) -> olu siteler, 🔴 olarak kaldi.
+  - **TurkAnime** 200 donuyor bos baslikla; **UgurFilm** park sayfasi; **SpankBang/UncutMaza/WebteIzle** 403 Cloudflare -> durumlar degismedi.
+  - **YouTube (Invidious)** API'si calisiyor (`invidious.f5.si/api/v1/trending` -> 42KB JSON, bot engeli yok).
+  - Ozet: **22 aktif, 3 Cloudflare korumali, 16 site kapali** (toplam 41).
 
 - **Yerel Chrome (CDP) ile Dizilla ve DiziMom yeniden yazildi** (her iki site de kendi temasini tamamen degistirmis):
   - **Dizilla v16**: site Artik **Tailwind/Angular** tabanli. Eski `div.grid-cols-3 a` / `h2` / `data-src` secicileri **0 sonuc** donuyordu (ana sayfa bomboş). Yeni yapi: `<li class="hover-border-top"><a href="dizi/the-scandal"><img alt="The Scandal izle" src="…macellan.online…">`; liste artik `a[href*='dizi/']` uzerinden, baslik `img[alt]` (" izle" atilir), afis `img[src]` ile aliniyor (href'ler `dizi/xxx` seklinde goreli). Arama: eski `POST /bg/searchcontent` ucu **tamamen yanlis** (IzleAI'den kopyalanmis) ve yeni temada sunucu tarafi arama yok -> `/arsiv` + `/yabanci-dizi-izle` sayfalari cekilip **istemci tarafinda filtreleniyor**. Dizi sayfasi: `h1` = "The Scandal izle", bolumler `/the-scandal-1-sezon-1-bolum`. Bolum sayfasindaki oynatici `div#playerLsDizilla > iframe[src="//four.pichive.online/iframe.php?v=…"]` -> protokol-relative adres `https:` ile normallestirilip kayitli `FourPichive` cozucusune veriliyor.
