@@ -55,13 +55,9 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **41 eklenti - 22 aktif, 3 Cloudflare korumali, 16 site kapali.**
+> **22 eklenti - hepsi aktif.**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
-> - 🟡 Beta: eklenti henuz tam test edilmedi
-> - ⚠️ Cloudflare: site Cloudflare korumali, uygulama ici dogrulama gerekebilir
-> - ⏳ Kaynak gecici olarak yanit vermiyor (site ayakta, sunucu sorunu)
-> - 🔴 Site kapali / adresi yok: kod repoda duruyor, yeni adres bulununca tekrar aktif olacak
 
 <table>
   <tr>
@@ -71,43 +67,24 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   </tr>
   <tr><td>🎭 <strong>AnimeciX</strong></td><td>Anime</td><td>✅ Aktif</td></tr>
   <tr><td>🌍 <strong>BelgeselX</strong></td><td>Belgesel</td><td>✅ Aktif</td></tr>
-  <tr><td>📡 <strong>CanliTV</strong></td><td>Canli TV</td><td>🔴 M3U listesi kaldirildi</td></tr>
   <tr><td>🧸 <strong>CizgiMax</strong></td><td>Cizgi Film</td><td>✅ Aktif (yeni tema guncellendi)</td></tr>
   <tr><td>📺 <strong>DiziBox</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizibox.live, v17 - tarayici basliklari eklendi)</td></tr>
-  <tr><td>🌸 <strong>DiziKorea</strong></td><td>Kore Dizi</td><td>🔴 Sunucu kapali (526 Invalid SSL)</td></tr>
   <tr><td>📺 <strong>Dizilla</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizilla.now, v16 - Tailwind/Angular tema entegrasyonu)</td></tr>
   <tr><td>📺 <strong>DiziMom</strong></td><td>Yerli + Yabanci Dizi</td><td>✅ Aktif (dizimom.help, v12 - yeni tema uyumu)</td></tr>
-  <tr><td>📺 <strong>DiziPal</strong></td><td>Dizi & Film</td><td>✅ Yeni filmvedizi temasi (dizipal3008)</td></tr>
+  <tr><td>📺 <strong>DiziPal</strong></td><td>Dizi & Film</td><td>✅ Aktif (dizipal3008.com, filmvedizi temasi)</td></tr>
   <tr><td>📺 <strong>DiziYou</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (diziyou.one)</td></tr>
   <tr><td>🎬 <strong>FilmMakinesi</strong></td><td>Film</td><td>✅ Aktif (filmmakinesi.to, v2 - CloseLoad/Rapid extractor eklentisi eklendi)</td></tr>
   <tr><td>🎬 <strong>FilmModu</strong></td><td>Film</td><td>✅ Aktif (filmmodu.one, v9 - schema.org microdata + lazy afis guncellemesi)</td></tr>
-  <tr><td>🎬 <strong>FullHDFilm</strong></td><td>Film</td><td>🔴 Adresi yok</td></tr>
   <tr><td>🎬 <strong>FullHDFilmizlesene</strong></td><td>Film</td><td>✅ Aktif (fullhdfilmizlesene.now, v5 - kategori adresleri düzeltildi)</td></tr>
   <tr><td>🔞 <strong>FullPorner</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
-  <tr><td>📡 <strong>GolgeTV</strong></td><td>Canli TV</td><td>🔴 API adresi yok</td></tr>
   <tr><td>🎬 <strong>HDFilmCehennemi</strong></td><td>Film & Dizi</td><td>✅ Aktif (v18 - degistirilmedi, calisiyor)</td></tr>
   <tr><td>🔞 <strong>HQPorner</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
-  <tr><td>🎬 <strong>InatBox</strong></td><td>Film, Dizi, Canli</td><td>🔴 Backend kapali (dizibox.rest)</td></tr>
   <tr><td>🎬 <strong>IzleAI</strong></td><td>Film</td><td>✅ Aktif</td></tr>
   <tr><td>🎬 <strong>JetFilmizle</strong></td><td>Film</td><td>✅ Aktif (videopark.top worker API entegresi ile v20)</td></tr>
-  <tr><td>🌸 <strong>KoreanTurk</strong></td><td>Kore Dizi</td><td>🔴 Sunucu kapali (522 Timeout)</td></tr>
   <tr><td>🎬 <strong>KultFilmler</strong></td><td>Film & Dizi</td><td>✅ Aktif (yeni tema guncellendi)</td></tr>
-  <tr><td>🎬 <strong>NetflixMirror</strong></td><td>Film & Dizi</td><td>🔴 iosmirror.cc kapandi</td></tr>
-  <tr><td>🔞 <strong>OxAx</strong></td><td>Yetiskin (VPN)</td><td>🔴 Servis kapandi</td></tr>
   <tr><td>🔞 <strong>PornHub</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
   <tr><td>🎬 <strong>RareFilmm</strong></td><td>Film</td><td>✅ Aktif</td></tr>
-  <tr><td>📡 <strong>RecTV</strong></td><td>Film + Canli TV</td><td>🔴 Adresi yok</td></tr>
-  <tr><td>🎬 <strong>SetFilmIzle</strong></td><td>Film & Dizi</td><td>🔴 Adresi yok</td></tr>
   <tr><td>📺 <strong>SezonlukDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (sezonlukdizi.cc, v2 - StreamRubyExtractor eklentisi)</td></tr>
-  <tr><td>🎬 <strong>SinemaCX</strong></td><td>Film</td><td>🔴 Adresi yok</td></tr>
-  <tr><td>🎬 <strong>SineWix</strong></td><td>Film, Dizi, Anime</td><td>🔴 Servis kapandi</td></tr>
-  <tr><td>🔞 <strong>SpankBang</strong></td><td>Yetiskin (VPN)</td><td>⚠️ Cloudflare korumali</td></tr>
-  <tr><td>🎬 <strong>SuperFilmGeldi</strong></td><td>Film</td><td>🔴 Adresi yok</td></tr>
-  <tr><td>🎭 <strong>TurkAnime</strong></td><td>Anime</td><td>🔴 Site resmen kapandi (2010-2026)</td></tr>
-  <tr><td>🎬 <strong>UgurFilm</strong></td><td>Film</td><td>🔴 Adresi satilik</td></tr>
-  <tr><td>🔞 <strong>UncutMaza</strong></td><td>Yetiskin (VPN)</td><td>⚠️ Cloudflare korumali</td></tr>
-  <tr><td>🎬 <strong>Watch2Movies</strong></td><td>Film</td><td>🔴 Adresi yok</td></tr>
-  <tr><td>🎬 <strong>WebteIzle</strong></td><td>Film</td><td>⚠️ Cloudflare korumali (webteizle.info, v16 - dil secicileri duzeltildi)</td></tr>
   <tr><td>🔞 <strong>xHamster</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
   <tr><td>▶️ <strong>YouTube</strong></td><td>Video</td><td>✅ Aktif (Invidious, otomatik instance)</td></tr>
 </table>
