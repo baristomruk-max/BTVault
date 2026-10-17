@@ -55,7 +55,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **41 eklenti - hepsi aktif.**
+> **43 eklenti - hepsi aktif.**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 
@@ -65,6 +65,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
     <th>Tur</th>
     <th>Durum</th>
   </tr>
+  <tr><td>🎬 <strong>4KFilmIzlesene</strong></td><td>Film</td><td>✅ Aktif (4kfilmizlesene.xyz, yeni: nikstream)</td></tr>
   <tr><td>🎭 <strong>AnimeciX</strong></td><td>Anime</td><td>✅ Aktif</td></tr>
   <tr><td>🌸 <strong>AsyaWatch</strong></td><td>Asya Dizi & Film</td><td>✅ Aktif (asyawatch.com, yeni: nikstream)</td></tr>
   <tr><td>🌍 <strong>BelgeselX</strong></td><td>Belgesel</td><td>✅ Aktif</td></tr>
@@ -101,6 +102,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>📺 <strong>TLC</strong></td><td>Dizi & Belgesel</td><td>✅ Aktif (tlctv.com.tr, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>Tafdi</strong></td><td>Film</td><td>✅ Aktif (tafdi.net, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>TvDiziler</strong></td><td>Yerli Dizi</td><td>✅ Aktif (tvdiziler.cc, yeni: nikstream)</td></tr>
+  <tr><td>🎬 <strong>WFilmIzle</strong></td><td>Film</td><td>✅ Aktif (wfilmizle.my, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>YabanciDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (yabancidizi.so, yeni: nikstream)</td></tr>
   <tr><td>📡 <strong>vavooSpor</strong></td><td>Canli Spor TV</td><td>✅ Aktif (M3U playlist, yeni: nikstream)</td></tr>
   <tr><td>🎬 <strong>XPrime</strong></td><td>Film</td><td>✅ Aktif (TMDB API, yeni: nikstream)</td></tr>
