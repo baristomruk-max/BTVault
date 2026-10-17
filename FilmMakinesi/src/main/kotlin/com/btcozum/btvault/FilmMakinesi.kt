@@ -3,9 +3,26 @@ package com.btcozum.btvault
 import org.jsoup.nodes.Element
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
+import okhttp3.Interceptor
+import okhttp3.Response
+import com.lagradost.cloudstream3.network.CloudflareKiller
 
 
 class FilmMakinesi : MainAPI() {
+    // ! CloudFlare v2
+    private val cloudflareKiller by lazy { CloudflareKiller() }
+    private val interceptor by lazy { CloudflareInterceptor(cloudflareKiller) }
+
+    class CloudflareInterceptor(private val cloudflareKiller: CloudflareKiller): Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val request = chain.request()
+            val response = chain.proceed(request)
+            if (response.body?.string()?.contains("Just a moment") == true) {
+                return cloudflareKiller.intercept(chain)
+            }
+            return response
+        }
+    }
     override var mainUrl              = "https://filmmakinesi.to"
     override var name                 = "FilmMakinesi"
     override val hasMainPage          = true
@@ -46,7 +63,7 @@ class FilmMakinesi : MainAPI() {
         val document = app.get(url, headers = mapOf(
             "User-Agent" to USER_AGENT,
             "Referer" to mainUrl
-        )).document
+        ), interceptor = interceptor).document
 
         val home = document.select("div.film-list div.item-relative")
             .mapNotNull { it.toSearchResult() }
@@ -74,14 +91,14 @@ class FilmMakinesi : MainAPI() {
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
-        val document = app.get("${mainUrl}/arama/?s=${query}").document
+        val document = app.get("${mainUrl}/arama/?s=${query}", interceptor = interceptor).document
         return document.select("div.film-list div.item-relative").mapNotNull { it.toSearchResult() }
     }
 
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
 
     override suspend fun load(url: String): LoadResponse? {
-        val document = app.get(url).document
+        val document = app.get(url, interceptor = interceptor).document
 
         val title       = document.selectFirst("h1")?.text()?.trim() ?: return null
         val poster      = fixUrlNull(document.selectFirst("[property='og:image']")?.attr("content"))
@@ -135,10 +152,9 @@ class FilmMakinesi : MainAPI() {
             headers = mapOf(
                 "User-Agent" to USER_AGENT,
                 "Referer" to mainUrl
-            )
+            ),
+            interceptor = interceptor
         ).document
-
-        // Oynatici adreslerini topla
         val candidates = LinkedHashSet<String>()
 
         fun isPlayer(v: String) = v.isNotBlank() &&

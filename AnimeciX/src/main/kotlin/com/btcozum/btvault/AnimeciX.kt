@@ -2,9 +2,25 @@ package com.btcozum.btvault
 
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
+import com.lagradost.cloudstream3.network.CloudflareKiller
+import okhttp3.Interceptor
+import okhttp3.Response
 import com.fasterxml.jackson.annotation.JsonProperty
 
 class AnimeciX : MainAPI() {
+    private val cloudflareKiller by lazy { CloudflareKiller() }
+    private val interceptor by lazy { CloudflareInterceptor(cloudflareKiller) }
+
+    class CloudflareInterceptor(private val cloudflareKiller: CloudflareKiller): Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val request = chain.request()
+            val response = chain.proceed(request)
+            if (response.body?.string()?.contains("Just a moment") == true) {
+                return cloudflareKiller.intercept(chain)
+            }
+            return response
+        }
+    }
     // shared anti-bot header required by every /secure/* endpoint
     private val E_H = "7Y2ozlO+QysR5w9Q6Tupmtvl9jJp7ThFH8SB+Lo7NvZjgjqRSqOgcT2v4ISM9sP10LmnlYI8WQ==.xrlyOBFS5BHjQ2Lk"
     override var mainUrl              = "https://animecix.tv"
@@ -26,14 +42,14 @@ class AnimeciX : MainAPI() {
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         return if (request.data.contains("/last-episodes")) {
-            val response = app.get("${mainUrl}/secure/last-episodes?page=$page&perPage=10", headers = mapOf("x-e-h" to E_H)).parsedSafe<LastEpisodesResponse>()?.data ?: emptyList()
+            val response = app.get("${mainUrl}/secure/last-episodes?page=$page&perPage=10", headers = mapOf("x-e-h" to E_H), interceptor = interceptor).parsedSafe<LastEpisodesResponse>()?.data ?: emptyList()
             val home = response.map {
                 val formattedTitle = "S${it.seasonNumber}B${it.episodeNumber} - ${it.titleName}"
                 newAnimeSearchResponse(formattedTitle, "${mainUrl}/secure/titles/${it.titleId}?titleId=${it.titleId}", TvType.Anime) { this.posterUrl = fixUrlNull(it.titlePoster) }
             }
             newHomePageResponse(request.name, home)
         } else {
-            val response = app.get("${request.data}&page=${page}&perPage=16", headers = mapOf("x-e-h" to E_H)).parsedSafe<Category>()
+            val response = app.get("${request.data}&page=${page}&perPage=16", headers = mapOf("x-e-h" to E_H), interceptor = interceptor).parsedSafe<Category>()
             val home = response?.pagination?.data?.map { anime ->
                 newAnimeSearchResponse(anime.title, "${mainUrl}/secure/titles/${anime.id}?titleId=${anime.id}", TvType.Anime) { this.posterUrl = fixUrlNull(anime.poster) }
             } ?: listOf()
@@ -42,7 +58,7 @@ class AnimeciX : MainAPI() {
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
-        val response = app.get("${mainUrl}/secure/search/${query}?limit=20").parsedSafe<Search>() ?: return listOf()
+        val response = app.get("${mainUrl}/secure/search/${query}?limit=20", interceptor = interceptor).parsedSafe<Search>() ?: return listOf()
         return response.results.map { anime ->
             newAnimeSearchResponse(anime.title, "${mainUrl}/secure/titles/${anime.id}?titleId=${anime.id}", TvType.Anime) { this.posterUrl = fixUrlNull(anime.poster) }
         }
@@ -52,7 +68,7 @@ class AnimeciX : MainAPI() {
 
     override suspend fun load(url: String): LoadResponse? {
         val headers = mapOf("x-e-h" to E_H, "X-Requested-With" to "fetch")
-        val response = app.get(url, headers = headers).parsedSafe<TitleResponse>() ?: return null
+        val response = app.get(url, headers = headers, interceptor = interceptor).parsedSafe<TitleResponse>() ?: return null
         val episodes = mutableListOf<Episode>()
         val titleId  = url.substringAfter("?titleId=", "")
 
@@ -100,7 +116,7 @@ class AnimeciX : MainAPI() {
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
         // data = https://animecix.tv/secure/videos/<videoId> -> { video: { url: "https://tau-video.xyz/embed/<embedId>" } }
         val headers = mapOf("x-e-h" to E_H, "X-Requested-With" to "fetch")
-        val envelope = app.get(data, headers = headers).parsedSafe<VideoEnvelope>() ?: return false
+        val envelope = app.get(data, headers = headers, interceptor = interceptor).parsedSafe<VideoEnvelope>() ?: return false
         val embedUrl = envelope.video.url ?: return false
 
         // some entries point straight at a file instead of the tau-video embed player

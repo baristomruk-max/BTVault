@@ -17,6 +17,9 @@ import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
 import com.lagradost.cloudstream3.LoadResponse.Companion.addTrailer
 import com.lagradost.cloudstream3.utils.*
+import com.lagradost.cloudstream3.network.CloudflareKiller
+import okhttp3.Interceptor
+import okhttp3.Response
 import java.net.URLEncoder
 import java.security.MessageDigest
 import javax.crypto.Cipher
@@ -24,6 +27,19 @@ import javax.crypto.spec.IvParameterSpec
 import javax.crypto.spec.SecretKeySpec
 
 class IzleAI : MainAPI() {
+    private val cloudflareKiller by lazy { CloudflareKiller() }
+    private val interceptor by lazy { CloudflareInterceptor(cloudflareKiller) }
+
+    class CloudflareInterceptor(private val cloudflareKiller: CloudflareKiller): Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val request = chain.request()
+            val response = chain.proceed(request)
+            if (response.body?.string()?.contains("Just a moment") == true) {
+                return cloudflareKiller.intercept(chain)
+            }
+            return response
+        }
+    }
     override var mainUrl              = "https://selcukflix.com"
     override var name                 = "720PizleAI"
     override val hasMainPage          = true
@@ -91,7 +107,7 @@ class IzleAI : MainAPI() {
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
 
     override suspend fun load(url: String): LoadResponse? {
-        val resp     = app.get(url)
+        val resp     = app.get(url, interceptor = interceptor)
         val html     = resp.text
         val document = resp.document
         val root     = iaiSecure(html)
@@ -150,7 +166,7 @@ class IzleAI : MainAPI() {
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit
     ): Boolean {
-        val html  = app.get(data).text
+        val html  = app.get(data, interceptor = interceptor).text
         val root  = iaiSecure(html) ?: return false
         val nodes = root.get("RelatedResults")?.takeIf { !it.isMissingNode && !it.isNull } ?: return false
 
@@ -194,7 +210,7 @@ class IzleAI : MainAPI() {
             return loadExtractor(link, referer, subtitleCallback, callback)
         }
 
-        val page = app.get(link, referer = referer).text
+        val page = app.get(link, referer = referer, interceptor = interceptor).text
         val playList = IAI_PLAYLIST.find(page)?.groupValues?.get(1) ?: return false
 
         // kaynaklar iki farkli adreste barisiyor (pichive.online / four.pichive.online),
@@ -203,7 +219,7 @@ class IzleAI : MainAPI() {
         if (host.isEmpty()) return false
         val origin = "https://$host"
 
-        val json = app.get("$origin/source2.php?v=${enc(playList)}", referer = link).text
+        val json = app.get("$origin/source2.php?v=${enc(playList)}", referer = link, interceptor = interceptor).text
         val playlist = runCatching { iaiMapper.readTree(json) }.getOrNull()
             ?.path("playlist")?.takeIf { it.isArray } ?: return false
 

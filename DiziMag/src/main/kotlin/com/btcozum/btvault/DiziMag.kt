@@ -34,9 +34,25 @@ import com.lagradost.cloudstream3.utils.loadExtractor
 import com.lagradost.cloudstream3.utils.newExtractorLink
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
+import com.lagradost.cloudstream3.network.CloudflareKiller
+import okhttp3.Interceptor
+import okhttp3.Response
 import java.util.regex.Pattern
 
 class DiziMag : MainAPI() {
+    private val cloudflareKiller by lazy { CloudflareKiller() }
+    private val interceptor by lazy { CloudflareInterceptor(cloudflareKiller) }
+
+    class CloudflareInterceptor(private val cloudflareKiller: CloudflareKiller): Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val request = chain.request()
+            val response = chain.proceed(request)
+            if (response.body?.string()?.contains("Just a moment") == true) {
+                return cloudflareKiller.intercept(chain)
+            }
+            return response
+        }
+    }
     override var mainUrl = "https://dizimag.dev"
     override var name = "DiziMag"
     override val hasMainPage = true
@@ -247,16 +263,16 @@ class DiziMag : MainAPI() {
             "Accept" to "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
             "Referer" to "$mainUrl/"
         )
-        val aa = app.get(mainUrl)
+        val aa = app.get(mainUrl, interceptor = interceptor)
         val ciSession = aa.cookies["ci_session"].toString()
         val document = app.get(
             data, headers = headers, cookies = mapOf(
                 "ci_session" to ciSession
-            )
+            ), interceptor = interceptor
         ).document
         val iframe =
             fixUrlNull(document.selectFirst("div#tv-spoox2 iframe")?.attr("src")) ?: return false
-        val docum = app.get(iframe, headers = headers, referer = "$mainUrl/").document
+        val docum = app.get(iframe, headers = headers, referer = "$mainUrl/", interceptor = interceptor).document
         docum.select("script").forEach { sc ->
             if (sc.toString().contains("bePlayer")) {
                 val pattern = Pattern.compile("bePlayer\\('(.*?)', '(.*?)'\\)")

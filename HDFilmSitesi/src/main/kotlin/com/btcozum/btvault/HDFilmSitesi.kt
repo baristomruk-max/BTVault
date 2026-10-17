@@ -15,6 +15,9 @@ import com.lagradost.cloudstream3.SearchResponse
 import com.lagradost.cloudstream3.SubtitleFile
 import com.lagradost.cloudstream3.TvType
 import com.lagradost.cloudstream3.app
+import com.lagradost.cloudstream3.network.CloudflareKiller
+import okhttp3.Interceptor
+import okhttp3.Response
 import com.lagradost.cloudstream3.fixUrl
 import com.lagradost.cloudstream3.fixUrlNull
 import com.lagradost.cloudstream3.mainPageOf
@@ -34,6 +37,19 @@ import com.lagradost.cloudstream3.utils.newExtractorLink
 import org.jsoup.nodes.Element
 
 class HDFilmSitesi : MainAPI() {
+    private val cloudflareKiller by lazy { CloudflareKiller() }
+    private val interceptor by lazy { CloudflareInterceptor(cloudflareKiller) }
+
+    class CloudflareInterceptor(private val cloudflareKiller: CloudflareKiller): Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val request = chain.request()
+            val response = chain.proceed(request)
+            if (response.body?.string()?.contains("Just a moment") == true) {
+                return cloudflareKiller.intercept(chain)
+            }
+            return response
+        }
+    }
     override var mainUrl = "https://hdfilmsite.net"
     override var name = "HDFilmSitesi"
     override val hasMainPage = true
@@ -63,7 +79,7 @@ class HDFilmSitesi : MainAPI() {
     )
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-        val document = app.get("${request.data}/${page}/").document
+        val document = app.get("${request.data}/${page}/", interceptor = interceptor).document
         val home = document.select("div.movie_box").mapNotNull { it.toMainPageResult() }
 
         return newHomePageResponse(request.name, home)
@@ -82,7 +98,7 @@ class HDFilmSitesi : MainAPI() {
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
-        val document = app.get("${mainUrl}/arama/${query}").document
+        val document = app.get("${mainUrl}/arama/${query}", interceptor = interceptor).document
 
         return document.select("div.movie_box").mapNotNull { it.toMainPageResult() }
     }
@@ -90,7 +106,7 @@ class HDFilmSitesi : MainAPI() {
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
 
     override suspend fun load(url: String): LoadResponse? {
-        val document = app.get(url).document
+        val document = app.get(url, interceptor = interceptor).document
 
         val title =
             document.selectFirst("h1 span")?.text()?.substringBefore(" izle")?.trim() ?: return null
@@ -122,7 +138,7 @@ class HDFilmSitesi : MainAPI() {
                 val value = pdata.component2();
 
                 val iframeData = iframeSkici.iframeCoz(value!!)
-                val iframeLink = app.get(iframeData, referer = "${mainUrl}/").url.toString()
+                val iframeLink = app.get(iframeData, referer = "${mainUrl}/", interceptor = interceptor).url.toString()
 
                 //val sz_num = partNumber.takeIf { it.contains("sezon") }?.substringBefore("sezon")?.toIntOrNull() ?: 1
                 //val ep_num = partName.substringBefore(".")?.trim()?.toIntOrNull() ?: 1
@@ -176,7 +192,7 @@ class HDFilmSitesi : MainAPI() {
     ): Boolean {
         Log.d("HDS", "data -> $data")
         if (data.contains("vidmody")) {
-            val aa = app.get(data, referer = "${mainUrl}/").document
+            val aa = app.get(data, referer = "${mainUrl}/", interceptor = interceptor).document
             val bb = aa.body().selectFirst("script").toString()
                 .substringAfter("var id =").substringBefore(";")
                 .replace("'", "").trim()
@@ -207,7 +223,7 @@ class HDFilmSitesi : MainAPI() {
             )
             loadExtractor(data, subtitleCallback, callback)
         }
-        val document = app.get(data).document
+        val document = app.get(data, interceptor = interceptor).document
         val iframeSkici = IframeKodlayici()
         val pdataMatches = Regex("""pdata\[\'(.*?)'\] = \'(.*?)\';""").findAll(document.html())
         val pdataList = pdataMatches.map { it.destructured }.toList()
@@ -216,7 +232,7 @@ class HDFilmSitesi : MainAPI() {
             val key = pdata.component1()
             val value = pdata.component2()
             val iframeData = iframeSkici.iframeCoz(value!!)
-            val iframeLink = app.get(iframeData, referer = "${mainUrl}/").url.toString()
+            val iframeLink = app.get(iframeData, referer = "${mainUrl}/", interceptor = interceptor).url.toString()
             if (iframeLink.contains("vidmody")) {
                 Log.d("HDS", "iframeLink -> $iframeLink")
                 val aa = app.get(iframeLink, referer = "${mainUrl}/").document

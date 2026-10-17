@@ -6,10 +6,26 @@ package com.btcozum.btvault
 import android.util.Log
 import org.jsoup.nodes.Element
 import com.lagradost.cloudstream3.*
+import com.lagradost.cloudstream3.network.CloudflareKiller
+import okhttp3.Interceptor
+import okhttp3.Response
 import com.lagradost.cloudstream3.utils.*
 import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
 
 class Dizilla : MainAPI() {
+    private val cloudflareKiller by lazy { CloudflareKiller() }
+    private val interceptor by lazy { CloudflareInterceptor(cloudflareKiller) }
+
+    class CloudflareInterceptor(private val cloudflareKiller: CloudflareKiller): Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val request = chain.request()
+            val response = chain.proceed(request)
+            if (response.body?.string()?.contains("Just a moment") == true) {
+                return cloudflareKiller.intercept(chain)
+            }
+            return response
+        }
+    }
     override var mainUrl              = "https://dizilla.now"
     override var name                 = "Dizilla"
     override val hasMainPage          = true
@@ -33,7 +49,7 @@ class Dizilla : MainAPI() {
     )
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-        val document = app.get(request.data).document
+        val document = app.get(request.data, interceptor = interceptor).document
         // Yeni Tailwind temasi: kartlar <li class="hover-border-top"><a href="dizi/slug">
         val home = document.select("a[href*='dizi/']").mapNotNull { it.diziler() }
             .distinctBy { it.url }
@@ -59,7 +75,7 @@ class Dizilla : MainAPI() {
         val epName = this.selectFirst("div.opacity-80")!!.text().replace(". Sezon ", "x").replace(". Bölüm", "")
         val title  = "$name - $epName"
 
-        val epDoc     = app.get(this.attr("href")).document
+        val epDoc     = app.get(this.attr("href"), interceptor = interceptor).document
         val href      = fixUrlNull(epDoc.selectFirst("a.relative")?.attr("href")) ?: return null
         val posterUrl = fixUrlNull(epDoc.selectFirst("img.imgt")?.attr("onerror")?.substringAfter("= '")?.substringBefore("';"))
 
@@ -84,7 +100,7 @@ class Dizilla : MainAPI() {
 
         listOf("${mainUrl}/arsiv", "${mainUrl}/yabanci-dizi-izle", mainUrl).forEach { page ->
             runCatching {
-                val doc = app.get(page).document
+                val doc = app.get(page, interceptor = interceptor).document
                 doc.select("a[href*='dizi/']").forEach { el ->
                     val item = el.diziler() ?: return@forEach
                     val name = item.name?.lowercase() ?: ""
@@ -100,7 +116,7 @@ class Dizilla : MainAPI() {
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
 
     override suspend fun load(url: String): LoadResponse? {
-        val document = app.get(url).document
+        val document = app.get(url, interceptor = interceptor).document
 
         val title       = document.selectFirst("div.page-top h1")?.text()?.trim()
             ?: document.selectFirst("h1")?.text()?.trim()?.removeSuffix(" izle")?.trim()
@@ -134,7 +150,7 @@ class Dizilla : MainAPI() {
 
         val episodeList = mutableListOf<Episode>()
         document.selectXpath("//div[contains(@class, 'gap-2')]/a[contains(@href, '-sezon')]").forEach {
-            val epDoc = app.get(fixUrlNull(it.attr("href")) ?: return@forEach).document
+            val epDoc = app.get(fixUrlNull(it.attr("href")) ?: return@forEach, interceptor = interceptor).document
         
             epDoc.select("div.episodes div.cursor-pointer").forEach ep@ { episodeElement ->
                 val epName        = episodeElement.select("a").last()?.text()?.trim() ?: return@ep
@@ -190,7 +206,7 @@ class Dizilla : MainAPI() {
 
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
         Log.d("DZL", "data » $data")
-        val document = app.get(data).document
+        val document = app.get(data, interceptor = interceptor).document
         val iframes  = mutableSetOf<String>()
 
         val alternatifler = document.select("a[href*='player']")
@@ -215,7 +231,7 @@ class Dizilla : MainAPI() {
             loadExtractor(iframe, "${mainUrl}/", subtitleCallback, callback)
         } else {
             alternatifler.forEach {
-                val playerDoc = app.get(fixUrlNull(it.attr("href")) ?: return@forEach).document
+                val playerDoc = app.get(fixUrlNull(it.attr("href")) ?: return@forEach, interceptor = interceptor).document
                 val iframe    = iframeUrl(playerDoc) ?: return@forEach
 
                 if (iframe in iframes) { return@forEach }

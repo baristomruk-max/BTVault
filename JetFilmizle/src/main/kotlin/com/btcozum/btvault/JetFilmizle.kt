@@ -5,6 +5,9 @@ package com.btcozum.btvault
 import org.jsoup.nodes.Element
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
+import com.lagradost.cloudstream3.network.CloudflareKiller
+import okhttp3.Interceptor
+import okhttp3.Response
 import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
 
 /**
@@ -17,6 +20,20 @@ import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
  * Eski jetfilmizle.io adresi artik yalnizca tanitim sayfasi; filmara.php 405 donuyor.
  */
 class JetFilmizle : MainAPI() {
+    // ! CloudFlare v2
+    private val cloudflareKiller by lazy { CloudflareKiller() }
+    private val interceptor by lazy { CloudflareInterceptor(cloudflareKiller) }
+
+    class CloudflareInterceptor(private val cloudflareKiller: CloudflareKiller): Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val request = chain.request()
+            val response = chain.proceed(request)
+            if (response.body?.string()?.contains("Just a moment") == true) {
+                return cloudflareKiller.intercept(chain)
+            }
+            return response
+        }
+    }
     override var mainUrl              = "https://jetfilmizle.now"
     override var name                 = "JetFilmizle"
     override val hasMainPage          = true
@@ -34,7 +51,7 @@ class JetFilmizle : MainAPI() {
     )
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-        val document = app.get("${request.data}${page}").document
+        val document = app.get("${request.data}${page}", interceptor = interceptor).document
         val home     = document.select("div.film-card").mapNotNull { it.toSearchResult() }
 
         return newHomePageResponse(request.name, home)
@@ -59,7 +76,7 @@ class JetFilmizle : MainAPI() {
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
-        val document = app.get("${mainUrl}/arama?q=${query.replace(" ", "+")}").document
+        val document = app.get("${mainUrl}/arama?q=${query.replace(" ", "+")}", interceptor = interceptor).document
 
         return document.select("div.film-card").mapNotNull { it.toSearchResult() }
     }
@@ -67,7 +84,7 @@ class JetFilmizle : MainAPI() {
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
 
     override suspend fun load(url: String): LoadResponse? {
-        val document = app.get(url).document
+        val document = app.get(url, interceptor = interceptor).document
 
         val player = document.selectFirst("#active-player")
         val title  = player?.attr("data-film-title")?.trim()?.takeIf { it.isNotBlank() }
@@ -138,7 +155,7 @@ class JetFilmizle : MainAPI() {
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit
     ): Boolean {
-        val document = app.get(data).document
+        val document = app.get(data, interceptor = interceptor).document
         val filmId   = document.selectFirst("input[name=film_id]")?.attr("value")?.trim().orEmpty()
         if (filmId.isBlank()) return false
 
@@ -180,7 +197,7 @@ class JetFilmizle : MainAPI() {
     private suspend fun resolveEmbed(embed: String, referer: String, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Int {
         // videopark.top -> worker uzerinden HLS/mp4
         if (embed.contains("videopark.top")) {
-            val page = app.get(embed, referer = referer).text
+            val page = app.get(embed, referer = referer, interceptor = interceptor).text
             // sayfa artik WORKER_BASE degil WORKER_URL kullaniyor
             val worker = Regex("""WORKER_(?:BASE|URL)\s*=\s*["']([^"']+)["']""").find(page)?.groupValues?.get(1)
                 ?: return 0
@@ -188,7 +205,7 @@ class JetFilmizle : MainAPI() {
             val videoId = Regex("""VIDEO_ID\s*=\s*["']?(\d+)["']?""").find(page)?.groupValues?.get(1) ?: return 0
             val base    = worker.trimEnd('/')
 
-            val info = app.get("$base/api/video?id=$videoId", referer = embed).text
+            val info = app.get("$base/api/video?id=$videoId", referer = embed, interceptor = interceptor).text
 
             var emitted = 0
 

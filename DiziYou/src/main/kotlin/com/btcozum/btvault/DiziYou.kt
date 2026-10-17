@@ -7,10 +7,26 @@ import android.util.Log
 import org.jsoup.nodes.Element
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
+import com.lagradost.cloudstream3.network.CloudflareKiller
+import okhttp3.Interceptor
+import okhttp3.Response
 import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
 import com.lagradost.cloudstream3.LoadResponse.Companion.addTrailer
 
 class DiziYou : MainAPI() {
+    private val cloudflareKiller by lazy { CloudflareKiller() }
+    private val interceptor by lazy { CloudflareInterceptor(cloudflareKiller) }
+
+    class CloudflareInterceptor(private val cloudflareKiller: CloudflareKiller): Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val request = chain.request()
+            val response = chain.proceed(request)
+            if (response.body?.string()?.contains("Just a moment") == true) {
+                return cloudflareKiller.intercept(chain)
+            }
+            return response
+        }
+    }
     override var mainUrl              = "https://www.diziyou.one"
     override var name                 = "DiziYou"
     override val hasMainPage          = true
@@ -38,7 +54,7 @@ class DiziYou : MainAPI() {
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val url      = request.data.replace("SAYFA", "$page")
-        val document = app.get(url).document
+        val document = app.get(url, interceptor = interceptor).document
         val home     = document.select("div.single-item").mapNotNull { it.toMainPageResult() }
 
         return newHomePageResponse(request.name, home)
@@ -53,7 +69,7 @@ class DiziYou : MainAPI() {
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
-        val document = app.get("${mainUrl}/?s=${query}").document
+        val document = app.get("${mainUrl}/?s=${query}", interceptor = interceptor).document
 
         return document.select("div.incontent div#list-series").mapNotNull { it.toMainPageResult() }
     }
@@ -61,7 +77,7 @@ class DiziYou : MainAPI() {
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
 
     override suspend fun load(url: String): LoadResponse? {
-        val document = app.get(url).document
+        val document = app.get(url, interceptor = interceptor).document
 
         val title           = document.selectFirst("h1")?.text()?.trim() ?: return null
         val poster          = fixUrlNull(document.selectFirst("div.category_image img")?.attr("src"))
@@ -98,7 +114,7 @@ class DiziYou : MainAPI() {
 
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
         Log.d("DZY", "data » $data")
-        val document = app.get(data).document
+        val document = app.get(data, interceptor = interceptor).document
 
         val itemId     = document.selectFirst("iframe#diziyouPlayer")?.attr("src")?.split("/")?.lastOrNull()?.substringBefore(".html") ?: return false
         Log.d("DZY", "itemId » $itemId")

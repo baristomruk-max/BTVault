@@ -30,11 +30,27 @@ import com.lagradost.cloudstream3.newMovieSearchResponse
 import com.lagradost.cloudstream3.newTvSeriesLoadResponse
 import com.lagradost.cloudstream3.newTvSeriesSearchResponse
 import com.lagradost.cloudstream3.utils.ExtractorLink
+import com.lagradost.cloudstream3.network.CloudflareKiller
+import okhttp3.Interceptor
+import okhttp3.Response
 import com.lagradost.cloudstream3.utils.loadExtractor
 import org.jsoup.Jsoup
 import java.util.Calendar
 
 class AsyaWatch : MainAPI() {
+    private val cloudflareKiller by lazy { CloudflareKiller() }
+    private val interceptor by lazy { CloudflareInterceptor(cloudflareKiller) }
+
+    class CloudflareInterceptor(private val cloudflareKiller: CloudflareKiller): Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val request = chain.request()
+            val response = chain.proceed(request)
+            if (response.body?.string()?.contains("Just a moment") == true) {
+                return cloudflareKiller.intercept(chain)
+            }
+            return response
+        }
+    }
     override var mainUrl = "https://asyawatch.com"
     override var name = "AsyaWatch"
     override val hasMainPage = true
@@ -202,7 +218,7 @@ class AsyaWatch : MainAPI() {
     override suspend fun load(url: String): LoadResponse {
         val objectMapper = ObjectMapper().registerModule(KotlinModule.Builder().build())
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-        val encodedDoc = app.get(url).document
+        val encodedDoc = app.get(url, interceptor = interceptor).document
         val script = encodedDoc.selectFirst("script#__NEXT_DATA__")?.data()
         val secureData =
             objectMapper.readTree(script).get("props").get("pageProps").get("secureData")
@@ -300,7 +316,7 @@ class AsyaWatch : MainAPI() {
         Log.d("SFX", "data » $data")
         val objectMapper = ObjectMapper().registerModule(KotlinModule.Builder().build())
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-        val encodedDoc = app.get(data).document
+        val encodedDoc = app.get(data, interceptor = interceptor).document
         val script = encodedDoc.selectFirst("script#__NEXT_DATA__")?.data()
         val secureData =
             objectMapper.readTree(script).get("props").get("pageProps").get("secureData")

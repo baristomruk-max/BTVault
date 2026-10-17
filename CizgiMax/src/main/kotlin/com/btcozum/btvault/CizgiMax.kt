@@ -9,6 +9,9 @@ import org.jsoup.nodes.Element
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
 import com.lagradost.cloudstream3.utils.AppUtils.tryParseJson
+import com.lagradost.cloudstream3.network.CloudflareKiller
+import okhttp3.Interceptor
+import okhttp3.Response
 import java.net.URLEncoder
 
 data class CZServer(
@@ -38,6 +41,20 @@ data class CZCaption(
 )
 
 class CizgiMax : MainAPI() {
+    // ! CloudFlare v2
+    private val cloudflareKiller by lazy { CloudflareKiller() }
+    private val interceptor by lazy { CloudflareInterceptor(cloudflareKiller) }
+
+    class CloudflareInterceptor(private val cloudflareKiller: CloudflareKiller): Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val request = chain.request()
+            val response = chain.proceed(request)
+            if (response.body?.string()?.contains("Just a moment") == true) {
+                return cloudflareKiller.intercept(chain)
+            }
+            return response
+        }
+    }
     override var mainUrl              = "https://cizgimax.online"
     override var name                 = "CizgiMax"
     override val hasMainPage          = true
@@ -58,7 +75,7 @@ class CizgiMax : MainAPI() {
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val sep  = if (request.data.contains("?")) "&" else "?"
-        val home = app.get("${mainUrl}${request.data}${sep}page=$page")
+        val home = app.get("${mainUrl}${request.data}${sep}page=$page", interceptor = interceptor)
             .document
             .select("div.film-item")
             .mapNotNull { it.toSearchResult() }
@@ -85,7 +102,7 @@ class CizgiMax : MainAPI() {
 
     override suspend fun search(query: String): List<SearchResponse> {
         val encoded = URLEncoder.encode(query, "UTF-8")
-        return app.get("${mainUrl}/ara/?q=$encoded")
+        return app.get("${mainUrl}/ara/?q=$encoded", interceptor = interceptor)
             .document
             .select("div.film-list div.film-item")
             .mapNotNull { it.toSearchResult() }
@@ -94,7 +111,7 @@ class CizgiMax : MainAPI() {
     override suspend fun quickSearch(query: String): List<SearchResponse> = search(query)
 
     override suspend fun load(url: String): LoadResponse? {
-        val document = app.get(url).document
+        val document = app.get(url, interceptor = interceptor).document
 
         val title       = document.selectFirst("div.anime-head-titles h1")?.text()?.trim()
             ?.ifBlank { null }
@@ -144,7 +161,7 @@ class CizgiMax : MainAPI() {
         subtitleCallback: (SubtitleFile) -> Unit,
         callback: (ExtractorLink) -> Unit,
     ): Boolean {
-        val html = app.get(data).text
+        val html = app.get(data, interceptor = interceptor).text
 
         // Sunucu listesi base64 gömülü: var servers = JSON.parse(atob("..."))
         val servers = Regex("""var\s+servers\s*=\s*JSON\.parse\(atob\("([^"]+)"\)\)""")
@@ -157,7 +174,7 @@ class CizgiMax : MainAPI() {
         for (server in servers) {
             val streamUrl = server.streamUrl ?: continue
             val resolve   = runCatching {
-                app.get(fixUrl(streamUrl), referer = data).parsedSafe<CZStream>()
+                app.get(fixUrl(streamUrl), referer = data, interceptor = interceptor).parsedSafe<CZStream>()
             }.getOrNull()
 
             val qualities = resolve?.urls.orEmpty().filter { !it.url.isNullOrBlank() }
