@@ -13,6 +13,11 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 
 class HDFilmCehennemi : MainAPI() {
+    private companion object {
+        // OkHttp varsayilan UA'si Cloudflare tarafindan 403 ile bloklaniyor
+        const val USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
+
     override var mainUrl              = "https://www.hdfilmcehennemi.nl"
     override var name                 = "HDFilmCehennemi"
     override val hasMainPage          = true
@@ -57,7 +62,7 @@ class HDFilmCehennemi : MainAPI() {
     )
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-        val document = app.get(request.data, interceptor = interceptor).document
+        val document = app.get(request.data, headers = mapOf("User-Agent" to USER_AGENT), interceptor = interceptor).document
         val home     = document.select("a.poster").mapNotNull { it.toSearchResult() }.distinctBy { it.url }
         return newHomePageResponse(request.name, home)
     }
@@ -77,7 +82,8 @@ class HDFilmCehennemi : MainAPI() {
     override suspend fun search(query: String): List<SearchResponse> {
         val response = app.get(
             "${mainUrl}/search?q=${query}",
-            headers = mapOf("X-Requested-With" to "fetch")
+            headers = mapOf("X-Requested-With" to "fetch", "User-Agent" to USER_AGENT),
+            interceptor = interceptor
         ).parsedSafe<Results>() ?: return emptyList()
         val searchResults = mutableListOf<SearchResponse>()
         response.results.forEach { resultHtml ->
@@ -93,7 +99,7 @@ class HDFilmCehennemi : MainAPI() {
     }
 
     override suspend fun load(url: String): LoadResponse? {
-        val document = app.get(url, interceptor = interceptor).document
+        val document = app.get(url, headers = mapOf("User-Agent" to USER_AGENT), interceptor = interceptor).document
         val title       = document.selectFirst("h1.section-title")?.text()?.substringBefore(" izle") ?: return null
         val poster      = fixUrlNull(document.select("aside.post-info-poster img.lazyload").lastOrNull()?.attr("data-src"))
         val tags        = document.select("div.post-info-genres a").map { it.text() }
@@ -228,7 +234,13 @@ class HDFilmCehennemi : MainAPI() {
     }
 
     private suspend fun invokeLocalSource(source: String, url: String, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit) {
-        val script   = app.get(url, referer = "${mainUrl}/").document.select("script").find { it.data().contains("sources:") }?.data() ?: return
+        // Cloudflare, okhttp UA'sini "Just a moment..." ile blokluyor: tarayici UA'si sart
+        val script   = app.get(
+            url,
+            referer = "${mainUrl}/",
+            headers = mapOf("User-Agent" to USER_AGENT),
+            interceptor = interceptor
+        ).document.select("script").find { it.data().contains("sources:") }?.data() ?: return
         val videoUrl = decodeRapidrame(getAndUnpack(script)) ?: return
         val subData  = script.substringAfter("tracks: [").substringBefore("]")
 
@@ -250,7 +262,7 @@ class HDFilmCehennemi : MainAPI() {
     }
 
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
-        val document = app.get(data, interceptor = interceptor).document
+        val document = app.get(data, headers = mapOf("User-Agent" to USER_AGENT), interceptor = interceptor).document
         document.select("div.alternative-links").map { element ->
             element to element.attr("data-lang").uppercase()
         }.forEach { (element, langCode) ->
@@ -259,7 +271,11 @@ class HDFilmCehennemi : MainAPI() {
             }.forEach { (source, videoID) ->
                 val apiGet = app.get(
                     "${mainUrl}/video/$videoID/", interceptor = interceptor,
-                    headers = mapOf("Content-Type" to "application/json", "X-Requested-With" to "fetch"),
+                    headers = mapOf(
+                        "Content-Type" to "application/json",
+                        "X-Requested-With" to "fetch",
+                        "User-Agent" to USER_AGENT
+                    ),
                     referer = data
                 ).text
                 val match = Regex("""data-src=\\"([^"]+)""").find(apiGet)

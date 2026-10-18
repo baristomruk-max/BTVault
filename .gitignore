@@ -24,3 +24,8 @@ scripts/*.csv
 
 scripts/audit-html/
 scripts/fm-verify/
+scripts/audit-2026-10-18/
+scripts/audit-final/
+scripts/play-audit-2026-10-18/
+scripts/play-audit-test/
+out-builds-*/

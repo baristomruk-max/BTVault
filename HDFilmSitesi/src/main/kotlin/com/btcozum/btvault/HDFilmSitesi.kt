@@ -2,6 +2,7 @@ package com.btcozum.btvault
 
 import android.util.Log
 import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.lagradost.cloudstream3.Actor
 import com.lagradost.cloudstream3.Episode
 import com.lagradost.cloudstream3.HomePageResponse
@@ -37,6 +38,8 @@ import com.lagradost.cloudstream3.utils.newExtractorLink
 import org.jsoup.nodes.Element
 
 class HDFilmSitesi : MainAPI() {
+    private val BEPEAK_UA =
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
     private val cloudflareKiller by lazy { CloudflareKiller() }
     private val interceptor by lazy { CloudflareInterceptor(cloudflareKiller) }
 
@@ -191,6 +194,66 @@ class HDFilmSitesi : MainAPI() {
         callback: (ExtractorLink) -> Unit
     ): Boolean {
         Log.d("HDS", "data -> $data")
+
+        // --- vidmixi / bepeak player ---
+        val detailHtml = app.get(data, interceptor = interceptor).document.html().replace("\\/", "/")
+        val vidmixiEmbeds = Regex("""https://vidmixi\.com/embed/[A-Za-z0-9]+""")
+            .findAll(detailHtml).map { it.value }.distinct().toList()
+        if (vidmixiEmbeds.isNotEmpty()) {
+            val refererHost = Regex(""""embedUrl":"https?://([^/"]+)""")
+                .find(detailHtml)?.groupValues?.get(1)
+                ?: mainUrl.substringAfter("://").substringBefore("/")
+            val bepeakReferer = "https://$refererHost/"
+            var emitted = false
+            for (embed in vidmixiEmbeds) {
+                val embedHtml = runCatching {
+                    app.get(
+                        embed,
+                        referer = bepeakReferer,
+                        headers = mapOf("User-Agent" to BEPEAK_UA, "Accept" to "*/*"),
+                        interceptor = interceptor
+                    ).text
+                }.getOrNull() ?: continue
+                val match = Regex("""bePlayer\('(.*?)',\s*'(.*?)'\)""").find(embedHtml) ?: continue
+                val key = match.groupValues[1]
+                val cipherJson = match.groupValues[2].replace("\\/", "/")
+                val cipher = runCatching {
+                    ObjectMapper().readValue(cipherJson, BepeakCipher::class.java)
+                }.getOrNull() ?: continue
+                val decrypted = runCatching {
+                    BepeakCrypto.decrypt(key, cipher.ct, cipher.iv, cipher.s)
+                }.getOrNull() ?: continue
+                val json = runCatching {
+                    ObjectMapper().readValue(decrypted, BepeakData::class.java)
+                }.getOrNull() ?: continue
+                val video = json.videoLocation ?: continue
+                val playReferer = json.referer?.let { "https://$it/" } ?: bepeakReferer
+                callback.invoke(
+                    newExtractorLink(
+                        source = this.name,
+                        name = this.name,
+                        url = video,
+                        ExtractorLinkType.M3U8
+                    ) {
+                        this.referer = playReferer
+                        this.headers = mapOf("Referer" to playReferer, "User-Agent" to BEPEAK_UA)
+                        this.quality = Qualities.Unknown.value
+                    }
+                )
+                json.strSubtitles?.forEach { sub ->
+                    val file = sub.file
+                    if (!file.isNullOrBlank()) {
+                        val subUrl = if (file.startsWith("http")) file else "https://vidmixi.com$file"
+                        subtitleCallback.invoke(
+                            SubtitleFile(sub.label ?: "Unknown", subUrl)
+                        )
+                    }
+                }
+                emitted = true
+            }
+            if (emitted) return true
+        }
+
         if (data.contains("vidmody")) {
             val aa = app.get(data, referer = "${mainUrl}/", interceptor = interceptor).document
             val bb = aa.body().selectFirst("script").toString()

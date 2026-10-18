@@ -10,7 +10,8 @@ import com.lagradost.cloudstream3.utils.*
 import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
 
 class DiziMom : MainAPI() {
-    override var mainUrl              = "https://www.dizimom.help"
+    // Site 2026-10 itibariyla dizimom.help -> dizidad.com adresine tasindi
+    override var mainUrl              = "https://www.dizidad.com"
     override var name                 = "DiziMom"
     override val hasMainPage          = true
     override var lang                 = "tr"
