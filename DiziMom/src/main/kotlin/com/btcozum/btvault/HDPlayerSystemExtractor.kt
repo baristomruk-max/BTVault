@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 open class HDPlayerSystem : ExtractorApi() {
     override val name            = "HDPlayerSystem"
-    override val mainUrl         = "https://hdplayersystem.live"
+    override val mainUrl         = "https://hdplayersystem.com"
     override val requiresReferer = true
 
     override suspend fun getUrl(url: String, referer: String?, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit) {
@@ -20,7 +20,9 @@ open class HDPlayerSystem : ExtractorApi() {
         } else {
             url.substringAfter("?data=")
         }
-        val postUrl = "${mainUrl}/player/index.php?data=${vidId}&do=getVideo"
+        // Site bazen .com bazen .live kullaniyor; istek atilan host'u URL'den turet.
+        val playerBase = Regex("""https?://[^/]*hdplayersystem\.[a-z]+""").find(url)?.value ?: mainUrl
+        val postUrl = "$playerBase/player/index.php?data=${vidId}&do=getVideo"
         Log.d("Kekik_${this.name}", "postUrl » $postUrl")
 
         val response = app.post(

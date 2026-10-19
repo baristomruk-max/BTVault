@@ -55,7 +55,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **43 eklenti - hepsi aktif.**
+> **40 eklenti - hepsi aktif.**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 
@@ -75,7 +75,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>📺 <strong>DDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (ddizi.im, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>Dizilla</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizilla.now, v16 - Tailwind/Angular tema entegrasyonu)</td></tr>
   <tr><td>📺 <strong>DiziMag</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizimag.dev, yeni: nikstream)</td></tr>
-  <tr><td>📺 <strong>DiziMom</strong></td><td>Yerli + Yabanci Dizi</td><td>✅ Aktif (dizimom.help, v12 - yeni tema uyumu)</td></tr>
+  <tr><td>📺 <strong>DiziMom</strong></td><td>Yerli + Yabanci Dizi</td><td>✅ Aktif (dizidad.com, v14 - hdplayersystem.com duzeltmesi)</td></tr>
   <tr><td>📺 <strong>DiziPal</strong></td><td>Dizi & Film</td><td>✅ Aktif (dizipal3008.com, filmvedizi temasi)</td></tr>
   <tr><td>📺 <strong>DiziYou</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (diziyou.one)</td></tr>
   <tr><td>📡 <strong>DMax</strong></td><td>Belgesel & TV</td><td>✅ Aktif (dmax.com.tr, yeni: nikstream)</td></tr>
@@ -86,10 +86,10 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>🎬 <strong>FullHDFilmizlesene</strong></td><td>Film</td><td>✅ Aktif (fullhdfilmizlesene.now, v5 - kategori adresleri düzeltildi)</td></tr>
   <tr><td>🎬 <strong>FullHDFilmIzlede</strong></td><td>Film</td><td>✅ Aktif (fullhdfilmizlede.net, yeni: nikstream)</td></tr>
   <tr><td>🔞 <strong>FullPorner</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
-  <tr><td>🎬 <strong>HDFilmCehennemi</strong></td><td>Film & Dizi</td><td>✅ Aktif (v18 - degistirilmedi, calisiyor)</td></tr>
+  <tr><td>🎬 <strong>HDFilmCehennemi</strong></td><td>Film & Dizi</td><td>✅ Aktif (v19 - tarayici basliklari eklendi)</td></tr>
   <tr><td>🎬 <strong>HDFilmCehennemi2</strong></td><td>Film & Dizi</td><td>✅ Aktif (hdfilmcehennemi2.site, yeni: nikstream)</td></tr>
   <tr><td>🎬 <strong>HDFilmIzle</strong></td><td>Film & Dizi</td><td>✅ Aktif (hdfilmizle.to, yeni: nikstream)</td></tr>
-  <tr><td>🎬 <strong>HDFilmSitesi</strong></td><td>Film</td><td>✅ Aktif (hdfilmsite.net, yeni: nikstream)</td></tr>
+  <tr><td>🎬 <strong>HDFilmSitesi</strong></td><td>Film</td><td>✅ Aktif (hdfilmsite.net -> dizifilmizle.to, vidmixi/bepeak destegi)</td></tr>
   <tr><td>🔞 <strong>HQPorner</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
   <tr><td>🎬 <strong>IzleAI</strong></td><td>Film</td><td>✅ Aktif</td></tr>
   <tr><td>🎬 <strong>JetFilmizle</strong></td><td>Film</td><td>✅ Aktif (videopark.top worker API entegresi ile v20)</td></tr>
@@ -100,15 +100,51 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>🎬 <strong>RareFilmm</strong></td><td>Film</td><td>✅ Aktif</td></tr>
   <tr><td>📺 <strong>SezonlukDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (sezonlukdizi.cc, v2 - StreamRubyExtractor eklentisi)</td></tr>
   <tr><td>📺 <strong>TLC</strong></td><td>Dizi & Belgesel</td><td>✅ Aktif (tlctv.com.tr, yeni: nikstream)</td></tr>
-  <tr><td>📺 <strong>Tafdi</strong></td><td>Film</td><td>✅ Aktif (tafdi.net, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>TvDiziler</strong></td><td>Yerli Dizi</td><td>✅ Aktif (tvdiziler.cc, yeni: nikstream)</td></tr>
-  <tr><td>🎬 <strong>WFilmIzle</strong></td><td>Film</td><td>✅ Aktif (wfilmizle.my, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>YabanciDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (yabancidizi.so, yeni: nikstream)</td></tr>
   <tr><td>📡 <strong>vavooSpor</strong></td><td>Canli Spor TV</td><td>✅ Aktif (M3U playlist, yeni: nikstream)</td></tr>
-  <tr><td>🎬 <strong>XPrime</strong></td><td>Film</td><td>✅ Aktif (TMDB API, yeni: nikstream)</td></tr>
   <tr><td>🔞 <strong>xHamster</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
   <tr><td>▶️ <strong>YouTube</strong></td><td>Video</td><td>✅ Aktif (Invidious, otomatik instance)</td></tr>
 </table>
+
+---
+
+## ISP DNS Engeli ve Cozum
+
+Turkiye'deki bazi internet servis saglayicilari (orn. Turk Telekom) asagidaki alan adlarini
+DNS seviyesinde `195.175.254.2` (Engelli Web) adresine yonlendiriyor. Bu durumda eklenti
+"Baglanti kurulamadi" veya "kaynak bulunamadi" verir; site aslinda canlidir.
+
+**Etkilenen eklentiler:** DiziMag, DiziPal, FullHDFilmIzlede, FullPorner, HQPorner, IzleAI,
+PornHub, SpankBang, TvDiziler, UncutMaza, xHamster, YabanciDizi.
+
+**Cozum:** Telefon/box DNS'ini `8.8.8.8` + `1.1.1.1` yapin veya bir VPN kullanin.
+Google DNS ile yapilan testte bu adreslerin hepsi **HTTP 200** dondu; yani eklentiler
+calisiyor, engel ISP'nin kendi DNS'inde.
+
+**Google DNS ile de acilmayan (kapali) eklentiler:** FullHDFilm (`fullhdfilm.site`),
+RecTV (`b.prectv38.sbs`), SinemaCX (`www.sinema.cx`). Bunlarin alan adi artik yok.
+
+---
+
+## Son Guncellemeler (19.10.2026)
+
+- **Tek tek tarayici denetimi (19.10.2026):** Tum eklentilerin ana sayfa + detay + oynatici
+  zinciri tarayici ve Google DNS uzerinden kontrol edildi.
+  - **HDFilmSitesi**: `hdfilmsite.net` artik `dizifilmizle.to`'ya yonlendiriyor; oynatici
+    `vidmixi.com/embed/<hash>` + `bePlayer()` AES-CBC sifrelemesine gecmis. Yeni
+    `BepeakCrypto` / `BepeakModels` + `vidmixi` cozucusu eklendi.
+  - **DiziYou**: `storage.diziyou.one/episodes/<id>/play.m3u8` -> **200 #EXTM3U** (calisiyor).
+  - **FilmMakinesi**: `closeload` + `decodePayload` -> **200 #EXTM3U** (calisiyor).
+  - **HDFilmCehennemi**: `/video/<id>/` -> `playerr/<token>/` -> kaynak (calisiyor).
+  - **DiziBox**: `player/king/king.php` -> `dbx.molystream.org/embed/sheila/<id>` -> **200 #EXTM3U**.
+  - **Dizilla**: `#playerLsDizilla iframe` -> `sn.hotlinger.com` -> `m.php` -> **200 #EXTM3U**.
+  - **DiziMom (v14)**: canli bolumlerde oynatici `hdplayersystem.live`'dan `hdplayersystem.com`'a
+    tasinmis; eski host "Player domain is does not match." donuyordu. Extractor hem `.com`
+    hem `.live` adresini URL'den turetecek sekilde duzeltildi (`securedLink` -> **200 #EXTM3U**).
+- **Kaldirilan eklentiler (site kapali):** Tafdi (`tafdi.net` park/blog oldu),
+  WFilmIzle (`wfilmizle.my` detay linkleri olu `wfilmizle.vip`'e gidiyor),
+  XPrime (`backend.xprime.tv` DNS'te yok).
 
 ---
 
