@@ -203,9 +203,8 @@ class Dizipod : MainAPI() {
             headers = mapOf("X-Requested-With" to "XMLHttpRequest")
         ).text
 
-        val embedId = Regex("embed\\\\?/([0-9]+)").find(playerResponse)
-            ?.groupValues?.get(1) ?: return false
-        val embedUrl = "https://player.dizipod.com/embed/$embedId.mp4"
+        val embedUrl = Regex("https://player\\.dizipod\\.com/embed/[^\"'\\s<]+")
+            .find(playerResponse.replace("\\/", "/"))?.value ?: return false
 
         val embedDocument = app.get(embedUrl, referer = "$mainUrl/").document
         val packedScript = embedDocument.select("script")
