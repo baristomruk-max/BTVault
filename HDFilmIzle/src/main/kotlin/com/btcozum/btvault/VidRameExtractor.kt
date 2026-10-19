@@ -68,6 +68,35 @@ open class VidRameExtractor : ExtractorApi() {
         val script = document.select("script").find { it.data().contains("sources:") }?.data() ?: ""
         Log.d("VidEx", "Script: $script")
 
+        // Yeni format (2026): file: (function(d,k){...})([...],"key") - satir ici XOR.
+        // Eski EE.dd("...") cozumune ek olarak once bunu dene.
+        val xor = Regex("""file:\s*\(function\(d,\s*k\)\{[^}]*\}\)\(\s*\[([0-9,\s]+)\]\s*,\s*["']([^"']+)["']\s*\)""").find(script)
+        if (xor != null) {
+            val bytes = xor.groupValues[1].split(",").mapNotNull { it.trim().toIntOrNull() }
+            val key = xor.groupValues[2]
+            val sb = StringBuilder()
+            for (i in bytes.indices) {
+                val ch = bytes[i] xor key[i % key.length].code xor ((i * 17 + 13) and 255)
+                sb.append(ch.toChar())
+            }
+            val link = sb.toString()
+            Log.d("VidEx", "XOR m3u8: $link")
+            if (link.startsWith("http")) {
+                callback.invoke(
+                    newExtractorLink(
+                        source = this.name,
+                        name = this.name,
+                        url = link,
+                        ExtractorLinkType.M3U8
+                    ) {
+                        this.referer = "$mainUrl/"
+                        this.quality = Qualities.Unknown.value
+                    }
+                )
+                return
+            }
+        }
+
 
         val regex = """("file": )EE\.dd\(".*?"\)""".toRegex()
         val videoData = script.substringAfter("sources: [")

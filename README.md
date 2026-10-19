@@ -88,7 +88,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>🔞 <strong>FullPorner</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
   <tr><td>🎬 <strong>HDFilmCehennemi</strong></td><td>Film & Dizi</td><td>✅ Aktif (v19 - tarayici basliklari eklendi)</td></tr>
   <tr><td>🎬 <strong>HDFilmCehennemi2</strong></td><td>Film & Dizi</td><td>✅ Aktif (hdfilmcehennemi2.site, yeni: nikstream)</td></tr>
-  <tr><td>🎬 <strong>HDFilmIzle</strong></td><td>Film & Dizi</td><td>✅ Aktif (hdfilmizle.to, yeni: nikstream)</td></tr>
+  <tr><td>?? <strong>HDFilmIzle</strong></td><td>Film & Dizi</td><td>? Aktif (hdfilmizle.to, v2 - Vidrame XOR cozucusu)</td></tr>
   <tr><td>🎬 <strong>HDFilmSitesi</strong></td><td>Film</td><td>✅ Aktif (hdfilmsite.net -> dizifilmizle.to, vidmixi/bepeak destegi)</td></tr>
   <tr><td>🔞 <strong>HQPorner</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
   <tr><td>🎬 <strong>IzleAI</strong></td><td>Film</td><td>✅ Aktif</td></tr>
@@ -139,6 +139,9 @@ RecTV (`b.prectv38.sbs`), SinemaCX (`www.sinema.cx`). Bunlarin alan adi artik yo
   - **HDFilmCehennemi**: `/video/<id>/` -> `playerr/<token>/` -> kaynak (calisiyor).
   - **DiziBox**: `player/king/king.php` -> `dbx.molystream.org/embed/sheila/<id>` -> **200 #EXTM3U**.
   - **Dizilla**: `#playerLsDizilla iframe` -> `sn.hotlinger.com` -> `m.php` -> **200 #EXTM3U**.
+  - **HDFilmIzle (v2)**: Vidrame oynaticisi `EE.dd("...")` yerine satir ici XOR fonksiyonuna
+    (`file: (function(d,k){...})([...],"key")`) gecmis; `VidRameExtractor` yeni formati da
+    cozecek sekilde guncellendi (mevcut `data-src` iframe'i gercek DOM'da, secici dogru).
   - **DiziMom (v14)**: canli bolumlerde oynatici `hdplayersystem.live`'dan `hdplayersystem.com`'a
     tasinmis; eski host "Player domain is does not match." donuyordu. Extractor hem `.com`
     hem `.live` adresini URL'den turetecek sekilde duzeltildi (`securedLink` -> **200 #EXTM3U**).
