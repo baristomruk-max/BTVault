@@ -1,9 +1,9 @@
-version = 4
+version = 5
 
 cloudstream {
     authors     = listOf("BTcozum", "keyiflerolsun")
     language    = "tr"
-    description = "Canlı TV"
+    description = "Canli TV - iptv-org TR kanal listesi"
 
     /**
      * Status int as the following:
@@ -12,7 +12,7 @@ cloudstream {
      * 2: Slow
      * 3: Beta only
     **/
-    status  = 0 // will be 3 if unspecified
+    status  = 1
     tvTypes = listOf("Live")
-    iconUrl = "https://www.google.com/s2/favicons?domain=tr.canlitv.team&sz=%size%"
+    iconUrl = "https://www.google.com/s2/favicons?domain=iptv-org.github.io&sz=%size%"
 }

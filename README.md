@@ -55,7 +55,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **40 eklenti - hepsi aktif.**
+> **42 eklenti - hepsi aktif.**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 
@@ -69,6 +69,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>🎭 <strong>AnimeciX</strong></td><td>Anime</td><td>✅ Aktif</td></tr>
   <tr><td>🌸 <strong>AsyaWatch</strong></td><td>Asya Dizi & Film</td><td>✅ Aktif (asyawatch.com, yeni: nikstream)</td></tr>
   <tr><td>🌍 <strong>BelgeselX</strong></td><td>Belgesel</td><td>✅ Aktif</td></tr>
+  <tr><td>📡 <strong>CanliTV</strong></td><td>Canli TV</td><td>✅ Aktif (iptv-org TR listesi + 2 yedek ayna)</td></tr>
   <tr><td>🧸 <strong>CizgiMax</strong></td><td>Cizgi Film</td><td>✅ Aktif (yeni tema guncellendi)</td></tr>
   <tr><td>📺 <strong>DiziBox</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizibox.live, v17 - tarayici basliklari eklendi)</td></tr>
   <tr><td>📺 <strong>DiziGom</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizigom.news, yeni: nikstream)</td></tr>
@@ -77,6 +78,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>📺 <strong>DiziMag</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizimag.dev, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>DiziMom</strong></td><td>Yerli + Yabanci Dizi</td><td>✅ Aktif (dizidad.com, v14 - hdplayersystem.com duzeltmesi)</td></tr>
   <tr><td>📺 <strong>DiziPal</strong></td><td>Dizi & Film</td><td>✅ Aktif (dizipal3008.com, filmvedizi temasi)</td></tr>
+  <tr><td>📺 <strong>Dizipod</strong></td><td>Yabanci Dizi & Film</td><td>✅ Aktif (dizipod.com, yeni - TR altyazili)</td></tr>
   <tr><td>📺 <strong>DiziYou</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (diziyou.one)</td></tr>
   <tr><td>📡 <strong>DMax</strong></td><td>Belgesel & TV</td><td>✅ Aktif (dmax.com.tr, yeni: nikstream)</td></tr>
   <tr><td>🎬 <strong>FilmMakinesi</strong></td><td>Film</td><td>✅ Aktif (filmmakinesi.to, v2 - CloseLoad/Rapid extractor eklentisi eklendi)</td></tr>
@@ -148,6 +150,13 @@ RecTV (`b.prectv38.sbs`), SinemaCX (`www.sinema.cx`). Bunlarin alan adi artik yo
   - **SezonlukDizi**: `dataEmbed22.asp` bazi IP'lerde (ozellikle datacenter/VPN) Turnstile
     kapisi donduruyor; ev internetinde dogrudan iframe gelebilir. Yeni `bysejikuar.com`
     oynaticisi PoW (proof-of-work) istiyor; Filemoon alternatifi bu yuzden acilmayabilir.
+- **Yeni eklenti - Dizipod (19.10.2026):** `dizipod.com` (yabanci dizi + film, Turkce
+  altyazili) eklendi. Ana sayfa, kategori, arama, dizi detayi + tum sezonlar, film detayi
+  ve oynatici zinciri dogrulandi: `admin-ajax.php?action=get_episode_player` -> iframe ->
+  `player.dizipod.com/embed/<id>.mp4` -> JW Player `sources` -> `gomindex.m3u8` (**200 #EXTM3U**).
+- **CanliTV duzeltmesi (19.10.2026):** Eski KekikAkademi playlist'i (`IPTV_YenirMi`) 404
+  donuyordu. `iptv-org` TR listesine gecildi; raw/GitHub Pages engellerine karsi 3 ayrik
+  adres sirayla deneniyor (iptv-org + iptv-org raw + omerdenizhan/IPTV-M3U).
 - **Kaldirilan eklentiler (site kapali):** Tafdi (`tafdi.net` park/blog oldu),
   WFilmIzle (`wfilmizle.my` detay linkleri olu `wfilmizle.vip`'e gidiyor),
   XPrime (`backend.xprime.tv` DNS'te yok).

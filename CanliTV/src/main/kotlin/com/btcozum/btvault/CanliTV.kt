@@ -11,7 +11,7 @@ import com.lagradost.cloudstream3.utils.AppUtils.toJson
 import java.io.InputStream
 
 class CanliTV : MainAPI() {
-    override var mainUrl              = "https://raw.githubusercontent.com/keyiflerolsun/IPTV_YenirMi/main/Kanallar/KekikAkademi.m3u"
+    override var mainUrl              = "https://iptv-org.github.io/iptv/countries/tr.m3u"
     override var name                 = "CanliTV"
     override val hasMainPage          = true
     override var lang                 = "tr"
@@ -19,22 +19,28 @@ class CanliTV : MainAPI() {
     override val hasDownloadSupport   = false
     override val supportedTypes       = setOf(TvType.Live)
 
+    private val playlistUrls = listOf(
+        mainUrl,
+        "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/tr.m3u",
+        "https://raw.githubusercontent.com/omerdenizhan/IPTV-M3U/refs/heads/main/m3u/turkiye.m3u"
+    )
+
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
-        val kanallar = IptvPlaylistParser().parseM3U(app.get(mainUrl).text)
+        val kanallar = fetchPlaylist()
 
         return newHomePageResponse(
             kanallar.items.groupBy { it.attributes["group-title"] }.map { group ->
-                val title = group.key ?: ""
+                val title = group.key ?: "Diğer"
                 val show  = group.value.map { kanal ->
                     val streamurl   = kanal.url.toString()
                     val channelname = kanal.title.toString()
-                    val posterurl   = kanal.attributes["tvg-logo"].toString()
-                    val chGroup     = kanal.attributes["group-title"].toString()
-                    val nation      = kanal.attributes["tvg-country"].toString()
+                    val posterurl   = kanal.attributes["tvg-logo"]
+                    val chGroup     = kanal.attributes["group-title"] ?: "Diğer"
+                    val nation      = kanal.attributes["tvg-country"] ?: "TR"
 
                     newLiveSearchResponse(
                         channelname,
-                        LoadData(streamurl, channelname, posterurl, chGroup, nation).toJson(),
+                        LoadData(streamurl, channelname, posterurl ?: "", chGroup, nation).toJson(),
                         type = TvType.Live
                     ) {
                         this.posterUrl = posterurl
@@ -50,18 +56,18 @@ class CanliTV : MainAPI() {
     }
 
     override suspend fun search(query: String): List<SearchResponse> {
-        val kanallar = IptvPlaylistParser().parseM3U(app.get(mainUrl).text)
+        val kanallar = fetchPlaylist()
 
         return kanallar.items.filter { it.title.toString().lowercase().contains(query.lowercase()) }.map { kanal ->
             val streamurl   = kanal.url.toString()
             val channelname = kanal.title.toString()
-            val posterurl   = kanal.attributes["tvg-logo"].toString()
-            val chGroup     = kanal.attributes["group-title"].toString()
-            val nation      = kanal.attributes["tvg-country"].toString()
+            val posterurl   = kanal.attributes["tvg-logo"]
+            val chGroup     = kanal.attributes["group-title"] ?: "Diğer"
+            val nation      = kanal.attributes["tvg-country"] ?: "TR"
 
             newLiveSearchResponse(
                 channelname,
-                LoadData(streamurl, channelname, posterurl, chGroup, nation).toJson(),
+                LoadData(streamurl, channelname, posterurl ?: "", chGroup, nation).toJson(),
                 type = TvType.Live
             ) {
                 this.posterUrl = posterurl
@@ -81,22 +87,22 @@ class CanliTV : MainAPI() {
             "» ${loadData.group} | ${loadData.nation} «"
         }
 
-        val kanallar        = IptvPlaylistParser().parseM3U(app.get(mainUrl).text)
+        val kanallar        = fetchPlaylist()
         val recommendations = mutableListOf<LiveSearchResponse>()
 
         for (kanal in kanallar.items) {
-            if (kanal.attributes["group-title"].toString() == loadData.group) {
+            if ((kanal.attributes["group-title"] ?: "Diğer") == loadData.group) {
                 val rcStreamUrl   = kanal.url.toString()
                 val rcChannelName = kanal.title.toString()
                 if (rcChannelName == loadData.title) continue
 
-                val rcPosterUrl   = kanal.attributes["tvg-logo"].toString()
-                val rcChGroup     = kanal.attributes["group-title"].toString()
-                val rcNation      = kanal.attributes["tvg-country"].toString()
+                val rcPosterUrl   = kanal.attributes["tvg-logo"]
+                val rcChGroup     = kanal.attributes["group-title"] ?: "Diğer"
+                val rcNation      = kanal.attributes["tvg-country"] ?: "TR"
 
                 recommendations.add(newLiveSearchResponse(
                     rcChannelName,
-                    LoadData(rcStreamUrl, rcChannelName, rcPosterUrl, rcChGroup, rcNation).toJson(),
+                    LoadData(rcStreamUrl, rcChannelName, rcPosterUrl ?: "", rcChGroup, rcNation).toJson(),
                     type = TvType.Live
                 ) {
                     this.posterUrl = rcPosterUrl
@@ -118,7 +124,7 @@ class CanliTV : MainAPI() {
         val loadData = fetchDataFromUrlOrJson(data)
         Log.d("IPTV", "loadData » $loadData")
 
-        val kanallar = IptvPlaylistParser().parseM3U(app.get(mainUrl).text)
+        val kanallar = fetchPlaylist()
         val kanal    = kanallar.items.first { it.url == loadData.url }
         Log.d("IPTV", "kanal » $kanal")
 
@@ -139,18 +145,36 @@ class CanliTV : MainAPI() {
 
     data class LoadData(val url: String, val title: String, val poster: String, val group: String, val nation: String)
 
+    /**
+     * Ayni kanal listesini farkli aynalardan dener. GitHub Pages ve raw
+     * adresleri bazi ISS'lerde engellendigi icin sirayla denenir.
+     */
+    private suspend fun fetchPlaylist(): Playlist {
+        var lastError: Exception? = null
+        for (playlistUrl in playlistUrls) {
+            try {
+                val playlist = IptvPlaylistParser().parseM3U(app.get(playlistUrl).text)
+                if (playlist.items.isNotEmpty()) return playlist
+            } catch (e: Exception) {
+                lastError = e
+                Log.w("IPTV", "Playlist alinamadi: $playlistUrl -> ${e.message}")
+            }
+        }
+        throw lastError ?: IllegalStateException("Hicbir IPTV playlist adresi yuklenemedi")
+    }
+
     private suspend fun fetchDataFromUrlOrJson(data: String): LoadData {
         if (data.startsWith("{")) {
             return parseJson<LoadData>(data)
         } else {
-            val kanallar = IptvPlaylistParser().parseM3U(app.get(mainUrl).text)
+            val kanallar = fetchPlaylist()
             val kanal    = kanallar.items.first { it.url == data }
 
             val streamurl   = kanal.url.toString()
             val channelname = kanal.title.toString()
-            val posterurl   = kanal.attributes["tvg-logo"].toString()
-            val chGroup     = kanal.attributes["group-title"].toString()
-            val nation      = kanal.attributes["tvg-country"].toString()
+            val posterurl   = kanal.attributes["tvg-logo"] ?: ""
+            val chGroup     = kanal.attributes["group-title"] ?: "Diğer"
+            val nation      = kanal.attributes["tvg-country"] ?: "TR"
 
             return LoadData(streamurl, channelname, posterurl, chGroup, nation)
         }
