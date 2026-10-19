@@ -98,7 +98,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>📺 <strong>powerDizi</strong></td><td>Canli Dizi TV</td><td>✅ Aktif (M3U playlist, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>powerSinema</strong></td><td>Canli Film TV</td><td>✅ Aktif (M3U playlist, yeni: nikstream)</td></tr>
   <tr><td>🎬 <strong>RareFilmm</strong></td><td>Film</td><td>✅ Aktif</td></tr>
-  <tr><td>📺 <strong>SezonlukDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (sezonlukdizi.cc, v2 - StreamRubyExtractor eklentisi)</td></tr>
+  <tr><td>?? <strong>SezonlukDizi</strong></td><td>Yabanci Dizi</td><td>? Aktif (sezonlukdizi.cc, v2 - bazi IP'lerde Turnstile kapisi)</td></tr>
   <tr><td>📺 <strong>TLC</strong></td><td>Dizi & Belgesel</td><td>✅ Aktif (tlctv.com.tr, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>TvDiziler</strong></td><td>Yerli Dizi</td><td>✅ Aktif (tvdiziler.cc, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>YabanciDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (yabancidizi.so, yeni: nikstream)</td></tr>
@@ -145,6 +145,9 @@ RecTV (`b.prectv38.sbs`), SinemaCX (`www.sinema.cx`). Bunlarin alan adi artik yo
   - **DiziMom (v14)**: canli bolumlerde oynatici `hdplayersystem.live`'dan `hdplayersystem.com`'a
     tasinmis; eski host "Player domain is does not match." donuyordu. Extractor hem `.com`
     hem `.live` adresini URL'den turetecek sekilde duzeltildi (`securedLink` -> **200 #EXTM3U**).
+  - **SezonlukDizi**: `dataEmbed22.asp` bazi IP'lerde (ozellikle datacenter/VPN) Turnstile
+    kapisi donduruyor; ev internetinde dogrudan iframe gelebilir. Yeni `bysejikuar.com`
+    oynaticisi PoW (proof-of-work) istiyor; Filemoon alternatifi bu yuzden acilmayabilir.
 - **Kaldirilan eklentiler (site kapali):** Tafdi (`tafdi.net` park/blog oldu),
   WFilmIzle (`wfilmizle.my` detay linkleri olu `wfilmizle.vip`'e gidiyor),
   XPrime (`backend.xprime.tv` DNS'te yok).
