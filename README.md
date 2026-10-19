@@ -55,7 +55,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **42 eklenti - hepsi aktif.**
+> **43 eklenti - hepsi aktif.**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 
@@ -70,6 +70,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>🌸 <strong>AsyaWatch</strong></td><td>Asya Dizi & Film</td><td>✅ Aktif (asyawatch.com, yeni: nikstream)</td></tr>
   <tr><td>🌍 <strong>BelgeselX</strong></td><td>Belgesel</td><td>✅ Aktif</td></tr>
   <tr><td>📡 <strong>CanliTV</strong></td><td>Canli TV</td><td>✅ Aktif (iptv-org TR listesi + 2 yedek ayna)</td></tr>
+  <tr><td>📡 <strong>SporTV</strong></td><td>Canli Spor TV</td><td>✅ Aktif (28 dogrulanmis kanal: TRT Spor, beIN Sports, Eurosport, NBA TV)</td></tr>
   <tr><td>🧸 <strong>CizgiMax</strong></td><td>Cizgi Film</td><td>✅ Aktif (yeni tema guncellendi)</td></tr>
   <tr><td>📺 <strong>DiziBox</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizibox.live, v17 - tarayici basliklari eklendi)</td></tr>
   <tr><td>📺 <strong>DiziGom</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizigom.news, yeni: nikstream)</td></tr>
@@ -104,7 +105,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>📺 <strong>TLC</strong></td><td>Dizi & Belgesel</td><td>✅ Aktif (tlctv.com.tr, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>TvDiziler</strong></td><td>Yerli Dizi</td><td>✅ Aktif (tvdiziler.cc, yeni: nikstream)</td></tr>
   <tr><td>📺 <strong>YabanciDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (yabancidizi.so, yeni: nikstream)</td></tr>
-  <tr><td>📡 <strong>vavooSpor</strong></td><td>Canli Spor TV</td><td>✅ Aktif (M3U playlist, yeni: nikstream)</td></tr>
+  <tr><td>📡 <strong>vavooSpor</strong></td><td>Canli Spor TV</td><td>✅ Aktif (iptv-org spor kategorisi, ulke gruplu - v2)</td></tr>
   <tr><td>🔞 <strong>xHamster</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
   <tr><td>▶️ <strong>YouTube</strong></td><td>Video</td><td>✅ Aktif (Invidious, otomatik instance)</td></tr>
 </table>
@@ -118,7 +119,8 @@ DNS seviyesinde `195.175.254.2` (Engelli Web) adresine yonlendiriyor. Bu durumda
 "Baglanti kurulamadi" veya "kaynak bulunamadi" verir; site aslinda canlidir.
 
 **Etkilenen eklentiler:** DiziMag, DiziPal, FullHDFilmIzlede, FullPorner, HQPorner, IzleAI,
-PornHub, SpankBang, TvDiziler, UncutMaza, xHamster, YabanciDizi.
+PornHub, SpankBang, TvDiziler, UncutMaza, xHamster, YabanciDizi, SporTV (beIN Sports /
+Eurosport yayinlari `andro.mangeinde4.lat` uzerinden gelir).
 
 **Cozum:** Telefon/box DNS'ini `8.8.8.8` + `1.1.1.1` yapin veya bir VPN kullanin.
 Google DNS ile yapilan testte bu adreslerin hepsi **HTTP 200** dondu; yani eklentiler
@@ -131,6 +133,19 @@ RecTV (`b.prectv38.sbs`), SinemaCX (`www.sinema.cx`). Bunlarin alan adi artik yo
 
 ## Son Guncellemeler (19.10.2026)
 
+- **Yeni eklenti - SporTV (19.10.2026):** 28 canli spor kanali eklendi; her biri
+  `master.m3u8 -> variant.m3u8 -> ilk segment` zinciriyle test edildi (HTTP 200/206).
+  - **Turkiye:** TRT Spor, TRT Spor Yildiz, A Spor, beIN Sports 1-5, beIN Sports Haber,
+    Eurosport 1-2, HT Spor, FB TV, TJK TV, TJK TV 2.
+  - **Dunya:** beIN Sports XTRA, Eurosport, NBA TV, WWE Network, Formula 1, FightBox,
+    FightBox HD, Golf Channel, Tennis Channel, Tennis Channel 2, Trace Sport Stars,
+    Sport1, Sport2.
+  - beIN Sports ve Eurosport yayinlari bazi ISS'lerde DNS engellidir; README'deki DNS
+    cozumu ile acilir.
+- **vavooSpor duzeltmesi (19.10.2026):** Eski vavoo playlist'indeki `play/<id>` adresleri
+  **404** donuyordu. Eklenti `iptv-org` spor kategorisine (481 kanal) tasindi ve kanallar
+  `tvg-id` ulke koduna gore gruplandi (US, TR, UK, DE...). Yedek olarak iptv-org TR
+  listesinin spor gruplari kullaniliyor.
 - **Tek tek tarayici denetimi (19.10.2026):** Tum eklentilerin ana sayfa + detay + oynatici
   zinciri tarayici ve Google DNS uzerinden kontrol edildi.
   - **HDFilmSitesi**: `hdfilmsite.net` artik `dizifilmizle.to`'ya yonlendiriyor; oynatici
