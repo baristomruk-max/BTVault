@@ -1,4 +1,4 @@
-version = 2
+﻿version = 3
 
 cloudstream {
     authors     = listOf("BTcozum")
@@ -10,5 +10,6 @@ cloudstream {
     **/
     status  = 1
     tvTypes = listOf("Movie", "TvSeries")
-    iconUrl = "https://www.google.com/s2/favicons?domain=hdfilmizle.to&sz=%size%"
+    iconUrl = "https://www.google.com/s2/favicons?domain=hdfilmizle.live&sz=%size%"
 }
+

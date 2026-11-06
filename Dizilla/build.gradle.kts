@@ -1,4 +1,4 @@
-﻿version = 16
+version = 17
 
 cloudstream {
     authors     = listOf("BTcozum", "keyiflerolsun")
@@ -12,7 +12,7 @@ cloudstream {
      * 2: Slow
      * 3: Beta only
     **/
-    status  = 1 // will be 3 if unspecified
+    status  = 0 // 2026-11-06: dizilla.la yeni Next.js tema; oynatici API'si yeniden yazilmali
     tvTypes = listOf("TvSeries")
-    iconUrl = "https://www.google.com/s2/favicons?domain=dizilla.club&sz=%size%"
+    iconUrl = "https://www.google.com/s2/favicons?domain=dizilla.la&sz=%size%"
 }

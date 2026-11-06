@@ -9,7 +9,7 @@ import com.lagradost.cloudstream3.utils.AppUtils.tryParseJson
 import com.lagradost.cloudstream3.utils.StringUtils.encodeUri
 
 class YouTube : MainAPI() {
-    override var mainUrl              = "https://invidious.f5.si"
+    override var mainUrl              = "https://yt.chocolatemoo53.com"
     override var name                 = "YouTube"
     override val hasMainPage          = true
     override var lang                 = "tr"
@@ -17,11 +17,10 @@ class YouTube : MainAPI() {
 
     // Invidious örnekleri API'yi zaman zaman kapatabiliyor (inv.nadeko.net gibi),
     // bu yüzden istekleri sırayla deneyerek çalışan instance'ı buluyoruz.
+    // 2026-11: API'si acik kalan ornekler (f5.si 530, invidious.site 404, nadeko/nerdvpn API kapali).
     private val instances = listOf(
-        "invidious.f5.si",
+        "yt.chocolatemoo53.com",
         "invidious.materialio.us",
-        "inv.nadeko.net",
-        "invidious.site",
         "yewtu.be",
     )
 

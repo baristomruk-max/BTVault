@@ -34,7 +34,8 @@ class JetFilmizle : MainAPI() {
             return response
         }
     }
-    override var mainUrl              = "https://jetfilmizle.now"
+    // 2026-11: jetfilmizle.now -> jetfilmizle.app (eski adres buraya 301 donuyor)
+    override var mainUrl              = "https://jetfilmizle.app"
     override var name                 = "JetFilmizle"
     override val hasMainPage          = true
     override var lang                 = "tr"

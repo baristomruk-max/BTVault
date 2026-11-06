@@ -15,7 +15,7 @@ import java.net.URLEncoder
 class DiziPal : MainAPI() {
     // dizipal####.com adresi belirli araliklarla degisiyor; eski adres 301 ile yonlendirildigi
     // icin istekler yine de siteye ulasir, kart baglantilari zaten yeni alan adini tasir.
-    override var mainUrl              = "https://dizipal3008.com"
+    override var mainUrl              = "https://dizipal3009.com"
     override var name                 = "DiziPal"
     override val hasMainPage          = true
     override var lang                 = "tr"
@@ -360,3 +360,4 @@ class DiziPal : MainAPI() {
         )
     }
 }
+

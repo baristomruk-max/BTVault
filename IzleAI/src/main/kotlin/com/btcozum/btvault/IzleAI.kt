@@ -40,7 +40,8 @@ class IzleAI : MainAPI() {
             return response
         }
     }
-    override var mainUrl              = "https://selcukflix.com"
+    // 2026-11: selcukflix.com -> selcukflix.app (API sozlesmesi ayni)
+    override var mainUrl              = "https://selcukflix.app"
     override var name                 = "720PizleAI"
     override val hasMainPage          = true
     override var lang                 = "tr"

@@ -37,7 +37,8 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 
 class YabanciDizi : MainAPI() {
-    override var mainUrl = "https://yabancidizi.so"
+    // 2026-11: yabancidizi.so -> yabancidizi.news (site tasindi, tema ayni)
+    override var mainUrl = "https://yabancidizi.news"
     override var name = "YabanciDizi"
     override val hasMainPage = true
     override var lang = "tr"
@@ -248,7 +249,7 @@ class YabanciDizi : MainAPI() {
                 Log.d("YBD", dataHash)
                 if (name.contains("Mac")) {
                     val mac = app.get(
-                        "https://yabancidizi.so/api/drive/" +
+                        "$mainUrl/api/drive/" +
                                 dataLink.replace("/", "_").replace("+", "-"),
                         referer = "$mainUrl/",
                         headers =
@@ -260,9 +261,9 @@ class YabanciDizi : MainAPI() {
                         val timestampInSeconds = System.currentTimeMillis() / 1000
                         Log.d("YBD", "timestampInSeconds -> $timestampInSeconds")
                         val drives = app.get(
-                            "https://yabancidizi.so/api/drives/" +
+                            "$mainUrl/api/drives/" +
                                     dataLink.replace("/", "_").replace("+", "-") + "?t=$timestampInSeconds",
-                            referer = "https://yabancidizi.so/api/drives/" +
+                            referer = "$mainUrl/api/drives/" +
                                     dataLink.replace("/", "_").replace("+", "-"),
                             headers =
                             mapOf("user-agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0", "Cookie" to "udys=$timestampMillis")
@@ -278,7 +279,7 @@ class YabanciDizi : MainAPI() {
 
                 } else if (name.contains("VidMoly")) {
                     val vdm = app.get(
-                        "https://yabancidizi.so/api/moly/" +
+                        "$mainUrl/api/moly/" +
                                 dataLink.replace("/", "_").replace("+", "-"), referer = "$mainUrl/",
                         headers =
                         mapOf("user-agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0", "Cookie" to "udys=$timestampMillis")
@@ -301,7 +302,7 @@ class YabanciDizi : MainAPI() {
                     }
                 } else if (name.contains("Okru")) {
                     val okr = app.get(
-                        "https://yabancidizi.so/api/ruplay/" +
+                        "$mainUrl/api/ruplay/" +
                                 dataLink.replace("/", "_").replace("+", "-"), referer = "$mainUrl/",
                         headers =
                         mapOf("user-agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0", "Cookie" to "udys=$timestampMillis")

@@ -1,4 +1,4 @@
-version = 1
+version = 2
 
 cloudstream {
     authors     = listOf("BTcozum")
@@ -8,7 +8,7 @@ cloudstream {
     /**
      * Status: 0=Down, 1=Ok, 2=Slow, 3=Beta
     **/
-    status  = 1
+    status  = 0 // tvdiziler.cc -> tvdiziler.tv, tema tamamen degisti
     tvTypes = listOf("TvSeries")
     iconUrl = "https://www.google.com/s2/favicons?domain=tvdiziler.cc&sz=%size%"
 }
