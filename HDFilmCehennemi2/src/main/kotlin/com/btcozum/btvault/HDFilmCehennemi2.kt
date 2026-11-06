@@ -5,6 +5,7 @@ import com.lagradost.cloudstream3.Actor
 import com.lagradost.cloudstream3.Episode
 import com.lagradost.cloudstream3.HomePageResponse
 import com.lagradost.cloudstream3.LoadResponse
+import com.lagradost.cloudstream3.LoadResponse.Companion.addActors
 import com.lagradost.cloudstream3.MainAPI
 import com.lagradost.cloudstream3.MainPageRequest
 import com.lagradost.cloudstream3.Score
@@ -27,6 +28,7 @@ import com.lagradost.cloudstream3.utils.loadExtractor
 import com.lagradost.cloudstream3.utils.newExtractorLink
 import org.jsoup.nodes.Element
 import java.util.Base64
+import java.net.URLEncoder
 
 class HDFilmCehennemi2 : MainAPI() {
     override var mainUrl = "https://www.hdfilmcehennemi2.biz"
@@ -85,7 +87,7 @@ class HDFilmCehennemi2 : MainAPI() {
 
     override suspend fun search(query: String): List<SearchResponse> {
         val response = app.post(
-            "${mainUrl}/api/search?q=${query.encodeUri()}",
+            "${mainUrl}/api/search?q=${URLEncoder.encode(query, "UTF-8")}",
             headers = mapOf(
                 "X-Requested-With" to "XMLHttpRequest",
                 "Accept" to "application/json"
@@ -137,11 +139,11 @@ class HDFilmCehennemi2 : MainAPI() {
         val ratingObj = ld["aggregateRating"] as? Map<*, *>
         val rating = ratingObj?.get("ratingValue")?.toString() ?: ""
         val actors = mutableListOf<Actor>()
-        (ld["actor"] as? List<*> ?: emptyList()).forEach { a ->
+        (ld["actor"] as? List<*> ?: emptyList<Any>()).forEach { a ->
             val am = a as? Map<*, *> ?: return@forEach
             actors.add(Actor(name = am["name"]?.toString() ?: ""))
         }
-        val tags = (ld["genre"] as? List<*> ?: emptyList()).mapNotNull { it.toString() }
+        val tags = (ld["genre"] as? List<*> ?: emptyList<Any>()).mapNotNull { it.toString() }
 
         val isSeries = url.contains("/dizi/")
         val episodes = mutableListOf<Episode>()
@@ -200,7 +202,7 @@ class HDFilmCehennemi2 : MainAPI() {
         val videos = mapper.readValue(unescaped, Map::class.java) as Map<String, Any>
 
         videos.forEach { (_, items) ->
-            (items as? List<*> ?: emptyList()).forEach { item ->
+            (items as? List<*> ?: emptyList<Any>()).forEach { item ->
                 val itemMap = item as? Map<*, *> ?: return@forEach
                 val link = itemMap["link"]?.toString() ?: return@forEach
                 val slug = itemMap["slug"]?.toString() ?: ""
