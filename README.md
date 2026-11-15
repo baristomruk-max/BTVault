@@ -55,14 +55,14 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **29 eklenti - 29 aktif, 0 kapali (15.11.2026).**
+> **30 eklenti - 30 aktif, 0 kapali (15.11.2026).**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 > - ⛔ Kapali: site olu / park / yeni tema (yeniden yazim bekliyor)
 >
 > Guncel teshis ve yol haritasi: [RAPOR-2026-11-06.md](RAPOR-2026-11-06.md)
 
-**? Aktif (29)**
+**? Aktif (30)**
 
 <table>
   <tr>
@@ -71,6 +71,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
     <th>Durum</th>
   </tr>
   <tr><td>🎭 <strong>AnimeciX</strong></td><td>Anime</td><td>✅ Aktif</td></tr>
+  <tr><td>?? <strong>AsyaWatch</strong></td><td>Asya Dizi & Film</td><td>? Aktif (asyawatch.com)</td></tr>
   <tr><td>🌍 <strong>BelgeselX</strong></td><td>Belgesel</td><td>✅ Aktif</td></tr>
   <tr><td>📡 <strong>CanliTV</strong></td><td>Canli TV</td><td>✅ Aktif (iptv-org TR listesi + 2 yedek ayna)</td></tr>
   <tr><td>📺 <strong>DDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (ddizi.tel - yeni tema, v2)</td></tr>
@@ -108,7 +109,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 - **Tum depolar tarandi (63 eklenti):** Her provider'in `mainUrl`'i Google DNS (8.8.8.8)
   ile cozuldu, `curl --resolve` ile ana sayfa/arama/detay cekildi ve kodun kullandigi
-  seciciler HTML ile karsilastirildi. Ozet: 29 aktif, 0 kapali.
+  seciciler HTML ile karsilastirildi. Ozet: 30 aktif, 0 kapali.
   Ayrinti: [RAPOR-2026-11-06.md](RAPOR-2026-11-06.md).
 - **Alan adi guncellenenler (tema ayni):** DiziMag `dizimag.onl`, YabanciDizi
   `yabancidizi.news` (API adresleri de `$mainUrl`'e tasindi), JetFilmizle
