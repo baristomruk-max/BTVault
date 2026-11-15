@@ -4,6 +4,7 @@ import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
+import java.util.Random
 
 class HDFilmCehennemi : MainAPI() {
     override var mainUrl = "https://www.hdfilmcehennemi.land"
@@ -11,7 +12,7 @@ class HDFilmCehennemi : MainAPI() {
     override val hasMainPage = true
     override var lang = "tr"
     override val hasQuickSearch = false
-    override val supportedTypes = setOf(TvType.Movie, TvType.TvSeries)
+    override val supportedTypes = setOf(TvType.TvSeries)
 
     override val mainPage = mainPageOf(
         mainUrl to "Ana Sayfa",
@@ -39,7 +40,7 @@ class HDFilmCehennemi : MainAPI() {
 
     override suspend fun search(query: String): List<SearchResponse> {
         val document = app.get("${mainUrl}/?s=${query}").document
-        return document.select("article.item").mapNotNull { it.toSearchResult() }
+        return document.select("article.item").mapNotNull { it.toSearchResult() }.distinctBy { it.url }
     }
 
     override suspend fun load(url: String): LoadResponse? {
@@ -61,22 +62,41 @@ class HDFilmCehennemi : MainAPI() {
         }
     }
 
+    /** FNV-1a 32-bit hash (JavaScript Math.imul ile eşdeğer) */
+    private fun fnv1a(input: String): String {
+        var hash: Int = 2166136261
+        for (b in input.toByteArray()) {
+            hash = (hash xor b.toInt() and 0xFF)
+            hash = (hash * 16777619).toInt()
+        }
+        return hash.toString(16).padStart(8, '0')
+    }
+
+    /** SPG koruması için X-Sp token üretir (n = spT) */
+    private fun generateXSp(sp: String, spT: Long): String {
+        val n = spT
+        val rnd = Random()
+        val r = (Math.floor(2176782336.0 * rnd.nextDouble())).toString(36)
+        val hashInput = "$sp|$n|$r"
+        val hash = fnv1a(hashInput)
+        return "$n.$r.$hash"
+    }
+
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
         val document = app.get(data).document
 
-        // nonce ve post_id parse et (daha spesifik regex)
+        // 1. nonce ve post_id parse et
         val nonce = Regex("""window\.videoAjax\s*=\s*\{[^}]*nonce:\s*'([^']+)'""").find(document.html())?.groupValues?.get(1)
             ?: Regex("""nonce:\s*'([^']+)'""").find(document.html())?.groupValues?.get(1)
             ?: return false
-        // post_id: player container'dan al
         val postId = document.selectFirst("#playex, .player_sist, [data-post-id]")?.attr("data-post-id")
             ?: document.selectFirst("[data-post-id]")?.attr("data-post-id")
             ?: return false
         val playerName = document.selectFirst("[data-player-name]")?.attr("data-player-name")?.takeIf { it.isNotBlank() } ?: "SetPlay"
 
-        // AJAX ile iframe URL al
+        // 2. AJAX ile iframe URL al
         val ajaxUrl = "${mainUrl}/wp-admin/admin-ajax.php"
-        val response = app.post(
+        val ajaxResponse = app.post(
             ajaxUrl,
             data = mapOf(
                 "action" to "get_video_url",
@@ -89,15 +109,40 @@ class HDFilmCehennemi : MainAPI() {
         ).text
 
         // response.data.url parse et (JSON escaped slashes unescape)
-        val iframeUrl = Regex(""""url"\s*:\s*"([^"]+)"""").find(response)?.groupValues?.get(1)?.replace("\\/", "/") ?: return false
+        val iframeUrl = Regex(""""url"\s*:\s*"([^"]+)"""").find(ajaxResponse)?.groupValues?.get(1)?.replace("\\/", "/") ?: return false
+
+        // 3. Jeton'ı iframe URL'den çıkar: https://setplay.sbs/player/?t=<jeton>
+        val jetonMatch = Regex("""[?&]t=([^&]+)""").find(iframeUrl) ?: return false
+        val jeton = jetonMatch.groupValues[1]
+
+        // 4. fastplay.mom video sayfasını çek (FSP config + SPG_A)
+        val fastplayUrl = "https://fastplay.mom/video/$jeton"
+        val fastplayHtml = app.get(fastplayUrl, headers = mapOf("Referer" to iframeUrl)).text
+
+        // FSP stream yolu
+        val streamMatch = Regex("""stream:\s*"([^"]+)"""").find(fastplayHtml) ?: return false
+        val streamPath = streamMatch.groupValues[1]
+
+        // SPG_A config
+        val spMatch = Regex("""sp":"([^"]+)"""").find(fastplayHtml) ?: return false
+        val spTMatch = Regex("""spT":(\d+)""").find(fastplayHtml) ?: return false
+        val sp = spMatch.groupValues[1]
+        val spT = spTMatch.groupValues[1].toLong()
+
+        // 5. X-Sp token üret (n = spT)
+        val xSpToken = generateXSp(sp, spT)
+
+        // 6. Manifest URL'sini M3U8 olarak döndür (X-Sp başlığı ile)
+        val manifestUrl = "https://fastplay.mom$streamPath"
 
         callback.invoke(newExtractorLink(
             source = name,
             name = name,
-            url = iframeUrl,
-            ExtractorLinkType.VIDEO
+            url = manifestUrl,
+            ExtractorLinkType.M3U8
         ) {
-            this.referer = data
+            this.referer = fastplayUrl
+            this.headers = mapOf("X-Sp" to xSpToken, "Referer" to fastplayUrl)
         })
         return true
     }
