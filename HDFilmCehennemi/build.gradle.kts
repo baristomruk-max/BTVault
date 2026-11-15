@@ -1,0 +1,14 @@
+version = 1
+
+cloudstream {
+    authors     = listOf("BTcozum")
+    language    = "tr"
+    description = "HDFilmCehennemi - Full HD film ve dizi (hdfilmcehennemi.land)"
+
+    /**
+     * Status: 0=Down, 1=Ok, 2=Slow, 3=Beta
+    **/
+    status  = 1 // 2026-11: yeniden yazildi, hdfilmcehennemi.land
+    tvTypes = listOf("Movie", "TvSeries")
+    iconUrl = "https://www.google.com/s2/favicons?domain=hdfilmcehennemi.land&sz=%size%"
+}

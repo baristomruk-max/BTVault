@@ -55,14 +55,14 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **29 eklenti - 29 aktif, 0 kapali (15.11.2026).**
+> **30 eklenti - 30 aktif, 0 kapali (15.11.2026).**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 > - ⛔ Kapali: site olu / park / yeni tema (yeniden yazim bekliyor)
 >
 > Guncel teshis ve yol haritasi: [RAPOR-2026-11-06.md](RAPOR-2026-11-06.md)
 
-**? Aktif (29)**
+**? Aktif (30)**
 
 <table>
   <tr>
@@ -83,7 +83,8 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>📡 <strong>DMax</strong></td><td>Belgesel & TV</td><td>✅ Aktif (dmax.com.tr)</td></tr>
   <tr><td>🎬 <strong>FilmMakinesi</strong></td><td>Film</td><td>✅ Aktif (filmmakinesi.to - CloseLoad/Rapid extractor)</td></tr>
   <tr><td>🎬 <strong>FilmModu</strong></td><td>Film</td><td>✅ Aktif (filmmodu.one - schema.org microdata + lazy afis)</td></tr>
-  <tr><td>🎬 <strong>HDFilmCehennemi2</strong></td><td>Film & Dizi</td><td>✅ Aktif (hdfilmcehennemi2.biz, v3 - yeni Laravel/Livewire temasi, vidload/vidmoly oynatici)</td></tr>
+    <tr><td>?? <strong>HDFilmCehennemi</strong></td><td>Film & Dizi</td><td>? Aktif (hdfilmcehennemi.land)</td></tr>
+<tr><td>🎬 <strong>HDFilmCehennemi2</strong></td><td>Film & Dizi</td><td>✅ Aktif (hdfilmcehennemi2.biz, v3 - yeni Laravel/Livewire temasi, vidload/vidmoly oynatici)</td></tr>
   <tr><td>🎬 <strong>HDFilmIzle</strong></td><td>Film & Dizi</td><td>✅ Aktif (hdfilmizle.live - Vidrame XOR cozucusu)</td></tr>
   <tr><td>🎬 <strong>IzleAI</strong></td><td>Film</td><td>✅ Aktif (selcukflix.app, v6 - alan adi guncellendi)</td></tr>
   <tr><td>🎬 <strong>JetFilmizle</strong></td><td>Film</td><td>✅ Aktif (jetfilmizle.app, v21 - alan adi guncellendi)</td></tr>
@@ -108,7 +109,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 - **Tum depolar tarandi (63 eklenti):** Her provider'in `mainUrl`'i Google DNS (8.8.8.8)
   ile cozuldu, `curl --resolve` ile ana sayfa/arama/detay cekildi ve kodun kullandigi
-  seciciler HTML ile karsilastirildi. Ozet: 29 aktif, 0 kapali.
+  seciciler HTML ile karsilastirildi. Ozet: 30 aktif, 0 kapali.
   Ayrinti: [RAPOR-2026-11-06.md](RAPOR-2026-11-06.md).
 - **Alan adi guncellenenler (tema ayni):** DiziMag `dizimag.onl`, YabanciDizi
   `yabancidizi.news` (API adresleri de `$mainUrl`'e tasindi), JetFilmizle
