@@ -29,3 +29,6 @@ scripts/audit-final/
 scripts/play-audit-2026-10-18/
 scripts/play-audit-test/
 out-builds-*/
+
+# rapor dosyalari (githuba yuklenmesin)
+RAPOR*.md
