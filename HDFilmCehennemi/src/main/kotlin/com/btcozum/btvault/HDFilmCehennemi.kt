@@ -62,18 +62,38 @@ class HDFilmCehennemi : MainAPI() {
     }
 
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
-        // Simplified: try to find iframe or video in page
         val document = app.get(data).document
-        val iframe = document.select("iframe").firstOrNull()?.attr("src")
-        if (iframe != null) {
-            callback.invoke(newExtractorLink(
-                source = name,
-                name = name,
-                url = iframe,
-                ExtractorLinkType.VIDEO
-            ))
-            return true
-        }
-        return false
+
+        // nonce ve post_id parse et
+        val nonce = Regex("""nonce:\s*'([^']+)'""").find(document.html())?.groupValues?.get(1) ?: return false
+        val postId = document.selectFirst("[data-post-id]")?.attr("data-post-id") ?: return false
+        val playerName = document.selectFirst("[data-player-name]")?.attr("data-player-name")?.takeIf { it.isNotBlank() } ?: "SetPlay"
+
+        // AJAX ile iframe URL al
+        val ajaxUrl = "${mainUrl}/wp-admin/admin-ajax.php"
+        val response = app.post(
+            ajaxUrl,
+            data = mapOf(
+                "action" to "get_video_url",
+                "nonce" to nonce,
+                "post_id" to postId,
+                "player_name" to playerName,
+                "part_key" to ""
+            ),
+            headers = mapOf("X-Requested-With" to "XMLHttpRequest")
+        ).text
+
+        // response.data.url parse et
+        val iframeUrl = Regex(""""url"\s*:\s*"([^"]+)"""").find(response)?.groupValues?.get(1) ?: return false
+
+        callback.invoke(newExtractorLink(
+            source = name,
+            name = name,
+            url = iframeUrl,
+            ExtractorLinkType.VIDEO
+        ) {
+            this.referer = data
+        })
+        return true
     }
 }
