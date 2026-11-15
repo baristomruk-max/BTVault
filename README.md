@@ -55,14 +55,14 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **64 eklenti - 41 aktif, 23 kapali (06.11.2026).**
+> **41 eklenti - 41 aktif, 0 kapali (15.11.2026).**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 > - ⛔ Kapali: site olu / park / yeni tema (yeniden yazim bekliyor)
 >
 > Guncel teshis ve yol haritasi: [RAPOR-2026-11-06.md](RAPOR-2026-11-06.md)
 
-**✅ Aktif (41)**
+**✅ Aktif (42)**
 
 <table>
   <tr>
@@ -113,46 +113,14 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>▶️ <strong>YouTube</strong></td><td>Video</td><td>✅ Aktif (yt.chocolatemoo53.com + yedek Invidious, v5)</td></tr>
 </table>
 
-**⛔ Kapali (23)**
-
-<table>
-  <tr>
-    <th>Platform</th>
-    <th>Tur</th>
-    <th>Durum</th>
-  </tr>
-  <tr><td>📺 <strong>Dizilla</strong></td><td>Yabanci Dizi</td><td>⛔ Kapali (dizilla.la yeni Next.js tema - oynatici yeniden yazilmali)</td></tr>
-  <tr><td>🎬 <strong>4KFilmIzlesene</strong></td><td>Film</td><td>⛔ Kapali (4kfilmizlesene.xyz Wayback arsivine dondu, detay 404)</td></tr>
-  <tr><td>📺 <strong>DiziKorea</strong></td><td>Kore Dizisi</td><td>⛔ Kapali (dizikorea.info - origin 526 SSL)</td></tr>
-  <tr><td>📺 <strong>DiziMom</strong></td><td>Yerli + Yabanci Dizi</td><td>⛔ Kapali (dizidad.com ve tum alan adlari park/redirect)</td></tr>
-  <tr><td>🎬 <strong>FilmKovasi</strong></td><td>Film</td><td>⛔ Kapali (Next.js yeni tema - yeniden yazim bekliyor)</td></tr>
-  <tr><td>🎬 <strong>FullHDFilm</strong></td><td>Film & Dizi</td><td>⛔ Kapali (site kapali)</td></tr>
-  <tr><td>📡 <strong>GolgeTV</strong></td><td>Canli TV</td><td>⛔ Kapali (kaynak kapali)</td></tr>
-  <tr><td>🎬 <strong>HDFilmSitesi</strong></td><td>Film</td><td>⛔ Kapali (dizifilmizle.to, Nuxt - yeniden yazim bekliyor)</td></tr>
-  <tr><td>📺 <strong>InatBox</strong></td><td>Film & Dizi & TV</td><td>⛔ Kapali (dizibox.rest + boxbc.sbs backend erisilemez)</td></tr>
-  <tr><td>📺 <strong>KoreanTurk</strong></td><td>Kore Dizisi</td><td>⛔ Kapali (koreanturk.com - origin 522)</td></tr>
-  <tr><td>🎬 <strong>NetflixMirror</strong></td><td>Film & Dizi</td><td>⛔ Kapali (iosmirror.cc kaynagi kapali)</td></tr>
-  <tr><td>🔞 <strong>OxAx</strong></td><td>Yetiskin & Canli (VPN)</td><td>⛔ Kapali (kaynak kapali)</td></tr>
-  <tr><td>🎬 <strong>RecTV</strong></td><td>Film & Dizi & TV</td><td>⛔ Kapali (prectv38.sbs kaynagi kapali)</td></tr>
-  <tr><td>🎬 <strong>SetFilmIzle</strong></td><td>Film & Dizi</td><td>⛔ Kapali (explay.store kaynagi kapali)</td></tr>
-  <tr><td>🎬 <strong>SinemaCX</strong></td><td>Film</td><td>⛔ Kapali (kaynak kapali)</td></tr>
-  <tr><td>🎬 <strong>SineWix</strong></td><td>Film & Dizi & Anime</td><td>⛔ Kapali (kaynak kapali)</td></tr>
-  <tr><td>🎬 <strong>SuperFilmGeldi</strong></td><td>Film</td><td>⛔ Kapali (mixplayhd.com kaynagi kapali)</td></tr>
-  <tr><td>🎬 <strong>Tafdi</strong></td><td>Film</td><td>⛔ Kapali (tafdi.net WordPress bloga donustu)</td></tr>
-  <tr><td>🎭 <strong>TurkAnime</strong></td><td>Anime</td><td>⛔ Kapali (kaynak kapali)</td></tr>
-  <tr><td>📺 <strong>TvDiziler</strong></td><td>Yerli Dizi</td><td>⛔ Kapali (tvdiziler.tv yeni tema - yeniden yazim bekliyor)</td></tr>
-  <tr><td>🎬 <strong>UgurFilm</strong></td><td>Film</td><td>⛔ Kapali (kaynak kapali)</td></tr>
-  <tr><td>🎬 <strong>Watch2Movies</strong></td><td>Film</td><td>⛔ Kapali (yapim asamasinda)</td></tr>
-  <tr><td>🎬 <strong>WFilmIzle</strong></td><td>Film</td><td>⛔ Kapali (detay linkleri NXDOMAIN wfilmizle.vip'e gidiyor)</td></tr>
-</table>
 
 ---
 
 ## Son Guncellemeler (01.11.2026)
 
-- **Tum depolar tarandi (64 eklenti):** Her provider'in `mainUrl`'i Google DNS (8.8.8.8)
+- **Tum depolar tarandi (63 eklenti):** Her provider'in `mainUrl`'i Google DNS (8.8.8.8)
   ile cozuldu, `curl --resolve` ile ana sayfa/arama/detay cekildi ve kodun kullandigi
-  seciciler HTML ile karsilastirildi. Ozet: 42 aktif, 22 kapali.
+  seciciler HTML ile karsilastirildi. Ozet: 42 aktif, 21 kapali.
   Ayrinti: [RAPOR-2026-11-06.md](RAPOR-2026-11-06.md).
 - **Alan adi guncellenenler (tema ayni):** DiziMag `dizimag.onl`, YabanciDizi
   `yabancidizi.news` (API adresleri de `$mainUrl`'e tasindi), JetFilmizle

@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="google" content="notranslate">
+<base href="https://jetfilmizle.app/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Gelişmiş Yapay Destekli Film Arama - \&quot;matrix\&quot;</title>
+<link rel="icon" href="https://jetfilmizle.app/public/icons/favicon.ico?v=d656a5f65379" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="https://jetfilmizle.app/public/icons/favicon.svg?v=b8f8a40650b9">
+<meta name="msapplication-config" content="https://jetfilmizle.app/public/icons/browserconfig.xml">
+<link rel="preconnect" href="https://cdn.jetfilmizle.app">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="stylesheet" href="https://jetfilmizle.app/assets/vendor/fonts/roboto.css?v=5e4e7dba5c8c">
+<link rel="stylesheet" href="https://jetfilmizle.app/assets/vendor/bootstrap/css/bootstrap.purged.css?v=ae3cb9a58a9a">
+<link rel="stylesheet" href="https://jetfilmizle.app/assets/vendor/fontawesome/css/all.min.css?v=4294980c0ea3">
+<link rel="stylesheet" href="https://jetfilmizle.app/assets/css/style.purged.css?v=6783d652f526">
+<link rel="stylesheet" href="https://jetfilmizle.app/assets/css/logo-styles.min.css?v=0b1979eb8e8f">
+<link rel="preload" as="style" href="https://jetfilmizle.app/assets/css/person-card-hover.min.css?v=1a74e82a60c6" data-jf-async-css>
+<link rel="preload" as="style" href="https://jetfilmizle.app/assets/css/pagination-modern.min.css?v=cb9afec0a091" data-jf-async-css>
+<noscript><link rel="stylesheet" href="https://jetfilmizle.app/assets/css/person-card-hover.min.css?v=1a74e82a60c6"><link rel="stylesheet" href="https://jetfilmizle.app/assets/css/pagination-modern.min.css?v=cb9afec0a091"></noscript>
+<link rel="stylesheet" href="https://jetfilmizle.app/assets/css/ads.min.css?v=a59a7a9dead9">
+<meta name="csrf-token" content="">
+<script>    // CSRF Helper - Global scope (inline for guaranteed availability)
+    window.getCSRFToken = function() {
+        var meta = document.querySelector('meta[name="csrf-token"]');
+        return meta ? meta.getAttribute('content') : '';
+    };
+    window.addCSRFToBody = function(body) {
+        var token = window.getCSRFToken();
+        if (token) {
+            return body + '&csrf_token=' + encodeURIComponent(token);
+        }
+        return body;
+    };
+    </script>
+<script>window.base_href="https:\/\/jetfilmizle.app\/";window.adDelayMinutes=10;window.visitorTrackingEnabled=true;window.visitorBanned=false;</script>
+<script src="https://jetfilmizle.app/assets/js/site-actions.min.js?v=9333a5d67361" defer></script>
+<script src="https://jetfilmizle.app/assets/js/search.js?v=6f1f9fe59560" defer></script>
+<script src="https://jetfilmizle.app/assets/js/ads-tracking.js?v=21581177bbcc" defer></script>
+<script src="https://jetfilmizle.app/assets/js/visitor-tracking.js?v=25b216b60c36" defer></script>
+<meta name="article:publisher" content="JetFilmizle">
+<meta name="author" content="JetFilmizle">
+<meta name="theme-color" content="#dc3545">
+<meta name="msapplication-TileColor" content="#dc3545">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=()">
+<link rel="canonical" href="https://jetfilmizle.app/arama">
+<link rel="alternate" type="application/rss+xml" title="JetFilmizle - Son Eklenen Filmler" href="https://jetfilmizle.app/feed/rss">
+<meta name="application-name" content="JetFilmizle">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="JetFilmizle">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="msapplication-starturl" content="/">
+<meta name="msapplication-navbutton-color" content="#ffc107">
+<link rel="manifest" href="https://jetfilmizle.app/manifest?v=1792916070" type="application/manifest+json">
+<meta name="search:query" content="matrix">
+<meta name="search:results_count" content="9">
+<meta name="search:type" content="all">
+<meta name="search:page" content="1">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SearchResultsPage","name":"Gelişmiş Yapay Destekli Film Arama - \\\"matrix\\\"","description":"\\\"matrix\\\" için arama sonuçları","url":"https://jetfilmizle.app/arama?q=matrix","mainEntity":{"@type":"SearchAction","query":"matrix","result":{"@type":"ItemList","numberOfItems":9,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Movie","name":"Matrix: Devrim","url":"https://jetfilmizle.app/film/matrix-devrim","image":{"@type":"ImageObject","url":"https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-devrim-poster-large.webp","encodingFormat":"image/webp"}}},{"@type":"ListItem","position":2,"item":{"@type":"Movie","name":"Matrix: Yeniden Yüklendi","url":"https://jetfilmizle.app/film/matrix-yeniden-yuklendi","image":{"@type":"ImageObject","url":"https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-yeniden-yuklendi-poster-large.webp","encodingFormat":"image/webp"}}},{"@type":"ListItem","position":3,"item":{"@type":"Movie","name":"Matrix","url":"https://jetfilmizle.app/film/matrix","image":{"@type":"ImageObject","url":"https://cdn.jetfilmizle.app/uploads/films/1999/m/matrix-poster-large.webp","encodingFormat":"image/webp"}}},{"@type":"ListItem","position":4,"item":{"@type":"Movie","name":"The Matrix Resurrections","url":"https://jetfilmizle.app/film/the-matrix-resurrections","image":{"@type":"ImageObject","url":"https://cdn.jetfilmizle.app/uploads/films/2021/t/the-matrix-resurrections-poster-large.webp","encodingFormat":"image/webp"}}},{"@type":"ListItem","position":5,"item":{"@type":"Movie","name":"Komando","url":"https://jetfilmizle.app/film/komando","image":{"@type":"ImageObject","url":"https://cdn.jetfilmizle.app/uploads/films/1985/k/komando-poster-large.webp","encodingFormat":"image/webp"}}},{"@type":"ListItem","position":6,"item":{"@type":"Movie","name":"Yemekle Oynanmaz","url":"https://jetfilmizle.app/film/yemekle-oynanmaz","image":{"@type":"ImageObject","url":"https://cdn.jetfilmizle.app/uploads/films/2016/y/yemekle-oynanmaz-poster-large.webp","encodingFormat":"image/webp"}}},{"@type":"ListItem","position":7,"item":{"@type":"Movie","name":"Valerian ve Bin Gezegen İmparatorluğu","url":"https://jetfilmizle.app/film/valerian-ve-bin-gezegen-imparatorlugu","image":{"@type":"ImageObject","url":"https://cdn.jetfilmizle.app/uploads/films/2017/v/valerian-ve-bin-gezegen-imparatorlugu-poster-large.jpg","encodingFormat":"image/jpeg"}}},{"@type":"ListItem","position":8,"item":{"@type":"Movie","name":"Animatrix","url":"https://jetfilmizle.app/film/animatrix","image":{"@type":"ImageObject","url":"https://cdn.jetfilmizle.app/uploads/films/2003/a/animatrix-poster-large.webp","encodingFormat":"image/webp"}}},{"@type":"ListItem","position":9,"item":{"@type":"Movie","name":"İsyan","url":"https://jetfilmizle.app/film/isyan-2002","image":{"@type":"ImageObject","url":"https://cdn.jetfilmizle.app/uploads/films/2002/i/isyan-2002-poster-large.webp","encodingFormat":"image/webp"}}},{"@type":"ListItem","position":10,"item":{"@type":"Person","name":"Matrix Naovaratpong","url":"https://jetfilmizle.app/oyuncu/matrix-naovaratpong","jobTitle":"Oyuncu"}}]}}}</script>
+<meta name="description" content="\&quot;matrix\&quot; için arama sonuçları">
+<meta name="keywords" content="matrix, film arama, arama sonuçları">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+<meta property="og:title" content="Gelişmiş Yapay Destekli Film Arama - \&quot;matrix\&quot;">
+<meta property="og:description" content="&quot;matrix&quot; araması için 9 film, 1 oyuncu, 0 yönetmen bulundu.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jetfilmizle.app/arama">
+<meta property="og:image" content="https://jetfilmizle.app/uploads/films/2003/m/matrix-devrim-poster-large.webp">
+<meta property="og:image:width" content="500">
+<meta property="og:image:height" content="750">
+<meta property="og:site_name" content="JetFilmizle">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="&quot;matrix&quot; Arama Sonuçları">
+<meta name="twitter:description" content="9 film ve 1 kişi bulundu.">
+<meta name="twitter:image" content="https://jetfilmizle.app/uploads/films/2003/m/matrix-devrim-poster-large.webp">
+<meta name="twitter:image:alt" content="matrix arama sonuçları - Matrix: Devrim Posteri">
+</head>
+<body class="bg-dark text-light" data-user-logged-in="false" data-is-admin="false" data-visitor-banned="false">
+<header class="header-custom py-3 border-bottom border-secondary">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-3 col-6 mb-3 mb-md-0">
+<a href="./" class="d-flex align-items-center text-decoration-none" title="Ana Sayfaya Git">
+<img src="https://jetfilmizle.app/assets/img/logo-koyu.svg?v=49a944aaf3a0" alt="JetFilmizle Logo" title="JetFilmizle - HD Film ve Dizi İzleme Sitesi" loading="eager" fetchpriority="high" width="190" height="50" class="header-logo-svg">
+</a>
+</div>
+<div class="col-md-6 col-12 order-md-1 order-3 mb-3 mb-md-0">
+<form action="https://jetfilmizle.app/arama" method="get" class="search-form">
+<div class="input-group">
+<label for="search-input" class="visually-hidden">Film, dizi, yönetmen, oyuncu, imdb id ara</label>
+<input type="text" name="q" id="search-input" class="form-control search-input-custom" placeholder="Film, dizi, yönetmen, oyuncu, imdb id ara..." autocomplete="off">
+<button type="submit" class="btn search-btn-custom" aria-label="Ara">
+<i class="fas fa-search"></i>
+</button>
+</div>
+<div id="search-results" class="search-results"></div>
+</form>
+</div>
+<div class="col-md-3 col-6 order-md-2 order-2 text-end mb-3 mb-md-0">
+<div class="d-flex align-items-center justify-content-end gap-2">
+<a href="https://jetfilmizle.app/giris" class="btn login-btn-custom me-2" title="Giriş Yap">
+<i class="fas fa-sign-in-alt me-1"></i> Giriş
+</a>
+<a href="https://jetfilmizle.app/kayit-ol" class="btn register-btn-custom d-none d-sm-inline-block" title="Ücretsiz üye olun">
+<i class="fas fa-user-plus me-1"></i> Üye Ol
+</a>
+<button class="btn mobile-menu-btn-custom d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Menüyü aç">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-1">
+<div class="container">
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link active" href="./" title="Ana Sayfaya Git">
+<i class="fas fa-home me-1"></i> Ana Sayfa
+</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle " href="#" id="filmlerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<i class="fas fa-film me-1"></i> Filmler
+</a>
+<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="filmlerDropdown">
+<li><a class="dropdown-item fw-bold" href="https://jetfilmizle.app/filmler" title="Tüm Filmleri Görüntüle">
+<i class="fas fa-film me-2 text-warning"></i>Tüm Filmler
+</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/turkce-dublaj" title="Türkçe Dublajlı Filmleri Görüntüle">
+<span class="film-badge-icon film-badge-flag me-2"><span class="tr-flag"></span></span>Türkçe Dublaj
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/turkce-altyazili" title="Türkçe Altyazılı Filmleri Görüntüle">
+<span class="film-badge-icon film-badge-cc me-2"><i class="fas fa-closed-captioning"></i></span>Türkçe Altyazılı
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/orijinal-filmler" title="Orijinal Dilde Filmleri Görüntüle">
+<span class="film-badge-icon film-badge-original me-2"><span class="original-icon"></span></span>Orijinal Film
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yerli-filmler" title="Yerli Filmleri Görüntüle">
+<span class="film-badge-icon film-badge-local me-2"><span class="local-icon">Yerli</span></span>Yerli Film
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/diller" title="Tüm Dilleri Görüntüle">
+<span class="film-badge-icon film-badge-world me-2"><span class="world-icon"></span></span>Diller
+</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle " href="#" id="navbarDizilerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<i class="fas fa-tv me-1"></i> Diziler
+</a>
+<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDizilerDropdown">
+<li><a class="dropdown-item fw-bold" href="https://jetfilmizle.app/diziler" title="Tüm Dizileri Görüntüle">
+<i class="fas fa-tv me-2 text-info"></i>Tüm Diziler
+</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yerli-diziler" title="Yerli (Türk) Dizileri Görüntüle">
+<span class="film-badge-icon film-badge-local me-2"><span class="local-icon">Yerli</span></span>Yerli Diziler
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yabanci-diziler" title="Yabancı Dizileri Görüntüle">
+<span class="film-badge-icon film-badge-world me-2"><span class="world-icon"></span></span>Yabancı Diziler
+</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<i class="fas fa-list me-1"></i> Türler
+</a>
+<ul class="dropdown-menu dropdown-menu-dark dropdown-menu-categories" aria-labelledby="navbarDropdown">
+<li><a class="dropdown-item fw-bold" href="https://jetfilmizle.app/turler" title="Tüm Film Türlerini Görüntüle">
+<i class="fas fa-th-large me-2 text-warning"></i>Tüm Türler
+</a></li>
+<li><hr class="dropdown-divider w-100"></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/aile" title="Aile Filmleri">
+<i class="fas fa-home me-2"></i>Aile </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/aksiyon" title="Aksiyon Filmleri">
+<i class="fas fa-fire me-2"></i>Aksiyon </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/animasyon" title="Animasyon Filmleri">
+<i class="fas fa-paint-brush me-2"></i>Animasyon </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/anime" title="Anime Filmleri">
+<i class="fas fa-torii-gate me-2"></i>Anime </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/belgesel" title="Belgesel Filmleri">
+<i class="fas fa-video me-2"></i>Belgesel </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/bilim-kurgu" title="Bilim Kurgu Filmleri">
+<i class="fas fa-rocket me-2"></i>Bilim Kurgu </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/dram" title="Dram Filmleri">
+<i class="fas fa-theater-masks me-2"></i>Dram </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/fantastik" title="Fantastik Filmleri">
+<i class="fas fa-film me-2"></i>Fantastik </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/fantezi" title="Fantezi Filmleri">
+<i class="fas fa-hat-wizard me-2"></i>Fantezi </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/gerilim" title="Gerilim Filmleri">
+<i class="fas fa-exclamation-triangle me-2"></i>Gerilim </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/gizem" title="Gizem Filmleri">
+<i class="fas fa-question-circle me-2"></i>Gizem </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/haber" title="Haber Filmleri">
+<i class="fas fa-newspaper me-2"></i>Haber </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/kisa-film" title="Kısa Film Filmleri">
+<i class="fas fa-stopwatch me-2"></i>Kısa Film </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/komedi" title="Komedi Filmleri">
+<i class="fas fa-laugh me-2"></i>Komedi </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/korku" title="Korku Filmleri">
+<i class="fas fa-skull me-2"></i>Korku </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/macera" title="Macera Filmleri">
+<i class="fas fa-compass me-2"></i>Macera </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/muzik" title="Müzik Filmleri">
+<i class="fas fa-music me-2"></i>Müzik </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/muzikal" title="Müzikal Filmleri">
+<i class="fas fa-microphone me-2"></i>Müzikal </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/reality" title="Reality Filmleri">
+<i class="fas fa-tv me-2"></i>Reality </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/romantik" title="Romantik Filmleri">
+<i class="fas fa-heart me-2"></i>Romantik </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/short" title="Short Filmleri">
+<i class="fas fa-film me-2"></i>Short </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/spor" title="Spor Filmleri">
+<i class="fas fa-football-ball me-2"></i>Spor </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/suc" title="Suç Filmleri">
+<i class="fas fa-user-secret me-2"></i>Suç </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/western" title="Western Filmleri">
+<i class="fas fa-horse me-2"></i>Western </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/yarisma-programi" title="Yarışma Programı Filmleri">
+<i class="fa-solid fa-shoe-prints me-2"></i>Yarışma Programı </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tur/yasam-tarzi" title="Yaşam Tarzı Filmleri">
+<i class="fas fa-heart me-2"></i>Yaşam Tarzı </a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="dillerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<i class="fas fa-language me-1"></i> Diller
+</a>
+<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dillerDropdown">
+<li><a class="dropdown-item fw-bold" href="https://jetfilmizle.app/diller" title="Tüm Dilleri Görüntüle">
+<span class="dil-flag dil-flag-world me-2" role="img" aria-label="Tüm Diller"></span>Tüm Diller
+</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/dil/turkce" title="Türkçe dilindeki tüm filmler ve diziler">
+<span class="dil-flag flag-tr me-2" role="img" aria-label="Türkçe"></span>Türkçe </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/dil/fransizca" title="Fransızca dilindeki tüm filmler ve diziler">
+<span class="dil-flag flag-fr me-2" role="img" aria-label="Fransızca"></span>Fransızca </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/dil/ispanyolca" title="İspanyolca dilindeki tüm filmler ve diziler">
+<span class="dil-flag flag-es me-2" role="img" aria-label="İspanyolca"></span>İspanyolca </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/dil/almanca" title="Almanca dilindeki tüm filmler ve diziler">
+<span class="dil-flag flag-de me-2" role="img" aria-label="Almanca"></span>Almanca </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/dil/hintce" title="Hintçe dilindeki tüm filmler ve diziler">
+<span class="dil-flag flag-in me-2" role="img" aria-label="Hintçe"></span>Hintçe </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/dil/italyanca" title="İtalyanca dilindeki tüm filmler ve diziler">
+<span class="dil-flag flag-it me-2" role="img" aria-label="İtalyanca"></span>İtalyanca </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/dil/japonca" title="Japonca dilindeki tüm filmler ve diziler">
+<span class="dil-flag flag-jp me-2" role="img" aria-label="Japonca"></span>Japonca </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/dil/korece" title="Korece dilindeki tüm filmler ve diziler">
+<span class="dil-flag flag-kr me-2" role="img" aria-label="Korece"></span>Korece </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/dil/mandarin" title="Mandarin dilindeki tüm filmler ve diziler">
+<span class="dil-flag flag-cn me-2" role="img" aria-label="Mandarin"></span>Mandarin </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/dil/rusca" title="Rusça dilindeki tüm filmler ve diziler">
+<span class="dil-flag flag-ru me-2" role="img" aria-label="Rusça"></span>Rusça </a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle " href="#" id="saglayicilarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<i class="fas fa-tv me-1"></i> Sağlayıcılar
+</a>
+<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="saglayicilarDropdown">
+<li><a class="dropdown-item fw-bold" href="https://jetfilmizle.app/saglayicilar" title="Tüm Sağlayıcıları Görüntüle">
+<i class="fas fa-th-large me-2 text-warning"></i>Tüm Sağlayıcılar
+</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/saglayici/universal-pictures" title="Universal Pictures sağlayıcısının tüm filmleri">
+<i class="fas fa-tv me-2"></i>Universal Pictures </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/saglayici/warner-bros" title="Warner Bros. sağlayıcısının tüm filmleri">
+<i class="fas fa-tv me-2"></i>Warner Bros. </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/saglayici/columbia-pictures" title="Columbia Pictures sağlayıcısının tüm filmleri">
+<i class="fas fa-tv me-2"></i>Columbia Pictures </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/saglayici/centre-national-du-cin-ma-et-de-l-image-anim-e-cnc" title="CNC sağlayıcısının tüm filmleri">
+<i class="fas fa-tv me-2"></i>CNC </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/saglayici/paramount-pictures" title="Paramount Pictures sağlayıcısının tüm filmleri">
+<i class="fas fa-tv me-2"></i>Paramount Pictures </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/saglayici/canalarti" title="Canal+ sağlayıcısının tüm filmleri">
+<i class="fas fa-tv me-2"></i>Canal+ </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/saglayici/netflix" title="Netflix sağlayıcısının tüm filmleri">
+<i class="fas fa-video me-2"></i>Netflix </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/saglayici/twentieth-century-fox" title="Twentieth Century Fox sağlayıcısının tüm filmleri">
+<i class="fas fa-tv me-2"></i>Twentieth Century Fox </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/saglayici/walt-disney-pictures" title="Walt Disney Pictures sağlayıcısının tüm filmleri">
+<i class="fas fa-tv me-2"></i>Walt Disney Pictures </a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/saglayici/cin-arti" title="Ciné+ sağlayıcısının tüm filmleri">
+<i class="fas fa-tv me-2"></i>Ciné+ </a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle " href="#" id="kesfetdropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<i class="fas fa-compass me-1"></i> Keşfet
+</a>
+<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="kesfetdropdown">
+<li><a class="dropdown-item" href="https://jetfilmizle.app/viral" title="Viral filmler ve trend topic'ler">
+<i class="fas fa-fire me-2 text-viral"></i>Viral
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/trendler" title="Haftanın en trend dizileri, filmleri ve kullanıcıları">
+<i class="fas fa-chart-line me-2 text-primary"></i>Trendler
+</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/kesfet/gunluk" title="Günün özel seçtiği film önerileri">
+<i class="fas fa-sun me-2 text-warning"></i>Günlük Keşif
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/kesfet/haftalik" title="Haftalık özel film keşifleri">
+<i class="fas fa-calendar-week me-2 text-info"></i>Haftalık Keşif
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/kesfet/aylik" title="Aylık özel film keşifleri">
+<i class="fas fa-calendar-alt me-2 text-success"></i>Aylık Keşif
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/kesfet/yillik" title="Yıllık özel film keşifleri">
+<i class="fas fa-calendar me-2 text-danger"></i>Yıllık Keşif
+</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/kesfet/rastgele" title="Rastgele film önerileri">
+<i class="fas fa-random me-2 text-primary"></i>Rastgele Keşif
+</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yakinda" title="Yakında vizyona girecek filmler">
+<i class="fas fa-clock me-2 text-warning"></i>Yakında Gelecek Filmler
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/gunun-kesleri" title="Günün özel olarak seçtiği filmler">
+<i class="fas fa-gem me-2 text-success"></i>Günün Özel Seçimi
+</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle " href="#" id="yillarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<i class="fas fa-calendar-alt me-1"></i> Yıllar
+</a>
+<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="yillarDropdown">
+<li><a class="dropdown-item fw-bold" href="https://jetfilmizle.app/yillar" title="Tüm Yılları Görüntüle">
+<i class="fas fa-calendar me-2 text-warning"></i>Tüm Yıllar
+</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yil/2026" title="2026 yılında çıkan tüm filmler">
+<i class="fas fa-calendar-day me-2"></i>2026 Filmleri
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yil/2025" title="2025 yılında çıkan tüm filmler">
+<i class="fas fa-calendar-day me-2"></i>2025 Filmleri
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yil/2024" title="2024 yılında çıkan tüm filmler">
+<i class="fas fa-calendar-day me-2"></i>2024 Filmleri
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yil/2023" title="2023 yılında çıkan tüm filmler">
+<i class="fas fa-calendar-day me-2"></i>2023 Filmleri
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yil/2022" title="2022 yılında çıkan tüm filmler">
+<i class="fas fa-calendar-day me-2"></i>2022 Filmleri
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yil/2021" title="2021 yılında çıkan tüm filmler">
+<i class="fas fa-calendar-day me-2"></i>2021 Filmleri
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yil/2020" title="2020 yılında çıkan tüm filmler">
+<i class="fas fa-calendar-day me-2"></i>2020 Filmleri
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yil/2019" title="2019 yılında çıkan tüm filmler">
+<i class="fas fa-calendar-day me-2"></i>2019 Filmleri
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yil/2018" title="2018 yılında çıkan tüm filmler">
+<i class="fas fa-calendar-day me-2"></i>2018 Filmleri
+</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/yil/2017" title="2017 yılında çıkan tüm filmler">
+<i class="fas fa-calendar-day me-2"></i>2017 Filmleri
+</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="enlerdropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<i class="fas fa-fire me-1"></i> Enler
+</a>
+<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="enlerdropdown">
+<li><h6 class="dropdown-header"><i class="fas fa-fire me-2 text-warning"></i>Popülerlik</h6></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/filmler/en-cok-izlenenler" title="En Çok İzlenen Filmler Listesi"><i class="fas fa-eye me-2"></i>En Çok İzlenenler</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/filmler/en-cok-yorumlananlar" title="En Çok Yorum Alan Filmler Listesi"><i class="fas fa-comments me-2"></i>En Çok Yorumlananlar</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/filmler/en-son-yorum-alan" title="En Son Yorum Alan Filmler Listesi"><i class="fas fa-clock me-2"></i>En Son Yorumlanan</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/filmler/en-cok-begenilenler" title="En Çok Beğenilen Filmler Listesi"><i class="fas fa-heart me-2"></i>En Çok Beğenilenler</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><h6 class="dropdown-header"><i class="fas fa-trophy me-2 text-warning"></i>Prestijli Listeler</h6></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/imdb-top" title="IMDb En İyi 250 Film Listesi"><i class="fab fa-imdb me-2"></i>IMDb Top 250</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/jetfilm-top" title="JetFilm En İyi 250 Film Seçkisi"><i class="fas fa-star me-2 text-warning"></i>JetFilm Top 250</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/metascore" title="En Yüksek Metascore Puanlı Filmler"><i class="fas fa-star-half-alt me-2"></i>Metascore Top</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/oscar" title="Oscar Ödüllü Filmler Listesi"><i class="fas fa-trophy me-2"></i>Oscar Ödüllü Filmler</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><h6 class="dropdown-header"><i class="fas fa-star me-2 text-warning"></i>Özel Seçimler</h6></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/tavsiye-filmler" title="Editör Tavsiyesi Filmler"><i class="fas fa-thumbs-up me-2"></i>Tavsiye Filmler</a></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/nette-ilkler" title="İnternette İlk Kez Yayınlanan Filmler"><i class="fas fa-crown me-2"></i>Nette İlkler</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle " href="#" id="listelerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<i class="fas fa-list-ul me-1"></i> Listeler
+</a>
+<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="listelerDropdown">
+<li><a class="dropdown-item fw-bold" href="https://jetfilmizle.app/uye-izleme-listeleri" title="Üyelerin Oluşturduğu İzleme Listeleri">
+<i class="fas fa-users me-2 text-warning"></i>Üye İzleme Listeleri
+</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/giris" title="Giriş Yaparak Listelere Erişin">
+<i class="fas fa-sign-in-alt me-2"></i>Giriş Yapın
+</a></li>
+<li><hr class="dropdown-divider"></li>
+<li><a class="dropdown-item" href="https://jetfilmizle.app/ozel-film-listeleri" title="Editörlerimizin Hazırladığı Özel Listeler">
+<i class="fas fa-star me-2 text-warning"></i>En Özel Film Listeleri
+</a></li>
+<li><small class="dropdown-item text-muted">Kişisel listelerinizi görüntülemek için giriş yapın</small></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="offcanvas offcanvas-start bg-dark text-light" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+<div class="offcanvas-header border-bottom border-secondary">
+<h5 class="offcanvas-title text-warning" id="mobileMenuLabel">
+<i class="fas fa-film me-2"></i>JetFilmizle </h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body p-0">
+<nav class="navbar-nav p-0">
+<a class="nav-link px-3 py-3 border-bottom border-secondary active" href="./" title="Ana Sayfaya Git">
+<i class="fas fa-home me-3"></i> Ana Sayfa
+</a>
+<div class="border-bottom border-secondary">
+<a class="nav-link px-3 py-3 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#filmsCollapse" role="button" aria-expanded="false" aria-controls="filmsCollapse">
+<span><i class="fas fa-film me-3"></i> Filmler</span>
+<i class="fas fa-chevron-down"></i>
+</a>
+<div class="collapse" id="filmsCollapse">
+<div class="bg-secondary bg-opacity-25">
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/filmler" title="Tüm Filmleri Görüntüle">
+<i class="fas fa-film me-2 text-warning"></i>Tüm Filmler
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/turkce-dublaj" title="Türkçe Dublajlı Filmleri Görüntüle">
+<span class="film-badge-icon film-badge-flag me-2"><span class="tr-flag"></span></span>Türkçe Dublaj
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/turkce-altyazili" title="Türkçe Altyazılı Filmleri Görüntüle">
+<span class="film-badge-icon film-badge-cc me-2"><i class="fas fa-closed-captioning"></i></span>Türkçe Altyazılı
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/orijinal-filmler" title="Orijinal Dilde Filmleri Görüntüle">
+<span class="film-badge-icon film-badge-original me-2"><span class="original-icon"></span></span>Orijinal Film
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yerli-filmler" title="Yerli Filmleri Görüntüle">
+<span class="film-badge-icon film-badge-local me-2"><span class="local-icon">Yerli</span></span>Yerli Film
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/diller" title="Tüm Dilleri Görüntüle">
+<i class="fas fa-globe me-2"></i>Diller
+</a>
+</div>
+</div>
+</div>
+<div class="border-bottom border-secondary">
+<a class="nav-link px-3 py-3 d-flex justify-content-between align-items-center " data-bs-toggle="collapse" href="#seriesCollapse" role="button" aria-expanded="false" aria-controls="seriesCollapse">
+<span><i class="fas fa-tv me-3"></i> Diziler</span>
+<i class="fas fa-chevron-down"></i>
+</a>
+<div class="collapse" id="seriesCollapse">
+<div class="bg-secondary bg-opacity-25">
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/diziler" title="Tüm Dizileri Görüntüle">
+<i class="fas fa-tv me-2 text-info"></i>Tüm Diziler
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yerli-diziler" title="Yerli (Türk) Dizileri Görüntüle">
+<span class="film-badge-icon film-badge-local me-2"><span class="local-icon">Yerli</span></span>Yerli Diziler
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yabanci-diziler" title="Yabancı Dizileri Görüntüle">
+<i class="fas fa-globe me-2"></i>Yabancı Diziler
+</a>
+</div>
+</div>
+</div>
+<div class="border-bottom border-secondary">
+<a class="nav-link px-3 py-3 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#categoriesCollapse" role="button" aria-expanded="false" aria-controls="categoriesCollapse">
+<span><i class="fas fa-list me-3"></i> Türler</span>
+<i class="fas fa-chevron-down"></i>
+</a>
+<div class="collapse" id="categoriesCollapse">
+<div class="bg-secondary bg-opacity-25">
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/turler" title="Tüm Film Türlerini Görüntüle">
+<i class="fas fa-th-large me-2 text-warning"></i>Tüm Türler
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/aile" title="Aile Filmleri">
+<i class="fas fa-home me-2"></i>Aile </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/aksiyon" title="Aksiyon Filmleri">
+<i class="fas fa-fire me-2"></i>Aksiyon </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/animasyon" title="Animasyon Filmleri">
+<i class="fas fa-paint-brush me-2"></i>Animasyon </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/anime" title="Anime Filmleri">
+<i class="fas fa-torii-gate me-2"></i>Anime </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/belgesel" title="Belgesel Filmleri">
+<i class="fas fa-video me-2"></i>Belgesel </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/bilim-kurgu" title="Bilim Kurgu Filmleri">
+<i class="fas fa-rocket me-2"></i>Bilim Kurgu </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/dram" title="Dram Filmleri">
+<i class="fas fa-theater-masks me-2"></i>Dram </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/fantastik" title="Fantastik Filmleri">
+<i class="fas fa-film me-2"></i>Fantastik </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/fantezi" title="Fantezi Filmleri">
+<i class="fas fa-hat-wizard me-2"></i>Fantezi </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/gerilim" title="Gerilim Filmleri">
+<i class="fas fa-exclamation-triangle me-2"></i>Gerilim </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/gizem" title="Gizem Filmleri">
+<i class="fas fa-question-circle me-2"></i>Gizem </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/haber" title="Haber Filmleri">
+<i class="fas fa-newspaper me-2"></i>Haber </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/kisa-film" title="Kısa Film Filmleri">
+<i class="fas fa-stopwatch me-2"></i>Kısa Film </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/komedi" title="Komedi Filmleri">
+<i class="fas fa-laugh me-2"></i>Komedi </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/korku" title="Korku Filmleri">
+<i class="fas fa-skull me-2"></i>Korku </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/macera" title="Macera Filmleri">
+<i class="fas fa-compass me-2"></i>Macera </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/muzik" title="Müzik Filmleri">
+<i class="fas fa-music me-2"></i>Müzik </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/muzikal" title="Müzikal Filmleri">
+<i class="fas fa-microphone me-2"></i>Müzikal </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/reality" title="Reality Filmleri">
+<i class="fas fa-tv me-2"></i>Reality </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/romantik" title="Romantik Filmleri">
+<i class="fas fa-heart me-2"></i>Romantik </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/short" title="Short Filmleri">
+<i class="fas fa-film me-2"></i>Short </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/spor" title="Spor Filmleri">
+<i class="fas fa-football-ball me-2"></i>Spor </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/suc" title="Suç Filmleri">
+<i class="fas fa-user-secret me-2"></i>Suç </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/western" title="Western Filmleri">
+<i class="fas fa-horse me-2"></i>Western </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/yarisma-programi" title="Yarışma Programı Filmleri">
+<i class="fa-solid fa-shoe-prints me-2"></i>Yarışma Programı </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tur/yasam-tarzi" title="Yaşam Tarzı Filmleri">
+<i class="fas fa-heart me-2"></i>Yaşam Tarzı </a>
+</div>
+</div>
+</div>
+<div class="border-bottom border-secondary">
+<a class="nav-link px-3 py-3 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#languagesCollapse" role="button" aria-expanded="false" aria-controls="languagesCollapse">
+<span><i class="fas fa-language me-3"></i> Diller</span>
+<i class="fas fa-chevron-down"></i>
+</a>
+<div class="collapse" id="languagesCollapse">
+<div class="bg-secondary bg-opacity-25">
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/diller" title="Tüm Dilleri Görüntüle">
+<span class="dil-flag dil-flag-world me-2" role="img" aria-label="Tüm Diller"></span>Tüm Diller
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/dil/turkce" title="Türkçe Filmleri">
+<i class="fas fa-language me-2"></i>Türkçe </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/dil/fransizca" title="Fransızca Filmleri">
+<i class="fas fa-language me-2"></i>Fransızca </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/dil/ispanyolca" title="İspanyolca Filmleri">
+<i class="fas fa-language me-2"></i>İspanyolca </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/dil/almanca" title="Almanca Filmleri">
+<i class="fas fa-language me-2"></i>Almanca </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/dil/hintce" title="Hintçe Filmleri">
+<i class="fas fa-language me-2"></i>Hintçe </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/dil/italyanca" title="İtalyanca Filmleri">
+<i class="fas fa-language me-2"></i>İtalyanca </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/dil/japonca" title="Japonca Filmleri">
+<i class="fas fa-language me-2"></i>Japonca </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/dil/korece" title="Korece Filmleri">
+<i class="fas fa-language me-2"></i>Korece </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/dil/mandarin" title="Mandarin Filmleri">
+<i class="fas fa-language me-2"></i>Mandarin </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/dil/rusca" title="Rusça Filmleri">
+<i class="fas fa-language me-2"></i>Rusça </a>
+</div>
+</div>
+</div>
+<div class="border-bottom border-secondary">
+<a class="nav-link px-3 py-3 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#providersCollapse" role="button" aria-expanded="false" aria-controls="providersCollapse">
+<span><i class="fas fa-tv me-3"></i> Sağlayıcılar</span>
+<i class="fas fa-chevron-down"></i>
+</a>
+<div class="collapse" id="providersCollapse">
+<div class="bg-secondary bg-opacity-25">
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/saglayicilar" title="Tüm Sağlayıcıları Görüntüle">
+<i class="fas fa-th-large me-2 text-warning"></i>Tüm Sağlayıcılar
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/saglayici/universal-pictures" title="Universal Pictures Filmleri">
+<i class="fas fa-tv me-2"></i>Universal Pictures </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/saglayici/warner-bros" title="Warner Bros. Filmleri">
+<i class="fas fa-tv me-2"></i>Warner Bros. </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/saglayici/columbia-pictures" title="Columbia Pictures Filmleri">
+<i class="fas fa-tv me-2"></i>Columbia Pictures </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/saglayici/centre-national-du-cin-ma-et-de-l-image-anim-e-cnc" title="CNC Filmleri">
+<i class="fas fa-tv me-2"></i>CNC </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/saglayici/paramount-pictures" title="Paramount Pictures Filmleri">
+<i class="fas fa-tv me-2"></i>Paramount Pictures </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/saglayici/canalarti" title="Canal+ Filmleri">
+<i class="fas fa-tv me-2"></i>Canal+ </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/saglayici/netflix" title="Netflix Filmleri">
+<i class="fas fa-video me-2"></i>Netflix </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/saglayici/twentieth-century-fox" title="Twentieth Century Fox Filmleri">
+<i class="fas fa-tv me-2"></i>Twentieth Century Fox </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/saglayici/walt-disney-pictures" title="Walt Disney Pictures Filmleri">
+<i class="fas fa-tv me-2"></i>Walt Disney Pictures </a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/saglayici/cin-arti" title="Ciné+ Filmleri">
+<i class="fas fa-tv me-2"></i>Ciné+ </a>
+</div>
+</div>
+</div>
+<div class="border-bottom border-secondary">
+<a class="nav-link px-3 py-3 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#discoverCollapse" role="button" aria-expanded="false" aria-controls="discoverCollapse">
+<span><i class="fas fa-compass me-3"></i> Keşfet</span>
+<i class="fas fa-chevron-down"></i>
+</a>
+<div class="collapse" id="discoverCollapse">
+<div class="bg-secondary bg-opacity-25">
+<a class="dropdown-item px-4 py-2 text-light " href="https://jetfilmizle.app/viral" title="Viral Filmler ve Trend Topic'ler">
+<i class="fas fa-fire me-2 text-viral"></i>Viral
+</a>
+<a class="dropdown-item px-4 py-2 text-light " href="https://jetfilmizle.app/trendler" title="Haftanın en trend dizileri, filmleri ve kullanıcıları">
+<i class="fas fa-chart-line me-2 text-primary"></i>Trendler
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/kesfet/gunluk" title="Günlük Film Keşifleri">
+<i class="fas fa-sun me-2 text-warning"></i>Günlük Keşif
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/kesfet/haftalik" title="Haftalık Film Keşifleri">
+<i class="fas fa-calendar-week me-2 text-info"></i>Haftalık Keşif
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/kesfet/aylik" title="Aylık Film Keşifleri">
+<i class="fas fa-calendar-alt me-2 text-success"></i>Aylık Keşif
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/kesfet/yillik" title="Yıllık Film Keşifleri">
+<i class="fas fa-calendar me-2 text-danger"></i>Yıllık Keşif
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/kesfet/rastgele" title="Rastgele Film Önerileri">
+<i class="fas fa-random me-2 text-primary"></i>Rastgele Keşif
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yakinda" title="Yakında Vizyona Girecek Filmler">
+<i class="fas fa-clock me-2 text-warning"></i>Yakında Gelecek Filmler
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/gunun-kesleri" title="Günün Özel Seçilmiş Filmleri">
+<i class="fas fa-gem me-2 text-success"></i>Günün Özel Seçimi
+</a>
+</div>
+</div>
+</div>
+<div class="border-bottom border-secondary">
+<a class="nav-link px-3 py-3 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#yearsCollapse" role="button" aria-expanded="false" aria-controls="yearsCollapse">
+<span><i class="fas fa-calendar-alt me-3"></i> Yıllar</span>
+<i class="fas fa-chevron-down"></i>
+</a>
+<div class="collapse" id="yearsCollapse">
+<div class="bg-secondary bg-opacity-25">
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yillar" title="Tüm Yılları Görüntüle">
+<i class="fas fa-calendar me-2 text-warning"></i>Tüm Yıllar
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yil/2026" title="2026 Yılı Filmleri">
+<i class="fas fa-calendar-day me-2"></i>2026 Filmleri
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yil/2025" title="2025 Yılı Filmleri">
+<i class="fas fa-calendar-day me-2"></i>2025 Filmleri
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yil/2024" title="2024 Yılı Filmleri">
+<i class="fas fa-calendar-day me-2"></i>2024 Filmleri
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yil/2023" title="2023 Yılı Filmleri">
+<i class="fas fa-calendar-day me-2"></i>2023 Filmleri
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yil/2022" title="2022 Yılı Filmleri">
+<i class="fas fa-calendar-day me-2"></i>2022 Filmleri
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yil/2021" title="2021 Yılı Filmleri">
+<i class="fas fa-calendar-day me-2"></i>2021 Filmleri
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yil/2020" title="2020 Yılı Filmleri">
+<i class="fas fa-calendar-day me-2"></i>2020 Filmleri
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yil/2019" title="2019 Yılı Filmleri">
+<i class="fas fa-calendar-day me-2"></i>2019 Filmleri
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yil/2018" title="2018 Yılı Filmleri">
+<i class="fas fa-calendar-day me-2"></i>2018 Filmleri
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/yil/2017" title="2017 Yılı Filmleri">
+<i class="fas fa-calendar-day me-2"></i>2017 Filmleri
+</a>
+</div>
+</div>
+</div>
+<div class="border-bottom border-secondary">
+<a class="nav-link px-3 py-3 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#toplistsCollapse" role="button" aria-expanded="false" aria-controls="toplistsCollapse">
+<span><i class="fas fa-fire me-3"></i> Enler</span>
+<i class="fas fa-chevron-down"></i>
+</a>
+<div class="collapse" id="toplistsCollapse">
+<div class="bg-secondary bg-opacity-25">
+<h6 class="dropdown-header"><i class="fas fa-fire me-2 text-warning"></i>Popülerlik</h6>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/filmler/en-cok-izlenenler" title="En Çok İzlenen Filmler Listesi">
+<i class="fas fa-eye me-2"></i>En Çok İzlenenler
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/filmler/en-cok-yorumlananlar" title="En Çok Yorum Alan Filmler Listesi">
+<i class="fas fa-comments me-2"></i>En Çok Yorumlananlar
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/filmler/en-son-yorum-alan" title="En Son Yorum Alan Filmler Listesi">
+<i class="fas fa-clock me-2"></i>En Son Yorumlanan
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/filmler/en-cok-begenilenler" title="En Çok Beğenilen Filmler Listesi">
+<i class="fas fa-heart me-2"></i>En Çok Beğenilenler
+</a>
+<h6 class="dropdown-header"><i class="fas fa-trophy me-2 text-warning"></i>Prestijli Listeler</h6>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/imdb-top" title="Tüm zamanların en iyi 250 filmi (IMDb)">
+<i class="fab fa-imdb me-2"></i>IMDb Top 250
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/jetfilm-top" title="JetFilm'in en iyi 250 film seçkisi">
+<i class="fas fa-star me-2 text-warning"></i>JetFilm Top 250
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/metascore" title="En yüksek metascore puanına sahip filmler">
+<i class="fas fa-star-half-alt me-2"></i>Metascore Top
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/oscar" title="Oscar ödüllü ve aday gösterilmiş filmler">
+<i class="fas fa-trophy me-2"></i>Oscar Ödüllü Filmler
+</a>
+<h6 class="dropdown-header"><i class="fas fa-star me-2 text-warning"></i>Özel Seçimler</h6>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/tavsiye-filmler" title="Editörlerimizin özenle seçtiği tavsiye filmler">
+<i class="fas fa-thumbs-up me-2"></i>Tavsiye Filmler
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/nette-ilkler" title="JetFilm'de ilk kez yayınlanan özel filmler">
+<i class="fas fa-crown me-2"></i>Nette İlkler
+</a>
+</div>
+</div>
+</div>
+<div class="border-bottom border-secondary">
+<a class="nav-link px-3 py-3 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#listsCollapse" role="button" aria-expanded="false" aria-controls="listsCollapse">
+<span><i class="fas fa-list-ul me-3"></i> Listeler</span>
+<i class="fas fa-chevron-down"></i>
+</a>
+<div class="collapse" id="listsCollapse">
+<div class="bg-secondary bg-opacity-25">
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/uye-izleme-listeleri" title="Diğer üyelerin oluşturduğu izleme listeleri">
+<i class="fas fa-users me-2 text-warning"></i>Üye İzleme Listeleri
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/giris" title="Giriş Yap">
+<i class="fas fa-sign-in-alt me-2"></i>Giriş Yapın
+</a>
+<a class="dropdown-item px-4 py-2 text-light" href="https://jetfilmizle.app/ozel-film-listeleri" title="Editörlerimizin hazırladığı özel film listeleri">
+<i class="fas fa-star me-2 text-warning"></i>En Özel Film Listeleri
+</a>
+<small class="dropdown-item px-4 py-1 text-muted">Kişisel listelerinizi görüntülemek için giriş yapın</small>
+</div>
+</div>
+</div>
+<a class="nav-link px-3 py-3 border-bottom border-secondary" href="https://jetfilmizle.app/giris" title="Hesabınıza Giriş Yapın">
+<i class="fas fa-sign-in-alt me-3"></i> Giriş Yap
+</a>
+<a class="nav-link px-3 py-3 border-bottom border-secondary" href="https://jetfilmizle.app/kayit-ol" title="Ücretsiz Üye Olun">
+<i class="fas fa-user-plus me-3"></i>Üye Ol
+</a>
+</nav>
+</div>
+</div>
+<main class="container py-4">
+<div class="row">
+<div class="col-12">
+<nav aria-label="breadcrumb" class="mb-4">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="https://jetfilmizle.app/" title="Ana Sayfaya Dön">Ana Sayfa</a></li>
+<li class="breadcrumb-item active" aria-current="page">
+Arama: "matrix"
+</li>
+</ol>
+</nav>
+<div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center mb-4">
+<div>
+<h1 class="h2 mb-2 d-flex align-items-center gap-2">
+<i class="fas fa-search me-2 text-warning"></i>
+Gelişmiş Yapay Destekli Arama
+<small class="text-muted fw-normal">— "matrix" için sonuçlar</small>
+</h1>
+<p class="text-muted mb-3 mb-lg-0">
+<i class="fas fa-robot me-1"></i> Akıllı filtrelerle film, dizi ve kişileri bulun; IMDb, Metascore ve yorum sayılarına göre daraltın.
+· 9 film, 1 oyuncu bulundu </p>
+</div>
+</div>
+<div class="card bg-dark mb-4">
+<div class="card-header bg-dark border-secondary py-3 cursor-pointer" data-bs-toggle="collapse" data-bs-target="#searchFiltersCollapse" aria-expanded="false" aria-controls="searchFiltersCollapse" id="searchFiltersHeader" style="cursor: pointer;">
+<div class="d-flex justify-content-between align-items-center">
+<h2 class="h5 text-light mb-0">
+<i class="fas fa-filter me-2"></i>Arama Filtreleri
+<span class="badge bg-warning text-dark ms-2">1 aktif</span>
+</h2>
+<div class="d-flex align-items-center">
+<span class="text-muted small me-2 d-none d-md-inline filter-toggle-text">
+Göster </span>
+<i class="fas fa-chevron-down text-warning filter-toggle-icon" style="transition: transform 0.3s ease; "></i>
+</div>
+</div>
+</div>
+<div class="collapse " id="searchFiltersCollapse">
+<div class="card-body pt-3">
+<div class="small text-muted mb-2">
+<i class="fas fa-lightbulb text-warning me-1"></i>
+Eş anlamlı arama terimleri de kullanılıyor:
+<span class="text-warning">matrix</span>
+</div>
+<form action="https://jetfilmizle.app/arama" method="get" class="row g-3">
+<div class="col-lg-5 col-md-6">
+<label for="q" class="form-label">Arama Terimi</label>
+<input type="text" class="form-control bg-dark text-light border-secondary" id="q" name="q" value="matrix" placeholder="Neo, Matrix, Christopher Nolan...">
+</div>
+<div class="col-lg-3 col-md-6">
+<label for="search_type" class="form-label">Nerede Ara?</label>
+<select class="form-select bg-dark text-light border-secondary" id="search_type" name="search_type" aria-label="Liste filtresi">
+<option value="all" selected>Heryerde</option>
+<option value="film" >Film Adında</option>
+<option value="imdb_id" >IMDb ID</option>
+<option value="oyuncu" >Oyuncuda</option>
+<option value="yonetmen" >Yönetmende</option>
+<option value="senarist" >Senaristte</option>
+<option value="seslendirme" >Seslendirmede</option>
+<option value="yapimci" >Yapımcıda</option>
+<option value="ulke" >Ülkede</option>
+</select>
+</div>
+<div class="col-lg-2 col-md-6">
+<label for="kategori" class="form-label">Kategori</label>
+<select class="form-select bg-dark text-light border-secondary" id="kategori" name="kategori" aria-label="Film türü">
+<option value="">Tümü</option>
+<option value="114" >Aile</option>
+<option value="1" >Aksiyon</option>
+<option value="3" >Aksiyon Destanı</option>
+<option value="252" >Almanca</option>
+<option value="31" >Animasyon</option>
+<option value="37" >Anime</option>
+<option value="5" >Araba Aksiyonu</option>
+<option value="267" >Arapça</option>
+<option value="84" >Askeri Belgesel</option>
+<option value="137" >B-Korku</option>
+<option value="4" >B-Sınıfı Aksiyon</option>
+<option value="210" >Basketbol</option>
+<option value="231" >Batı</option>
+<option value="235" >Batı Destanı</option>
+<option value="169" >Beceriksiz Dedektif</option>
+<option value="51" >Beden Değişimi Komedisi</option>
+<option value="77" >Belgesel</option>
+<option value="80" >Belgesel Dizisi</option>
+<option value="95" >Belgesel drama</option>
+<option value="282" >Bengalce</option>
+<option value="209" >Beyzbol</option>
+<option value="129" >Bilgi Yarışması</option>
+<option value="34" >Bilgisayar Animasyonu</option>
+<option value="189" >Bilim Kurgu</option>
+<option value="196" >Bilim Kurgu Destanı</option>
+<option value="88" >Bilim ve Teknoloji Belgeseli</option>
+<option value="96" >Biyografi</option>
+<option value="211" >Boks</option>
+<option value="186" >Buharlı Romantizm</option>
+<option value="136" >Buluntu Görüntü Korku</option>
+<option value="146" >Cadı Korkusu</option>
+<option value="232" >Çağdaş Batı</option>
+<option value="138" >Canavar Korku</option>
+<option value="227" >Casus</option>
+<option value="60" >Çılgın Komedi</option>
+<option value="20" >Çöl Macerası</option>
+<option value="24" >Dağ Macerası</option>
+<option value="264" >Danca</option>
+<option value="27" >Deniz Macerası</option>
+<option value="97" >Destansı</option>
+<option value="285" >Diller</option>
+<option value="21" >Dinozor Macerası</option>
+<option value="193" >Distopik Bilim Kurgu</option>
+<option value="176" >Docusoap Reality TV</option>
+<option value="86" >Doğa Belgeseli</option>
+<option value="122" >Doğaüstü Fantezi</option>
+<option value="142" >Doğaüstü Korku</option>
+<option value="104" >Dönem Draması</option>
+<option value="9" >Dövüş Sanatları</option>
+<option value="91" >Dram</option>
+<option value="22" >Dünya Turu Macerası</option>
+<option value="212" >Ekstrem Sporlar</option>
+<option value="35" >Elle Çizilmiş Animasyon</option>
+<option value="93" >Ergenliğe Giriş</option>
+<option value="221" >Erotik Gerilim</option>
+<option value="151" >Ev Dekorasyonu</option>
+<option value="247" >Fantastik</option>
+<option value="121" >Fantastik Epik</option>
+<option value="117" >Fantezi</option>
+<option value="255" >Farsça</option>
+<option value="6" >Felaket</option>
+<option value="265" >Felemenkçe</option>
+<option value="278" >Filipince</option>
+<option value="98" >Finansal Dram</option>
+<option value="269" >Fince</option>
+<option value="248" >Fransızca</option>
+<option value="213" >Futbol</option>
+<option value="215" >Futbol</option>
+<option value="73" >Gangster</option>
+<option value="124" >Genç Fantezi</option>
+<option value="143" >Genç Korku</option>
+<option value="187" >Genç Romantik</option>
+<option value="66" >Gençlik Komedisi</option>
+<option value="29" >Gençlik Macerası</option>
+<option value="76" >Gerçek Suç</option>
+<option value="218" >Gerilim</option>
+<option value="170" >Gerilim Gizem</option>
+<option value="222" >Giallo</option>
+<option value="165" >Gizem</option>
+<option value="177" >Gizli Kamera</option>
+<option value="25" >Görev</option>
+<option value="149" >Güzellik Makyajı</option>
+<option value="126" >Güzellik Yarışması</option>
+<option value="272" >Haber</option>
+<option value="153" >Haberler</option>
+<option value="135" >Halk Korkusu</option>
+<option value="106" >Hapishane Draması</option>
+<option value="168" >Hard-boiled Dedektif</option>
+<option value="228" >Hayatta kalma</option>
+<option value="130" >Hayatta Kalma Yarışması</option>
+<option value="115" >Hayvan Macerası</option>
+<option value="249" >Hintçe</option>
+<option value="102" >Hukuk Draması</option>
+<option value="81" >İnanç ve Maneviyat Belgeseli</option>
+<option value="179" >İş Dünyası Reality TV</option>
+<option value="113" >İş Yeri Draması</option>
+<option value="39" >Isekai</option>
+<option value="254" >İspanyolca</option>
+<option value="260" >İsveççe</option>
+<option value="256" >İtalyanca</option>
+<option value="40" >Iyashikei</option>
+<option value="182" >İyi Hissettiren Romantizm</option>
+<option value="263" >Japonca</option>
+<option value="41" >Josei</option>
+<option value="161" >Jukebox Müzikali</option>
+<option value="194" >Kaiju</option>
+<option value="49" >Kanka Komedisi</option>
+<option value="283" >Kannada</option>
+<option value="251" >Kantonca</option>
+<option value="72" >Kara Film</option>
+<option value="52" >Kara Komedi</option>
+<option value="118" >Karanlık Fantezi</option>
+<option value="183" >Karanlık Romantizm</option>
+<option value="171" >Katil Kim?</option>
+<option value="28" >Kılıç Ustası</option>
+<option value="123" >Kılıç ve Büyücülük</option>
+<option value="13" >Kılıç ve Sandalet</option>
+<option value="207" >Kısa</option>
+<option value="206" >Kısa Film</option>
+<option value="234" >Klasik Batı</option>
+<option value="160" >Klasik Müzikal</option>
+<option value="47" >Komedi</option>
+<option value="229" >Komplo Gerilim</option>
+<option value="157" >Konser</option>
+<option value="101" >Kore Dizisi</option>
+<option value="257" >Korece</option>
+<option value="132" >Korku</option>
+<option value="94" >Kostümlü Drama</option>
+<option value="8" >Kung Fu</option>
+<option value="145" >Kurt Adam Korkusu</option>
+<option value="17" >Macera</option>
+<option value="19" >Macera Destanı</option>
+<option value="271" >Malayalam</option>
+<option value="258" >Mandarin</option>
+<option value="280" >Marathice</option>
+<option value="42" >Mecha</option>
+<option value="200" >Mevsimsel</option>
+<option value="214" >Motor Sporları</option>
+<option value="58" >Müstehcen Komedi</option>
+<option value="156" >Müzik</option>
+<option value="85" >Müzik Belgeseli</option>
+<option value="159" >Müzikal</option>
+<option value="70" >Muziplik</option>
+<option value="259" >Norveççe</option>
+<option value="23" >Orman Macerası</option>
+<option value="65" >Ot Komedisi</option>
+<option value="128" >Oyun Gösterisi</option>
+<option value="178" >Paranormal Reality TV</option>
+<option value="56" >Parodi</option>
+<option value="109" >Pembe Dizi</option>
+<option value="110" >Pembe Dizi</option>
+<option value="275" >Pencapça</option>
+<option value="119" >Peri Masalı</option>
+<option value="69" >Polis Draması</option>
+<option value="50" >Polis Kankalar</option>
+<option value="75" >Polis Soruşturması</option>
+<option value="105" >Politik Drama</option>
+<option value="224" >Politik Gerilim</option>
+<option value="163" >Pop Müzikal</option>
+<option value="268" >Portekizce</option>
+<option value="107" >Psikolojik Drama</option>
+<option value="225" >Psikolojik Gerilim</option>
+<option value="139" >Psikolojik Korku</option>
+<option value="167" >Rahat Gizem</option>
+<option value="172" >Reality</option>
+<option value="173" >Reality TV</option>
+<option value="175" >Reality TV ile Tanışma</option>
+<option value="286" >Reality-TV</option>
+<option value="164" >Rock Müzikali</option>
+<option value="180" >Romantik</option>
+<option value="185" >Romantik Destan</option>
+<option value="184" >Romantik Komedi</option>
+<option value="261" >Rusça</option>
+<option value="53" >Saçma Komedi</option>
+<option value="55" >Sahte Belgesel</option>
+<option value="11" >Samuray</option>
+<option value="14" >Savaş</option>
+<option value="15" >Savaş Destanı</option>
+<option value="30" >Şehir Macerası</option>
+<option value="43" >Seinen</option>
+<option value="226" >Seri Katil</option>
+<option value="155" >Seyahat</option>
+<option value="90" >Seyahat Belgeseli</option>
+<option value="44" >Shōjo</option>
+<option value="45" >Shōnen</option>
+<option value="287" >Short</option>
+<option value="108" >Showbiz Draması</option>
+<option value="220" >Siber Gerilim</option>
+<option value="192" >Siberpunk</option>
+<option value="141" >Sıçramalı Korku</option>
+<option value="7" >Silahlı Dövüş</option>
+<option value="61" >Sitkom</option>
+<option value="87" >Siyasi Belgesel</option>
+<option value="62" >Skeç Komedisi</option>
+<option value="63" >Slapstick</option>
+<option value="140" >Slasher Korku</option>
+<option value="46" >Slice of Life</option>
+<option value="74" >Soygun</option>
+<option value="233" >Spagetti Western</option>
+<option value="208" >Spor</option>
+<option value="89" >Spor Belgeseli</option>
+<option value="64" >Stand-Up</option>
+<option value="198" >Steampunk</option>
+<option value="36" >Stop Motion Animasyon</option>
+<option value="217" >Su Sporları</option>
+<option value="67" >Suç</option>
+<option value="79" >Suç Belgeseli</option>
+<option value="174" >Suç Reality TV</option>
+<option value="12" >Süper Kahraman</option>
+<option value="154" >Talk Show</option>
+<option value="276" >Tamilce</option>
+<option value="83" >Tarih Belgeseli</option>
+<option value="284" >Tarihi</option>
+<option value="99" >Tarihi Destan</option>
+<option value="100" >Tarihi Destan</option>
+<option value="59" >Taşlama</option>
+<option value="201" >Tatil</option>
+<option value="204" >Tatil Ailesi</option>
+<option value="202" >Tatil Animasyonu</option>
+<option value="203" >Tatil Komedisi</option>
+<option value="205" >Tatil Romantizmi</option>
+<option value="262" >Tayca</option>
+<option value="10" >Tek Kişilik Ordu Aksiyonu</option>
+<option value="111" >Telenovela</option>
+<option value="279" >Teluguca</option>
+<option value="103" >Tıp Draması</option>
+<option value="112" >Trajedi</option>
+<option value="188" >Trajik Romantizm</option>
+<option value="57" >Tuhaf Komedi</option>
+<option value="250" >Türkçe</option>
+<option value="281" >Urduca</option>
+<option value="71" >Uyuşturucu Suçları</option>
+<option value="197" >Uzay Bilim Kurgu</option>
+<option value="190" >Uzaylı İstilası</option>
+<option value="144" >Vampir Korkusu</option>
+<option value="134" >Vücut Korkusu</option>
+<option value="230" >Western</option>
+<option value="16" >Wuxia</option>
+<option value="195" >Yapay Zeka</option>
+<option value="125" >Yarışma</option>
+<option value="274" >Yarışma Programı</option>
+<option value="223" >Yasal Gerilim</option>
+<option value="148" >Yaşam Tarzı</option>
+<option value="82" >Yemek Belgeseli</option>
+<option value="150" >Yemek Pişirme &amp; Yemek</option>
+<option value="127" >Yemek Yarışması</option>
+<option value="131" >Yetenek Yarışması</option>
+<option value="33" >Yetişkin Animasyonu</option>
+<option value="26" >Yolculuk</option>
+<option value="54" >Yüksek Konsept Komedi</option>
+<option value="266" >Yunanca</option>
+<option value="199" >Zaman Yolculuğu</option>
+<option value="147" >Zombi Korkusu</option>
+</select>
+</div>
+<div class="col-lg-2 col-md-6">
+<label for="tur" class="form-label">Tür</label>
+<select class="form-select bg-dark text-light border-secondary" id="tur" name="tur" aria-label="Liste filtresi">
+<option value="">Tümü</option>
+<option value="film" >Film</option>
+<option value="dizi" >Dizi</option>
+</select>
+</div>
+<div class="row g-3 mt-3 pt-3 border-top border-secondary mx-0">
+<div class="col-lg-2 col-md-3">
+<label for="yil_min" class="form-label">Min. Yıl</label>
+<input type="number" class="form-control bg-dark text-light border-secondary" id="yil_min" name="yil_min" value="" placeholder="1990" min="1900" max="2028">
+</div>
+<div class="col-lg-2 col-md-3">
+<label for="yil_max" class="form-label">Maks. Yıl</label>
+<input type="number" class="form-control bg-dark text-light border-secondary" id="yil_max" name="yil_max" value="" placeholder="2026" min="1900" max="2028">
+</div>
+<div class="col-lg-2 col-md-3">
+<label for="min_puan" class="form-label">Min. IMDb</label>
+<select class="form-select bg-dark text-light border-secondary" id="min_puan" name="min_puan" aria-label="En düşük puan">
+<option value="">Hepsi</option>
+<option value="1" >1.0+</option>
+<option value="2" >2.0+</option>
+<option value="3" >3.0+</option>
+<option value="4" >4.0+</option>
+<option value="5" >5.0+</option>
+<option value="6" >6.0+</option>
+<option value="7" >7.0+</option>
+<option value="8" >8.0+</option>
+<option value="9" >9.0+</option>
+</select>
+</div>
+<div class="col-lg-2 col-md-3">
+<label for="min_metascore" class="form-label">Min. Metascore</label>
+<select class="form-select bg-dark text-light border-secondary" id="min_metascore" name="min_metascore" aria-label="Liste filtresi">
+<option value="">Hepsi</option>
+<option value="40" >40+</option>
+<option value="50" >50+</option>
+<option value="60" >60+</option>
+<option value="70" >70+</option>
+<option value="80" >80+</option>
+<option value="90" >90+</option>
+</select>
+</div>
+<div class="col-lg-2 col-md-3">
+<label for="min_yorum" class="form-label">Min. Yorum</label>
+<select class="form-select bg-dark text-light border-secondary" id="min_yorum" name="min_yorum" aria-label="Liste filtresi">
+<option value="">Hepsi</option>
+<option value="5" >5+</option>
+<option value="10" >10+</option>
+<option value="25" >25+</option>
+<option value="50" >50+</option>
+<option value="100" >100+</option>
+</select>
+</div>
+<div class="col-lg-2 col-md-3">
+<label for="sort" class="form-label">Sıralama</label>
+<select class="form-select bg-dark text-light border-secondary" id="sort" name="sort" aria-label="Sıralama">
+<option value="id" selected>En Yeni</option>
+<option value="baslik" >A-Z</option>
+<option value="yil" >Yıl</option>
+<option value="imdb_puan" >IMDb</option>
+<option value="metascore" >Metascore</option>
+<option value="yorum" >Yorum</option>
+<option value="izlenme" >İzlenme</option>
+</select>
+</div>
+</div>
+<div class="row g-3 mt-2 mx-0">
+<div class="col-lg-4">
+<label for="oyuncu_filter" class="form-label">Oyuncu</label>
+<input type="text" class="form-control bg-dark text-light border-secondary" id="oyuncu_filter" name="oyuncu" value="" placeholder="Tom Hanks, Scarlett Johansson...">
+</div>
+<div class="col-lg-4">
+<label for="yonetmen_filter" class="form-label">Yönetmen</label>
+<input type="text" class="form-control bg-dark text-light border-secondary" id="yonetmen_filter" name="yonetmen_filter" value="" placeholder="Nolan, Villeneuve...">
+</div>
+<div class="col-lg-4">
+<label for="senarist_filter" class="form-label">Senarist</label>
+<input type="text" class="form-control bg-dark text-light border-secondary" id="senarist_filter" name="senarist_filter" value="" placeholder="Aaron Sorkin...">
+</div>
+</div>
+<div class="col-12 mt-3 d-flex flex-wrap gap-2">
+<button type="submit" class="btn btn-warning">
+<i class="fas fa-search me-1"></i> Ara
+</button>
+<a href="https://jetfilmizle.app/arama" class="btn btn-outline-light" title="Arama Filtrelerini Temizle">
+<i class="fas fa-refresh me-1"></i> Temizle
+</a>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script>    document.addEventListener('DOMContentLoaded', function() {
+        const filterHeader = document.getElementById('searchFiltersHeader');
+        const filterCollapse = document.getElementById('searchFiltersCollapse');
+        const toggleIcon = filterHeader?.querySelector('.filter-toggle-icon');
+        const toggleText = filterHeader?.querySelector('.filter-toggle-text');
+        
+        if (filterCollapse && toggleIcon) {
+            // Bootstrap collapse olaylarını dinle
+            filterCollapse.addEventListener('shown.bs.collapse', function() {
+                toggleIcon.style.transform = 'rotate(180deg)';
+                if (toggleText) toggleText.textContent = 'Gizle';
+                // Kullanıcı tercihini kaydet
+                try { localStorage.setItem('searchFiltersExpanded', 'true'); } catch(e) {}
+            });
+            
+            filterCollapse.addEventListener('hidden.bs.collapse', function() {
+                toggleIcon.style.transform = 'rotate(0deg)';
+                if (toggleText) toggleText.textContent = 'Göster';
+                // Kullanıcı tercihini kaydet
+                try { localStorage.setItem('searchFiltersExpanded', 'false'); } catch(e) {}
+            });
+            
+            // Sayfa yüklendiğinde localStorage'dan tercihi oku (sadece aktif filtre yoksa)
+                    }
+    });
+    </script>
+<div class="alert alert-secondary bg-dark border-secondary text-light mb-4">
+<h3 class="h6 mb-2"><i class="fas fa-filter me-2 text-warning"></i>Aktif Filtreler:</h3>
+<div class="d-flex flex-wrap gap-2">
+<span class="badge bg-secondary">Heryerde: "matrix"</span>
+</div>
+</div>
+<div class="mb-4">
+<h2 class="h4 mb-3">
+<i class="fas fa-film me-2 text-warning"></i> Filmler
+<span class="badge bg-secondary ms-2">9</span>
+</h2>
+<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 g-3">
+<div class="col">
+<div class="card bg-dark border-secondary h-100 film-card jf-card">
+<div class="film-card-wrapper position-relative">
+<a href="https://jetfilmizle.app/film/matrix-devrim" class="text-decoration-none" title="Matrix: Devrim Full Türkçe Dublaj İzle">
+<div class="film-poster">
+<img src="https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-devrim-poster-medium.webp" srcset="https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-devrim-poster-tiny.webp 150w, https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-devrim-poster-small.webp 300w, https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-devrim-poster-medium.webp 500w, https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-devrim-poster-large.webp 780w, https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-devrim-poster-xlarge.webp 1200w" sizes="(max-width: 576px) calc(50vw - 24px), (max-width: 768px) calc(33vw - 24px), (max-width: 992px) calc(25vw - 24px), (max-width: 1200px) calc(20vw - 24px), 200px" loading="lazy" decoding="async" width="300"                     height="450"                     class="card-img-top" alt="Matrix: Devrim (The Matrix Revolutions) 2003 HD Film Afişi">
+<span class="fc-hover" aria-hidden="true">
+<span class="fc-play"><i class="fas fa-play"></i></span>
+<span class="fc-desc">&quot;Matrix 3 izle&quot;, 2003 yılında çekilmiş olan Matrix serisinin üçüncü ve son filmi olarak çekildi fakat matrix 4 filminide çekmeye...</span> </span>
+<span class="fc-scores-top">
+<span class="fc-rating fc-rating--imdb" title="IMDb Puanı"><i class="fas fa-star" aria-hidden="true"></i>6.7</span>
+<span class="fc-rating fc-rating--jf" title="JetFilm Kullanıcı Puanı"><span class="fc-jf-mark" aria-hidden="true">JF</span>9.2</span>
+</span>
+<span class="fc-bottom">
+<span class="fc-chips">
+<span class="fc-chip fc-chip--dublaj" title="Türkçe Dublaj"><span class="fc-flag" aria-hidden="true"></span>Dublaj</span>
+</span>
+<h3 class="fc-title">Matrix: Devrim</h3>
+<span class="fc-sub">
+<span class="fc-year">2003</span>
+<span class="fc-sure">2s 9dk</span>
+<span class="fc-orig">The Matrix Revolutions</span>
+</span>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card bg-dark border-secondary h-100 film-card jf-card">
+<div class="film-card-wrapper position-relative">
+<a href="https://jetfilmizle.app/film/matrix-yeniden-yuklendi" class="text-decoration-none" title="Matrix: Yeniden Yüklendi Full Türkçe Dublaj İzle">
+<div class="film-poster">
+<img src="https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-yeniden-yuklendi-poster-medium.webp" srcset="https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-yeniden-yuklendi-poster-tiny.webp 150w, https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-yeniden-yuklendi-poster-small.webp 300w, https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-yeniden-yuklendi-poster-medium.webp 500w, https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-yeniden-yuklendi-poster-large.webp 780w, https://cdn.jetfilmizle.app/uploads/films/2003/m/matrix-yeniden-yuklendi-poster-xlarge.webp 1200w" sizes="(max-width: 576px) calc(50vw - 24px), (max-width: 768px) calc(33vw - 24px), (max-width: 992px) calc(25vw - 24px), (max-width: 1200px) calc(20vw - 24px), 200px" loading="lazy" decoding="async" width="300"                     height="450"                     class="card-img-top" alt="Matrix: Yeniden Yüklendi (The Matrix Reloaded) 2003 HD Film Afişi">
+<span class="fc-hover" aria-hidden="true">
+<span class="fc-play"><i class="fas fa-play"></i></span>
+<span class="fc-desc">Gerçek adı Thomas Anderson nickname ile bilinen Neo(Keanu Reeves) kendisini Matrixte ajanların ve makinelerin ellerinden kurtarmayı...</span> </span>
+<span class="fc-scores-top">
+<span class="fc-rating fc-rating--imdb" title="IMDb Puanı"><i class="fas fa-star" aria-hidden="true"></i>7.2</span>
+<span class="fc-rating fc-rating--jf" title="JetFilm Kullanıcı Puanı"><span class="fc-jf-mark" aria-hidden="true">JF</span>8.6</span>
+</span>
+<span class="fc-bottom">
+<span class="fc-chips">
+<span class="fc-chip fc-chip--dublaj" title="Türkçe Dublaj"><span class="fc-flag" aria-hidden="true"></span>Dublaj</span>
+</span>
+<h3 class="fc-title">Matrix: Yeniden Yüklendi</h3>
+<span class="fc-sub">
+<span class="fc-year">2003</span>
+<span class="fc-sure">2s 18dk</span>
+<span class="fc-orig">The Matrix Reloaded</span>
+</span>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card bg-dark border-secondary h-100 film-card jf-card">
+<div class="film-card-wrapper position-relative">
+<a href="https://jetfilmizle.app/film/matrix" class="text-decoration-none" title="Matrix Full Türkçe Dublaj İzle">
+<div class="film-poster">
+<img src="https://cdn.jetfilmizle.app/uploads/films/1999/m/matrix-poster-medium.webp" srcset="https://cdn.jetfilmizle.app/uploads/films/1999/m/matrix-poster-tiny.webp 150w, https://cdn.jetfilmizle.app/uploads/films/1999/m/matrix-poster-small.webp 300w, https://cdn.jetfilmizle.app/uploads/films/1999/m/matrix-poster-medium.webp 500w, https://cdn.jetfilmizle.app/uploads/films/1999/m/matrix-poster-large.webp 780w, https://cdn.jetfilmizle.app/uploads/films/1999/m/matrix-poster-xlarge.webp 1200w" sizes="(max-width: 576px) calc(50vw - 24px), (max-width: 768px) calc(33vw - 24px), (max-width: 992px) calc(25vw - 24px), (max-width: 1200px) calc(20vw - 24px), 200px" loading="lazy" decoding="async" width="300"                     height="450"                     class="card-img-top" alt="Matrix (The Matrix) 1999 HD Film Afişi">
+<span class="fc-hover" aria-hidden="true">
+<span class="fc-play"><i class="fas fa-play"></i></span>
+<span class="fc-desc">The Matrix, sıradan bir hayat sürdüğünü sanan yazılımcı Neo’nun, gerçeğin sandığından çok daha farklı olduğuna dair...</span> </span>
+<span class="fc-scores-top">
+<span class="fc-rating fc-rating--imdb" title="IMDb Puanı"><i class="fas fa-star" aria-hidden="true"></i>8.7</span>
+<span class="fc-rating fc-rating--jf" title="JetFilm Kullanıcı Puanı"><span class="fc-jf-mark" aria-hidden="true">JF</span>9.5</span>
+</span>
+<span class="fc-bottom">
+<span class="fc-chips">
+<span class="fc-chip fc-chip--dublaj" title="Türkçe Dublaj"><span class="fc-flag" aria-hidden="true"></span>Dublaj</span>
+<span class="fc-chip fc-chip--altyazi" title="Türkçe Altyazılı"><i class="fas fa-closed-captioning" aria-hidden="true"></i>Altyazı</span>
+</span>
+<h3 class="fc-title">Matrix</h3>
+<span class="fc-sub">
+<span class="fc-year">1999</span>
+<span class="fc-sure">2s 16dk</span>
+<span class="fc-orig">The Matrix</span>
+</span>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card bg-dark border-secondary h-100 film-card jf-card">
+<div class="film-card-wrapper position-relative">
+<a href="https://jetfilmizle.app/film/the-matrix-resurrections" class="text-decoration-none" title="The Matrix Resurrections Full Türkçe Dublaj İzle">
+<div class="film-poster">
+<img src="https://cdn.jetfilmizle.app/uploads/films/2021/t/the-matrix-resurrections-poster-medium.webp" srcset="https://cdn.jetfilmizle.app/uploads/films/2021/t/the-matrix-resurrections-poster-tiny.webp 150w, https://cdn.jetfilmizle.app/uploads/films/2021/t/the-matrix-resurrections-poster-small.webp 300w, https://cdn.jetfilmizle.app/uploads/films/2021/t/the-matrix-resurrections-poster-medium.webp 500w, https://cdn.jetfilmizle.app/uploads/films/2021/t/the-matrix-resurrections-poster-large.webp 780w, https://cdn.jetfilmizle.app/uploads/films/2021/t/the-matrix-resurrections-poster-xlarge.webp 1200w" sizes="(max-width: 576px) calc(50vw - 24px), (max-width: 768px) calc(33vw - 24px), (max-width: 992px) calc(25vw - 24px), (max-width: 1200px) calc(20vw - 24px), 200px" loading="lazy" decoding="async" width="300"                     height="450"                     class="card-img-top" alt="The Matrix Resurrections 2021 HD Film Afişi">
+<span class="fc-hover" aria-hidden="true">
+<span class="fc-play"><i class="fas fa-play"></i></span>
+<span class="fc-desc">&quot;The Matrix 4 izle&quot;, 2021 yılında çekilmiş olan Matrix serisinin dördüncü filmidir. Film, önceki filmlerde anlatılan hikayenin 20...</span> </span>
+<span class="fc-scores-top">
+<span class="fc-rating fc-rating--imdb" title="IMDb Puanı"><i class="fas fa-star" aria-hidden="true"></i>5.6</span>
+<span class="fc-rating fc-rating--jf" title="JetFilm Kullanıcı Puanı"><span class="fc-jf-mark" aria-hidden="true">JF</span>5.0</span>
+</span>
+<span class="fc-bottom">
+<span class="fc-chips">
+<span class="fc-chip fc-chip--dublaj" title="Türkçe Dublaj"><span class="fc-flag" aria-hidden="true"></span>Dublaj</span>
+</span>
+<h3 class="fc-title">The Matrix Resurrections</h3>
+<span class="fc-sub">
+<span class="fc-year">2021</span>
+<span class="fc-sure">2s 28dk</span>
+</span>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card bg-dark border-secondary h-100 film-card jf-card">
+<div class="film-card-wrapper position-relative">
+<a href="https://jetfilmizle.app/film/komando" class="text-decoration-none" title="Komando Full Türkçe Dublaj İzle">
+<div class="film-poster">
+<img src="https://cdn.jetfilmizle.app/uploads/films/1985/k/komando-poster-medium.webp" srcset="https://cdn.jetfilmizle.app/uploads/films/1985/k/komando-poster-tiny.webp 150w, https://cdn.jetfilmizle.app/uploads/films/1985/k/komando-poster-small.webp 300w, https://cdn.jetfilmizle.app/uploads/films/1985/k/komando-poster-medium.webp 500w, https://cdn.jetfilmizle.app/uploads/films/1985/k/komando-poster-large.webp 780w, https://cdn.jetfilmizle.app/uploads/films/1985/k/komando-poster-xlarge.webp 1200w" sizes="(max-width: 576px) calc(50vw - 24px), (max-width: 768px) calc(33vw - 24px), (max-width: 992px) calc(25vw - 24px), (max-width: 1200px) calc(20vw - 24px), 200px" loading="lazy" decoding="async" width="300"                     height="450"                     class="card-img-top" alt="Komando (Commando) 1985 HD Film Afişi">
+<span class="fc-hover" aria-hidden="true">
+<span class="fc-play"><i class="fas fa-play"></i></span>
+<span class="fc-desc">&quot;Komando (Commando) izle,&quot; 1985 yapımı bir aksiyon filmidir ve başrolünde Arnold Schwarzenegger yer almaktadır. Filmin konusu şu...</span> </span>
+<span class="fc-scores-top">
+<span class="fc-rating fc-rating--imdb" title="IMDb Puanı"><i class="fas fa-star" aria-hidden="true"></i>6.7</span>
+</span>
+<span class="fc-bottom">
+<span class="fc-chips">
+<span class="fc-chip fc-chip--dublaj" title="Türkçe Dublaj"><span class="fc-flag" aria-hidden="true"></span>Dublaj</span>
+</span>
+<h3 class="fc-title">Komando</h3>
+<span class="fc-sub">
+<span class="fc-year">1985</span>
+<span class="fc-sure">1s 30dk</span>
+<span class="fc-orig">Commando</span>
+</span>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card bg-dark border-secondary h-100 film-card jf-card">
+<div class="film-card-wrapper position-relative">
+<a href="https://jetfilmizle.app/film/yemekle-oynanmaz" class="text-decoration-none" title="Yemekle Oynanmaz Full Türkçe Dublaj İzle">
+<div class="film-poster">
+<img src="https://cdn.jetfilmizle.app/uploads/films/2016/y/yemekle-oynanmaz-poster-medium.webp" srcset="https://cdn.jetfilmizle.app/uploads/films/2016/y/yemekle-oynanmaz-poster-tiny.webp 150w, https://cdn.jetfilmizle.app/uploads/films/2016/y/yemekle-oynanmaz-poster-small.webp 300w, https://cdn.jetfilmizle.app/uploads/films/2016/y/yemekle-oynanmaz-poster-medium.webp 500w, https://cdn.jetfilmizle.app/uploads/films/2016/y/yemekle-oynanmaz-poster-large.webp 780w, https://cdn.jetfilmizle.app/uploads/films/2016/y/yemekle-oynanmaz-poster-xlarge.webp 1200w" sizes="(max-width: 576px) calc(50vw - 24px), (max-width: 768px) calc(33vw - 24px), (max-width: 992px) calc(25vw - 24px), (max-width: 1200px) calc(20vw - 24px), 200px" loading="lazy" decoding="async" width="300"                     height="450"                     class="card-img-top" alt="Yemekle Oynanmaz (The Bad Batch) 2016 HD Film Afişi">
+<span class="fc-hover" aria-hidden="true">
+<span class="fc-play"><i class="fas fa-play"></i></span>
+<span class="fc-desc">Ana Lily Amirpourun yazıp yönettiği The Bad Batch, namı diğer Kötü Grup, izleyiciyi paranın ateş yakmak için kullanıldığı,...</span> </span>
+<span class="fc-scores-top">
+<span class="fc-rating fc-rating--imdb" title="IMDb Puanı"><i class="fas fa-star" aria-hidden="true"></i>5.2</span>
+<span class="fc-rating fc-rating--jf" title="JetFilm Kullanıcı Puanı"><span class="fc-jf-mark" aria-hidden="true">JF</span>3.7</span>
+</span>
+<span class="fc-bottom">
+<span class="fc-chips">
+<span class="fc-chip fc-chip--dublaj" title="Türkçe Dublaj"><span class="fc-flag" aria-hidden="true"></span>Dublaj</span>
+</span>
+<h3 class="fc-title">Yemekle Oynanmaz</h3>
+<span class="fc-sub">
+<span class="fc-year">2016</span>
+<span class="fc-sure">1s 58dk</span>
+<span class="fc-orig">The Bad Batch</span>
+</span>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card bg-dark border-secondary h-100 film-card jf-card">
+<div class="film-card-wrapper position-relative">
+<a href="https://jetfilmizle.app/film/valerian-ve-bin-gezegen-imparatorlugu" class="text-decoration-none" title="Valerian ve Bin Gezegen İmparatorluğu Full Türkçe Dublaj İzle">
+<div class="film-poster">
+<img src="https://cdn.jetfilmizle.app/uploads/films/2017/v/valerian-ve-bin-gezegen-imparatorlugu-poster-medium.webp" srcset="https://cdn.jetfilmizle.app/uploads/films/2017/v/valerian-ve-bin-gezegen-imparatorlugu-poster-tiny.webp 150w, https://cdn.jetfilmizle.app/uploads/films/2017/v/valerian-ve-bin-gezegen-imparatorlugu-poster-small.webp 300w, https://cdn.jetfilmizle.app/uploads/films/2017/v/valerian-ve-bin-gezegen-imparatorlugu-poster-medium.webp 500w, https://cdn.jetfilmizle.app/uploads/films/2017/v/valerian-ve-bin-gezegen-imparatorlugu-poster-large.webp 780w, https://cdn.jetfilmizle.app/uploads/films/2017/v/valerian-ve-bin-gezegen-imparatorlugu-poster-xlarge.webp 1200w" sizes="(max-width: 576px) calc(50vw - 24px), (max-width: 768px) calc(33vw - 24px), (max-width: 992px) calc(25vw - 24px), (max-width: 1200px) calc(20vw - 24px), 200px" loading="lazy" decoding="async" width="300"                     height="450"                     class="card-img-top" alt="Valerian ve Bin Gezegen İmparatorluğu (Valerian and the City of a Thousand Planets) 2017 HD Film Afişi">
+<span class="fc-hover" aria-hidden="true">
+<span class="fc-play"><i class="fas fa-play"></i></span>
+<span class="fc-desc">Eğer bir gün bir yerde modern sinemadan ve yeni filmlerden konu açılacak olursa o konu mutlaka ama mutlaka bilim kurgu filmlerine de...</span> </span>
+<span class="fc-scores-top">
+<span class="fc-rating fc-rating--imdb" title="IMDb Puanı"><i class="fas fa-star" aria-hidden="true"></i>6.4</span>
+<span class="fc-rating fc-rating--jf" title="JetFilm Kullanıcı Puanı"><span class="fc-jf-mark" aria-hidden="true">JF</span>7.3</span>
+</span>
+<span class="fc-bottom">
+<span class="fc-chips">
+<span class="fc-chip fc-chip--dublaj" title="Türkçe Dublaj"><span class="fc-flag" aria-hidden="true"></span>Dublaj</span>
+</span>
+<h3 class="fc-title">Valerian ve Bin Gezegen İmparatorluğu</h3>
+<span class="fc-sub">
+<span class="fc-year">2017</span>
+<span class="fc-sure">2s 16dk</span>
+<span class="fc-orig">Valerian and the City of a Thousand Planets</span>
+</span>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card bg-dark border-secondary h-100 film-card jf-card">
+<div class="film-card-wrapper position-relative">
+<a href="https://jetfilmizle.app/film/animatrix" class="text-decoration-none" title="Animatrix Full Türkçe Dublaj İzle">
+<div class="film-poster">
+<img src="https://cdn.jetfilmizle.app/uploads/films/2003/a/animatrix-poster-medium.webp" srcset="https://cdn.jetfilmizle.app/uploads/films/2003/a/animatrix-poster-tiny.webp 150w, https://cdn.jetfilmizle.app/uploads/films/2003/a/animatrix-poster-small.webp 300w, https://cdn.jetfilmizle.app/uploads/films/2003/a/animatrix-poster-medium.webp 500w, https://cdn.jetfilmizle.app/uploads/films/2003/a/animatrix-poster-large.webp 780w, https://cdn.jetfilmizle.app/uploads/films/2003/a/animatrix-poster-xlarge.webp 1200w" sizes="(max-width: 576px) calc(50vw - 24px), (max-width: 768px) calc(33vw - 24px), (max-width: 992px) calc(25vw - 24px), (max-width: 1200px) calc(20vw - 24px), 200px" loading="lazy" decoding="async" width="300"                     height="450"                     class="card-img-top" alt="Animatrix (The Animatrix) 2003 HD Film Afişi">
+<span class="fc-hover" aria-hidden="true">
+<span class="fc-play"><i class="fas fa-play"></i></span>
+<span class="fc-desc">Animatrix animasyonu, Matrix dünyasının animasyon ortamına aktarılmış öykülerinden oluşuyor. Osirisin Son Uçuşu ise dokuz kısa...</span> </span>
+<span class="fc-scores-top">
+<span class="fc-rating fc-rating--imdb" title="IMDb Puanı"><i class="fas fa-star" aria-hidden="true"></i>7.3</span>
+<span class="fc-rating fc-rating--jf" title="JetFilm Kullanıcı Puanı"><span class="fc-jf-mark" aria-hidden="true">JF</span>5.0</span>
+</span>
+<span class="fc-bottom">
+<span class="fc-chips">
+<span class="fc-chip fc-chip--dublaj" title="Türkçe Dublaj"><span class="fc-flag" aria-hidden="true"></span>Dublaj</span>
+</span>
+<h3 class="fc-title">Animatrix</h3>
+<span class="fc-sub">
+<span class="fc-year">2003</span>
+<span class="fc-sure">1s 42dk</span>
+<span class="fc-orig">The Animatrix</span>
+</span>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card bg-dark border-secondary h-100 film-card jf-card">
+<div class="film-card-wrapper position-relative">
+<a href="https://jetfilmizle.app/film/isyan-2002" class="text-decoration-none" title="İsyan Full Türkçe Dublaj İzle">
+<div class="film-poster">
+<img src="https://cdn.jetfilmizle.app/uploads/films/2002/i/isyan-2002-poster-medium.webp" srcset="https://cdn.jetfilmizle.app/uploads/films/2002/i/isyan-2002-poster-tiny.webp 150w, https://cdn.jetfilmizle.app/uploads/films/2002/i/isyan-2002-poster-small.webp 300w, https://cdn.jetfilmizle.app/uploads/films/2002/i/isyan-2002-poster-medium.webp 500w, https://cdn.jetfilmizle.app/uploads/films/2002/i/isyan-2002-poster-large.webp 780w, https://cdn.jetfilmizle.app/uploads/films/2002/i/isyan-2002-poster-xlarge.webp 1200w" sizes="(max-width: 576px) calc(50vw - 24px), (max-width: 768px) calc(33vw - 24px), (max-width: 992px) calc(25vw - 24px), (max-width: 1200px) calc(20vw - 24px), 200px" loading="lazy" decoding="async" width="300"                     height="450"                     class="card-img-top" alt="İsyan (Equilibrium) 2002 HD Film Afişi">
+<span class="fc-hover" aria-hidden="true">
+<span class="fc-play"><i class="fas fa-play"></i></span>
+<span class="fc-desc">Muhteşem bir film, çok beğeneceksiniz. Zaten bir filmde Christian Bale varsa filmin kötü olma ihtimali sıfıra yakın, vasat olma...</span> </span>
+<span class="fc-scores-top">
+<span class="fc-rating fc-rating--imdb" title="IMDb Puanı"><i class="fas fa-star" aria-hidden="true"></i>7.3</span>
+<span class="fc-rating fc-rating--jf" title="JetFilm Kullanıcı Puanı"><span class="fc-jf-mark" aria-hidden="true">JF</span>7.7</span>
+</span>
+<span class="fc-bottom">
+<span class="fc-chips">
+<span class="fc-chip fc-chip--dublaj" title="Türkçe Dublaj"><span class="fc-flag" aria-hidden="true"></span>Dublaj</span>
+</span>
+<h3 class="fc-title">İsyan</h3>
+<span class="fc-sub">
+<span class="fc-year">2002</span>
+<span class="fc-sure">1s 47dk</span>
+<span class="fc-orig">Equilibrium</span>
+</span>
+</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-5">
+<h2 class="h4 mb-3">
+<i class="fas fa-users me-2 text-warning"></i> Oyuncular
+<span class="badge bg-secondary ms-2">1</span>
+</h2>
+<div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
+<div class="col">
+<a href="https://jetfilmizle.app/oyuncu/matrix-naovaratpong" title="Matrix Naovaratpong Filmleri ve Hayatı" class="text-decoration-none">
+<div class="person-card person-card-horizontal d-flex align-items-center p-3">
+<div class="person-image flex-shrink-0 me-3">
+<div class="initial-avatar mx-auto" style="--avatar-size: 60px; --avatar-from: #fc6076; --avatar-to: #ff9a44;"><span class="avatar-text">MN</span></div> </div>
+<div class="flex-grow-1">
+<div class="h6 person-name text-light mb-1">Matrix Naovaratpong</div>
+<small class="text-warning">Oyuncu</small>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="alert alert-secondary bg-dark border-secondary text-light mt-4 mb-3">
+<div class="fw-semibold mb-2"><i class="fas fa-compass me-2 text-warning"></i>Hızlı Erişim</div>
+<div class="d-flex flex-wrap gap-2 mb-2">
+<a class="btn btn-sm btn-warning flex-fill text-center" href="https://jetfilmizle.app/filmler" title="Tüm Filmleri Görüntüle"><i class="fas fa-film me-1"></i>Tüm Filmler</a>
+<a class="btn btn-sm btn-outline-warning flex-fill text-center" href="https://jetfilmizle.app/turkce-dublaj" title="Türkçe Dublajlı Filmler"><i class="fas fa-microphone me-1"></i>Türkçe Dublaj</a>
+<a class="btn btn-sm btn-outline-warning flex-fill text-center" href="https://jetfilmizle.app/turkce-altyazili" title="Türkçe Altyazılı Filmler"><i class="fas fa-closed-captioning me-1"></i>Türkçe Altyazılı</a>
+<a class="btn btn-sm btn-outline-warning flex-fill text-center" href="https://jetfilmizle.app/orijinal-filmler" title="Orijinal Dilde Filmler"><i class="fas fa-globe me-1"></i>Orijinal Film</a>
+<a class="btn btn-sm btn-outline-warning flex-fill text-center" href="https://jetfilmizle.app/yerli-filmler" title="Yerli Filmler"><i class="fas fa-flag me-1"></i>Yerli Film</a>
+<a class="btn btn-sm btn-outline-info flex-fill text-center" href="https://jetfilmizle.app/diziler" title="Tüm Dizileri Görüntüle"><i class="fas fa-tv me-1"></i>Diziler</a>
+</div>
+<div class="d-flex flex-wrap gap-2 mb-2">
+<a class="btn btn-sm btn-outline-danger flex-fill text-center" href="https://jetfilmizle.app/viral" title="Viral filmler ve trend topic'ler"><i class="fas fa-fire me-1"></i>Viral</a>
+<a class="btn btn-sm btn-outline-success flex-fill text-center" href="https://jetfilmizle.app/kesfet/gunluk" title="Günlük film keşfi"><i class="fas fa-sun me-1"></i>Günlük Keşif</a>
+<a class="btn btn-sm btn-outline-info flex-fill text-center" href="https://jetfilmizle.app/kesfet/haftalik" title="Haftalık film keşfi"><i class="fas fa-calendar-week me-1"></i>Haftalık Keşif</a>
+<a class="btn btn-sm btn-outline-primary flex-fill text-center" href="https://jetfilmizle.app/kesfet/rastgele" title="Rastgele film önerileri"><i class="fas fa-random me-1"></i>Rastgele</a>
+<a class="btn btn-sm btn-outline-warning flex-fill text-center" href="https://jetfilmizle.app/yakinda" title="Yakında gelecek filmler"><i class="fas fa-clock me-1"></i>Yakında</a>
+</div>
+<div class="d-flex flex-wrap gap-2">
+<a class="btn btn-sm btn-outline-light flex-fill text-center" href="https://jetfilmizle.app/filmler/en-cok-izlenenler" title="En Çok İzlenen Filmler"><i class="fas fa-eye me-1"></i>En Çok İzlenen</a>
+<a class="btn btn-sm btn-outline-light flex-fill text-center" href="https://jetfilmizle.app/filmler/en-cok-begenilenler" title="En Çok Beğenilen Filmler"><i class="fas fa-heart me-1"></i>En Çok Beğenilen</a>
+<a class="btn btn-sm btn-outline-light flex-fill text-center" href="https://jetfilmizle.app/filmler/en-cok-yorumlananlar" title="En Çok Yorum Alan Filmler"><i class="fas fa-comments me-1"></i>En Çok Yorumlanan</a>
+<a class="btn btn-sm btn-outline-secondary flex-fill text-center" href="https://jetfilmizle.app/imdb-top" title="IMDb En İyi 250 Film"><i class="fab fa-imdb me-1"></i>IMDb Top 250</a>
+<a class="btn btn-sm btn-outline-warning flex-fill text-center" href="https://jetfilmizle.app/oscar" title="Oscar Ödüllü Filmler"><i class="fas fa-trophy me-1"></i>Oscar Ödüllü</a>
+<a class="btn btn-sm btn-outline-success flex-fill text-center" href="https://jetfilmizle.app/tavsiye-filmler" title="Editör Tavsiyesi Filmler"><i class="fas fa-thumbs-up me-1"></i>Tavsiye Filmler</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<style>
+.person-card {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.person-card:hover {
+    background: rgba(255, 193, 7, 0.1);
+    transform: translateY(-4px);
+    border-color: rgba(255, 193, 7, 0.3);
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.15);
+}
+
+.person-name {
+    font-size: 0.9rem;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.person-image {
+    transition: transform 0.3s ease;
+}
+
+.person-card:hover .person-image {
+    transform: scale(1.05);
+}
+
+.search-welcome {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    margin: 2rem 0;
+}
+
+.empty-state {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    margin: 2rem 0;
+}
+
+.popular-searches .badge {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.popular-searches .badge:hover {
+    background: #ffc107 !important;
+    color: #000 !important;
+}
+
+/* Mobil responsive düzenlemeler */
+@media (max-width: 767.98px) {
+    .person-card {
+        padding: 0.75rem;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+    
+    .person-card .person-image {
+        width: 50px !important;
+        height: 50px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .person-image img,
+    .person-image .avatar-circle {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .person-name {
+        font-size: 0.85rem;
+        word-break: break-word;
+    }
+    
+    .person-card small {
+        font-size: 0.7rem;
+    }
+    
+    .person-card .flex-grow-1 {
+        min-width: 0;
+        overflow: hidden;
+        flex: 1;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .person-card {
+        padding: 0.5rem 0.6rem;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+    
+    .person-card .me-3 {
+        margin-right: 0.6rem !important;
+    }
+    
+    .person-card .person-image {
+        width: 54px !important;
+        height: 54px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .person-image img,
+    .person-image .avatar-circle {
+        width: 54px !important;
+        height: 54px !important;
+        font-size: 1rem !important;
+    }
+    
+    .person-name {
+        font-size: 0.75rem;
+        line-height: 1.2;
+        word-break: break-word;
+    }
+    
+    .person-card small {
+        font-size: 0.65rem;
+    }
+    
+    .person-card .flex-grow-1 {
+        min-width: 0;
+        overflow: hidden;
+        flex: 1;
+    }
+}
+</style>
+<section class="recently-viewed-section bg-dark py-4" id="recentlyViewedGuest" hidden>
+<div class="container">
+<div class="card bg-dark mb-4 mt-5">
+<div class="card-header d-flex justify-content-between align-items-center">
+<h5 class="card-title mb-0 text-warning">
+<i class="fas fa-history me-2"></i>Son Gezdiğim 10 Film </h5>
+<button type="button" class="btn btn-sm btn-outline-danger" id="recentlyViewedGuestClear">
+<i class="fas fa-trash-alt me-1"></i>Tümünü Temizle
+</button>
+</div>
+<div class="card-body">
+<div class="recently-viewed-grid"></div>
+</div>
+</div>
+</div>
+</section>
+<footer class="py-4">
+<div class="container">
+<div class="row">
+<div class="col-md-3 mb-3 footer-about">
+<a href="https://jetfilmizle.app/" class="d-inline-block mb-2" title="Ana Sayfaya Git">
+<img src="https://jetfilmizle.app/assets/img/logo-koyu.svg?v=49a944aaf3a0" alt="JetFilmizle Logo" width="190" height="50" loading="lazy" decoding="async" class="img-fluid">
+</a>
+<p class="text-muted small">JetFilmizle, en güncel ve popüler filmleri HD kalitede izleyebileceğiniz bir film platformudur. Tamamen ücretsiz olan sitemizde binlerce film ve dizi bulabilirsiniz.</p>
+<a href="https://jetfilmizle.app/hakkimizda" class="text-warning hover-text-white small text-decoration-none">
+<i class="fas fa-info-circle me-1"></i>Daha Fazla Bilgi
+</a>
+</div>
+<div class="col-md-2 col-6 mb-3">
+<h6>Hızlı Erişim</h6>
+<ul class="list-unstyled">
+<li><a href="https://jetfilmizle.app/" class="text-muted hover-text-white small" title="Ana Sayfaya Git">Ana Sayfa</a></li>
+<li><a href="https://jetfilmizle.app/filmler" class="text-muted hover-text-white small" title="Tüm Filmleri Görüntüle">Filmler</a></li>
+<li><a href="https://jetfilmizle.app/diziler" class="text-muted hover-text-white small" title="Tüm Dizileri Görüntüle">Diziler</a></li>
+<li><a href="https://jetfilmizle.app/film-istek" class="text-muted hover-text-white small" title="Film İsteğinde Bulunun">Film İstek</a></li>
+<li><a href="https://jetfilmizle.app/film-istekleri" class="text-muted hover-text-white small" title="Tüm Film İsteklerini Görüntüle">Film İstekleri</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-6 mb-3">
+<h6>Prestijli Listeler</h6>
+<ul class="list-unstyled">
+<li><a href="https://jetfilmizle.app/imdb-top" class="text-muted hover-text-white small" title="IMDb En İyi 250 Film Listesi">IMDb Top 250</a></li>
+<li><a href="https://jetfilmizle.app/jetfilm-top" class="text-muted hover-text-white small" title="JetFilm En İyi 250 Film Seçkisi">JetFilm Top 250</a></li>
+<li><a href="https://jetfilmizle.app/metascore" class="text-muted hover-text-white small" title="En Yüksek Metascore Puanlı Filmler">Metascore Top</a></li>
+<li><a href="https://jetfilmizle.app/oscar" class="text-muted hover-text-white small" title="Oscar Ödüllü Filmler Listesi">Oscar Ödüllü</a></li>
+<li><a href="https://jetfilmizle.app/tavsiye-filmler" class="text-muted hover-text-white small" title="Editör Tavsiyesi Filmler">Tavsiye Filmler</a></li>
+<li><a href="https://jetfilmizle.app/ozel-film-listeleri" class="text-muted hover-text-white small" title="En Özel Film Listeleri">En Özel Film Listeleri</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-6 mb-3">
+<h6>Türler</h6>
+<ul class="list-unstyled">
+<li><a href="https://jetfilmizle.app/tur/dram" class="text-muted hover-text-white small" title="Dram Filmleri">Dram</a></li><li><a href="https://jetfilmizle.app/tur/komedi" class="text-muted hover-text-white small" title="Komedi Filmleri">Komedi</a></li><li><a href="https://jetfilmizle.app/tur/gerilim" class="text-muted hover-text-white small" title="Gerilim Filmleri">Gerilim</a></li><li><a href="https://jetfilmizle.app/tur/aksiyon" class="text-muted hover-text-white small" title="Aksiyon Filmleri">Aksiyon</a></li><li><a href="https://jetfilmizle.app/tur/suc" class="text-muted hover-text-white small" title="Suç Filmleri">Suç</a></li> </ul>
+</div>
+<div class="col-md-2 col-6 mb-3">
+<h6>Kişiler</h6>
+<ul class="list-unstyled">
+<li><a href="https://jetfilmizle.app/oyuncular" class="text-muted hover-text-white small" title="Tüm Oyuncuları Görüntüle">Oyuncular</a></li>
+<li><a href="https://jetfilmizle.app/yonetmenler" class="text-muted hover-text-white small" title="Tüm Yönetmenleri Görüntüle">Yönetmenler</a></li>
+<li><a href="https://jetfilmizle.app/senaristler" class="text-muted hover-text-white small" title="Tüm Senaristleri Görüntüle">Senaristler</a></li>
+<li><a href="https://jetfilmizle.app/seslendirme-sanatcilari" class="text-muted hover-text-white small" title="Seslendirme Sanatçılarını Görüntüle">Seslendirme Sanatçıları</a></li>
+</ul>
+</div>
+</div>
+<hr class="my-3 border-secondary">
+<div class="row">
+<div class="col-md-6 text-center text-md-start">
+<p class="text-muted small mb-0">&copy; 2026 JetFilmizle. Tüm hakları saklıdır.</p>
+</div>
+<div class="col-md-6 text-center text-md-end">
+<p class="text-muted small mb-0 footer-legal">
+<a href="https://jetfilmizle.app/hakkimizda" class="text-muted hover-text-white" title="Hakkımızda Sayfası">Hakkımızda</a>
+<a href="https://jetfilmizle.app/iletisim" class="text-muted hover-text-white" title="Bizimle İletişime Geçin">İletişim</a>
+<a href="https://jetfilmizle.app/sss" class="text-muted hover-text-white" title="Sık Sorulan Sorular">S.S.S</a>
+<a href="https://jetfilmizle.app/gizlilik-politikasi" class="text-muted hover-text-white" title="Gizlilik Politikamız">Gizlilik Politikası</a>
+<a href="https://jetfilmizle.app/kullanim-kosullari" class="text-muted hover-text-white" title="Kullanım Koşullarımız">Kullanım Koşulları</a>
+<a href="https://jetfilmizle.app/feed/rss" class="text-warning hover-text-white footer-rss" title="RSS Feed - Son Eklenen Filmler" target="_blank"><i class="fas fa-rss"></i> RSS</a>
+</p>
+</div>
+</div>
+</div>
+</footer>
+<script src="https://jetfilmizle.app/assets/vendor/bootstrap/js/bootstrap.bundle.min.js?v=e4fd49181388"></script>
+<script src="https://jetfilmizle.app/assets/js/core.min.js?v=fa6b93c67a27"></script>
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content bg-dark text-white">
+<div class="modal-header border-bottom border-secondary">
+<h5 class="modal-title" id="confirmModalLabel">
+<i class="fas fa-question-circle text-warning me-2"></i>Onay
+</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body" id="confirmModalMessage">Bu işlemi onaylıyor musunuz?</div>
+<div class="modal-footer border-top border-secondary">
+<button type="button" class="btn btn-outline-secondary" id="confirmModalCancelBtn" data-bs-dismiss="modal">İptal</button>
+<button type="button" class="btn btn-danger" id="confirmModalConfirmBtn">Onayla</button>
+</div>
+</div>
+</div>
+</div>
+<nav class="bottom-nav d-lg-none" id="mobileBottomNav">
+<a href="https://jetfilmizle.app/" class="bottom-nav-item">
+<i class="fas fa-home"></i>
+<span>Ana Sayfa</span>
+</a>
+<a href="https://jetfilmizle.app/filmler" class="bottom-nav-item">
+<i class="fas fa-film"></i>
+<span>Filmler</span>
+</a>
+<a href="https://jetfilmizle.app/turler" class="bottom-nav-item">
+<i class="fas fa-th-large"></i>
+<span>Kategoriler</span>
+</a>
+<a href="https://jetfilmizle.app/giris" class="bottom-nav-item">
+<i class="fas fa-sign-in-alt"></i>
+<span>Giriş Yap</span>
+</a>
+<a href="https://jetfilmizle.app/kayit-ol" class="bottom-nav-item">
+<i class="fas fa-user-plus"></i>
+<span>Kayıt Ol</span>
+</a>
+</nav>
+<script defer src="https://jetfilmizle.app/assets/js/performance-external.min.js?v=e26eef32684e"
+        data-analytics-src="https://www.googletagmanager.com/gtag/js?id=G-P2W3FQ2F79"></script>
+<script>    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P2W3FQ2F79');
+</script>
+</body>
+</html>

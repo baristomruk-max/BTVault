@@ -1,0 +1,3 @@
+{
+    "message": "The POST method is not supported for route search. Supported methods: GET, HEAD."
+}
