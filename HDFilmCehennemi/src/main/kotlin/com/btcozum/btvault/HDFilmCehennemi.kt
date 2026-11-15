@@ -64,9 +64,14 @@ class HDFilmCehennemi : MainAPI() {
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
         val document = app.get(data).document
 
-        // nonce ve post_id parse et
-        val nonce = Regex("""nonce:\s*'([^']+)'""").find(document.html())?.groupValues?.get(1) ?: return false
-        val postId = document.selectFirst("[data-post-id]")?.attr("data-post-id") ?: return false
+        // nonce ve post_id parse et (daha spesifik regex)
+        val nonce = Regex("""window\.videoAjax\s*=\s*\{[^}]*nonce:\s*'([^']+)'""").find(document.html())?.groupValues?.get(1)
+            ?: Regex("""nonce:\s*'([^']+)'""").find(document.html())?.groupValues?.get(1)
+            ?: return false
+        // post_id: player container'dan al
+        val postId = document.selectFirst("#playex, .player_sist, [data-post-id]")?.attr("data-post-id")
+            ?: document.selectFirst("[data-post-id]")?.attr("data-post-id")
+            ?: return false
         val playerName = document.selectFirst("[data-player-name]")?.attr("data-player-name")?.takeIf { it.isNotBlank() } ?: "SetPlay"
 
         // AJAX ile iframe URL al
@@ -83,8 +88,28 @@ class HDFilmCehennemi : MainAPI() {
             headers = mapOf("X-Requested-With" to "XMLHttpRequest")
         ).text
 
-        // response.data.url parse et
-        val iframeUrl = Regex(""""url"\s*:\s*"([^"]+)"""").find(response)?.groupValues?.get(1) ?: return false
+        // response.data.url parse et (JSON escaped slashes unescape)
+        val iframeUrl = Regex(""""url"\s*:\s*"([^"]+)"""").find(response)?.groupValues?.get(1)?.replace("\\/", "/") ?: return false
+
+        // iframe URL'sini döndür; eğer setplay.sbs ise iframe'i fetch et
+        if (iframeUrl.contains("setplay.sbs") || iframeUrl.contains("player")) {
+            try {
+                val iframeDoc = app.get(iframeUrl, headers = mapOf("Referer" to data)).document
+                val videoSrc = iframeDoc.select("video source, video").firstOrNull()?.attr("src")
+                    ?: iframeDoc.select("source").firstOrNull()?.attr("src")
+                if (videoSrc != null) {
+                    callback.invoke(newExtractorLink(
+                        source = name,
+                        name = name,
+                        url = fixUrl(videoSrc, mainUrl),
+                        ExtractorLinkType.VIDEO
+                    ) {
+                        this.referer = iframeUrl
+                    })
+                    return true
+                }
+            } catch (_: Exception) { }
+        }
 
         callback.invoke(newExtractorLink(
             source = name,
