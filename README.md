@@ -55,14 +55,14 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **41 eklenti - 41 aktif, 0 kapali (15.11.2026).**
+> **29 eklenti - 29 aktif, 0 kapali (15.11.2026).**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 > - ⛔ Kapali: site olu / park / yeni tema (yeniden yazim bekliyor)
 >
 > Guncel teshis ve yol haritasi: [RAPOR-2026-11-06.md](RAPOR-2026-11-06.md)
 
-**✅ Aktif (42)**
+**? Aktif (29)**
 
 <table>
   <tr>
@@ -74,40 +74,28 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>🌸 <strong>AsyaWatch</strong></td><td>Asya Dizi & Film</td><td>✅ Aktif (asyawatch.com)</td></tr>
   <tr><td>🌍 <strong>BelgeselX</strong></td><td>Belgesel</td><td>✅ Aktif</td></tr>
   <tr><td>📡 <strong>CanliTV</strong></td><td>Canli TV</td><td>✅ Aktif (iptv-org TR listesi + 2 yedek ayna)</td></tr>
-  <tr><td>🧸 <strong>CizgiMax</strong></td><td>Cizgi Film</td><td>✅ Aktif (yeni tema guncellendi)</td></tr>
   <tr><td>📺 <strong>DDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (ddizi.tel - yeni tema, v2)</td></tr>
   <tr><td>📺 <strong>DiziBox</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizibox.live; VPN/sunucu IP'lerini engelliyor)</td></tr>
   <tr><td>📺 <strong>DiziGom</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizigom.news)</td></tr>
   <tr><td>📺 <strong>DiziMag</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizimag.onl, v2 - alan adi guncellendi)</td></tr>
-  <tr><td>📺 <strong>DiziPal</strong></td><td>Dizi & Film</td><td>✅ Aktif (dizipal3009.com, filmvedizi temasi)</td></tr>
   <tr><td>📺 <strong>Dizipod</strong></td><td>Yabanci Dizi & Film</td><td>✅ Aktif (dizipod.com - TR altyazili)</td></tr>
   <tr><td>📺 <strong>DiziYou</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (diziyou.one)</td></tr>
   <tr><td>📡 <strong>DMax</strong></td><td>Belgesel & TV</td><td>✅ Aktif (dmax.com.tr)</td></tr>
-  <tr><td>🎬 <strong>FilmIzleIlk</strong></td><td>Film & Dizi</td><td>✅ Aktif (filmizleilk.com)</td></tr>
   <tr><td>🎬 <strong>FilmMakinesi</strong></td><td>Film</td><td>✅ Aktif (filmmakinesi.to - CloseLoad/Rapid extractor)</td></tr>
   <tr><td>🎬 <strong>FilmModu</strong></td><td>Film</td><td>✅ Aktif (filmmodu.one - schema.org microdata + lazy afis)</td></tr>
-  <tr><td>🎬 <strong>FullHDFilmIzlede</strong></td><td>Film</td><td>✅ Aktif (fullhdfilmizlede.net)</td></tr>
-  <tr><td>🎬 <strong>FullHDFilmizlesene</strong></td><td>Film</td><td>✅ Aktif (fullhdfilmizlesene.now - kategori adresleri duzeltildi)</td></tr>
-  <tr><td>🔞 <strong>FullPorner</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
-  <tr><td>🎬 <strong>HDFilmCehennemi</strong></td><td>Film & Dizi</td><td>✅ Aktif (tarayici basliklari eklendi)</td></tr>
   <tr><td>🎬 <strong>HDFilmCehennemi2</strong></td><td>Film & Dizi</td><td>✅ Aktif (hdfilmcehennemi2.biz, v3 - yeni Laravel/Livewire temasi, vidload/vidmoly oynatici)</td></tr>
   <tr><td>🎬 <strong>HDFilmIzle</strong></td><td>Film & Dizi</td><td>✅ Aktif (hdfilmizle.live - Vidrame XOR cozucusu)</td></tr>
-  <tr><td>🔞 <strong>HQPorner</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
   <tr><td>🎬 <strong>IzleAI</strong></td><td>Film</td><td>✅ Aktif (selcukflix.app, v6 - alan adi guncellendi)</td></tr>
   <tr><td>🎬 <strong>JetFilmizle</strong></td><td>Film</td><td>✅ Aktif (jetfilmizle.app, v21 - alan adi guncellendi)</td></tr>
   <tr><td>🎬 <strong>KultFilmler</strong></td><td>Film & Dizi</td><td>✅ Aktif (yeni tema guncellendi)</td></tr>
-  <tr><td>🔞 <strong>PornHub</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
   <tr><td>📺 <strong>powerDizi</strong></td><td>Canli Dizi TV</td><td>✅ Aktif (M3U playlist)</td></tr>
   <tr><td>📺 <strong>powerSinema</strong></td><td>Canli Film TV</td><td>✅ Aktif (M3U playlist)</td></tr>
   <tr><td>🎬 <strong>RareFilmm</strong></td><td>Film</td><td>✅ Aktif</td></tr>
   <tr><td>📺 <strong>SezonlukDizi</strong></td><td>Yabanci Dizi</td><td>⚠️ Aktif (sezonlukdizi.cc - bazi IP'lerde Turnstile kapisi)</td></tr>
-  <tr><td>🔞 <strong>SpankBang</strong></td><td>Yetiskin (VPN)</td><td>⚠️ Aktif (Cloudflare - cihazda test edilmeli)</td></tr>
   <tr><td>📡 <strong>SporTV</strong></td><td>Canli Spor TV</td><td>✅ Aktif (28 dogrulanmis kanal)</td></tr>
   <tr><td>📺 <strong>TLC</strong></td><td>Dizi & Belgesel</td><td>✅ Aktif (tlctv.com.tr)</td></tr>
-  <tr><td>🔞 <strong>UncutMaza</strong></td><td>Yetiskin (VPN)</td><td>⚠️ Aktif (Cloudflare - cihazda test edilmeli)</td></tr>
   <tr><td>📡 <strong>vavooSpor</strong></td><td>Canli Spor TV</td><td>✅ Aktif (iptv-org spor kategorisi, ulke gruplu)</td></tr>
   <tr><td>🎬 <strong>WebteIzle</strong></td><td>Film</td><td>⚠️ Aktif (Cloudflare - cihazda test edilmeli)</td></tr>
-  <tr><td>🔞 <strong>xHamster</strong></td><td>Yetiskin (VPN)</td><td>✅ Aktif</td></tr>
   <tr><td>🎬 <strong>XPrime</strong></td><td>Film & Dizi (TMDB)</td><td>✅ Aktif (TMDB API)</td></tr>
   <tr><td>📺 <strong>YabanciDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (yabancidizi.news, v2 - alan adi + API adresleri guncellendi)</td></tr>
   <tr><td>▶️ <strong>YouTube</strong></td><td>Video</td><td>✅ Aktif (yt.chocolatemoo53.com + yedek Invidious, v5)</td></tr>
@@ -120,7 +108,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 - **Tum depolar tarandi (63 eklenti):** Her provider'in `mainUrl`'i Google DNS (8.8.8.8)
   ile cozuldu, `curl --resolve` ile ana sayfa/arama/detay cekildi ve kodun kullandigi
-  seciciler HTML ile karsilastirildi. Ozet: 42 aktif, 21 kapali.
+  seciciler HTML ile karsilastirildi. Ozet: 29 aktif, 0 kapali.
   Ayrinti: [RAPOR-2026-11-06.md](RAPOR-2026-11-06.md).
 - **Alan adi guncellenenler (tema ayni):** DiziMag `dizimag.onl`, YabanciDizi
   `yabancidizi.news` (API adresleri de `$mainUrl`'e tasindi), JetFilmizle
@@ -142,8 +130,6 @@ Turkiye'deki bazi internet servis saglayicilari (orn. Turk Telekom) asagidaki al
 DNS seviyesinde `195.175.254.2` (Engelli Web) adresine yonlendiriyor. Bu durumda eklenti
 "Baglanti kurulamadi" veya "kaynak bulunamadi" verir; site aslinda canlidir.
 
-**Etkilenen eklentiler:** DiziMag, DiziPal, FullHDFilmIzlede, FullPorner, HQPorner, IzleAI,
-PornHub, SpankBang, TvDiziler, UncutMaza, xHamster, YabanciDizi, SporTV (beIN Sports /
 Eurosport yayinlari `andro.mangeinde4.lat` uzerinden gelir).
 
 **Cozum:** Telefon/box DNS'ini `8.8.8.8` + `1.1.1.1` yapin veya bir VPN kullanin.
