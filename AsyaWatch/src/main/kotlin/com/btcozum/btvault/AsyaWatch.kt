@@ -25,8 +25,15 @@ class AsyaWatch : MainAPI() {
     private fun org.jsoup.nodes.Element.toSearchResult(): SearchResponse? {
         val href = fixUrlNull(this.attr("href")) ?: return null
         if (!href.contains("/dizi/")) return null
-        val title = this.selectFirst("b")?.text() ?: this.text().trim().takeIf { it.isNotBlank() } ?: return null
+        // a.sc.pcard: title in b, poster in img
+        // a.tcn: title in text, poster in sibling a.tci img
+        val title = this.selectFirst("b")?.text()?.trim()
+            ?: this.text().trim().takeIf { it.isNotBlank() && it != "?" }
+            ?: this.parent()?.selectFirst("a.tcn")?.text()?.trim()
+            ?: return null
+        if (title.isBlank() || title == "?") return null
         val posterUrl = fixUrlNull(this.selectFirst("img")?.attr("src"))
+            ?: fixUrlNull(this.parent()?.selectFirst("a.tci img, img")?.attr("src"))
         return newTvSeriesSearchResponse(title, href, TvType.TvSeries) { this.posterUrl = posterUrl }
     }
 
