@@ -91,26 +91,6 @@ class HDFilmCehennemi : MainAPI() {
         // response.data.url parse et (JSON escaped slashes unescape)
         val iframeUrl = Regex(""""url"\s*:\s*"([^"]+)"""").find(response)?.groupValues?.get(1)?.replace("\\/", "/") ?: return false
 
-        // iframe URL'sini döndür; eğer setplay.sbs ise iframe'i fetch et
-        if (iframeUrl.contains("setplay.sbs") || iframeUrl.contains("player")) {
-            try {
-                val iframeDoc = app.get(iframeUrl, headers = mapOf("Referer" to data)).document
-                val videoSrc = iframeDoc.select("video source, video").firstOrNull()?.attr("src")
-                    ?: iframeDoc.select("source").firstOrNull()?.attr("src")
-                if (videoSrc != null) {
-                    callback.invoke(newExtractorLink(
-                        source = name,
-                        name = name,
-                        url = fixUrl(videoSrc, mainUrl),
-                        ExtractorLinkType.VIDEO
-                    ) {
-                        this.referer = iframeUrl
-                    })
-                    return true
-                }
-            } catch (_: Exception) { }
-        }
-
         callback.invoke(newExtractorLink(
             source = name,
             name = name,
