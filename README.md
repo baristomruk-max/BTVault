@@ -55,14 +55,14 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **30 eklenti - 30 aktif, 0 kapali (15.11.2026).**
+> **30 eklenti - 29 aktif, 1 kapali (17.11.2026).**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 > - ⛔ Kapali: site olu / park / yeni tema (yeniden yazim bekliyor)
 >
 > Guncel teshis ve yol haritasi: [RAPOR-2026-11-06.md](RAPOR-2026-11-06.md)
 
-**? Aktif (30)**
+**? Aktif (29)**
 
 <table>
   <tr>
@@ -86,7 +86,6 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
     <tr><td>?? <strong>HDFilmCehennemi</strong></td><td>Film & Dizi</td><td>? Aktif (hdfilmcehennemi.land)</td></tr>
 <tr><td>🎬 <strong>HDFilmCehennemi2</strong></td><td>Film & Dizi</td><td>✅ Aktif (hdfilmcehennemi2.biz, v3 - yeni Laravel/Livewire temasi, vidload/vidmoly oynatici)</td></tr>
   <tr><td>🎬 <strong>HDFilmIzle</strong></td><td>Film & Dizi</td><td>✅ Aktif (hdfilmizle.live - Vidrame XOR cozucusu)</td></tr>
-  <tr><td>🎬 <strong>IzleAI</strong></td><td>Film</td><td>✅ Aktif (selcukflix.app, v6 - alan adi guncellendi)</td></tr>
   <tr><td>🎬 <strong>JetFilmizle</strong></td><td>Film</td><td>✅ Aktif (jetfilmizle.app, v21 - alan adi guncellendi)</td></tr>
   <tr><td>🎬 <strong>KultFilmler</strong></td><td>Film & Dizi</td><td>✅ Aktif (yeni tema guncellendi)</td></tr>
   <tr><td>📺 <strong>powerDizi</strong></td><td>Canli Dizi TV</td><td>✅ Aktif (M3U playlist)</td></tr>
@@ -101,6 +100,16 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>📺 <strong>YabanciDizi</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (yabancidizi.news, v2 - alan adi + API adresleri guncellendi)</td></tr>
   <tr><td>▶️ <strong>YouTube</strong></td><td>Video</td><td>✅ Aktif (yt.chocolatemoo53.com + yedek Invidious, v5)</td></tr>
 </table>
+
+**? Kapali (1)**
+
+<table>
+  <tr><th>Platform</th><th>Tur</th><th>Durum</th></tr>
+  <tr><td>?? <strong>IzleAI</strong></td><td>Film</td><td>? Kapali (selcukflix.app Next.js yeni tema, eski /api/bg/* 404 - tam rewrite bekliyor)</td></tr>
+</table>
+
+> **17.11.2026 tarayici denetimi:** DiziMag dizimag.onl � dizimag.best guncellendi. HDFilmCehennemi video zinciri (admin-ajax � setplay � fastplay.mom X-Sp) tarayicida dogrulandi.
+
 
 
 ---
