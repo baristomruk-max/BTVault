@@ -1,8 +1,6 @@
 package com.btcozum.btvault
 
-import Video
 import android.util.Log
-import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.fasterxml.jackson.module.kotlin.readValue
@@ -24,8 +22,13 @@ import com.lagradost.cloudstream3.newHomePageResponse
 import com.lagradost.cloudstream3.newMovieLoadResponse
 import com.lagradost.cloudstream3.newMovieSearchResponse
 import com.lagradost.cloudstream3.utils.ExtractorLink
+import com.lagradost.cloudstream3.utils.ExtractorLinkType
+import com.lagradost.cloudstream3.utils.Qualities
+import com.lagradost.cloudstream3.utils.newExtractorLink
 import com.lagradost.cloudstream3.utils.loadExtractor
+import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
+import java.util.regex.Pattern
 
 class HDFilmIzle : MainAPI() {
     override var mainUrl = "https://www.hdfilmizle.live"
@@ -166,20 +169,65 @@ class HDFilmIzle : MainAPI() {
         Log.d("HDF", "data » ${data}")
         val document = app.get(data).document
 
-        val iframe = document.selectFirst("iframe")?.attr("data-src") ?: ""
+        // Vidrame iframe'i (data-src attribute)
+        val iframe = document.selectFirst("iframe")?.attr("data-src") ?: return false
         Log.d("HDF", "iframe » ${iframe}")
-        loadExtractor(iframe, mainUrl, subtitleCallback, callback)
+
+        // Vidrame player sayfasını referer ile getir
+        val playerHtml = runCatching {
+            app.get(iframe, referer = data, headers = mapOf("User-Agent" to UA)).text
+        }.getOrNull() ?: return false
+
+        // Vidrame XOR decode: sources: [{file: (function(d,k){...})([...], 'key')}]
+        val encoded = Pattern.compile("""sources\s*:\s*\[\s*\{\s*file\s*:\s*\(function\(d,k\)\{.*?\}\)\((\[.*?\]),\s*['\"]([^'\"]+)['\"]\)""", Pattern.DOTALL)
+            .matcher(playerHtml)
+        if (!encoded.find()) {
+            Log.d("HDF", "Vidrame XOR pattern not found")
+            return false
+        }
+
+        val arrStr = encoded.group(1)
+        val key = encoded.group(2)
+        val nums = Pattern.compile("""\d+""").matcher(arrStr)
+            .results()
+            .map { it.group().toInt() }
+            .toList()
+
+        // XOR decode: d[i] ^ key[i % key.length] ^ ((i * 17 + 13) & 0xFF)
+        val sb = StringBuilder()
+        nums.forEachIndexed { index, value ->
+            val keyChar = key[index % key.length].toInt()
+            val xor = (index * 17 + 13) and 0xFF
+            val decoded = (value xor keyChar xor xor).toChar()
+            sb.append(decoded)
+        }
+        val streamUrl = sb.toString()
+
+        if (!streamUrl.startsWith("http")) {
+            Log.d("HDF", "Decoded URL invalid: $streamUrl")
+            return false
+        }
+
+        Log.d("HDF", "Decoded stream: $streamUrl")
+
+        callback.invoke(
+            newExtractorLink(
+                source = name,
+                name = "Vidrame",
+                url = streamUrl,
+                ExtractorLinkType.M3U8
+            ) {
+                this.referer = iframe
+                this.headers = mapOf("Referer" to iframe, "User-Agent" to UA)
+                this.quality = Qualities.Unknown.value
+            }
+        )
 
         return true
     }
 
-    private data class SubSource(
-        @JsonProperty("file") val file: String? = null,
-        @JsonProperty("label") val label: String? = null,
-        @JsonProperty("kind") val kind: String? = null
-    )
+    companion object {
+        const val UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+    }
 
-    data class Results(
-        @JsonProperty("results") val results: List<String> = arrayListOf()
-    )
-}
+    }

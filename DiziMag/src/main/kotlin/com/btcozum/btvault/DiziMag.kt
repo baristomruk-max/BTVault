@@ -54,7 +54,7 @@ class DiziMag : MainAPI() {
         }
     }
     // 2026-11: dizimag.dev -> dizimag.onl (site tasindi, tema ayni)
-    override var mainUrl = "https://dizimag.onl"
+    override var mainUrl = "https://dizimag.best"
     override var name = "DiziMag"
     override val hasMainPage = true
     override var lang = "tr"

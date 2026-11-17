@@ -152,6 +152,9 @@ class DDiziProvider : MainAPI() {
         val playerHtml = runCatching { app.get(playerUrl, referer = data, headers = headers()).text }.getOrNull() ?: return false
 
         val found = LinkedHashSet<String>()
+        // Yeni jwplayer setup pattern: sources: [{file:"<url>"}]
+        Regex("""sources\s*:\s*\[\s*\{\s*file\s*:\s*"([^"]+)"""").findAll(playerHtml).forEach { found.add(it.groupValues[1]) }
+        // Eski pattern fallback
         Regex("""file\s*:\s*"([^"]+)"""").findAll(playerHtml).forEach { found.add(it.groupValues[1]) }
         Regex("""https?://[^"'\s]+\.m3u8[^"'\s]*""").findAll(playerHtml).forEach { found.add(it.value) }
 

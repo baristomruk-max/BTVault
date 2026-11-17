@@ -18,7 +18,9 @@ class AsyaWatch : MainAPI() {
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val document = app.get(request.data).document
-        val items = document.select("a.sc.pcard, a[href*=\"/dizi/\"]").mapNotNull { it.toSearchResult() }.distinctBy { it.url }
+        // Sadece gerçek dizi kartları: b etiketli (a.sc/a.nwc/a.pcard) veya dogrudan baslikli (a.tcn/a.ct)
+        val selector = "a.sc, a.nwc, a.tcn, a.ct, a.sc.pcard, a.pcard"
+        val items = document.select(selector).mapNotNull { it.toSearchResult() }.distinctBy { it.url }
         return newHomePageResponse(request.name, items)
     }
 
@@ -39,7 +41,7 @@ class AsyaWatch : MainAPI() {
 
     override suspend fun search(query: String): List<SearchResponse> {
         val document = app.get("${mainUrl}/ara?q=${query}").document
-        return document.select("a.sc.pcard, a[href*=\"/dizi/\"]").mapNotNull { it.toSearchResult() }.distinctBy { it.url }
+        return document.select("a.sc.pcard, a.pcard, #dzm-series a[href*=\"/dizi/\"]").mapNotNull { it.toSearchResult() }.distinctBy { it.url }
     }
 
     override suspend fun load(url: String): LoadResponse? {
