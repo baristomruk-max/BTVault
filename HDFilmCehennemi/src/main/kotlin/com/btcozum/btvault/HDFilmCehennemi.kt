@@ -1,5 +1,6 @@
 package com.btcozum.btvault
 
+import android.util.Base64
 import com.lagradost.cloudstream3.*
 import com.lagradost.cloudstream3.utils.*
 import org.jsoup.Jsoup
@@ -64,12 +65,13 @@ class HDFilmCehennemi : MainAPI() {
 
     /** FNV-1a 32-bit hash (JavaScript Math.imul ile eşdeğer) */
     private fun fnv1a(input: String): String {
-        var hash: Int = -2128831035 // 2166136261
+        var hash: Int = -2128831035 // 2166136261 (uint32)
         for (b in input.toByteArray()) {
             hash = hash xor (b.toInt() and 0xFF)
             hash *= 16777619
         }
-        return hash.toString(16).padStart(8, '0')
+        // JS: hash >>> 0 -> toString(16), leading sifir yok
+        return Integer.toUnsignedString(hash)
     }
 
     /** SPG koruması için X-Sp token üretir (n = spT) */
@@ -111,12 +113,20 @@ class HDFilmCehennemi : MainAPI() {
         // response.data.url parse et (JSON escaped slashes unescape)
         val iframeUrl = Regex(""""url"\s*:\s*"([^"]+)"""").find(ajaxResponse)?.groupValues?.get(1)?.replace("\\/", "/") ?: return false
 
-        // 3. Jeton'ı iframe URL'den çıkar: https://setplay.sbs/player/?t=<jeton>
-        val jetonMatch = Regex("""[?&]t=([^&]+)""").find(iframeUrl) ?: return false
-        val jeton = jetonMatch.groupValues[1]
+        // 3. setplay iframe sayfasindan gercek video URL'sini coz
+        //    SPG.cerceve("id", "<payload>", "<key>") -> XOR(base64(payload), base64(key)) = stream URL
+        //    (jeton her istekte degisir; dogrudan video/<jeton> 404 doner)
+        val iframeHtml = app.get(iframeUrl, headers = mapOf("Referer" to data)).text
+        val cerceve = Regex("""SPG\.cerceve\("[^"]+","([^"]+)","([^"]+)"\)""").find(iframeHtml)
+            ?: return false
+        val enc = Base64.decode(cerceve.groupValues[1], Base64.DEFAULT)
+        val decKey = Base64.decode(cerceve.groupValues[2], Base64.DEFAULT)
+        if (enc.isEmpty() || decKey.isEmpty()) return false
+        val decoded = CharArray(enc.size) { i -> (enc[i].toInt() xor decKey[i % decKey.size].toInt()).toChar() }
+        val fastplayUrl = String(decoded)
+        if (!fastplayUrl.startsWith("http")) return false
 
-        // 4. fastplay.mom video sayfasını çek (FSP config + SPG_A)
-        val fastplayUrl = "https://fastplay.mom/video/$jeton"
+        // 4. fastplay video sayfasini cek (FSP config + sp/spT)
         val fastplayHtml = app.get(fastplayUrl, headers = mapOf("Referer" to iframeUrl)).text
 
         // FSP stream yolu
