@@ -57,7 +57,8 @@ class Dizipod : MainAPI() {
 
     private fun Element.toSearchResult(): SearchResponse? {
         val isArticle = this.tagName() == "article"
-        val anchor = if (isArticle) this.selectFirst("a.img-link") else this.parent()
+        val anchor = if (isArticle) this.selectFirst("a.img-link")
+            else this.selectFirst("div.img a") ?: this.selectFirst("div.title a") ?: this.selectFirst("a")
         val href = anchor?.attr("href")?.takeIf { it.isNotBlank() } ?: return null
         val title = (if (isArticle) this.selectFirst("h3.title") else this.selectFirst("div.title"))
             ?.text()?.trim() ?: return null
@@ -161,7 +162,7 @@ class Dizipod : MainAPI() {
         val episodes = mutableListOf<Episode>()
         for ((season, seasonUrl) in seasons) {
             val seasonDocument = app.get(seasonUrl).document
-            seasonDocument.select("div.episode-item a[href*='-bolum/']").forEach { anchor ->
+            seasonDocument.select("div.episodes-grid a.episode-link[href*='-bolum/']").forEach { anchor ->
                 val href = anchor.attr("href").takeIf { it.isNotBlank() } ?: return@forEach
                 val episode = Regex("-([0-9]+)-bolum/").find(href)?.groupValues?.get(1)?.toIntOrNull()
                     ?: return@forEach
