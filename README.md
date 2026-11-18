@@ -55,7 +55,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
 
 ## Icerik
 
-> **30 eklenti - 29 aktif, 1 kapali (17.11.2026).**
+> **31 eklenti - 30 aktif, 1 kapali (18.11.2026).**
 >
 > - ✅ Aktif: site acik, eklenti bu adreste calisiyor
 > - ⛔ Kapali: site olu / park / yeni tema (yeniden yazim bekliyor)
@@ -80,6 +80,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>📺 <strong>DiziMag</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizimag.onl, v2 - alan adi guncellendi)</td></tr>
   <tr><td>📺 <strong>Dizipod</strong></td><td>Yabanci Dizi & Film</td><td>✅ Aktif (dizipod.com - TR altyazili)</td></tr>
   <tr><td>📺 <strong>DiziYou</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (diziyou.one)</td></tr>
+<tr><td>📺 <strong>Dizilla</strong></td><td>Yabanci Dizi</td><td>✅ Aktif (dizilla.la)</td></tr>
   <tr><td>📡 <strong>DMax</strong></td><td>Belgesel & TV</td><td>✅ Aktif (dmax.com.tr)</td></tr>
   <tr><td>🎬 <strong>FilmMakinesi</strong></td><td>Film</td><td>✅ Aktif (filmmakinesi.to - CloseLoad/Rapid extractor)</td></tr>
   <tr><td>🎬 <strong>FilmModu</strong></td><td>Film</td><td>✅ Aktif (filmmodu.one - schema.org microdata + lazy afis)</td></tr>
@@ -108,7 +109,7 @@ https://raw.githubusercontent.com/baristomruk-max/BTVault/main/repo.json
   <tr><td>?? <strong>IzleAI</strong></td><td>Film</td><td>? Kapali (selcukflix.app Next.js yeni tema, eski /api/bg/* 404 - tam rewrite bekliyor)</td></tr>
 </table>
 
-> **17.11.2026 tarayici denetimi:** DiziMag dizimag.onl � dizimag.best guncellendi. HDFilmCehennemi video zinciri (admin-ajax � setplay � fastplay.mom X-Sp) tarayicida dogrulandi.
+> **17.11.2026 tarayici denetimi:** DiziMag dizimag.onl � dizimag.best guncellendi. HDFilmCehennemi video zinciri (admin-ajax � setplay � fastplay.mom X-Sp) tarayicida dogrulandi.
 
 
 
