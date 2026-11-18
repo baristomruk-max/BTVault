@@ -1,3 +1,5 @@
+package com.btcozum.btvault
+
 import com.fasterxml.jackson.annotation.JsonProperty
 
 data class Video(

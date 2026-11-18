@@ -53,11 +53,11 @@ class AsyaWatch : MainAPI() {
         val description = ld["description"]?.toString()
         val posterUrl = fixUrlNull(ld["image"]?.toString())
         val episodes = mutableListOf<Episode>()
-        val seasons = ld["containsSeason"] as? List<*> ?: emptyList()
+        val seasons = ld["containsSeason"] as? List<*> ?: emptyList<Any?>()
         seasons.forEach { season ->
             val sm = season as? Map<*, *> ?: return@forEach
             val seasonNum = sm["seasonNumber"]?.toString()?.toIntOrNull() ?: 1
-            val eps = sm["episode"] as? List<*> ?: emptyList()
+            val eps = sm["episode"] as? List<*> ?: emptyList<Any?>()
             eps.forEach { ep ->
                 val em = ep as? Map<*, *> ?: return@forEach
                 val epName = em["name"]?.toString() ?: return@forEach

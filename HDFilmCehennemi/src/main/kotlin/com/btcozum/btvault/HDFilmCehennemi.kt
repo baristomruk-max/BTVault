@@ -12,7 +12,7 @@ class HDFilmCehennemi : MainAPI() {
     override val hasMainPage = true
     override var lang = "tr"
     override val hasQuickSearch = false
-    override val supportedTypes = setOf(TvType.TvSeries)
+    override val supportedTypes = setOf(TvType.Movie, TvType.TvSeries)
 
     override val mainPage = mainPageOf(
         mainUrl to "Ana Sayfa",
@@ -64,10 +64,10 @@ class HDFilmCehennemi : MainAPI() {
 
     /** FNV-1a 32-bit hash (JavaScript Math.imul ile eşdeğer) */
     private fun fnv1a(input: String): String {
-        var hash: Int = 2166136261
+        var hash: Int = -2128831035 // 2166136261
         for (b in input.toByteArray()) {
-            hash = (hash xor b.toInt() and 0xFF)
-            hash = (hash * 16777619).toInt()
+            hash = hash xor (b.toInt() and 0xFF)
+            hash *= 16777619
         }
         return hash.toString(16).padStart(8, '0')
     }
@@ -76,7 +76,7 @@ class HDFilmCehennemi : MainAPI() {
     private fun generateXSp(sp: String, spT: Long): String {
         val n = spT
         val rnd = Random()
-        val r = (Math.floor(2176782336.0 * rnd.nextDouble())).toString(36)
+        val r = java.lang.Long.toString((2176782336.0 * rnd.nextDouble()).toLong(), 36)
         val hashInput = "$sp|$n|$r"
         val hash = fnv1a(hashInput)
         return "$n.$r.$hash"
