@@ -78,17 +78,33 @@ class AsyaWatch : MainAPI() {
 
     override suspend fun loadLinks(data: String, isCasting: Boolean, subtitleCallback: (SubtitleFile) -> Unit, callback: (ExtractorLink) -> Unit): Boolean {
         val html = app.get(data).text
-        // RSC payload'dan video src çıkar
-        val srcMatch = Regex(""""src"\s*:\s*"(https?://[^"]+)"""").find(html)
-        val videoUrl = srcMatch?.groupValues?.get(1) ?: return false
-        callback.invoke(newExtractorLink(
-            source = name,
-            name = name,
-            url = videoUrl,
-            ExtractorLinkType.VIDEO
-        ) {
-            this.referer = data
-        })
+
+        // 2026-11: kaynaklar four.pichive.online/iframe.php uzerinde (NP player + proof-of-work kapisi)
+        val iframes = Regex("""https?://[A-Za-z0-9.\-]+/iframe\.php\?v=[A-Za-z0-9_\-]+""")
+            .findAll(html)
+            .map { it.value }
+            .distinct()
+            .toList()
+
+        var resolved = false
+        for (iframe in iframes) {
+            if (AsyaWatchPichive.resolve(iframe, subtitleCallback, callback)) resolved = true
+        }
+        if (resolved) return true
+
+        // Yedek: sayfada dogrudan m3u8 varsa
+        val direct = Regex("""https?://[^"'\s<>\\]+\.m3u8[^"'\s<>\\]*""").find(html)?.value
+            ?: return false
+        callback.invoke(
+            newExtractorLink(
+                source = name,
+                name = name,
+                url = direct,
+                ExtractorLinkType.M3U8
+            ) {
+                this.referer = data
+            }
+        )
         return true
     }
 }
