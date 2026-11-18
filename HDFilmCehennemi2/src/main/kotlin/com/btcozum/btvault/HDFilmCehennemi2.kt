@@ -65,7 +65,7 @@ class HDFilmCehennemi2 : MainAPI() {
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
         val document = app.get("${request.data}?page=$page").document
-        val items = document.select("a.group/poster").mapNotNull { it.toMainPageResult() }
+        val items = document.select("a[class*=group/poster]").mapNotNull { it.toMainPageResult() }
         return newHomePageResponse(request.name, items)
     }
 
