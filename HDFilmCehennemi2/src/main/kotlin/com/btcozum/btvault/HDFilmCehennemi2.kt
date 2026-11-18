@@ -237,7 +237,9 @@ class HDFilmCehennemi2 : MainAPI() {
         val script = document.select("script").map { it.data() }.joinToString("\n")
         val m = Regex("""jwplayer\('[^']+'\)\.setup\(JSON\.parse\('(.*?)'\)\)""", RegexOption.DOT_MATCHES_ALL)
             .find(script) ?: return
-        val unescaped = unescapeUnicode(m.groupValues[1])
+        // Sayfadaki JSON once JavaScript string literali olarak, sonra JSON olarak cozuluyor:
+        // \\\/ -> \/ (JS) -> / (JSON). \\& gibi gecersiz JSON kacislari da JS adiminda temizlenir.
+        val unescaped = unescapeJsString(m.groupValues[1])
         val mapper = ObjectMapper()
         try {
             val setup = mapper.readValue(unescaped, Map::class.java) as Map<String, Any>
@@ -253,6 +255,54 @@ class HDFilmCehennemi2 : MainAPI() {
             })
         } catch (_: Exception) {
         }
+    }
+
+    /** JavaScript string literali kacislarini cozer (\\uXXXX, \\xXX, \\/, \\&, \\', ...) */
+    private fun unescapeJsString(s: String): String {
+        val sb = StringBuilder(s.length)
+        var i = 0
+        while (i < s.length) {
+            val c = s[i]
+            if (c != '\\' || i + 1 >= s.length) {
+                sb.append(c)
+                i++
+                continue
+            }
+            val n = s[i + 1]
+            when (n) {
+                'u' -> {
+                    if (i + 5 < s.length) {
+                        val code = s.substring(i + 2, i + 6).toIntOrNull(16)
+                        if (code != null) {
+                            sb.append(code.toChar())
+                            i += 6
+                            continue
+                        }
+                    }
+                    sb.append(n)
+                    i += 2
+                }
+                'x' -> {
+                    if (i + 3 < s.length) {
+                        val code = s.substring(i + 2, i + 4).toIntOrNull(16)
+                        if (code != null) {
+                            sb.append(code.toChar())
+                            i += 4
+                            continue
+                        }
+                    }
+                    sb.append(n)
+                    i += 2
+                }
+                'n' -> { sb.append('\n'); i += 2 }
+                'r' -> { sb.append('\r'); i += 2 }
+                't' -> { sb.append('\t'); i += 2 }
+                'b' -> { sb.append('\b'); i += 2 }
+                'f' -> { sb.append('\u000C'); i += 2 }
+                else -> { sb.append(n); i += 2 }
+            }
+        }
+        return sb.toString()
     }
 
     private suspend fun vidmolyExtract(
