@@ -170,7 +170,9 @@ class HDFilmIzle : MainAPI() {
         val document = app.get(data).document
 
         // Vidrame iframe'i (data-src attribute)
-        val iframe = document.selectFirst("iframe")?.attr("data-src") ?: return false
+        val iframe = document.select("iframe[data-src]")
+            .mapNotNull { it.attr("data-src").takeIf { u -> u.isNotBlank() } }
+            .firstOrNull() ?: return false
         Log.d("HDF", "iframe » ${iframe}")
 
         // Vidrame player sayfasını referer ile getir

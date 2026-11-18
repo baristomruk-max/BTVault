@@ -272,7 +272,18 @@ class DiziMag : MainAPI() {
             ), interceptor = interceptor
         ).document
         val iframe =
-            fixUrlNull(document.selectFirst("div#tv-spoox2 iframe")?.attr("src")) ?: return false
+            fixUrlNull(document.selectFirst("div#tv-spoox2 iframe")?.attr("src"))
+                ?: fixUrlNull(
+                    document.select("iframe").mapNotNull { it.attr("src").takeIf { u -> u.isNotBlank() } }
+                        .firstOrNull()
+                )
+                ?: return false
+
+        // 2026-11: yeni oynat_ici japierdolevid.com uzerinde, sifreli /stream protokolu
+        if (iframe.contains("japierdolevid")) {
+            if (DiziMagJapier.resolve(iframe, "$mainUrl/", subtitleCallback, callback)) return true
+        }
+
         val docum = app.get(iframe, headers = headers, referer = "$mainUrl/", interceptor = interceptor).document
         docum.select("script").forEach { sc ->
             if (sc.toString().contains("bePlayer")) {
